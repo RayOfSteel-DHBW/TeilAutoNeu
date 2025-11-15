@@ -1,0 +1,42 @@
+Zielgruppe:
+(- Behörden)
+(- Firmen)
+- Privatpersonen:
+    * TA als 2. Auto
+    * Personen ohne Auto
+    * Quernutzer
+    * "Besucher" - braucht öfter ein Auto, z.B. in der alten Heimat
+    * (Schüler oder Studenten eher weniger, wenn als Zweitnutzer bei Eltern)
+    * (bevorzugt erfahrene Fahrer)
+
+Image: 
+- Fokus auf Nachhaltigkeit. 
+- National vernetzt
+- Unabhängiges Kleinstunternehmen (Ehepaar)
+- Bilder: Lokale Fotografie (erkennbare Landmarks)
+- Farbwahl: Wie TA Neckaralb wär OK, muss aber net
+
+
+Ziele: 
+- Vergrößerung der Kundenbasis und damit Auto-/Stellplatz Auswahl
+- c.a. 20 Kunden mehr wär cool
+- Fokus auf Vermeidung von "False-Positives": (sprich wenig Support Kapazität) 
+- Nachschlagewerk für Preise/Fahrzeuge/Standorte -> Karte? 
+(- iwann in Zukunft: Formulare/AGBs auf Website. Muss erst anwaltlich gecheckt werden)
+Funktionsumfang:
+- Reine Präsentationsseite reicht
+- JavaScript Rechner
+
+Nice to Have:
+- Studie nachrechnen mit eigenen Zahlen (für faulen Nutzer der den Rechner nicht bedienen möchte)
+- Spezielle Features 
+- Kartenintegration ?
+
+
+
+
+
+
+
+
+
