@@ -1,0 +1,344 @@
+Option Compare Database   'Verwenden der Datenbank-Sortierreihenfolge beim Vergleich von Zeichenfolgen.
+Dim ab, bis, Zeit
+Const std = 4.16666666666667E-02
+Const halbe_std = 2.08333333333333E-02
+
+
+
+Private Sub Form_Activate()
+DoCmd.ShowToolbar "schliessen", A_TOOLBAR_YES
+End Sub
+
+Private Sub Form_Deactivate()
+DoCmd.ShowToolbar "schliessen", A_TOOLBAR_NO
+End Sub
+
+Private Sub Form_Open(Cancel As Integer)
+Me!jahr = Year(Now)
+Me!Monat = Month(Now)
+Me!tagab = Format(Date, "dd.mm.yyyy")
+Me!tagbis = Format(Date, "dd.mm.yyyy")
+Me!tarifsystem = 1
+Me!Zeitab.SetFocus
+If DLookup("kmtarif2", "global") = False Then
+    Me!km2.Visible = False
+    Me!über100.Visible = False
+    Me!km_mal.Visible = False
+    Me!km100_neu.Visible = False
+    Me!km100geld_neu.Visible = False
+End If
+
+Call tarife_AfterUpdate
+Me!anfang = 2
+End Sub
+
+Private Sub berechnen_Click()
+Dim a, B As Long
+Dim m As Variant
+If IsNull(beginnf) Or beginnf = "" Then
+    MsgBox "Achtung: Globale Berechnungswerte nicht mehr geladen. Ohne speichern beenden, Abrechnungsmenü schliessen und dann neu aufrufen!"
+    Exit Sub
+End If
+
+If IsNull(Me!Kmab) Or IsNull(Me!tagab) Or IsNull(Me!tagbis) Or IsNull(Me!Zeitab) Or IsNull(Me!zeitbis) Then
+    MsgBox "Berechnungsgrundlage muß vollständig gefüllt sein!"
+    DoCmd.GoToControl "kmab"
+    Exit Sub
+End If
+y = (DateValue(Me!tagbis) + TimeValue(Me!zeitbis)) - (DateValue(Me!tagab) + TimeValue(Me!Zeitab))
+If y < 0 Then
+    MsgBox "Achtung!" & Chr(13) & "Achtung: Fahrtende >= Fahrtbeginn!"
+    Me!tagab.SetFocus
+    Exit Sub
+End If
+If y = 0 Then
+    MsgBox "Achtung!" & Chr(13) & "Fahrtende = Fahrtbeginn!"
+End If
+
+Me!gefahren = Me!Kmab
+Me!kmgeld_neu = 0
+
+Me!über100 = 0
+Me!km100geld_neu = 0
+
+Me!über500 = 0
+Me!km500geld_neu = 0
+
+Me!zeitgeld_unter8 = 0
+Me!std_unter = 0
+
+Me!zeitgeld_über8 = 0
+Me!std_über = 0
+
+Me!zeitgeld_nacht = 0
+Me!std_nacht = 0
+
+Me!gebühren = 0
+Me!Summe = 0
+
+
+Call berechnen_neu
+Call warnen
+End Sub
+
+Private Sub Schaltfläche55_Click()
+Me!gefahren = 0
+Me!über100 = 0
+Me!über500 = 0
+Me!Summe = 0
+Me!tagab = Null
+Me!tagbis = Null
+Me!Zeitab = Null
+Me!zeitbis = Null
+Me!Kmab = Null
+Me!std_unter = 0
+Me!std_über = 0
+Me!std_nacht = 0
+Me!kmgeld_neu = 0
+Me!km100geld_neu = 0
+Me!km500geld_neu = 0
+Me!zeitgeld_unter8 = 0
+Me!zeitgeld_über8 = 0
+Me!zeitgeld_nacht = 0
+End Sub
+
+Private Sub tagab_AfterUpdate()
+On Error Resume Next
+a = Me!tagab
+B = InStr(1, a, ".")
+If B = 0 Then
+    Me!tagab = DateValue(Me!tagab & "." & Me!Monat & "." & Me!jahr)
+    Me!tagab = Format(Me!tagab, "dd.mm.yyyy")
+Else
+    Me!tagab = DateValue(Me!tagab)
+End If
+If DateValue(Me!tagab) < Date - 365 Then
+    MsgBox "Mit dem Datum stimmt was nicht!" & Chr(13) & "Sie haben den Wert '" & a & "' eingegeben."
+    Me!tagab = Null
+    SendKeys "+{tab}"
+    Exit Sub
+End If
+Me!tagab = CLng(DateSerial(Mid(Me!tagab, 7, 4), Mid(Me!tagab, 4, 2), Mid(Me!tagab, 1, 2)))
+Me!tagab = Format(Me!tagab, "dd.mm.yyyy")
+Me!tagbis = Me!tagab
+End Sub
+
+Private Sub tagbis_AfterUpdate()
+On Error Resume Next
+a = Me!tagbis
+B = InStr(1, a, ".")
+If B = 0 Then
+    Me!tagbis = DateValue(Me!tagbis & "." & Me!Monat & "." & Me!jahr)
+    Me!tagbis = Format(Me!tagbis, "dd.mm.yyyy")
+Else
+    Me!tagbis = DateValue(Me!tagbis)
+End If
+If DateValue(Me!tagbis) < Date - 365 Then
+    MsgBox "Mit dem Datum stimmt was nicht!" & Chr(13) & "Sie haben den Wert '" & a & "' eingegeben."
+    Me!tagbis = Null
+    SendKeys "+{tab}"
+    Exit Sub
+End If
+Me!tagbis = CLng(DateSerial(Mid(Me!tagbis, 7, 4), Mid(Me!tagbis, 4, 2), Mid(Me!tagbis, 1, 2)))
+Me!tagbis = Format(Me!tagbis, "dd.mm.yyyy")
+End Sub
+
+
+Private Sub warnen()
+Dim a As Double
+If Me!Summe >= 1000 Then
+    MsgBox "Achtung: Fahrtsumme ok?"
+End If
+
+a = (DateSerial(Year(tagbis), Month(tagbis), Day(tagbis)) + TimeSerial(Hour(zeitbis), minute(zeitbis), Second(zeitbis))) - (DateSerial(Year(tagab), Month(tagab), Day(tagab)) + TimeSerial(Hour(Zeitab), minute(Zeitab), Second(Zeitab)))
+If a <> 0 Then
+    a = Me!gefahren / (a * 24)
+    If a >= 50 Then
+        MsgBox "Achtung: Durchschnittliche km/h = " & Format(a, "0") & ". Erfassungsfehler?"
+    End If
+End If
+End Sub
+
+Private Sub tarife_AfterUpdate()
+
+x = DLookup("Kmtarif", "kategorien", "kindex = " & Me!tarife)
+y = DLookup("Zeittarif", "kategorien", "kindex = " & Me!tarife)
+z = DLookup("Tag1tarif", "kategorien", "kindex = " & Me!tarife)
+w = DLookup("Tag2tarif", "kategorien", "kindex = " & Me!tarife)
+v = DLookup("Kmtaf2", "kategorien", "kindex = " & Me!tarife)
+p = DLookup("Kmtaf3", "kategorien", "kindex = " & Me!tarife)
+
+If Me!tarifsystem = 1 Then
+    Me!Kilometertarif_neu = DLookup("Betrag", "Tarife", "Tarif = " & x)
+    Me!km100_neu = DLookup("Betrag", "Tarife", "Tarif = " & v)
+    Me!km500_neu = DLookup("Betrag", "Tarife", "Tarif = " & p)
+    Me!zeittarif_unter8 = DLookup("Betrag", "Tarife", "Tarif = " & y)
+    Me!zeittarif_über8 = DLookup("Betrag", "Tarife", "Tarif = " & z)
+    Me!zeittarif_nacht = DLookup("Betrag", "Tarife", "Tarif = " & w)
+Else
+    Me!Kilometertarif_neu = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & x & " and Tarifsystem = " & Me!tarifsystem)
+    Me!km100_neu = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & v & " and Tarifsystem = " & Me!tarifsystem)
+    Me!km500_neu = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & p & " and Tarifsystem = " & Me!tarifsystem)
+    Me!zeittarif_unter8 = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & y & " and Tarifsystem = " & Me!tarifsystem)
+    Me!zeittarif_über8 = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & z & " and Tarifsystem = " & Me!tarifsystem)
+    Me!zeittarif_nacht = DLookup("Betrag", "Tarifgruppe", "Tarifart = " & w & " and Tarifsystem = " & Me!tarifsystem)
+End If
+
+If Me!anfang = 2 Then
+    Call berechnen_Click
+End If
+End Sub
+
+Private Sub tarifsystem_AfterUpdate()
+tarife_AfterUpdate
+End Sub
+
+Private Sub Zeitab_AfterUpdate()
+'On Error Resume Next
+
+Select Case Right(Me!Zeitab, 1)
+    Case "0" To "9"
+     Select Case Me!Zeitab
+        Case Is > 23
+            MsgBox "Mit der Uhrzeit stimmt was nicht!"
+            SendKeys "+{tab}"
+            Exit Sub
+     End Select
+    B = 0
+    Case ","
+    a = Len(Me!Zeitab)
+    B = 30
+    Me!Zeitab = Left(Me!Zeitab, a - 1)
+    Case Else
+    MsgBox "Mit der Uhrzeit stimmt was nicht!"
+    SendKeys "+{tab}"
+    Exit Sub
+End Select
+
+
+
+Me!Zeitab = TimeValue(Me!Zeitab & ":" & B)
+Me!Zeitab = Format(Me!Zeitab, "hh:nn")
+
+End Sub
+
+Private Sub zeitbis_AfterUpdate()
+On Error GoTo zeiterror
+Select Case Right(Me!zeitbis, 1)
+    Case "0" To "9"
+    B = 0
+    Case ","
+    a = Len(Me!zeitbis)
+    B = 30
+    Me!zeitbis = Left(Me!zeitbis, a - 1)
+    Case Else
+    MsgBox "Mit der Uhrzeit stimmt was nicht!"
+    SendKeys "+{tab}"
+    Exit Sub
+End Select
+If Me!zeitbis = 24 Then
+    Me!tagbis = CLng(DateSerial(Mid(Me!tagbis, 7, 4), Mid(Me!tagbis, 4, 2), Mid(Me!tagbis, 1, 2)))
+    Me!tagbis = Me!tagbis + 1
+    Me!tagbis = Format(Me!tagbis, "dd.mm.yyyy")
+    Me!zeitbis = 0
+End If
+
+Me!zeitbis = TimeValue(Me!zeitbis & ":" & B)
+Me!zeitbis = Format(Me!zeitbis, "hh:nn")
+
+zeitende:
+Exit Sub
+
+zeiterror:
+MsgBox "Bitte Uhrzeit erst löschen und dann neu eingeben!"
+SendKeys "+{tab}"
+Resume zeitende
+End Sub
+
+
+Private Sub berechnen_neu()
+Dim datab, datbis, abzug As Double
+Dim std_zählen As Integer
+datab = CDbl(DateValue(Me!tagab) + TimeValue(Me!Zeitab))
+datbis = CDbl(DateValue(Me!tagbis) + TimeValue(Me!zeitbis))
+
+std_zählen = 0
+std_unter_über = 0
+
+Me!kmgeld_neu = 0
+
+Me!zeitgeld_unter8 = 0
+Me!zeitgeld_über8 = 0
+Me!zeitgeld_nacht = 0
+
+Me!Summe = 0
+Me!std_über = 0
+Me!std_unter = 0
+Me!std_nacht = 0
+
+If DLookup("kmtarif2", "global") = True And DLookup("kmtarif3", "global") = True Then
+    If Me!gefahren > DLookup("kilometer3", "global") Then
+        Me!über500 = Me!gefahren - DLookup("kilometer3", "global")
+        Me!über100 = DLookup("kilometer3", "global") - DLookup("kilometer", "global")
+        Me!gefahren = DLookup("kilometer", "global")
+        Me!km100geld_neu = Me!über100 * Me!km100_neu
+        Me!km500geld_neu = Me!über500 * Me!km500_neu
+    ElseIf Me!gefahren > DLookup("kilometer", "global") Then
+        Me!über100 = Me!gefahren - DLookup("kilometer", "global")
+        Me!gefahren = DLookup("kilometer", "global")
+        Me!km100geld_neu = Me!über100 * Me!km100_neu
+    End If
+ElseIf DLookup("kmtarif2", "global") = True Then
+    If Me!gefahren > DLookup("kilometer", "global") Then
+        Me!über100 = Me!gefahren - DLookup("kilometer", "global")
+        Me!gefahren = DLookup("kilometer", "global")
+        Me!km100geld_neu = Me!über100 * Me!km100_neu
+    End If
+End If
+
+Me!kmgeld_neu = Me!gefahren * Me!Kilometertarif_neu
+
+If globgebühr = True Then
+    Me!gebühren = Me!gebühren + globgebdm
+End If
+
+Do Until Year(datab) = Year(datbis) And Day(datab) = Day(datbis) And Hour(datab) = Hour(datbis) And minute(datab) = minute(datbis)
+    datab = datab + halbe_std
+    std_zählen = std_zählen + 0.5
+    Select Case Hour(datab) & Format(minute(datab), "00")
+        Case 0 To 800, 2330
+            std_nacht = std_nacht + 0.5
+        Case Else
+            std_unter_über = std_unter_über + 0.5
+            If std_unter_über <= globlangtarif Then
+                Me!std_unter = Me!std_unter + 0.5
+            Else
+                Me!std_über = Me!std_über + 0.5
+            End If
+    End Select
+Loop
+
+Me!zeitgeld_unter8 = Me!zeittarif_unter8 * Me!std_unter
+Me!zeitgeld_über8 = Me!zeittarif_über8 * Me!std_über
+Me!zeitgeld_nacht = Me!zeittarif_nacht * Me!std_nacht
+
+Me!Summe = Me!kmgeld_neu + Me!km100geld_neu + Me!km500geld_neu + Me!zeitgeld_unter8 + Me!zeitgeld_über8 + Me!zeitgeld_nacht + Me!gebühren
+End Sub
+Private Sub erg_druck_Click()
+On Error GoTo Err_erg_druck_Click
+
+    Dim stDocName As String
+
+    stDocName = "Abrechnung Info"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_erg_druck_Click:
+    Exit Sub
+
+Err_erg_druck_Click:
+    MsgBox Err.Description
+    Resume Exit_erg_druck_Click
+    
+End Sub
+Fahrtensimulation.vba
+11 KB

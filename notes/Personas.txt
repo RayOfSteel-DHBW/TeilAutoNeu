@@ -1,0 +1,16 @@
+(TA als 2. Auto):
+Simone, 27, grad ihr erstes Kind bekommen und ist daheim im Mutterschutz.
+Ihr Ehemann benötigt das gemeinsame Auto von 7 bis 18 Uhr um zur Arbeit zu pendeln weshalb Sie in diesen Zeiträumen ein Zweitauto benötigt. 
+-> Spezifische Sektion "TeilAuto als Zweitwagen"?
+-> "Zweitwagen-Modus" für Rechner?
+
+Johannes, 29, Berufsanfänger
+- Frisch fertig mit dem Master-Studium und hat gerade seinen ersten Job begonnen, den er mit dem Zug erreicht. 
+- Johannes ist umweltbewusst und es macht ihm nichts aus kein Auto zu haben, manchmal wäre es aber schon praktisch eines zur Verfügung zu haben.
+
+
+Joachim, 52, Quernutzer
+- kennt Teilauto/carsharing bereits, da er bei einem Partnerverband Mitglied ist
+-  Preise usw interessieren nur sekundär
+-> Auto Location v.a. relevant ?
+-> Tendenziell anspruchslos, will nur wissen dass er Quernutzen kann und was ?

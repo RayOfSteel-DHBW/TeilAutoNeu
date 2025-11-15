@@ -1,0 +1,137 @@
+ ---
+
+1. Grundlegendes Konzept
+
+1. Klare Struktur  
+   Durch eine übersichtliche und logisch aufgebaute Navigation (z. B. in Form einer klassischen Hauptnavigation oben oder einem gut sichtbaren Menü-Button in einer mobilen Version) können Nutzer*innen die gesuchten Informationen schnell finden. Essenzielle Punkte sollten dabei schnell erreichbar sein (z. B. Startseite, Angebot, Mitglied werden, Kontakt).
+
+2. Einfaches, responsives Design  
+   Da viele Leute mobil nach Carsharing-Angeboten suchen, ist eine mobiloptimierte Website essenziell. Bilder, Texte und Navigationselemente sollten sich nahtlos an verschiedene Bildschirmgrößen anpassen.
+
+3. Fokus auf das Wesentliche  
+   Um unnötige Anrufe zu vermeiden, sollten alle wichtigen Informationen (z. B. Mitgliedschaftsbedingungen, Ablauf der Buchung) leicht auffindbar sein und klar kommuniziert werden. Eventuell ergänzend mit FAQ-Bereich oder Infografiken.
+
+4. Vertrauensaufbau  
+   Zeigt, warum Teilauto Mössingen eine gute Wahl ist: kurze Erfolgsstory, Zertifizierungen, Referenzen, ggf. Presseartikel oder Testimonials anderer Kunden. Ein sympathischer “Über uns”-Abschnitt mit Team-Vorstellung schafft Nähe und Vertrauen.
+
+---
+
+2. Vorschlag für die Navigationsstruktur
+
+Eine mögliche Hauptnavigation könnte folgendermaßen aussehen:
+
+1. Startseite
+2. So funktioniert’s  
+3. Tarife & Mitgliedschaft
+4. Standorte & Fahrzeuge
+5. FAQ
+6. Kontakt
+7. Über uns (bzw. “Wer wir sind”)
+
+#2.1. Startseite
+
+- Hero-Bereich: Großes, ansprechendes Bild eines Fahrzeugs oder eines zufriedenen Nutzers mit einem kurzen Slogan wie „Teilauto Mössingen – gemeinsam unterwegs“ oder „Nachhaltige Mobilität in deiner Region“.
+- Kurzer Überblick:  
+  - Kurze Beschreibung des Carsharing-Konzepts (z. B. 2–3 Sätze: „Bequem und umweltfreundlich ein Auto nutzen, ohne eins zu besitzen“).  
+  - CTA (Call-To-Action): z. B. ein Button mit „Jetzt Mitglied werden“ oder „Mehr erfahren“.
+- Vorteile auf einen Blick: Stichpunktartig 3–4 Gründe, warum man sich bei Teilauto Mössingen anmelden sollte (Kostenvorteil, Umweltbewusstsein, Flexibilität).
+
+#2.2. So funktioniert’s
+
+- Einfacher Erklärtext oder Infografik: Wie läuft der Buchungsprozess ab?
+  1. Mitglied werden (Antrag, kurzer Verifizierungsprozess)  
+  2. Auto buchen (App, Website oder Telefon)  
+  3. Auto abholen (Schlüsselsystem, Standort etc.)  
+  4. Fahren & zurückbringen  
+- Mitgliedschaftsarten (wenn es verschiedene Modelle gibt): Auflisten mit konkreten Vorteilen.  
+
+> Ziel: Nach dem Lesen soll klar sein, welche Schritte notwendig sind, um bei Teilauto Mössingen ein Auto zu buchen.
+
+#2.3. Tarife & Mitgliedschaft
+
+- Preisübersicht:  
+  - Monatsbeitrag/Jahresbeitrag  
+  - Nutzungskosten (z. B. pro Stunde und Kilometer, eventuell verschiedene Tarife)  
+  - Eventuell Sonderkonditionen für Studierende, Firmen etc.  
+- Was ist im Preis enthalten?: Versicherungen, Kraftstoff, Reinigung, Wartung usw.
+- Anmeldeformular (entweder direkt als Online-Formular oder klarer Link zu einem PDF, falls online nicht möglich):  
+  - Option „Online registrieren” = Reduzierung von Nachfragen/Anrufen.  
+
+#2.4. Standorte & Fahrzeuge
+
+- Übersichtskarte: Zeigt, wo die Fahrzeuge verfügbar sind.  
+- Standortdetails: z. B. genaue Adresse, ggf. Fotos vom Parkplatz, Tipps zur Anreise (ÖPNV, Fahrradabstellplatz).  
+- Fahrzeugtypen: Welche Autos gibt es (Kleinwagen, Kombi, E-Auto)? Ggf. kurze Beschreibung der wichtigsten Eckdaten.
+
+#2.5. FAQ
+
+- Häufige Fragen & Antworten:  
+  - Muss ich ein eigenes Auto haben? (Nein, Sinn ist gerade kein eigenes Auto besitzen zu müssen …)  
+  - Brauche ich eine Kreditkarte?  
+  - Was passiert bei einem Unfall?  
+  - Welche Führerscheinklassen sind notwendig?  
+  - Brauche ich ein Smartphone?  
+  - Wie und wann zahle ich? (Monatlich, Lastschrift, etc.)  
+- Gut sortiert nach Themenblöcken, damit Besucher*innen schnell ihre Antworten finden.
+
+#2.6. Kontakt
+
+- Kontaktformular: Leicht auszufüllende Felder (Name, E-Mail, Anliegen).  
+- E-Mail-Adresse & Telefonnummer (z. B. mit Servicezeiten, damit klar ist, wann jemand erreichbar ist).  
+- Ggf. Hilfestellung: Wer noch Fragen hat, kann sie hier stellen. Evtl. Hinweis: „Bitte schauen Sie vorab in unsere FAQ.”, um Anfragen zu reduzieren.
+
+#2.7. Über uns
+
+- Geschichte und Idee hinter Teilauto Mössingen: Gründung, Entwicklung, regionale Verankerung.  
+- Teamvorstellung (ggf. mit Fotos und kurzen persönlichen Infos – schafft Vertrauen und Nähe).  
+- Werte (z. B. Nachhaltigkeit, Gemeinschaft, Regionalität).  
+
+---
+
+3. Design-Tipps zur Reduzierung von Anrufen
+
+1. Klare Infotexte & Grafiken  
+   - Wo immer möglich, visuell erklären: Infografiken oder Schritt-für-Schritt-Schaubilder, damit Nutzer*innen nicht nur Textwände lesen müssen.  
+   - Kurze Video-Anleitung für den Registrierungsprozess kann sehr hilfreich sein.
+
+2. Integrierte Suchfunktion  
+   - Ermöglicht Nutzern direkt zu finden, was sie brauchen („Wie kann ich…?“).  
+
+3. Call-To-Actions am richtigen Ort  
+   - Z. B. “Mehr erfahren” -> führt gezielt zu einer Unterseite mit genauen Infos.  
+   - “Jetzt Mitglied werden” -> führt direkt zum Anmeldeformular.
+
+4. Prominent platzierte FAQ  
+   - Oft gestellte Fragen idealerweise schon im Footer verlinkt oder auf den wichtigen Seiten am Ende einblenden: „Sie haben noch Fragen? Hier finden Sie Antworten“.
+
+5. Hinweise & Tooltips  
+   - Bei Tarifen oder Buchungsschritten kleine Infofelder bzw. “(i)”-Symbole, die kurz erklärt, was gemeint ist.
+
+---
+
+4. Technische Umsetzung & Extras
+
+- Responsives Webdesign: Wichtig für mobile Nutzer (z. B. Bootstrap oder ein anderes Frontend-Framework).
+- Schnelle Ladezeiten: Komprimierte Bilder, möglichst schlankes Theme.
+- Web-Analyse-Tool (z. B. Matomo, Google Analytics DSGVO-konform): Verständnis, wo Nutzer*innen abspringen oder welche Seiten besonders oft aufgerufen werden.
+- Cookie- und Datenschutz-Hinweise (DSGVO)  
+   - Kurze, verständliche Datenschutzerklärung.  
+   - Opt-in/Opt-out für Cookies.  
+- Social-Media-Integration (wenn sinnvoll): Facebook, Instagram, lokale Gruppen? Kann helfen, Reichweite zu steigern.
+
+---
+
+5. Marketing-Elemente
+
+1. Testimonials: Zufriedene Kund*innen berichten (mit Bild und kurzem Zitat).  
+2. Umwelt-Aspekt betonen: Größter Carsharing-Vorteil neben Kostenersparnis ist Nachhaltigkeit.  
+3. Aktionen / Rabatte: Falls vorhanden (z. B. Werbeaktion „1 Monat gratis Grundgebühr“), direkt auf der Startseite hervorheben.  
+4. Lokale Partnerschaften: Kooperation mit Fahrradläden, ÖPNV etc. – Stärkt die lokale Verwurzelung.
+
+---
+
+6. Zusammenfassung
+
+Das Ziel ist eine freundliche, übersichtliche und funktionale Website, die den Besucher*innen schnell klarmacht, wie Teilauto Mössingen funktioniert und welche Vorteile es bietet. Durch eine stringente Informationsvermittlung (FAQ, Schritt-für-Schritt, klare Tarifinfos) lassen sich unnötige Anrufe deutlich reduzieren. Das Design sollte modern, aber nicht überladen sein, sich auf die Kerninformationen konzentrieren und mit gezielten CTAs zum Mitmachen anregen.
+
+Mit dieser Struktur ist sichergestellt, dass Interessent*innen ohne viel Suchen begreifen, wie das Angebot funktioniert, was es kostet und wie man sich anmelden kann. Gleichzeitig entsteht Vertrauen durch einen persönlichen Einblick in das Unternehmen und dessen Werte.
