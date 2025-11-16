@@ -1,0 +1,238 @@
+:root {
+    --accent: hsl(195, 53%, 79%);
+    --accent-hover: hsl(195, 53%, 72%);
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+}
+
+main {
+    background: white;
+    padding: 2rem 10%;
+    min-height: 100vh;
+}
+
+@media (orientation: landscape) {
+    main {
+        padding: 2rem 20%;
+    }
+}
+
+/* Dont match nested sections */
+main section:not(section section) {
+    margin: 5rem 0;
+}
+
+/* Navigation */
+
+#nav-items a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+@media screen and (width < 800px) {
+    #nav-spacer {
+        display: none;
+    }
+
+    #hamburger {
+        position: fixed;
+        z-index: 101;
+        top: 0;
+        right: 0;
+        display: grid;
+        grid-template: 1fr 0.7fr / 1.6fr 1fr;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        background-color: var(--accent);
+        user-select: none;
+    }
+
+    #hamburger>span {
+        grid-column: 2;
+        padding: 0.3rem;
+        transition: rotate 1s;
+    }
+
+    nav[open] #hamburger span {
+        rotate: 90deg;
+    }
+
+    li:has(#nav-logo) {
+        height: 5rem;
+        padding: 0.4rem;
+        contain: size;
+    }
+
+    #nav-logo img {
+        height: 100%;
+    }
+
+    #nav-items {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        background: var(--accent);
+        clip-path: xywh(0 0 100% 0%);
+        transition: clip-path 1s;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav[open] #nav-items {
+        clip-path: xywh(0 0 100% 100%);
+    }
+
+    #nav-items a span {
+        display: block;
+        padding: 0.3rem;
+    }
+
+    #nav-items li:hover {
+        background: linear-gradient(90deg, var(--accent-hover) 0%, var(--accent) 70%);
+    }
+}
+
+@media screen and (width >=800px) {
+    nav {
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        width: 100%;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    #nav-items {
+        display: flex;
+        height: 4rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #nav-items>* {
+        background: var(--accent);
+    }
+
+    li:has(#nav-logo) {
+        flex-basis: 0;
+    }
+
+    #nav-logo {
+        height: 100%;
+    }
+
+    #nav-logo img {
+        height: 100%;
+        padding: 0.2rem;
+        box-sizing: border-box;
+    }
+
+    #nav-spacer {
+        flex: 1;
+    }
+
+    #nav-items li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    #nav-items a {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 0.7rem;
+    }
+
+    #nav-items li:has(a):hover {
+        background-color: var(--accent-hover);
+    }
+
+    #nav-items li.nav-current {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, calc(50% + 10px) 100%, 50% 90%, calc(50% - 10px) 100%, 0% 100%);
+    }
+
+    #nav-items li+li::before {
+        content: "";
+        position: absolute;
+        height: 1.8em;
+        left: 0;
+        border-left: 1px solid var(--accent-hover);
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    width: 100%;
+    background: var(--accent);
+    border-top: 2px solid gray;
+    padding: 0.5rem 0;
+}
+
+footer a {
+    color: inherit;
+}
+
+@media (orientation: landscape) {
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+.simple-list-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.simple-list-layout article {
+    position: relative;
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.simple-list-layout article+article::before {
+    content: "";
+    position: absolute;
+    background: lightgray;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0.3);
+}
+
+@media (orientation: landscape) {
+    .simple-list-layout {
+        flex-direction: row;
+    }
+
+    .simple-list-layout article {
+        padding: 0 2rem;
+    }
+
+    .simple-list-layout article+article::before {
+        height: 100%;
+        width: 2px;
+        transform: scaleY(0.3);
+    }
+}

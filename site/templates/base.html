@@ -1,0 +1,65 @@
+{% macro create_nav_link(name, page, current) %}
+<li {% if name==current %} class="nav-current" {% endif %}>
+    <a href="{{ page }}">
+        <span>{{ name }}</span>
+    </a>
+</li>
+{% endmacro navlink %}
+
+{% macro create_nav(page="xxx") %}
+<nav>
+    <div id="hamburger" onclick="document.querySelector('nav').toggleAttribute('open')">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+    <ul id="nav-items">
+        <li>
+            <a id="nav-logo" href="./">
+                <img src="img/talogo.svg" alt="teilAuto Logo">
+            </a>
+        </li>
+        <li id="nav-spacer"></li>
+        {{ self::create_nav_link(name="Preise", page="preise.html", current=page) }}
+        {{ self::create_nav_link(name="Nachhaltigkeit", page="nachhaltig.html", current=page) }}
+        {{ self::create_nav_link(name="Fahrzeuge", page="fahrzeuge.html", current=page) }}
+        {{ self::create_nav_link(name="Für Firmen", page="geschaeftskunden.html", current=page) }}
+        {{ self::create_nav_link(name="Über uns", page="ueber-uns.html", current=page) }}
+    </ul>
+</nav>
+{% endmacro %}
+
+{% macro create_title(page) %}
+<title>{{page}} | teilAuto Mössingen</title>
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chilanka&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_arrow_down,menu" />
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+    {% block nav %}
+    {{ throw(message="Missing nav block") }}
+    {% endblock nav %}
+    {% block body %}
+    NO BODY CONTENT
+    {% endblock body %}
+    <footer>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+    </footer>
+</body>
+
+</html>

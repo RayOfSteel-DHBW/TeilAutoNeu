@@ -1,0 +1,73 @@
+<section class="accordion">
+    <div class="accordion-item">
+        <button class="accordion-header">Wie funktioniert Carsharing?</button>
+        <div class="accordion-content">
+            <p>Beim Carsharing nutzen mehrere Personen gemeinsam ein oder mehrere Fahrzeuge, wobei eine
+                Carsharing-Organisation die Verwaltung, Vermietung und Abrechnung übernimmt.&shy;Die Nutzer schließen
+                mit dem Carsharing-Anbieter einen Rahmenvertrag und können von da an die Fahrzeuge jederzeit buchen.</p>
+            <p>Bezahlt wird dabei nur der Verbrauch und der nutzungsbasierte Anteil an den Fixkosten des Autos.
+                <br>Kurz: Perfekt für alle die ihr Auto nicht täglich brauchen.</p>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Kann ich auch nur einmalig ein Auto mieten?</button>
+        <div class="accordion-content">
+            <p>Kurz gesagt - nein.<br>Um ein Auto bei uns zu mieten müssen Sie Mitglied werden - nur so können wir den
+                Verwaltungsaufwand bei der Buchung gering halten und die Verteilung der Nebenkosten fair gestalten.</p>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Wie wird man Mitglied?</button>
+        <div class="accordion-content">
+            <p>Rufen Sie uns an und vereinbaren Sie einen Termin.<br>Alles weitere erklären wir Ihnen telefonisch.</p>
+            <p>Tel: 07473/92202</p>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Was kostet Carsharing?</button>
+        <div class="accordion-content">
+            <p>Wir geben an unsere Nutzer nur genau die Kosten weiter, &shy;die sie auch verbrauchen - dementsprechend
+                gibt es darauf keine simple Antwort.</p>
+            <p>In Kürze:</p>
+            <ul>
+                <li>Einmalige Sicherungseinlage: 490€&shy; (wird wieder ausbezahlt)</li>
+                <li>Eintritts-/Jahresgebühr: 35€ </li>
+                <li>Stundenpreis: 0,34€ - 2,00€ / Stunde</li>
+                <li>Kilometerpreis: 0,26 - 0,30€ / KM</li>
+                <li>(Werte sind u.a. Fahrzeugabhängig)</li>
+                <li>Genaueres entnehmen Sie bitte der Unterseite <a href="Preise.html">Preise</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <button class="accordion-header">Wie viele Fahrzeuge hat Teilauto Mössingen?</button>
+        <div class="accordion-content">
+            <p>Momentan stellen wir in Mössingen 2 Fahrzeuge (Klassen XS und M) bereit. <br>Mit steigendem Bedarf
+                steigen aber auch unsere Möglichkeiten:<br> Weitere eigene Fahrzeuge in Mössingen und den Teilorten sind
+                geplant und werden nach Bedarf mit steigenden Nutzerzahlen angeschafft.<br>
+                Zusätzlich sind wir Mitglied im <a href="https://www.carsharing.de">Bundesverband Carsharing</a>:
+                Dadurch können Sie deutschlandweit Autos bei einem unserer über 200 Partner quernutzen - ohne Aufpreis!
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Select all accordion headers and add click event listener
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const activeHeader = document.querySelector('.accordion-header.active');
+            if (activeHeader && activeHeader !== header) {
+                activeHeader.classList.remove('active');
+                activeHeader.nextElementSibling.style.maxHeight = null;
+            }
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            if (header.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+</script>

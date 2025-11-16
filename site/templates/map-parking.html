@@ -1,0 +1,35 @@
+<div id="map-parking"></div>
+<link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js" defer></script>
+<script type="module">
+    const map = new maplibregl.Map({
+        style: 'https://tiles.openfreemap.org/styles/liberty',
+        center: [9.047250123744496, 48.40207038114552],
+        zoom: 12,
+        cooperativeGestures: true,
+        container: 'map-parking',
+    })
+    let markers = [
+        new maplibregl.Marker({ color: "#FF5555" })
+            .setLngLat([9.047250123744496, 48.40207038114552])
+            .setPopup(new maplibregl.Popup({ closeButton: false }).setHTML("Opel Mokka"))
+            .addTo(map),
+        new maplibregl.Marker({ color: "#8888FF" })
+            .setLngLat([9.05936419569643, 48.404022527634346])
+            .setPopup(new maplibregl.Popup({ closeButton: false }).setHTML("Opel Adam"))
+            .addTo(map),
+        new maplibregl.Marker({ color: "#BBBBBB" })
+            .setLngLat([9.031131931773112, 48.40304911141525])
+            .setPopup(new maplibregl.Popup({ closeButton: false }).setHTML("Geplanter Stellplatz<br>Don Bosco"))
+            .addTo(map),
+        new maplibregl.Marker({ color: "#BBBBBB" })
+            .setLngLat([9.063100288360795, 48.410348956774534])
+            .setPopup(new maplibregl.Popup({ closeButton: false }).setHTML("Geplanter Stellplatz<br>Kino"))
+            .addTo(map),
+    ]
+
+    markers.forEach(marker => {
+        marker.getElement().onmouseenter = () => marker.togglePopup()
+        marker.getElement().onmouseleave = () => marker.togglePopup()
+    })
+</script>
