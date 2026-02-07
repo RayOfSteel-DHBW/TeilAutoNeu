@@ -61,6 +61,6 @@ This installs the npm scripts only (there are no JavaScript runtime dependencies
 
 ## Deployment
 
-`npm run build` produces the exact `build/dist` output that GitHub Pages consumes today. See `.github/workflows/deploy.yml` for the GitHub Pages pipeline (still using this folder as the working directory).
+`npm run build` produces the exact `build/dist` output that GitHub Pages consumes today. See `.github/workflows/static.yml` for the GitHub Pages pipeline (still using this folder as the working directory).
 
 > **Note:** sFTP deployment is not wired up yet. We will add a script and automation later once the hosting details are finalized.
