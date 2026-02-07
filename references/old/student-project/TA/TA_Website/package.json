@@ -1,0 +1,16 @@
+{
+  "name": "ta-website",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "clean": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File ./scripts/build-site.ps1 -Task clean",
+    "build": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File ./scripts/build-site.ps1 -Task build",
+    "watch": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File ./scripts/build-site.ps1 -Task watch",
+    "dev": "npm run watch"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  }
+}

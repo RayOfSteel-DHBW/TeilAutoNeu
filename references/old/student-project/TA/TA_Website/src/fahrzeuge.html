@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="fahrzeuge.css">
+{{ self::create_title(page="Fahrzeuge") }}
+{% endblock head %}
+{% block nav %}
+{{ self::create_nav(page="Fahrzeuge") }}
+{% endblock nav %}
+{% block body %}
+<main>
+    <h1>Die Fahrzeuge</h1>
+    <div class="simple-list-layout">
+        <article>
+            <h3>Opel Mokka <span></span></h3>
+            <img src="img/mokka.png" alt="Opel mokka">
+            <span class="description-aligner"></span>
+            <p>Tarif M, Farbe Schwarz</p>
+            <details>
+                <summary>Ausstattung</summary>
+                <ul>
+                    <li>Antrieb: Elektromotor</li>
+                    <li>Getriebe: Automatik</li>
+                    <li>Max. Leistung: 100 kW</li>
+                    <li>elektrische Reichweite: WLTP 325 km</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Assistenzsysteme</summary>
+                <ul>
+                    <li>Park & Go</li>
+                    <li>Toter-Winkel-Warner</li>
+                    <li>Aktiver Spurhalte-Assistent</li>
+                    <li>Autom. Geschwindigkeit-Assistent</li>
+                    <li>Rückfahrkamera</li>
+                    <li>LED Scheinwerfer</li>
+                </ul>
+            </details>
+
+        </article>
+        <article>
+            <h3>Opel Adam</h3>
+            <img src="img/adam.png" alt="Opel Adam">
+            <span class="description-aligner"></span>
+            <p>Tarif XS, Farbe blau</p>
+            <details>
+                <summary>Ausstattung</summary>
+                <ul>
+                    <li>Navi 4.0</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Assistenzsysteme</summary>
+                <ul>
+                    <li>Automatischer Parkassistent</li>
+                </ul>
+            </details>
+        </article>
+    </div>
+    <p>
+        <strong>Nicht genug?</strong> Da wir Mitglied im DACHverband Carsharing sind ist es für sie jederzeit
+        Möglich auf die
+        Fahrzeuge unserer vielen Partner zurückzugreifen um z.B. einen Sprinter für Ihren nächsten Umzug zu mieten -
+        ohne zusätzlichen Gebühren.
+    </p>
+    <section>
+        <h2>Stellplätze</h2>
+        {% include "map-parking.html" %}
+    </section>
+
+</main>
+{% endblock body %}

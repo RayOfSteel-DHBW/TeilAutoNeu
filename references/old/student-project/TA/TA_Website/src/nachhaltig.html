@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="nachhaltig.css">
+{{ self::create_title(page="Nachhaltig") }}
+{% endblock head %}
+{% block nav %}
+{{ self::create_nav(page="Nachhaltigkeit") }}
+{% endblock nav %}
+{% block body %}
+<main>
+    <h1>Nachhaltigkeit</h1>
+    <article>
+        <h2>Jeder redet von Umweltschutz - wir tun es seit über 20 Jahren</h2>
+        <p>
+            Mit Carsharing haben wir bei Teilauto Mössingen schon früh auf ein zukunftsweisendes Moblitätskonzept
+            gesetzt, das nicht nur flexibel und bequem ist, sondern auch einen entscheidenden Beitrag zum Klimaschutz
+            leistet.
+        </p>
+    </article>
+    <article>
+        <h3>Ressourcenschonung und Effizienz</h3>
+        <p>
+            Wir bieten eine kostengünstige und einfache Lösung für Menschen die nur selten einen (Zweit)-wagen
+            benötigen. Damit verhindern wir unnötige Anschaffungen von Autos und die damit verbundene Energie-,
+            CO2-
+            und
+            Ressourcenverschwendung in der Produktion.
+        </p>
+        <h3>Moderne Technik für nachhaltige Mobilität</h3>
+        <p>
+            Unsere Teilautos sind technisch auf dem neuesten Stand und werden regelmäßig gewartet - so
+            garantieren
+            wir
+            nicht nur höchste Sicherheitsstandards, sondern auch einen minimalen CO₂-Ausstoß.
+        </p>
+        <h3>Nachhaltige Mobilitätskultur</h3>
+        <p>
+            Carsharing fördert eine Mobilitätskultur, die Verantwortung und Freiheit verbindet. Viele unserer
+            Kunden
+            berichten, dass die Hemmschwelle das Fahrrad oder den Bus zu nehmen gesunken ist, seit sie nicht
+            mehr
+            das
+            Gefühl haben dass sich ihr Auto "rentieren" muss.
+        </p>
+    </article>
+</main>
+{% endblock body %}

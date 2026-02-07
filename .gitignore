@@ -1,4 +1,8 @@
 #_old/
+# Ignore .git folders in student projects but keep source files
 references/old/student-project/TA/TA_Website/.git/
-references/old/student-project/TA/TA_Website/
-references/old/student-project/TA/RainerFiddle/
+references/old/student-project/TA/TA_Website/node_modules/
+references/old/student-project/TA/TA_Website/build/
+references/old/student-project/TA/RainerFiddle/.git/
+references/old/student-project/TA/RainerFiddle/node_modules/
+references/old/student-project/TA/RainerFiddle/build/

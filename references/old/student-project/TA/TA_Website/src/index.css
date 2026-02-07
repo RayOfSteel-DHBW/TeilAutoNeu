@@ -1,0 +1,226 @@
+@import url('accordion.css');
+
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/bergrutsch.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+#main-content {
+    margin-top: 25vh;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button {
+    display: block;
+    background: var(--accent);
+    border: none;
+    padding: 0.7rem;
+    border-radius: calc(infinity * 1px);
+    font: inherit;
+    text-decoration: inherit;
+    color: inherit;
+    text-align: center;
+}
+
+.button:hover {
+    background: var(--accent-hover);
+}
+
+/* Hero */
+
+#hero {
+    height: 50vh;
+    padding: 0 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    --shadow-color: #0008;
+    --shadow-size: 10px;
+    --shadow: drop-shadow(-1px -1px var(--shadow-size) var(--shadow-color)) drop-shadow(1px -1px var(--shadow-size) var(--shadow-color)) drop-shadow(1px 1px var(--shadow-size) var(--shadow-color)) drop-shadow(-1px 1px var(--shadow-size) var(--shadow-color));
+}
+
+#hero img {
+    min-height: 0;
+    margin-top: 2rem;
+    filter: invert() var(--shadow);
+}
+
+#hero p {
+    color: white;
+    text-align: center;
+    font-size: x-large;
+    text-wrap: balance;
+    filter: var(--shadow);
+}
+
+@media (orientation: landscape) {
+    #hero p {
+        font-size: xx-large;
+    }
+}
+
+/* Benefits */
+
+section:has(#benefits) {
+    margin-top: 2rem;
+}
+
+#benefits {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+#benefits h4 {
+    margin: 0;
+}
+
+@media (orientation: portrait) {
+    #benefits .spacer {
+        height: 5rem;
+        position: relative;
+    }
+
+    #benefits .spacer::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        top: 50%;
+        border: 1px solid lightgray;
+        transform: scaleX(30%);
+    }
+}
+
+
+@media (orientation: landscape) {
+    #benefits {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-auto-flow: column;
+        column-gap: 2rem;
+    }
+
+    #benefits .spacer {
+        grid-row: 1/-1;
+        position: relative;
+    }
+
+    #benefits .spacer::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        border: 1px solid lightgray;
+        transform: scaleY(40%);
+    }
+}
+
+/* How-To */
+
+#howto-items {
+    display: flex;
+    flex-direction: column;
+}
+
+#howto-items article {
+    display: grid;
+}
+
+#howto-items article figure {
+    contain: size;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#howto-items article figure img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@media (orientation: portrait) {
+    #howto-items article {
+        grid-template-rows: 1fr 0fr 2fr;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: #eeeeee;
+    }
+
+    #howto-items article hgroup h4 {
+        text-align: center;
+    }
+
+    .howto-flow-arrow {
+        align-self: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media (orientation: landscape) {
+    .howto-flow-arrow {
+        display: none;
+    }
+
+    #howto-items {
+        gap: 1rem;
+    }
+
+    #howto-items article {
+        grid-template-columns: 3fr 1fr 5fr;
+    }
+
+    #howto-items article:nth-of-type(odd) {
+        grid-template-columns: 5fr 1fr 3fr;
+        grid-auto-flow: dense;
+    }
+
+    #howto-items article:nth-of-type(odd) figure {
+        grid-column: 3;
+    }
+
+    .howto-item-spacer {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .howto-item-spacer::before {
+        content: "";
+        height: 4rem;
+        width: 2px;
+        background: lightgray;
+    }
+}
+
+/* Users */
+
+#users article {
+    display: flex;
+    flex-direction: column;
+}
+
+.users-button-aligner {
+    flex-grow: 1;
+}
+
+@media (orientation: portrait) {
+    #users span:has(.button) {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (orientation: landscape) {
+    #users span:has(.button) {
+        align-self: center;
+        width: max-content;
+    }
+}
