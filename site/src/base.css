@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
 :root {
   color-scheme: light;
 }
@@ -10,10 +12,29 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   line-height: 1.5;
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #f4f9f6;
+  color: #0f2d1f;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Grotesk", "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+  color: #0f2d1f;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
 }
 
 img,
@@ -26,7 +47,7 @@ svg {
 }
 
 a {
-  color: inherit;
+  color: #0f5f3c;
   text-decoration: none;
 }
 
