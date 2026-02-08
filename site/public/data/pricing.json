@@ -1,0 +1,43 @@
+{
+  "updated": "2026-02-08",
+  "disclaimer": "Genaue, aktuelle Preise erhalten Sie im persoenlichen Gespraech und in den aktuellen Unterlagen. Alle Angaben ohne Gewaehr.",
+  "membership": {
+    "deposit": "im hoeheren dreistelligen Bereich",
+    "annual_fee": "geringe Jahresgebuehr"
+  },
+  "usage": {
+    "booking_fee": "kleine Buchungsgebuehr pro Fahrt",
+    "time_rate": "zeitabhaengiger Tarif mit guenstigeren Nacht- und Folgestunden",
+    "km_rate": "Kilometerpreis je nach Fahrzeugklasse",
+    "includes": [
+      "Kraftstoff",
+      "Betriebsstoffe",
+      "Versicherung"
+    ]
+  },
+  "classes": [
+    {
+      "id": "XS",
+      "label": "Kleinwagen",
+      "notes": "Guenstigste Klasse, ideal fuer kurze Wege und Besorgungen"
+    },
+    {
+      "id": "M",
+      "label": "Kompaktklasse",
+      "notes": "Mehr Platz und Komfort, etwas hoeherer Tarif"
+    }
+  ],
+  "examples": [
+    {
+      "title": "Wochenendeinkauf",
+      "inputs": "ca. 2 Stunden, 15 km mit Klasse XS",
+      "output": "Gesamtbetrag im unteren zweistelligen Bereich"
+    },
+    {
+      "title": "Tagesausflug",
+      "inputs": "ca. 8 Stunden, 150 km mit Klasse M",
+      "output": "Gesamtbetrag im mittleren zweistelligen Bereich"
+    }
+  ],
+  "quernutzung": "Groessere Fahrzeugklassen nutzen Sie ueber Quernutzung bei Partnerorganisationen im bundesweiten Carsharing-Netzwerk."
+}
