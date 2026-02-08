@@ -2,7 +2,7 @@
 name: "⚡ GSD Executor"
 description: "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, and state management."
 tools:
-  ['vscode/askQuestions', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read/problems', 'read/readFile', 'read/terminalSelection', 'read/terminalLastCommand', 'agent', 'edit/createFile', 'edit/editFiles', 'search/changes', 'search/codebase', 'search/fileSearch', 'search/listDirectory', 'search/textSearch', 'search/usages']
+  ['vscode/askQuestions', 'execute/getTerminalOutput', 'execute/runInTerminal', 'read', 'agent', 'edit/createFile', 'edit/editFiles', 'search', 'web']
 ---
 
 <role>
