@@ -13,6 +13,8 @@ $TemplateDir = Join-Path $ProjectRoot "templates"
 $PublicDir = Join-Path $ProjectRoot "public"
 $BuildDir = Join-Path $ProjectRoot "build"
 $BuildOutputDir = Join-Path $BuildDir "dist"
+$TailwindInput = Join-Path $SourceDir "tailwind.css"
+$TailwindOutput = Join-Path $BuildOutputDir "tailwind.css"
 
 if (-not (Test-Path -LiteralPath $SourceDir)) {
     throw "Source directory not found: $SourceDir"
@@ -52,6 +54,29 @@ function Invoke-Tera {
     }
 }
 
+function Invoke-Tailwind {
+    if (-not (Test-Path -LiteralPath $TailwindInput)) {
+        throw "Tailwind input not found: $TailwindInput"
+    }
+
+    Push-Location $ProjectRoot
+    try {
+        $arguments = @(
+            "tailwindcss",
+            "-i", $TailwindInput,
+            "-o", $TailwindOutput
+        )
+
+        & npx @arguments
+        if ($LASTEXITCODE -ne 0) {
+            throw "tailwindcss exited with code $LASTEXITCODE"
+        }
+    }
+    finally {
+        Pop-Location
+    }
+}
+
 function Invoke-Build {
     Ensure-Directory -Path $BuildDir
     Ensure-Directory -Path $BuildOutputDir
@@ -61,11 +86,16 @@ function Invoke-Build {
         Invoke-Tera -TemplatePath $file.FullName
     }
 
+    Invoke-Tailwind
+
     if (Test-Path -LiteralPath $PublicDir) {
         Ensure-Directory -Path $BuildOutputDir
-        $publicItemCount = (Get-ChildItem -Path $PublicDir -Force | Measure-Object).Count
-        if ($publicItemCount -gt 0) {
-            Copy-Item -Path (Join-Path $PublicDir '*') -Destination $BuildOutputDir -Recurse -Force -Container
+        $publicItems = Get-ChildItem -Path $PublicDir -Force
+        if ($publicItems.Count -gt 0) {
+            foreach ($item in $publicItems) {
+                $destination = Join-Path $BuildOutputDir $item.Name
+                Copy-Item -LiteralPath $item.FullName -Destination $destination -Recurse -Force
+            }
         }
     }
 
