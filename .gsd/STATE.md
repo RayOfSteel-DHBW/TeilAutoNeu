@@ -5,24 +5,24 @@
 See: .gsd/PROJECT.md (updated 2026-02-08)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** Phase 3 - Homepage & Membership Funnel (ready to plan)
+**Current focus:** Phase 4 - Pricing & Value System (ready to plan)
 
 ## Current Position
 
-Phase: 2 of 6 (Core UX & Navigation)
+Phase: 3 of 6 (Homepage & Membership Funnel)
 Plan: 3 of 3 in current phase
 Status: Complete (ready to transition)
-Last activity: 2026-02-08 - Completed 02-03 plan (brand styling and copy guardrails)
+Last activity: 2026-02-08 - Completed Phase 3 (homepage, membership, FAQ accordion)
 
-Progress: [███-------] 33%
+Progress: [█████-----] 50%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 6
-- Average duration: 0.22 hours
-- Total execution time: 1.32 hours
+- Total plans completed: 9
+- Average duration: 0.17 hours
+- Total execution time: 1.54 hours
 
 **By Phase:**
 
@@ -30,15 +30,15 @@ Progress: [███-------] 33%
 | --- | --- | --- | --- |
 | 1 | 3 | 0.18h | 0.06h |
 | 2 | 3 | 1.13h | 0.38h |
-| 3 | 0 | 0.0h | - |
+| 3 | 3 | 0.22h | 0.07h |
 | 4 | 0 | 0.0h | - |
 | 5 | 0 | 0.0h | - |
 | 6 | 0 | 0.0h | - |
 
 **Recent Trend:**
 
-- Last 5 plans: 02-03 (1 min), 02-02 (7 min), 02-01 (60 min), 01-03 (2 min), 01-02 (1 min)
-- Trend: N/A
+- Last 5 plans: 03-03 (3 min), 03-02 (5 min), 03-01 (5 min), 02-03 (1 min), 02-02 (7 min)
+- Trend: Fast execution, content-focused plans
 
 ## Accumulated Context
 
@@ -48,6 +48,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - V1 deployment via GitHub Pages only; STRATO deferred to final V1 step.
+- Generic CTA wording: "Ueberzeugt? Melden Sie sich bei uns" with default hours Mo-Fr 09:00-12:00.
 
 ### Pending Todos
 
@@ -55,10 +56,10 @@ Recent decisions affecting current work:
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ## Session Continuity
 
-Last session: 2026-02-08 16:59Z
-Stopped at: Completed 02-03-PLAN.md
+Last session: 2026-02-08 17:40Z
+Stopped at: Completed Phase 3 (homepage, membership, FAQ accordion)
 Resume file: None
