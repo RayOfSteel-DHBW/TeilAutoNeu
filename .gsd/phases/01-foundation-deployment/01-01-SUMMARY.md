@@ -62,7 +62,7 @@ Each task was committed atomically:
 2. **Task 2: Integrate Tailwind build into build-site.ps1 and emit CSS into dist** - `03bc2c3` (feat)
 3. **Task 3: Wire Tailwind CSS into the base template and ensure Pages compatibility** - `064115a` (feat)
 
-**Plan metadata:** pending (docs: complete plan)
+**Plan metadata:** `dbd99f8` (docs: complete plan)
 
 _Note: TDD tasks may have multiple commits (test -> feat -> refactor)_
 

@@ -11,37 +11,38 @@ Model profiles control which Copilot model each GSD agent uses. This allows bala
 
 | Agent                    | `quality` | `balanced` | `budget` |
 | ------------------------ | --------- | ---------- | -------- |
-| gsd-planner              | opus      | opus       | sonnet   |
-| gsd-roadmapper           | opus      | sonnet     | sonnet   |
-| gsd-executor             | opus      | sonnet     | sonnet   |
-| gsd-phase-researcher     | opus      | sonnet     | haiku    |
-| gsd-project-researcher   | opus      | sonnet     | haiku    |
-| gsd-research-synthesizer | sonnet    | sonnet     | haiku    |
-| gsd-debugger             | opus      | sonnet     | sonnet   |
-| gsd-codebase-mapper      | sonnet    | haiku      | haiku    |
-| gsd-verifier             | sonnet    | sonnet     | haiku    |
-| gsd-plan-checker         | sonnet    | sonnet     | haiku    |
-| gsd-integration-checker  | sonnet    | sonnet     | haiku    |
+| gsd-planner              | Claude Opus 4.6 (copilot) | GPT-5.2 (copilot) | Claude Sonnet 4.5 (copilot) |
+| gsd-roadmapper           | GPT-5.2 (copilot) | GPT-5.2 (copilot) | Claude Sonnet 4.5 (copilot) |
+| gsd-executor             | GPT-5.2-Codex (copilot) | GPT-5.2-Codex (copilot) | Claude Sonnet 4.5 (copilot) |
+| gsd-phase-researcher     | GPT-5.2-Codex (copilot) | GPT-5.2 (copilot) | Claude Haiku 4.5 (copilot) |
+| gsd-project-researcher   | GPT-5.2-Codex (copilot) | GPT-5.2 (copilot) | Claude Haiku 4.5 (copilot) |
+| gsd-research-synthesizer | GPT-5.2 (copilot) | GPT-5.2 (copilot) | Claude Haiku 4.5 (copilot) |
+| gsd-debugger             | GPT-5.2-Codex (copilot) | GPT-5.2-Codex (copilot) | Claude Sonnet 4.5 (copilot) |
+| gsd-codebase-mapper      | GPT-5.2-Codex (copilot) | Claude Haiku 4.5 (copilot) | Claude Haiku 4.5 (copilot) |
+| gsd-verifier             | GPT-5.2 (copilot) | GPT-5.2 (copilot) | Claude Sonnet 4.5 (copilot) |
+| gsd-plan-checker         | GPT-5.2 (copilot) | Claude Sonnet 4.5 (copilot) | Claude Haiku 4.5 (copilot) |
+| gsd-integration-checker  | GPT-5.2-Codex (copilot) | GPT-5.2-Codex (copilot) | Claude Sonnet 4.5 (copilot) |
 
 ## Profile Philosophy
 
 **quality** - Maximum reasoning power
 
-- Opus for all decision-making agents
-- Sonnet for read-only verification
-- Use when: quota available, critical architecture work
+- Prefer GPT-5.2-Codex (copilot) for long, protocol-heavy software engineering work (execution/debugging) and source-heavy repo investigation where memory matters
+- Prefer GPT-5.2 (copilot) for methodology-heavy reasoning (planning, synthesis, verification)
+- Use Claude Opus 4.6 (copilot) selectively for the hardest problems (but avoid it for large source-reading due to Copilot context limits + cost)
+- Avoid relying on Gemini as a “high-context” model in Copilot (it does not get the full API context window)
 
 **balanced** (default) - Smart allocation
 
-- Opus only for planning (where architecture decisions happen)
-- Sonnet for execution and research (follows explicit instructions)
-- Sonnet for verification (needs reasoning, not just pattern matching)
+- Default to GPT-5.2 (copilot) for planning/research synthesis when process design matters
+- Use GPT-5.2-Codex (copilot) for agents that must follow long checklists and do precise tool calling (executor/debugger/integration)
+- Use Claude Haiku 4.5 (copilot) for high-volume scanning/mapping where outputs are reviewed
 - Use when: normal development, good balance of quality and cost
 
 **budget** - Minimal Opus usage
 
-- Sonnet for anything that writes code
-- Haiku for research and verification
+- Prefer Claude Haiku 4.5 (copilot) for fast reading and first-pass synthesis (review outputs)
+- Use Claude Sonnet 4.5 (copilot) when you still need reliable tool calling/coding on a budget
 - Use when: conserving quota, high-volume work, less critical phases
 
 ## Resolution Logic

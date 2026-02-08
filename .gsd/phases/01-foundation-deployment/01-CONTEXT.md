@@ -57,7 +57,7 @@ Site builds as a static HTML/Tailwind project with preview and owner-run deploym
 <deferred>
 ## Deferred Ideas
 
-- **STRATO SFTP full-site deployment** — originally scoped as Plan 01-03, moves to V2. Roadmap plan should be revisited.
+- **STRATO SFTP full-site deployment** — final enhancement for V1 (V1.X). Deferred until static site and data workflows are proven on GitHub Pages.
 - **Direct .xlsx link instead of manual import** — V2 enhancement for the data-update workflow.
 - **Credential store / secrets management** — V2, replace hardcoded values with a proper store.
 
