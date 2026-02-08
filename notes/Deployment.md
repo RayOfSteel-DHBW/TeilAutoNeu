@@ -8,6 +8,7 @@ These notes cover the preview pipeline and local build steps used by the team.
 - **Manual trigger:** GitHub -> Actions -> "Deploy marketing site to Pages" -> Run workflow.
 - **What it does:** Builds the site from `site/` and deploys `site/build/dist` to GitHub Pages.
 - **Preview URL:** Share the Pages URL with reviewers. It updates on every push to `dhbw/publish`.
+- **Verified preview URL (2026-02-08):** https://rayofsteel-dhbw.github.io/TeilAutoNeu/
 
 ## Where To Find the Pages URL
 
