@@ -24,7 +24,7 @@
 
 **Primary goals (authoritative — locked):**
 
-1. **Acquire suitable new members** (private households, businesses, government) **without overwhelming limited phone capacity** — the business is run part-time/volunteer by a married couple (Ralf & Ursula Stahl)
+1. **Acquire suitable new members** (private households, businesses, government) **without overwhelming limited phone capacity** — the business is run part-time/volunteer by a married couple (Ralf & Ursula Stahl); avoiding "false positives" is a strong priority
 2. **Answer standard questions** (pricing, how it works, locations) so fewer calls/emails are needed — the website as a "self-service information hub"
 3. **Position teilAuto** as a local, reliable, down-to-earth carsharing alternative to owning a (second) car — no moralizing, no poverty signals
 4. **Present costs, processes, and rules transparently but abstractly** based on the 02/2022 usage handbook — users get the detailed handbook in person later
@@ -163,10 +163,11 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 - Avoid claiming capabilities the business doesn't have (24/7 support, app, spontaneous booking, free-floating, paperless) — *notes/AuswertungHandbuch*
 - Empty Impressum and Datenschutz must be filled — legally required — *notes/überarbeitet*
 - Persona self-segmentation tiles on startpage — *notes/überarbeitet*
+(User Note: Self-Segmentation isn't set in stone, the more essential requirement is that the startpage should "work" for all personas)
 - Analytics tracking concept (persona clicks, scroll depth, FAQ opens, contact clicks) — *notes/überarbeitet*
-- Abstract tariff presentation (no exact prices unless explicitly approved) — *notes/überarbeitet*
-- „Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den Unterlagen" disclaimer — *notes/überarbeitet*
-- Owner must be able to maintain limited content (e.g., Tarife.xml swap, parking descriptions) — *notes/Gespräch_Eltern*
+- Pricing communication: show key values and sample calculations, but avoid full detail; price is a selling point but not the lead message — *notes/überarbeitet + owner input*
+- Include the disclaimer: „Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den Unterlagen" — *notes/überarbeitet*
+- Owner must be able to maintain limited content (e.g., tariffs, parking descriptions). Pricing data should be updateable from one source file (e.g., JSON) — *notes/Gespräch_Eltern + owner input*
 - German DSGVO-compliant tracking — *notes/überarbeitet*
 
 **Can-have (V1 / V1.5):**
@@ -175,7 +176,7 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 - Map integration for parking locations — *notes/Erstgespraech (KANN)*
 
 **Deferred (V2/future):**
-- JavaScript cost calculator (Tarifrechner) — *notes/Gespräch_Eltern explicitly defers*
+- JavaScript cost calculator (Tarifrechner) — V2; placeholder space on V1 page is acceptable — *notes/Gespräch_Eltern + owner input*
 - Detailed price tables from Tarife.xml — *notes/überarbeitet*
 - Example calculations with actual numbers — *notes, references*
 - Downloadable contracts/AGB (blocked on legal review) — *notes/Erstgespraech*
@@ -190,6 +191,7 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 - Responsive design with mobile hamburger nav — *primary codebase*
 - GitHub Pages deployment — *primary codebase*
 - Vehicle fleet: Opel Mokka E (M, electric), Opel Adam (XS, blue) — *primary, old-site, references*
+- Public tariff classes should be limited to XS and M (current fleet); larger classes only via Quernutzung — *owner input*
 - 2 active + 1 vacant + 2 planned parking locations — *primary, old-site, references*
 - Phone-only booking (07473-922202) — *all sources consistently*
 - Membership-based model, no one-time rentals — *all sources consistently*
@@ -213,6 +215,8 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 - **No online signup/application form** — next step is always phone contact — *notes/überarbeitet*
 - **No capabilities the business doesn't have** — no 24/7 chat, no app, no free-floating, no spontaneous returns, no "completely paperless" — *notes/AuswertungHandbuch*
 - **Pricing caution** — all price data from 02/2022 handbook; must be verified before publishing exact numbers. If unverified, use abstract language only. — *notes/überarbeitet, AuswertungHandbuch*
+- **Do not publish private phone numbers** — only the booking line should appear: 07473-922202 — *owner input*
+- **Avoid overly detailed billing rules on the website** — night-hour definitions and deep tariff mechanics are out of scope for V1 web copy — *owner input*
 - **Legal compliance** — Impressum (§5 TMG) and Datenschutzerklärung (DSGVO) are legally mandatory for German commercial websites — *notes/überarbeitet*
 - **Maintenance simplicity** — the parents (non-technical) must be able to update tariffs and basic text. This constrains CMS/architecture choices. — *notes/Gespräch_Eltern*
 - **Student-project code is UNLICENSED** — `package.json` declares UNLICENSED. Any code reuse must be treated as inspiration, not copy. — *student-project/COPYRIGHT-FLAGS.md*
@@ -226,18 +230,18 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 
 | # | Topic | Source A | Source A Says | Source B | Source B Says | Resolution | Rule Applied |
 |---|-------|---------|--------------|---------|--------------|------------|-------------|
-| 1 | **Tech stack** | notes/TechStack.md (Auth) | CouchCMS + PHP on STRATO, Tailwind, Alpine.js, Leaflet | primary codebase (Base) | Tera + PowerShell, vanilla CSS, MapLibre, GitHub Pages | **OPEN QUESTION** — TechStack.md was written as a "final tech decision" but was never implemented. The codebase went a different direction. Owner must decide: keep current Tera stack or pivot to CouchCMS+PHP. | Rule 3 (multiple auth-level sources conflict with reality) |
-| 2 | **Pricing display** | notes/überarbeitet (Auth) | Abstract only — "eher textlich erklären", no exact € | primary codebase (Base) | Exact prices in HTML tables (490€, 34€, 2.05€/h, etc.) | **Authoritative wins:** prices should be abstract per spec. Current exact prices contradict the spec. Needs reconciliation — either owner approves exact prices or they must be removed/softened. | Rule 1 (Auth states explicit position) |
-| 3 | **Homepage "Rechner" reference** | primary codebase (Base) | Homepage says "interaktiven Rechner" linking to preise.html | notes (Auth) | Calculator explicitly deferred to V2 | **Authoritative wins:** Remove or replace the "Rechner" reference from homepage. No calculator in V1. | Rule 1 |
+| 1 | **Tech stack** | notes/TechStack.md (Auth) | CouchCMS + PHP on STRATO, Tailwind, Alpine.js, Leaflet | primary codebase (Base) | Tera + PowerShell, vanilla CSS, MapLibre, GitHub Pages | **Resolved:** Keep the current Tera/static stack to ship updated content quickly. | Rule 3 (multiple auth-level sources conflict with reality) |
+| 2 | **Pricing display** | notes/überarbeitet (Auth) | Abstract only — "eher textlich erklären", no exact € | primary codebase (Base) | Exact prices in HTML tables (490€, 34€, 2.05€/h, etc.) | **Resolved:** Show key values and sample calculations without full tariff detail; price should not be the lead message. Include the "Preise im persönlichen Gespräch" disclaimer. Exact numbers require fresh verification. | Rule 1 (Auth + owner input) |
+| 3 | **Homepage "Rechner" reference** | primary codebase (Base) | Homepage says "interaktiven Rechner" linking to preise.html | notes (Auth) | Calculator explicitly deferred to V2 | **Resolved:** Calculator is V2; remove or replace the V1 reference. A "coming soon" placeholder is acceptable. | Rule 1 |
 | 4 | **Information Architecture** | notes/überarbeitet (Auth) | 9 pages with "So funktioniert's" as separate page | primary codebase (Base) | 9 pages but different structure (how-to is on homepage, separate mitglied-werden page) | **Authoritative takes priority** for planning. The spec's IA should guide the redesign. Current codebase structure is informational only. | Rule 1 |
 | 5 | **CSS framework** | notes/TechStack.md (Auth) | TailwindCSS | primary codebase (Base) | Vanilla CSS with custom properties | Subsumed by Conflict #1 (tech stack). Decided together. | Rule 3 |
 | 6 | **Map library** | notes/TechStack.md (Auth) | Leaflet + OpenStreetMap | primary codebase (Base) | MapLibre GL JS + OpenFreeMap | Subsumed by Conflict #1. MapLibre is functionally similar to Leaflet; either works. | Rule 3 |
-| 7 | **Annual fee** | old-site + primary codebase (Base) | 34€ | references/Nutzungshandbuch + notes/überarbeitet (Base+Auth) | 35€ | **OPEN QUESTION** — contradictory data across multiple sources. Owner must confirm current annual fee. | Rule 3 |
-| 8 | **Booking fee** | references/InputStartseite (Base) | 0,75€ | references/Nutzungshandbuch (Base) | 0,77€ | **OPEN QUESTION** — two baseline sources disagree. Owner must confirm. | Rule 3 |
-| 9 | **Firmen Grundgebühr** | primary + old-site (Base) | 34€ | references/Nutzungshandbuch (Base) | 40€ | **OPEN QUESTION** — baseline sources disagree. Owner must confirm. | Rule 3 |
-| 10 | **Night hours** | references/email (Base) | 0:00–6:00 | references/InputStartseite (Base) | 0:00–7:00 | **OPEN QUESTION** — multiple definitions (0–6, 0–7, 0–8). Owner must confirm. | Rule 3 |
+| 7 | **Annual fee** | old-site + primary codebase (Base) | 34€ | references/Nutzungshandbuch + notes/überarbeitet (Base+Auth) | 35€ | **Resolved for V1:** existing numbers are not trusted; do not publish exact fees until a fresh price set is provided. | Rule 3 |
+| 8 | **Booking fee** | references/InputStartseite (Base) | 0,75€ | references/Nutzungshandbuch (Base) | 0,77€ | **Resolved for V1:** existing numbers are not trusted; do not publish exact fees until a fresh price set is provided. | Rule 3 |
+| 9 | **Firmen Grundgebühr** | primary + old-site (Base) | 34€ | references/Nutzungshandbuch (Base) | 40€ | **Resolved for V1:** existing numbers are not trusted; do not publish exact fees until a fresh price set is provided. | Rule 3 |
+| 10 | **Night hours** | references/email (Base) | 0:00–6:00 | references/InputStartseite (Base) | 0:00–7:00 | **Resolved for V1:** night-hour definitions are out of scope for web copy; avoid detailed billing rules. | Rule 3 |
 | 11 | **Contact form vs no online signup** | notes/überarbeitet (Auth) | "Kein Online-Abschluss, kein Jetzt-anmelden-Formular" | primary codebase (Base) | Has contact form on mitglied-werden page | **Resolved:** The spec forbids an *application/signup* form but allows contact/inquiry forms. A "send us a message" form is fine; it just can't be a membership signup form. The current form's intent (Name, Email, Betreff, Nachricht) is an inquiry form, not a signup form — consistent with the spec. BUT the form is non-functional and needs a real backend. | Rule 1 (clarified scope) |
-| 12 | **Phone numbers** | references/InputStartseite (Base) | Contact: 07473-25517, Booking: 07473-922202 | primary codebase + kont.htm (Base) | Only 07473-922202 | **OPEN QUESTION** — is 07473-25517 still active? Which number(s) to publish? | Rule 3 |
+| 12 | **Phone numbers** | references/InputStartseite (Base) | Contact: 07473-25517, Booking: 07473-922202 | primary codebase + kont.htm (Base) | Only 07473-922202 | **Resolved:** publish only 07473-922202; do not publish the private number. | Rule 3 |
 
 ---
 
@@ -245,21 +249,14 @@ Static multi-page website built with **Tera** templating engine (Rust-based Jinj
 
 | # | Question | Why It Matters | Conflicting Sources | Default If No Answer |
 |---|----------|---------------|--------------------|--------------------|
-| 1 | **Keep current Tera/static stack or move to CouchCMS+PHP+Tailwind as planned in TechStack.md?** | Defines entire architecture, hosting (GitHub Pages vs STRATO), maintenance model (code edits vs CMS admin panel), and development approach. Massive scope difference. | notes/TechStack.md vs primary codebase | Keep Tera stack (it works, it's deployed, lower complexity) |
-| 2 | **Exact prices on website or abstract ranges only?** | Spec says abstract; codebase has exact prices; old site has exact prices. Users expect price info. Owner worried about outdated data. | notes/überarbeitet vs primary + old-site | Abstract with "Preise erhalten Sie im Gespräch" disclaimer |
-| 3 | **Is the cost calculator V1 or V2?** | Homepage already references it. Notes defer to V2. Significant dev effort for complex billing logic (time tiers, km tiers, night rates). | notes/Erstgespraech vs notes/Gespräch_Eltern | V2 (deferred — remove homepage reference) |
-| 4 | **Are current pricing numbers accurate (last verified 02/2022)?** | If publishing any prices, they must be correct. Deposit: 490/200/740€. Annual: 34€ or 35€? Booking: 0.75€ or 0.77€? Firmen: 34€ or 40€? | references (multiple conflicting), old-site | Do not publish exact prices until owner confirms |
-| 5 | **Which phone number(s) to publish?** | 07473-25517 (contact) vs 07473-922202 (booking). Are both active? One number simplifies UX. | references/InputStartseite, primary codebase | Use 07473-922202 only (booking line, appears in most sources) |
-| 6 | **Night hour definition?** | Billing calculation depends on this. 0:00–6:00, 0:00–7:00, or 0:00–8:00? | references (3 different values) | Don't publish exact hours; say "Nachtstunden" generically |
-| 7 | **Active tariff classes?** | Current fleet uses only XS and M. Tarife.xml has XXS–XXL including L/XL/XXL. Are the larger classes for Quernutzung display or legacy? | references/Tarife.xml vs primary codebase | Show only XS and M (current fleet) |
-| 8 | **Is Belsen parking location returning?** | Currently vacant ("zur Zeit nicht belegt"). Show on map/site or omit? | references/Ergänzung Handbuch, old-site/stellpl.htm | Show as "geplant" (planned) alongside Don Bosco and Kino |
-| 9 | **Color scheme / branding?** | No design mockup or brand guide exists. "Wie TA Neckaralb wär OK, muss aber net." Current codebase uses `hsl(195, 53%, 79%)` light blue. | notes/Erstgespraech (vague) | Keep current light blue accent; refine during design phase |
-| 10 | **Photography / image assets?** | All current images have copyright issues. Owner needs to supply or commission photos. Suggestion: local photos at recognizable landmarks, detail shots of Tresor/Schlüssel/Fahrtenbuch. | notes/Spezifikation, WerbeIdeenHandbuch | Block on owner providing photos before launch |
-| 11 | **How personal can website texts be?** | Notes ask: "Wie persönlich dürfen die Texte sein?" — affects tone of Über uns, testimonials, storytelling. | notes/Spezifikation_V1_Entwurf | Moderately personal (founders named, origin story told — as in current Über uns) |
-| 12 | **Quernutzung still active and current details?** | Handbook 2022 describes it in detail. Important selling point. But partner details (27 vehicles in Tübingen) may be outdated. | references/Nutzungshandbuch, old-site | Include but with generic "200+ Partner" — verify specifics |
-| 13 | **Number of vehicles/members still accurate?** | "60+ Fahrtberechtigte" and "2 Fahrzeuge" stated for 2025. Is this still correct in 2026? | notes/Texte/Über uns.docx | Use current numbers but verify before launch |
-| 14 | **Tiered km pricing still in use?** | Calculator supports 3-tier km pricing (base/100+/500+). Website drafts show single rate. | references/Calculator_Notes vs InputStartseite | Assume single rate unless owner says otherwise |
-| 15 | **What should happen with the contact form?** | Currently a fake `alert()`. Options: (a) real email-sending form, (b) remove form and keep phone-only CTA, (c) mailto: link. Backend needed for (a). | primary codebase, notes/überarbeitet | Phone-only CTA with optional mailto: link (simplest, matches "kein Online-Abschluss" spirit) |
+| 1 | **Is Belsen parking location returning?** | Currently vacant ("zur Zeit nicht belegt"). Show on map/site or omit? | references/Ergänzung Handbuch, old-site/stellpl.htm | Show as "geplant" (planned) alongside Don Bosco and Kino |
+| 2 | **Color scheme / branding?** | No design mockup or brand guide exists. "Wie TA Neckaralb wär OK, muss aber net." Current codebase uses `hsl(195, 53%, 79%)` light blue. | notes/Erstgespraech (vague) | Keep current light blue accent; refine during design phase |
+| 3 | **Photography / image assets?** | All current images have copyright issues. Owner needs to supply or commission photos. Suggestion: local photos at recognizable landmarks, detail shots of Tresor/Schlüssel/Fahrtenbuch. | notes/Spezifikation, WerbeIdeenHandbuch | Block on owner providing photos before launch |
+| 4 | **How personal can website texts be?** | Notes ask: "Wie persönlich dürfen die Texte sein?" — affects tone of Über uns, testimonials, storytelling. | notes/Spezifikation_V1_Entwurf | Moderately personal (founders named, origin story told — as in current Über uns) |
+| 5 | **Quernutzung still active and current details?** | Handbook 2022 describes it in detail. Important selling point. But partner details (27 vehicles in Tübingen) may be outdated. | references/Nutzungshandbuch, old-site | Include but with generic "200+ Partner" — verify specifics |
+| 6 | **Number of vehicles/members still accurate?** | "60+ Fahrtberechtigte" and "2 Fahrzeuge" stated for 2025. Is this still correct in 2026? | notes/Texte/Über uns.docx | Use current numbers but verify before launch |
+| 7 | **Tiered km pricing still in use?** | Calculator supports 3-tier km pricing (base/100+/500+). Website drafts show single rate. | references/Calculator_Notes vs InputStartseite | Assume single rate unless owner says otherwise |
+| 8 | **What should happen with the contact form?** | Currently a fake `alert()`. Options: (a) real email-sending form, (b) remove form and keep phone-only CTA, (c) mailto: link. Backend needed for (a). | primary codebase, notes/überarbeitet | Phone-only CTA with optional mailto: link (simplest, matches "kein Online-Abschluss" spirit) |
 
 **These questions should be answered during `gsd:new-project` questioning phase.**
 
