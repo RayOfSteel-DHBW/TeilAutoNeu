@@ -59,6 +59,19 @@ This installs the npm scripts only (there are no JavaScript runtime dependencies
 - The repository contains `.vscode/tasks.json`, so running the **“npm: watch”** task will start the PowerShell watcher in the background.
 - The Live Preview extension is configured via `.vscode/settings.json` to open `build/dist/index.html`; start the watcher first, then run Live Preview to see instant updates on save.
 
+## Pricing data
+
+Pricing values are stored in `public/data/pricing.json` and rendered at runtime
+by `public/js/pricing.js` on the Preise page.
+
+To update pricing:
+
+1. Edit `site/public/data/pricing.json` (values, disclaimer, examples).
+2. Run `npm run build` (or `npm run watch` for live preview).
+3. Deploy `build/dist` as usual.
+
+No HTML editing is required — the JSON file is the single source of truth.
+
 ## Deployment
 
 `npm run build` produces the exact `build/dist` output that GitHub Pages consumes today. See `.github/workflows/static.yml` for the GitHub Pages pipeline (still using this folder as the working directory).
