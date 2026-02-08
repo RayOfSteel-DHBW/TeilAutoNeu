@@ -1,9 +1,9 @@
 {
   "updated": "2026-02-08",
-  "disclaimer": "Genaue, aktuelle Preise erhalten Sie im persoenlichen Gespraech und in den aktuellen Unterlagen. Alle Angaben ohne Gewaehr.",
+  "disclaimer": "Die hier genannten Angaben dienen der Orientierung. Genaue, aktuelle Preise erhalten Sie im persoenlichen Gespraech und in den aktuellen Vertragsunterlagen. Alle Angaben ohne Gewaehr.",
   "membership": {
-    "deposit": "im hoeheren dreistelligen Bereich",
-    "annual_fee": "geringe Jahresgebuehr"
+    "deposit": "einmalige Kaution im hoeheren dreistelligen Bereich",
+    "annual_fee": "geringe jaehrliche Grundgebuehr"
   },
   "usage": {
     "booking_fee": "kleine Buchungsgebuehr pro Fahrt",
