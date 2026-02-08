@@ -62,7 +62,7 @@ function Invoke-Tailwind {
     Push-Location $ProjectRoot
     try {
         $arguments = @(
-            "tailwindcss",
+            "@tailwindcss/cli",
             "-i", $TailwindInput,
             "-o", $TailwindOutput
         )
