@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="base.css">
         {% block head %}{% endblock head %}
     </head>
-    <body class="min-h-screen bg-white text-slate-900">
+    <body class="min-h-screen bg-brand-surface text-brand-ink font-sans">
         <a class="sr-only focus:not-sr-only focus:relative focus:mx-4 focus:my-2 focus:inline-flex focus:rounded-full focus:bg-white focus:px-3 focus:py-2" href="#main-content">Zum Inhalt springen</a>
         <div class="min-h-screen flex flex-col">
-            <header class="border-b border-slate-200 bg-white">
+            <header class="border-b border-brand-muted bg-white">
                 {% block header %}{% include "partials/header.html" %}{% endblock header %}
             </header>
             <main id="main-content" class="flex-1">
@@ -19,7 +19,7 @@
                     {% block main %}{% endblock main %}
                 </div>
             </main>
-            <footer class="border-t border-slate-200 bg-slate-50">
+            <footer class="border-t border-brand-muted bg-brand-surface">
                 {% block footer %}{% include "partials/footer.html" %}{% endblock footer %}
             </footer>
         </div>
