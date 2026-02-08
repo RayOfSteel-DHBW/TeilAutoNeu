@@ -2,6 +2,13 @@
 
 These notes cover the preview pipeline and local build steps used by the team.
 
+## V1 Deployment Decision
+
+- V1 publishing is GitHub Pages-only for now.
+- STRATO SFTP full-site deployment is deferred until the final V1 step.
+- No STRATO deployment script is included yet.
+- Credentials will be provided in time
+
 ## GitHub Pages Preview Pipeline
 
 - **Trigger branch:** Pushes to `dhbw/publish` start the "Deploy marketing site to Pages" workflow.

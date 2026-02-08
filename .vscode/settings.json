@@ -1,5 +1,6 @@
 {
     "chat.tools.terminal.autoApprove": {
         "git commit": true
-    }
+    },
+    "livePreview.defaultPreviewPath": "/site/build/dist/index.html"
 }

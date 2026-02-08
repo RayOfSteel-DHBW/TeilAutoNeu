@@ -105,82 +105,83 @@ Deferred to future release. Tracked but not in current roadmap.
 
 Explicitly excluded. Documented to prevent scope creep.
 
-| Feature | Reason |
-|---------|--------|
-| Email contact/inquiry forms | Phone handler is near-blind; phone-only by design constraint |
-| Online membership signup ("Jetzt anmelden") | Business policy: next step is always a phone call ("kein Online-Abschluss") |
-| CMS (WordPress, CouchCMS, etc.) | Owners deploy via SFTP; static site meets needs and reduces complexity |
-| JavaScript SPA (React, Vue, etc.) | Unnecessary for informational site; static HTML sufficient |
-| 24/7 support claims | Business doesn't offer this — part-time/volunteer operation although for profit |
-| Mobile app | Business doesn't have one; won't claim it does |
-| Free-floating carsharing | Station-based model only |
-| Spontaneous returns | Booking required, no spontaneous availability |
-| "Completely paperless" claims | Some paper processes remain |
-| Detailed billing rules on website | Night-hour definitions, deep tariff mechanics too granular for web |
-| Private phone numbers | Only publish booking line: 07473-922202 |
-| Exact unverified pricing | 2022 handbook numbers not trusted; owner must supply fresh price JSON |
-| Student project code reuse | UNLICENSED code — inspiration only |
-| Copyright-flagged images | Must be replaced with owner-supplied or AI-generated assets |
+| Feature                                     | Reason                                                                          |
+| ------------------------------------------- | ------------------------------------------------------------------------------- |
+| Email contact/inquiry forms                 | Phone handler is near-blind; phone-only by design constraint                    |
+| Online membership signup ("Jetzt anmelden") | Business policy: next step is always a phone call ("kein Online-Abschluss")     |
+| CMS (WordPress, CouchCMS, etc.)             | Owners deploy via SFTP; static site meets needs and reduces complexity          |
+| JavaScript SPA (React, Vue, etc.)           | Unnecessary for informational site; static HTML sufficient                      |
+| 24/7 support claims                         | Business doesn't offer this — part-time/volunteer operation although for profit |
+| Mobile app                                  | Business doesn't have one; won't claim it does                                  |
+| Free-floating carsharing                    | Station-based model only                                                        |
+| Spontaneous returns                         | Booking required, no spontaneous availability                                   |
+| "Completely paperless" claims               | Some paper processes remain                                                     |
+| Detailed billing rules on website           | Night-hour definitions, deep tariff mechanics too granular for web              |
+| Private phone numbers                       | Only publish booking line: 07473-922202                                         |
+| Exact unverified pricing                    | 2022 handbook numbers not trusted; owner must supply fresh price JSON           |
+| Student project code reuse                  | UNLICENSED code — inspiration only                                              |
+| Copyright-flagged images                    | Must be replaced with owner-supplied or AI-generated assets                     |
 
 ## Traceability
 
 Which phases cover which requirements. Updated during roadmap creation.
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 4 | Pending |
-| FOUND-06 | Phase 4 | Pending |
-| LEGAL-01 | Phase 6 | Pending |
-| LEGAL-02 | Phase 6 | Pending |
-| LEGAL-03 | Phase 6 | Pending |
-| LEGAL-04 | Phase 5 | Pending |
-| CONT-01 | Phase 3 | Complete |
-| CONT-02 | Phase 4 | Pending |
-| CONT-03 | Phase 6 | Pending |
-| CONT-04 | Phase 5 | Pending |
-| CONT-05 | Phase 6 | Pending |
-| CONT-06 | Phase 6 | Pending |
-| CONT-07 | Phase 3 | Complete |
-| CONT-08 | Phase 4 | Pending |
-| CONT-09 | Phase 6 | Pending |
-| CONT-10 | Phase 3 | Complete |
-| CONT-11 | Phase 3 | Complete |
-| FEAT-01 | Phase 3 | Complete |
-| FEAT-02 | Phase 3 | Complete |
-| FEAT-03 | Phase 5 | Pending |
-| FEAT-04 | Phase 5 | Pending |
-| FEAT-05 | Phase 5 | Pending |
-| FEAT-06 | Phase 2 | Pending |
-| FEAT-07 | Phase 3 | Complete |
-| PRICE-01 | Phase 4 | Pending |
-| PRICE-02 | Phase 4 | Pending |
-| PRICE-03 | Phase 4 | Pending |
-| PRICE-04 | Phase 4 | Pending |
-| PRICE-05 | Phase 4 | Pending |
-| UX-01 | Phase 2 | Pending |
-| UX-02 | Phase 2 | Pending |
-| UX-03 | Phase 6 | Pending |
-| UX-04 | Phase 2 | Pending |
-| UX-05 | Phase 2 | Pending |
-| UX-06 | Phase 2 | Pending |
-| UX-07 | Phase 2 | Pending |
-| UX-08 | Phase 3 | Complete |
-| SEO-01 | Phase 6 | Pending |
-| SEO-02 | Phase 6 | Pending |
-| SEO-03 | Phase 6 | Pending |
-| SEO-04 | Phase 6 | Pending |
-| TRACK-01 | Phase 6 | Pending |
-| QUAL-01 | Phase 6 | Pending |
-| QUAL-02 | Phase 6 | Pending |
-| QUAL-03 | Phase 6 | Pending |
-| QUAL-04 | Phase 4 | Pending |
-| QUAL-05 | Phase 6 | Pending |
+| Requirement | Phase   | Status   |
+| ----------- | ------- | -------- |
+| FOUND-01    | Phase 1 | Pending  |
+| FOUND-02    | Phase 1 | Pending  |
+| FOUND-03    | Phase 1 | Pending  |
+| FOUND-04    | Phase 1 | Pending  |
+| FOUND-05    | Phase 4 | Pending  |
+| FOUND-06    | Phase 4 | Pending  |
+| LEGAL-01    | Phase 6 | Pending  |
+| LEGAL-02    | Phase 6 | Pending  |
+| LEGAL-03    | Phase 6 | Pending  |
+| LEGAL-04    | Phase 5 | Pending  |
+| CONT-01     | Phase 3 | Complete |
+| CONT-02     | Phase 4 | Pending  |
+| CONT-03     | Phase 6 | Pending  |
+| CONT-04     | Phase 5 | Pending  |
+| CONT-05     | Phase 6 | Pending  |
+| CONT-06     | Phase 6 | Pending  |
+| CONT-07     | Phase 3 | Complete |
+| CONT-08     | Phase 4 | Pending  |
+| CONT-09     | Phase 6 | Pending  |
+| CONT-10     | Phase 3 | Complete |
+| CONT-11     | Phase 3 | Complete |
+| FEAT-01     | Phase 3 | Complete |
+| FEAT-02     | Phase 3 | Complete |
+| FEAT-03     | Phase 5 | Pending  |
+| FEAT-04     | Phase 5 | Pending  |
+| FEAT-05     | Phase 5 | Pending  |
+| FEAT-06     | Phase 2 | Pending  |
+| FEAT-07     | Phase 3 | Complete |
+| PRICE-01    | Phase 4 | Pending  |
+| PRICE-02    | Phase 4 | Pending  |
+| PRICE-03    | Phase 4 | Pending  |
+| PRICE-04    | Phase 4 | Pending  |
+| PRICE-05    | Phase 4 | Pending  |
+| UX-01       | Phase 2 | Pending  |
+| UX-02       | Phase 2 | Pending  |
+| UX-03       | Phase 6 | Pending  |
+| UX-04       | Phase 2 | Pending  |
+| UX-05       | Phase 2 | Pending  |
+| UX-06       | Phase 2 | Pending  |
+| UX-07       | Phase 2 | Pending  |
+| UX-08       | Phase 3 | Complete |
+| SEO-01      | Phase 6 | Pending  |
+| SEO-02      | Phase 6 | Pending  |
+| SEO-03      | Phase 6 | Pending  |
+| SEO-04      | Phase 6 | Pending  |
+| TRACK-01    | Phase 6 | Pending  |
+| QUAL-01     | Phase 6 | Pending  |
+| QUAL-02     | Phase 6 | Pending  |
+| QUAL-03     | Phase 6 | Pending  |
+| QUAL-04     | Phase 4 | Pending  |
+| QUAL-05     | Phase 6 | Pending  |
 
 **Coverage:**
+
 - v1 requirements: 51 total
 - Mapped to phases: 51
 - Unmapped: 0
