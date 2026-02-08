@@ -10,17 +10,13 @@
     </head>
     <body>
         <header>
-            {% block header %}
-                {% include "partials/header.html" %}
-            {% endblock header %}
+            {% block header %}{% endblock header %}
         </header>
         <main id="main-content">
             {% block main %}{% endblock main %}
         </main>
         <footer>
-            {% block footer %}
-                {% include "partials/footer.html" %}
-            {% endblock footer %}
+            {% block footer %}{% endblock footer %}
         </footer>
     </body>
 </html>
