@@ -319,9 +319,9 @@ Usage: `/settings.md`
 **`/set-profile.md <profile>`**
 Quick switch model profile for GSD agents.
 
-- `quality` — Opus everywhere except verification
-- `balanced` — Opus for planning, Sonnet for execution (default)
-- `budget` — Sonnet for writing, Haiku for research/verification
+- `quality` — Claude Opus 4.6 (copilot) for planners, GPT-5.2-Codex (copilot) for executors, GPT-5.2 (copilot) for verifiers
+- `balanced` — GPT-5.2 (copilot) for planning/research, GPT-5.2-Codex (copilot) for executors, Claude Sonnet 4.5 (copilot) for plan-checking
+- `budget` — Claude Sonnet 4.5 (copilot) for execution/verification, Claude Haiku 4.5 (copilot) for research
 
 Usage: `/set-profile.md budget`
 

@@ -61,13 +61,13 @@ Default to "balanced" if not set.
 
 **Model lookup table:**
 
-| Agent                | quality | balanced | budget |
-| -------------------- | ------- | -------- | ------ |
-| gsd-phase-researcher | opus    | sonnet   | haiku  |
-| gsd-planner          | opus    | opus     | sonnet |
-| gsd-plan-checker     | sonnet  | sonnet   | haiku  |
+| Agent                | quality                   | balanced                  | budget                    |
+| -------------------- | ------------------------- | ------------------------- | ------------------------- |
+| gsd-phase-researcher | GPT-5.2-Codex (copilot)    | GPT-5.2 (copilot)         | Claude Haiku 4.5 (copilot) |
+| gsd-planner          | Claude Opus 4.6 (copilot)  | GPT-5.2 (copilot)         | Claude Sonnet 4.5 (copilot) |
+| gsd-plan-checker     | GPT-5.2 (copilot)          | Claude Sonnet 4.5 (copilot) | Claude Haiku 4.5 (copilot) |
 
-Store resolved models for use in Task calls below.
+Store resolved models for use in Task calls below (avoid shorthand like "opus/sonnet/haiku").
 
 ## 2. Parse and Normalize Arguments
 

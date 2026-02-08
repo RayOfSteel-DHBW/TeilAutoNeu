@@ -402,13 +402,13 @@ MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:sp
 
 Default to "balanced" if not set.
 
-**Model lookup table:**
+**Model lookup table (use official Copilot model names):**
 
-| Agent                    | quality | balanced | budget |
-| ------------------------ | ------- | -------- | ------ |
-| gsd-project-researcher   | opus    | sonnet   | haiku  |
-| gsd-research-synthesizer | sonnet  | sonnet   | haiku  |
-| gsd-roadmapper           | opus    | sonnet   | sonnet |
+| Agent                    | quality                   | balanced                  | budget                    |
+| ------------------------ | ------------------------- | ------------------------- | ------------------------- |
+| gsd-project-researcher   | GPT-5.2-Codex (copilot)    | GPT-5.2 (copilot)         | Claude Haiku 4.5 (copilot) |
+| gsd-research-synthesizer | GPT-5.2 (copilot)          | GPT-5.2 (copilot)         | Claude Haiku 4.5 (copilot) |
+| gsd-roadmapper           | GPT-5.2 (copilot)          | GPT-5.2 (copilot)         | Claude Sonnet 4.5 (copilot) |
 
 Store resolved models for use in Task calls below.
 

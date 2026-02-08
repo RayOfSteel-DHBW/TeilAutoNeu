@@ -36,11 +36,11 @@ MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:sp
 
 Default to "balanced" if not set.
 
-**Model lookup table:**
+**Model lookup table (use official Copilot model names):**
 
-| Agent               | quality | balanced | budget |
-| ------------------- | ------- | -------- | ------ |
-| gsd-codebase-mapper | sonnet  | haiku    | haiku  |
+| Agent               | quality                   | balanced                  | budget                    |
+| ------------------- | ------------------------- | ------------------------- | ------------------------- |
+| gsd-codebase-mapper | GPT-5.2-Codex (copilot)    | Claude Haiku 4.5 (copilot) | Claude Haiku 4.5 (copilot) |
 
 Store resolved model for use in Task calls below.
 </step>
