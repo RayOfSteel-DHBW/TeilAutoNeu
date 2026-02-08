@@ -51,13 +51,15 @@ Plans:
 1. Site is mobile-first and includes a hamburger nav for small screens.
 2. Base styling uses a white/green palette with consistent teilAuto casing and phone format.
 3. Shared UI copy uses Sie-Ansprache and avoids moralizing or poverty signals.
+4. Student-project HTML/CSS/JS is removed from `site/src/` and reauthored from scratch.
 
 **Plans**: TBD
 
 Plans:
 
-- [ ] 02-01: Base layout, responsive grid, and navigation shell
-- [ ] 02-02: Brand styling and copy guardrails
+- [ ] 02-01: Clean-slate base templates and page stubs (remove student code)
+- [ ] 02-02: Base layout, responsive grid, and navigation shell
+- [ ] 02-03: Brand styling and copy guardrails
 
 ### Phase 3: Homepage & Membership Funnel
 
@@ -66,9 +68,9 @@ Plans:
 **Requirements**: CONT-01, CONT-07, CONT-10, CONT-11, FEAT-01, FEAT-02, FEAT-07, UX-08
 **Success Criteria** (what must be TRUE):
 
-1. Homepage communicates the value prop, the 3-step flow, and persona-inclusive messaging.
-2. Membership steps and the phone-only CTA appear in the join context, with no forms or email links.
-3. Hero typing effect and FAQ accordion function on the homepage.
+1. Homepage communicates the value prop and persona-inclusive messaging (no 3-step flow on the homepage).
+2. Membership steps and the phone-only CTA appear only in the join context, with no forms or email links.
+3. Hero is simplified (no typing effect) and the FAQ accordion functions on the homepage.
 4. Local area names are woven into copy for local search.
 
 **Plans**: TBD
@@ -110,6 +112,7 @@ Plans:
 1. Vehicles page presents the two current vehicles with specs.
 2. Map shows two active locations and Don Bosco marked as planned.
 3. Map includes required OSM attribution and interactive controls.
+4. Map implementation is newly written, with no student-project code reuse.
 
 **Plans**: TBD
 
@@ -146,7 +149,7 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 | --- | --- | --- | --- |
-| 1. Foundation & Deployment | 0/TBD | Not started | - |
+| 1. Foundation & Deployment | 3/3 | Complete | 2026-02-08 |
 | 2. Core UX & Navigation | 0/TBD | Not started | - |
 | 3. Homepage & Membership Funnel | 0/TBD | Not started | - |
 | 4. Pricing & Value System | 0/TBD | Not started | - |

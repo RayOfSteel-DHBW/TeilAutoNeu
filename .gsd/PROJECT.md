@@ -12,11 +12,11 @@ A redesigned website for **teilAuto Mössingen e.K.**, a family-run station-base
 
 ### Validated
 
-- ✓ 9-page site structure (home, pricing, sustainability, vehicles, business, about, membership, privacy, imprint) — existing (reference prototype)
-- ✓ Interactive parking map with MapLibre GL JS + OpenFreeMap — existing (reference prototype)
-- ✓ FAQ accordion component — existing (reference prototype)
-- ✓ Responsive mobile layout with hamburger nav — existing (reference prototype)
-- ✓ Template-based static build pipeline — existing (reference prototype)
+- ✓ 9-page site structure (home, pricing, sustainability, vehicles, business, about, membership, privacy, imprint) — validated concept from reference prototype (must be reauthored)
+- ✓ Interactive parking map with MapLibre GL JS + OpenFreeMap — validated concept from reference prototype (must be reimplemented)
+- ✓ FAQ accordion component — validated concept from reference prototype (must be reimplemented)
+- ✓ Responsive mobile layout with hamburger nav — validated concept from reference prototype (must be reimplemented)
+- ✓ Template-based static build pipeline — validated concept from reference prototype (must be reimplemented)
 
 ### Active
 
@@ -63,7 +63,9 @@ A redesigned website for **teilAuto Mössingen e.K.**, a family-run station-base
 
 **The business:** teilAuto Mössingen is run part-time/volunteer by Ralf Stahl (owner) and Ursula Stahl (bookings/admin). They serve ~60 members ("Fahrtberechtigte") with 2 vehicles from 2 active parking locations in Mössingen. Membership-based, no one-time rentals. 3-month minimum, monthly cancellation after. Phone-only booking. Part of the BCS/DACHverband cross-use network giving access to 200+ partner vehicles regionally.
 
-**The problem:** The current website is a frameset-based site from ~2000 that looks outdated and fails to answer basic questions, forcing unnecessary phone calls. A student project attempted a redesign (Tera-based static build) but produced UNLICENSED code with copyright-problematic images. That codebase exists in `site/` as reference material — patterns can be used as inspiration but code cannot be copied directly.
+**The problem:** The current website is a frameset-based site from ~2000 that looks outdated and fails to answer basic questions, forcing unnecessary phone calls. A student project attempted a redesign (Tera-based static build) but produced UNLICENSED code with copyright-problematic images. That codebase currently lives in `site/` only as a temporary build fixture and must be removed before Phase 2 content work begins; patterns can be used as inspiration but code cannot be copied directly.
+
+**Current state warning:** `site/src/` currently contains the student-project HTML/CSS/JS used to test Phase 1 build tooling. Phase 2 must delete and reauthor these files from scratch. Do not modify or extend student-project code.
 
 **Target outcome:** ~20 additional suitable members. The site should reduce "tire-kicker" calls while increasing calls from genuinely interested prospects.
 
@@ -106,6 +108,7 @@ A redesigned website for **teilAuto Mössingen e.K.**, a family-run station-base
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Static HTML + Tailwind, no CMS | Owners deploy via SFTP; simplicity over features. Low-tech V1 to ship fast. | — Pending |
+| V1 deployment via GitHub Pages; STRATO deferred | Fast reviewable site with minimal owner setup; STRATO planned as final V1 step. | Approved 2026-02-08 |
 | Phone-only CTA, no email/forms | Phone handler is near-blind; email would create unmanageable workload | — Pending |
 | Pricing from JSON file | Owners can update tariffs without touching HTML; single source of truth | — Pending |
 | White/green color palette | Nature-forward, matches competition/partners, fits Mössingen's landscape imagery | — Pending |
