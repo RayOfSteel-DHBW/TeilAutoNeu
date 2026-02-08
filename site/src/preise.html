@@ -2,6 +2,41 @@
 
 {% block title %}Preise | teilAuto Moessingen{% endblock title %}
 
+{% block head %}
+  <script src="js/pricing.js" defer></script>
+{% endblock head %}
+
 {% block main %}
-  <h1>Preise</h1>
+<section class="space-y-10">
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-display sm:text-4xl">Preise</h1>
+    <p class="mt-4 text-lg text-brand-ink/80">
+      Carsharing mit teilAuto ist uebersichtlich und planbar. Sie zahlen eine
+      geringe Jahresgebuehr und nutzen die Fahrzeuge nach einem einfachen
+      Prinzip: Buchungsgebuehr plus Zeit- und Kilometertarif. Was im Preis
+      enthalten ist und wie sich typische Fahrten zusammensetzen, sehen Sie
+      auf dieser Seite.
+    </p>
+  </div>
+
+  <div id="pricing-values" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <p class="text-brand-ink/60">Preisinformationen werden geladen&hellip;</p>
+  </div>
+
+  <div id="pricing-classes" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <p class="text-brand-ink/60">Fahrzeugklassen werden geladen&hellip;</p>
+  </div>
+
+  <div id="pricing-examples" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <p class="text-brand-ink/60">Beispielrechnungen werden geladen&hellip;</p>
+  </div>
+
+  <div id="pricing-quernutzung" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <p class="text-brand-ink/60">Quernutzung wird geladen&hellip;</p>
+  </div>
+
+  <div id="pricing-disclaimer" class="rounded-3xl border border-brand-muted bg-brand-surface p-6 shadow-sm sm:p-8">
+    <p class="text-brand-ink/60">Hinweis wird geladen&hellip;</p>
+  </div>
+</section>
 {% endblock main %}
