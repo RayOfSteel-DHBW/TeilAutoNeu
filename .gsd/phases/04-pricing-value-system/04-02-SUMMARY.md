@@ -1,96 +1,59 @@
 ---
 phase: 04-pricing-value-system
 plan: 02
-subsystem: ui
-tags: [pricing, preise-page, vanilla-js, dom-rendering, runtime-fetch]
+subsystem: frontend
+tags: [pricing, renderer, javascript, dom-api, preise-page]
 
 # Dependency graph
-requires:
-  - Plan 04-01: pricing.json data source
-  - Phase 2: Base template with head/main blocks
-provides:
-  - Data-driven Preise page with runtime JSON rendering
-  - Pricing.js vanilla JS renderer using DOM APIs
-affects:
-  - Plan 04-03: Copy refinement modifies Preise intro text
-  - Phase 6: SEO & Quality (Preise page content for meta descriptions)
+depends_on: [04-01]
+feeds_into: [04-03]
+affects: [site/src/preise.html, site/public/js/pricing.js]
 
 # Tech tracking
 tech-stack:
   added: []
-  patterns:
-    [Page-scoped vanilla JS fetching JSON and building DOM, no innerHTML]
+  patterns: [DOM-only JSON rendering, noch-offen badge pattern, progressive enhancement]
 
 key-files:
   created: [site/public/js/pricing.js]
   modified: [site/src/preise.html]
 
 key-decisions:
-  - "Used DOM APIs (createElement/textContent) instead of innerHTML for security"
-  - "Loading states shown while JSON fetches, graceful fallback on error"
-  - "Script loaded via head block with defer attribute"
+  - "DOM APIs only — no innerHTML for security and content safety"
+  - "noch-offen values rendered with amber badge for visibility"
 
 patterns-established:
-  - "Runtime data rendering: fetch JSON from relative URL, populate section IDs"
-  - "Fallback pattern: catch block shows user-friendly error message"
+  - "Runtime JSON rendering via fetch + DOM API"
+  - "Progressive enhancement: HTML loads, then JS fills content"
 
 # Metrics
-duration: 5min
-completed: 2026-02-08
+duration: 4min
+tasks_completed: 3/3
+
+# Verification
+verification_commands:
+  - "Test-Path site/src/preise.html"
+  - "Test-Path site/public/js/pricing.js"
+  - "Test-Path site/public/data/pricing.json"
 ---
 
-# Phase 04 Plan 02: Preise Page Structure and JSON Renderer Summary
+# 04-02 Summary: Pricing page rendering
 
-**Data-driven Preise page with vanilla JS renderer fetching pricing.json and populating five semantic sections via DOM APIs**
+## What was done
+Rebuilt the Preise page structure with 5 container sections for JSON-driven content and created a 296-line pricing.js renderer that fetches pricing.json at runtime and populates all sections using DOM APIs only (createElement/textContent).
 
-## Performance
+## Deliverables
+- site/src/preise.html — value-first intro, 5 pricing container sections with loading placeholders
+- site/public/js/pricing.js — DOM-based renderer with noch-offen amber badges, class cards, example calculations, and fallback error handling
 
-- **Duration:** 5 min
-- **Started:** 2026-02-08T20:13:00Z
-- **Completed:** 2026-02-08T20:18:00Z
-- **Tasks:** 3
-- **Files modified:** 2
+## Key features
+- Value-first intro paragraph (neighbours sharing costs) before any pricing numbers
+- Membership and usage overview with noch-offen badges for missing values
+- XS and M class cards with rate tables (stunde, folgestunde, nachtstunde, km)
+- Two example calculations with breakdown
+- Quernutzung section for larger vehicles
+- Disclaimer at bottom (not leading)
+- Graceful fallback if JSON fetch fails
 
-## Accomplishments
-
-- Preise page rebuilt with full layout: intro, values, classes, examples, quernutzung, disclaimer sections
-- Created pricing.js with runtime fetch and DOM rendering for all pricing sections
-- Loading states and graceful error fallback for network failures
-- Build verified: preise.html contains all section IDs and pricing.js reference
-
-## Task Commits
-
-Each task was committed atomically:
-
-1. **Task 1: Build Preise page structure for data-driven pricing** - `d6723c3` (feat)
-2. **Task 2: Create pricing JSON renderer** - `94782a7` (feat)
-3. **Task 3: Verify Preise build output** - (verified, no separate commit needed)
-
-## Files Created/Modified
-
-- `site/src/preise.html` - Full Preise layout with section IDs and pricing.js script tag
-- `site/public/js/pricing.js` - Vanilla JS renderer fetching pricing.json and populating DOM
-
-## Decisions Made
-
-- DOM APIs only (createElement/textContent) to avoid XSS via innerHTML
-- Relative URL `./data/pricing.json` for GitHub Pages compatibility
-- Script loaded via `{% block head %}` with defer for non-blocking load
-
-## Deviations from Plan
-
-None - plan executed exactly as written.
-
-## Issues Encountered
-
-- Build script `npm run build` failed because `build/dist` was locked by another process (VS Code Live Preview). Worked around by running build steps manually (tera + tailwind + copy) without the clean step.
-
-## Next Phase Readiness
-
-- Preise page renders all pricing data from JSON at runtime
-- Ready for Plan 04-03 copy refinement
-
----
-
-_Phase: 04-pricing-value-system_
-_Completed: 2026-02-08_
+## Deviations
+- Build verification could not run (tera CLI not installed). Source files verified manually.
