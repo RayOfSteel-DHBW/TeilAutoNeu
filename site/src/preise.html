@@ -8,40 +8,48 @@
 
 {% block main %}
 <section class="space-y-10">
+
+  <!-- Value-first intro: why sharing beats owning, before any numbers -->
   <div class="max-w-3xl">
     <h1 class="text-3xl font-display sm:text-4xl">Preise</h1>
     <p class="mt-4 text-lg text-brand-ink/80">
-      Mobilitaet soll planbar sein &ndash; ohne versteckte Kosten und ohne
-      boese Ueberraschungen. Bei teilAuto wissen Sie vorher, was eine Fahrt
-      ungefaehr kostet, und alles Wichtige ist bereits im Preis enthalten:
+      Statt fuer Versicherung, Werkstatt, TUeV und Sprit getrennt zu zahlen,
+      teilen sich bei teilAuto viele Nachbarn diese Kosten &ndash; und jeder
+      zahlt nur, was er tatsaechlich faehrt. Im Preis ist alles drin:
       Kraftstoff, Versicherung und Betriebsstoffe.
     </p>
     <p class="mt-3 text-brand-ink/80">
       Das Prinzip ist einfach: eine geringe Jahresgebuehr, eine kleine
       Buchungsgebuehr pro Fahrt und ein uebersichtlicher Zeit- und
-      Kilometertarif. Unten sehen Sie, wie sich typische Fahrten
-      zusammensetzen.
+      Kilometertarif. So wissen Sie vorher, was eine Fahrt ungefaehr kostet
+      &ndash; ohne versteckte Kosten und ohne boese Ueberraschungen.
     </p>
   </div>
 
+  <!-- Membership & usage overview -->
   <div id="pricing-values" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
     <p class="text-brand-ink/60">Preisinformationen werden geladen&hellip;</p>
   </div>
 
+  <!-- Vehicle class cards (XS, M) -->
   <div id="pricing-classes" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
     <p class="text-brand-ink/60">Fahrzeugklassen werden geladen&hellip;</p>
   </div>
 
+  <!-- Sample calculations -->
   <div id="pricing-examples" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
     <p class="text-brand-ink/60">Beispielrechnungen werden geladen&hellip;</p>
   </div>
 
+  <!-- Larger vehicles via partner network -->
   <div id="pricing-quernutzung" class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
     <p class="text-brand-ink/60">Quernutzung wird geladen&hellip;</p>
   </div>
 
+  <!-- Disclaimer — intentionally last -->
   <div id="pricing-disclaimer" class="rounded-3xl border border-brand-muted bg-brand-surface p-6 shadow-sm sm:p-8">
     <p class="text-brand-ink/60">Hinweis wird geladen&hellip;</p>
   </div>
+
 </section>
 {% endblock main %}
