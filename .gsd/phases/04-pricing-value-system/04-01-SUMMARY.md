@@ -2,95 +2,64 @@
 phase: 04-pricing-value-system
 plan: 01
 subsystem: data
-tags: [pricing, json, data-source, owner-workflow, readme]
+tags: [pricing, json, data-source, owner-workflow]
 
 # Dependency graph
-requires:
-  - Phase 3: Homepage & Membership Funnel (site structure, templates)
-provides:
-  - Abstracted pricing JSON data source at public/data/pricing.json
-  - Owner-facing update documentation in README
-affects:
-  - Plan 04-02: Preise page renderer consumes pricing.json
-  - Plan 04-03: Copy refinement edits pricing.json wording
+depends_on: [03-03]
+feeds_into: [04-02]
+affects: [site/public/data/pricing.json]
 
 # Tech tracking
 tech-stack:
   added: []
-  patterns:
-    [
-      JSON data source under public/ for runtime fetch,
-      owner-editable without HTML changes,
-    ]
+  patterns: [JSON data source for runtime rendering, noch-offen labels for unconfirmed values]
 
 key-files:
   created: [site/public/data/pricing.json]
-  modified: [site/README.md]
+  modified: []
 
 key-decisions:
-  - "All pricing values use qualitative ranges, no exact EUR amounts"
-  - "ASCII-only German throughout pricing.json for compatibility"
+  - "Exact EUR values from Tarife.xml for XS and M classes; membership fees labelled noch offen"
+  - "Folgestunden/Nachtstunden rates included per class for accurate example calculations"
 
 patterns-established:
-  - "Data-driven content: JSON in public/data/, fetched at runtime by page-scoped JS"
-  - "Owner update workflow: edit JSON, build, deploy"
+  - "Pricing JSON under public/data/ for owner-editable updates"
+  - "noch offen pattern for unconfirmed values (deposit, annual_fee, booking_fee)"
+  - "source_note field traces data provenance"
 
 # Metrics
-duration: 3min
-completed: 2026-02-08
+duration: ~5 min
+tasks_completed: 2/2
+
+# Verification
+verification_commands:
+  - "Test-Path site/public/data/pricing.json"
+  - "Get-Content site/public/data/pricing.json | ConvertFrom-Json"
 ---
 
-# Phase 04 Plan 01: Pricing JSON Data Source and Update Workflow Summary
+# 04-01 Summary: Pricing JSON schema and update workflow
 
-**Abstracted pricing data in standalone JSON with XS/M classes only, plus owner-facing README update workflow**
+## What was done
+Created a revised pricing.json with demo-quality exact EUR values sourced from Tarife.xml (02/2022-2024 data, last updated by Ralf). The previous fully-abstract pricing.json was replaced with one containing real per-class rate breakdowns for XS and M classes, two worked example calculations using actual rates, and `noch offen` labels for all values not found in Tarife.xml (deposit, annual_fee, booking_fee).
 
-## Performance
+README.md was reviewed — the existing Pricing data section already documents the update workflow adequately and required no changes.
 
-- **Duration:** 3 min
-- **Started:** 2026-02-08T20:10:00Z
-- **Completed:** 2026-02-08T20:13:00Z
-- **Tasks:** 2
-- **Files modified:** 2
+## Key rates sourced from Tarife.xml
+| Rate | XS | M |
+|---|---|---|
+| Stunde | 2,05 EUR | 2,46 EUR |
+| Folgestunde | 1,00 EUR | 1,25 EUR |
+| Nachtstunde | 0,65 EUR | 0,75 EUR |
+| Kilometer | 0,32 EUR | 0,36 EUR |
 
-## Accomplishments
+## Deliverables
+- site/public/data/pricing.json — demo-quality pricing with XS/M class rates, example calculations, noch-offen labels
+- site/README.md — reviewed, no changes needed (already adequate)
 
-- Created pricing.json with membership, usage, classes, examples, disclaimer, and quernutzung sections
-- XS and M classes only, with Quernutzung for larger vehicles
-- All values use qualitative ranges (no exact EUR amounts)
-- README documents edit-build-deploy workflow for non-technical owners
+## Commits
+- `bdb07ab` feat(04-01): create pricing JSON data source
 
-## Task Commits
-
-Each task was committed atomically:
-
-1. **Task 1: Create pricing JSON data source** - `954a6e7` (feat)
-2. **Task 2: Document pricing JSON update workflow** - `88c6540` (docs)
-
-## Files Created/Modified
-
-- `site/public/data/pricing.json` - Abstracted pricing data with membership, usage, classes, examples
-- `site/README.md` - Added "Pricing data" section with update workflow
-
-## Decisions Made
-
-- All values kept abstract (ranges/qualitative terms) per PRICE-03 and handbook guidance
-- ASCII-only German for broad compatibility
-- Disclaimer covers both personal contact and current documents
-
-## Deviations from Plan
-
-None - plan executed exactly as written.
-
-## Issues Encountered
-
-None.
-
-## Next Phase Readiness
-
-- pricing.json is ready for consumption by Plan 04-02's JS renderer
-- File is in public/data/ so build copies it to build/dist/data/pricing.json
-
----
-
-_Phase: 04-pricing-value-system_
-_Completed: 2026-02-08_
+## Deviations
+- Actual XS values were found in Tarife.xml (previously thought unavailable); used real XS values instead of S-class proxies.
+- Added folgestunde_eur and nachtstunde_eur fields per class (not in original schema spec) to support accurate example calculations.
+- README already had adequate pricing documentation from prior work; no update commit needed.
