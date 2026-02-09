@@ -2,95 +2,60 @@
 phase: 04-pricing-value-system
 plan: 03
 subsystem: content
-tags: [pricing, copy, compliance, disclaimer, abstract-values, guardrails]
+tags: [pricing, copy, compliance, disclaimer, value-framing]
 
 # Dependency graph
-requires:
-  - Plan 04-02: Preise page structure and renderer
-  - Plan 04-01: pricing.json data
-provides:
-  - Compliant pricing copy with value-first framing
-  - Strengthened disclaimer and abstraction wording in JSON
-affects:
-  - Phase 6: SEO & Quality (Preise copy final for meta/review)
+depends_on: [04-02]
+feeds_into: []
+affects: [site/src/preise.html, site/public/data/pricing.json]
 
 # Tech tracking
 tech-stack:
   added: []
-  patterns:
-    [Value-first messaging before pricing details, disclaimer after content]
+  patterns: [Value-first messaging before pricing details, disclaimer after content]
 
 key-files:
   created: []
   modified: [site/src/preise.html, site/public/data/pricing.json]
 
 key-decisions:
-  - "Intro leads with predictability and transparency, not pricing mechanics"
-  - "Disclaimer prefixed with orientation framing for clarity"
-  - "Deposit clarified as einmalige Kaution for context"
+  - "1-2 exact sample values OK as demo; XS and M rate details acceptable for demo-quality draft"
+  - "Removed qualitative pricing claims (geringe, kleine) for unconfirmed fee values"
 
 patterns-established:
   - "Value-first page structure: intro framing before data sections"
   - "1-2 exact sample values OK as demo; no full tariff table or billing formula"
+  - "No qualitative pricing adjectives on noch-offen values"
 
 # Metrics
-duration: 3min
-completed: 2026-02-08
+duration: 4min
+tasks_completed: 3/3
+
+# Verification
+verification_commands:
+  - "Select-String -Path site/src/preise.html -Pattern 'pricing-disclaimer'"
+  - "Select-String -Path site/public/data/pricing.json -Pattern 'noch offen'"
+  - "Select-String -Path site/src/preise.html -Pattern 'geringe|kleine' (should return nothing)"
 ---
 
-# Phase 04 Plan 03: Pricing Messaging Refinement and Compliance Review Summary
+# 04-03 Summary: Pricing messaging constraints and disclaimers
 
-**Value-first Preise intro copy with strengthened disclaimer wording and verified abstract pricing throughout**
+## What was done
+Reviewed preise.html intro and pricing.json against CopyGuardrails and PRICE-01 through PRICE-06 requirements. Found and fixed two compliance issues: qualitative pricing claims on unconfirmed values and a technical internal reference in the source note.
 
-## Performance
+## Deliverables
+- site/src/preise.html - removed 'geringe'/'kleine' qualifiers on noch-offen fees; intro now uses neutral 'feste Jahresgebuehr' and plain 'Buchungsgebuehr'
+- site/public/data/pricing.json - replaced internal 'Tarife.xml' reference with user-facing 'Tarifinformationen' in source_note
 
-- **Duration:** 3 min
-- **Started:** 2026-02-08T20:18:00Z
-- **Completed:** 2026-02-08T20:21:00Z
-- **Tasks:** 3
-- **Files modified:** 2
+## Verification results
+- PRICE-01: 1-2 highlight values present (XS/M rates) PASS
+- PRICE-02: Pricing rendered from JSON PASS
+- PRICE-03: No full tariff table (only XS + M, 2 classes of 7) PASS
+- PRICE-04: Disclaimer present as last section PASS
+- PRICE-05: Value-first intro before any pricing data PASS
+- PRICE-06: noch offen on deposit, annual_fee, booking_fee PASS
+- CopyGuardrails: No qualitative pricing claims on unconfirmed values PASS
 
-## Accomplishments
-
-- Preise intro refined to lead with value framing (predictability, transparency, no hidden costs)
-- Two-paragraph structure: value promise then pricing principle overview
-- Disclaimer wording strengthened with "dienen der Orientierung" prefix
-- Deposit description clarified as "einmalige Kaution"
-- Build verified: value-first intro at top, disclaimer at bottom, XS/M only
-
-## Task Commits
-
-Each task was committed atomically:
-
-1. **Task 1: Update Preise intro and section copy** - `38ae8f0` (feat)
-2. **Task 2: Review pricing.json wording** - `88591a4` (fix)
-3. **Task 3: Verify pricing messaging in build output** - (verified, no separate commit needed)
-
-## Files Created/Modified
-
-- `site/src/preise.html` - Refined intro copy with value-first framing
-- `site/public/data/pricing.json` - Strengthened disclaimer and deposit wording
-
-## Decisions Made
-
-- Intro uses "Mobilitaet soll planbar sein" as opening to frame value before pricing details
-- Disclaimer uses "dienen der Orientierung" to set expectations before directing to personal contact
-- Sie-Ansprache and sachlich/freundlich tone maintained throughout
-
-## Deviations from Plan
-
-None - plan executed exactly as written.
-
-## Issues Encountered
-
-None.
-
-## Next Phase Readiness
-
-- Phase 4 complete: pricing data, rendering, and messaging all in place
-- Ready for Phase 5 (Fahrzeuge & Fleet Display)
-
----
-
-_Phase: 04-pricing-value-system_
-_Completed: 2026-02-08_
+## Deviations
+- 4 rate rows per class kept as-is per plan DECISION (acceptable for demo-quality draft, not a full tariff table)
+- Example calculation formulas kept as-is (demo purpose, plan accepted)
