@@ -13,8 +13,8 @@ Requirements for initial launch. Site acts as self-service information hub and m
 - [ ] **FOUND-02**: Build pipeline using npm scripts
 - [ ] **FOUND-03**: PowerShell SFTP upload script for owner-managed deployment to STRATO hosting
 - [ ] **FOUND-04**: Development preview deployable to GitHub Pages
-- [ ] **FOUND-05**: Pricing data sourced from a JSON file separate from HTML
-- [ ] **FOUND-06**: Owners can update pricing JSON and deploy via simple PowerShell command
+- [x] **FOUND-05**: Pricing data sourced from a JSON file separate from HTML
+- [x] **FOUND-06**: Owners can update pricing JSON and deploy via simple PowerShell command
 
 ### Legal Compliance
 
@@ -26,13 +26,13 @@ Requirements for initial launch. Site acts as self-service information hub and m
 ### Content Pages
 
 - [ ] **CONT-01**: Homepage — hero, value prop, 3-step "how it works," top FAQ accordion, persona-inclusive messaging
-- [ ] **CONT-02**: Preise (Pricing) — key tariff values, sample calculations, abstract presentation, disclaimer
+- [x] **CONT-02**: Preise (Pricing) — key tariff values, sample calculations, abstract presentation, disclaimer
 - [ ] **CONT-03**: Sustainability communicated through storytelling, not a dedicated "green" page — readers who care will see it; others won't feel lectured
 - [ ] **CONT-04**: Fahrzeuge (Vehicles) — fleet display (Opel Mokka E, Opel Adam) with specs, parking map
 - [ ] **CONT-05**: Für Firmen (Business) — business customer pitch with 4 benefits
 - [ ] **CONT-06**: Über uns (About) — founders, history, 60+ members, operations model
 - [ ] **CONT-07**: Membership info (how to join, expectations, phone number) — may be separate page or baked into homepage "how it works" flow
-- [ ] **CONT-08**: Only publish tariff classes XS and M (current fleet); larger classes mentioned via Quernutzung
+- [x] **CONT-08**: Only publish tariff classes XS and M (current fleet); larger classes mentioned via Quernutzung
 - [ ] **CONT-09**: Quernutzung (cross-use network) mentioned as notable benefit, not headline feature
 - [ ] **CONT-10**: Phone number (07473-922202) placed only in membership/how-to-join context — NOT on every page; avoid pushing unqualified callers
 - [ ] **CONT-11**: No contact forms, no email addresses, no online signup (phone-only by design)
@@ -49,12 +49,12 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### Pricing Display
 
-- [ ] **PRICE-01**: Pricing page shows 1–2 highlight values (e.g. hourly rate, km price) to demo JSON-driven rendering
-- [ ] **PRICE-02**: Pricing data rendered from pricing JSON file
-- [ ] **PRICE-03**: Abstract pricing presentation — no full tariff detail, no deep billing mechanics
-- [ ] **PRICE-04**: Disclaimer present: "Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den Unterlagen"
-- [ ] **PRICE-05**: Price is presented as a selling point but not the lead message
-- [ ] **PRICE-06**: Any missing or non-final pricing values must be explicitly labeled as "noch offen" or "Platzhalter" on the page
+- [x] **PRICE-01**: Pricing page shows 1–2 highlight values (e.g. hourly rate, km price) to demo JSON-driven rendering
+- [x] **PRICE-02**: Pricing data rendered from pricing JSON file
+- [x] **PRICE-03**: Abstract pricing presentation — no full tariff detail, no deep billing mechanics
+- [x] **PRICE-04**: Disclaimer present: "Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den Unterlagen"
+- [x] **PRICE-05**: Price is presented as a selling point but not the lead message
+- [x] **PRICE-06**: Any missing or non-final pricing values must be explicitly labeled as "noch offen" or "Platzhalter" on the page
 
 ### Design & UX
 
@@ -80,7 +80,7 @@ Requirements for initial launch. Site acts as self-service information hub and m
 - [ ] **QUAL-01**: Correct German spelling and grammar throughout
 - [ ] **QUAL-02**: No typos (fix issues like "gegegeben," "Moblitätskonzept," "Ihrer→Ihre")
 - [ ] **QUAL-03**: No claims about capabilities business doesn't have (24/7 support, app, free-floating, spontaneous returns, "completely paperless")
-- [ ] **QUAL-04**: Content validated against 02/2022 usage handbook (abstracted for web)
+- [x] **QUAL-04**: Content validated against 02/2022 usage handbook (abstracted for web)
 - [ ] **QUAL-05**: All links functional (no case-sensitive link bugs like "Preise.html")
 
 ## v2 Requirements
