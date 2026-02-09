@@ -114,9 +114,9 @@ A redesigned website for **teilAuto Mössingen e.K.**, a family-run station-base
 | White/green color palette | Nature-forward, matches competition/partners, fits Mössingen's landscape imagery | — Pending |
 | Quernutzung as notable benefit, not headline | Owners say it rarely drives new members; useful for informed interest, not acquisition | — Pending |
 | Don Bosco on map as "Geplant" | Subtle local SEO for expansion area; vague enough to be correct without commitment | — Pending |
-| Abstract pricing (no exact unverified numbers) | 2022 handbook data not trusted; fresh price set needed before exact figures | — Pending |
+| Abstract pricing (no exact unverified numbers) | 2022 handbook data not trusted; fresh price set needed before exact figures | Revised 2026-02-09: 1–2 exact sample values OK as demo; no full tariff table or billing formula. All content is first-draft for customer review. |
 | Build fresh, student project as reference only | UNLICENSED code, copyright-flagged assets; patterns reusable, code is not | — Pending |
 
 ---
 
-_Last updated: 2026-02-08 after initialization_
+_Last updated: 2026-02-09 after Phase 4 plan refactoring_

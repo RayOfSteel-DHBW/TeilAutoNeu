@@ -49,9 +49,10 @@ Recent decisions affecting current work:
 
 - V1 deployment via GitHub Pages only; STRATO deferred to final V1 step.
 - Generic CTA wording: "Ueberzeugt? Melden Sie sich bei uns" with default hours Mo-Fr 09:00-12:00.
-- All pricing values kept abstract (qualitative ranges only, no exact EUR amounts).
+- Pricing page is demo-quality: 1–2 exact sample values OK, no full tariff table or billing formula.
 - DOM APIs only (createElement/textContent) for pricing renderer — no innerHTML.
-- Pricing page leads with value framing, disclaimer at bottom.
+- Pricing page leads with value framing (neighbours sharing costs), disclaimer at bottom.
+- All content is first-draft for customer review, not final.
 
 ### Pending Todos
 
@@ -63,6 +64,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-08 20:21Z
-Stopped at: Completed Phase 4 execution (all 3 plans)
+Last session: 2026-02-09
+Stopped at: Refactored Phase 4 plans to reflect demo-quality pricing with 1–2 sample values; site files reverted pending re-execution
 Resume file: None

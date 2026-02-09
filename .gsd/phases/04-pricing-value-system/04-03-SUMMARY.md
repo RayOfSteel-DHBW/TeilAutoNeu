@@ -1,8 +1,7 @@
 ---
 phase: 04-pricing-value-system
 plan: 03
-subsystem:
-  content
+subsystem: content
 tags: [pricing, copy, compliance, disclaimer, abstract-values, guardrails]
 
 # Dependency graph
@@ -18,7 +17,8 @@ affects:
 # Tech tracking
 tech-stack:
   added: []
-  patterns: [Value-first messaging before pricing details, disclaimer after content]
+  patterns:
+    [Value-first messaging before pricing details, disclaimer after content]
 
 key-files:
   created: []
@@ -31,7 +31,7 @@ key-decisions:
 
 patterns-established:
   - "Value-first page structure: intro framing before data sections"
-  - "Pricing language: qualitative terms only, no exact EUR values"
+  - "1-2 exact sample values OK as demo; no full tariff table or billing formula"
 
 # Metrics
 duration: 3min

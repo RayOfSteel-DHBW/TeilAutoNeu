@@ -49,11 +49,12 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### Pricing Display
 
-- [ ] **PRICE-01**: Pricing page shows key values and sample calculations (deposit, annual fee, time/km rates)
+- [ ] **PRICE-01**: Pricing page shows 1–2 highlight values (e.g. hourly rate, km price) to demo JSON-driven rendering
 - [ ] **PRICE-02**: Pricing data rendered from pricing JSON file
 - [ ] **PRICE-03**: Abstract pricing presentation — no full tariff detail, no deep billing mechanics
 - [ ] **PRICE-04**: Disclaimer present: "Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den Unterlagen"
 - [ ] **PRICE-05**: Price is presented as a selling point but not the lead message
+- [ ] **PRICE-06**: Any missing or non-final pricing values must be explicitly labeled as "noch offen" or "Platzhalter" on the page
 
 ### Design & UX
 

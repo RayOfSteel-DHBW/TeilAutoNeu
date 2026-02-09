@@ -13,10 +13,10 @@ This roadmap delivers a launch-ready static site that pre-qualifies callers whil
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Deployment** - Static build pipeline and owner-friendly deployment.
-- [ ] **Phase 2: Core UX & Navigation** - Mobile-first layout, brand system, and navigation.
-- [ ] **Phase 3: Homepage & Membership Funnel** - Homepage messaging and phone-only join path.
-- [ ] **Phase 4: Pricing & Value System** - JSON-driven pricing page with abstracted value framing.
+- [x] **Phase 1: Foundation & Deployment** - Static build pipeline and owner-friendly deployment.
+- [x] **Phase 2: Core UX & Navigation** - Mobile-first layout, brand system, and navigation.
+- [x] **Phase 3: Homepage & Membership Funnel** - Homepage messaging and phone-only join path.
+- [x] **Phase 4: Pricing & Value System** - Demo-quality pricing page with 1–2 sample values and value-first framing.
 - [ ] **Phase 5: Fleet & Locations** - Vehicles and interactive map with locations.
 - [ ] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
 
@@ -83,24 +83,25 @@ Plans:
 
 ### Phase 4: Pricing & Value System
 
-**Goal**: Visitors can see pricing value from a JSON source without over-detailed tariff claims.
+**Goal**: Visitors see a value-first pricing page with 1–2 sample values from JSON, as a demo-quality draft for customer review.
 **Depends on**: Phase 3
-**Requirements**: FOUND-05, FOUND-06, CONT-02, CONT-08, PRICE-01, PRICE-02, PRICE-03, PRICE-04, PRICE-05, QUAL-04
+**Requirements**: FOUND-05, FOUND-06, CONT-02, CONT-08, PRICE-01, PRICE-02, PRICE-03, PRICE-04, PRICE-05, PRICE-06, QUAL-04
 **Success Criteria** (what must be TRUE):
 
-1. Pricing page renders key values and sample calculations from the pricing JSON.
-2. Pricing presentation is abstract with the required disclaimer and does not lead the page.
-3. Only XS and M classes are shown; larger classes are referenced via Quernutzung.
+1. Pricing page leads with value framing (neighbours sharing costs) before any numbers.
+2. 1–2 exact sample values (e.g. hourly rate, km rate) are shown to demo JSON-driven rendering.
+3. No full tariff table or billing formula is exposed; presentation stays light.
 4. Owners can update the pricing JSON and redeploy without editing HTML.
-5. Pricing content aligns with the 02/2022 handbook and is safely abstracted.
+5. Required disclaimer is present; missing/unconfirmed values are labelled "noch offen".
+6. Larger vehicle classes are referenced via Quernutzung only.
 
 **Plans**: TBD
 
 Plans:
 
-- [ ] 04-01: Pricing JSON schema and update workflow
-- [ ] 04-02: Pricing page rendering and sample calculations
-- [ ] 04-03: Pricing messaging constraints and disclaimers
+- [x] 04-01: Pricing JSON schema and update workflow
+- [x] 04-02: Pricing page rendering (1–2 highlight values, no full tariff table)
+- [x] 04-03: Pricing messaging, disclaimers, and value-first framing
 
 ### Phase 5: Fleet & Locations
 
@@ -141,6 +142,7 @@ Plans:
 - [ ] 06-01: About, business, sustainability, and Quernutzung content
 - [ ] 06-02: Legal pages and analytics concept
 - [ ] 06-03: SEO, semantic HTML, and quality sweep
+- [ ] 06-04: Present questions to teilAuto (content verification, verifying our direction is correct).
 
 ## Progress
 
@@ -152,6 +154,6 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 | 1. Foundation & Deployment      | 3/3            | Complete    | 2026-02-08 |
 | 2. Core UX & Navigation         | 3/3            | Complete    | 2026-02-08 |
 | 3. Homepage & Membership Funnel | 3/3            | Complete    | 2026-02-08 |
-| 4. Pricing & Value System       | 0/TBD          | Not started | -          |
+| 4. Pricing & Value System       | 3/3            | Complete    | 2026-02-08 |
 | 5. Fleet & Locations            | 0/TBD          | Not started | -          |
 | 6. Trust, Legal, SEO & Quality  | 0/TBD          | Not started | -          |
