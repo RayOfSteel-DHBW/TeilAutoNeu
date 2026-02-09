@@ -1,6 +1,10 @@
 /**
  * pricing.js – Fetches pricing.json and populates the Preise page sections.
- * Uses DOM APIs (createElement / textContent) to avoid injecting raw HTML.
+ *
+ * Rendering rules:
+ *   - DOM APIs only (createElement / textContent / appendChild)
+ *   - NO innerHTML, NO insertAdjacentHTML
+ *   - "noch offen" values get an amber badge so placeholders are visible
  */
 (function () {
   "use strict";
@@ -9,6 +13,7 @@
 
   // ---- helpers ----
 
+  /** Create an element with optional attributes and children/text. */
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
     if (attrs) {
@@ -30,124 +35,228 @@
     return node;
   }
 
+  /** Remove all children from a container. */
   function clear(container) {
     while (container.firstChild) container.removeChild(container.firstChild);
   }
 
-  // ---- renderers ----
+  /** True when a value is the placeholder string "noch offen". */
+  function isNochOffen(val) {
+    return typeof val === "string" && val.toLowerCase().trim() === "noch offen";
+  }
 
+  /**
+   * Return either a plain text node or an amber "noch offen" badge,
+   * depending on the value.
+   */
+  function valueOrBadge(val, prefix) {
+    if (isNochOffen(val)) {
+      var badge = el(
+        "span",
+        { className: "inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800" },
+        "noch offen"
+      );
+      if (prefix) {
+        var wrapper = el("span", { className: "inline-flex items-center gap-2" });
+        wrapper.appendChild(document.createTextNode(prefix + " "));
+        wrapper.appendChild(badge);
+        return wrapper;
+      }
+      return badge;
+    }
+    return document.createTextNode(prefix ? prefix + " " + val : val);
+  }
+
+  /** Format a number as EUR with German comma (e.g. 2.05 → "2,05 EUR"). */
+  function eur(n) {
+    return String(n).replace(".", ",") + "\u00a0EUR";
+  }
+
+  // ---- section renderers ----
+
+  /** #pricing-values — membership fees + usage overview */
   function renderValues(container, data) {
     clear(container);
 
-    var heading = el("h2", { className: "text-2xl font-display" }, "Kostenprinzip");
-    var desc = el("p", { className: "mt-3 text-brand-ink/80" },
-      "Bei teilAuto zahlen Sie eine " + data.membership.annual_fee +
-      " sowie eine Kaution " + data.membership.deposit +
-      ". Jede Fahrt setzt sich zusammen aus:"
+    container.appendChild(
+      el("h2", { className: "text-2xl font-display" }, "Mitgliedschaft & Nutzung")
     );
 
-    var listItems = [
-      data.usage.booking_fee,
-      data.usage.time_rate,
-      data.usage.km_rate
+    // Membership row
+    var memberGrid = el("div", { className: "mt-4 grid gap-4 sm:grid-cols-2" });
+
+    var depositCard = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
+    depositCard.appendChild(el("p", { className: "text-sm font-semibold text-brand-ink" }, "Kaution (einmalig)"));
+    depositCard.appendChild(el("p", { className: "mt-1 text-lg font-display" }));
+    depositCard.lastChild.appendChild(valueOrBadge(data.membership.deposit));
+    memberGrid.appendChild(depositCard);
+
+    var feeCard = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
+    feeCard.appendChild(el("p", { className: "text-sm font-semibold text-brand-ink" }, "Jahresbeitrag"));
+    feeCard.appendChild(el("p", { className: "mt-1 text-lg font-display" }));
+    feeCard.lastChild.appendChild(valueOrBadge(data.membership.annual_fee));
+    memberGrid.appendChild(feeCard);
+
+    container.appendChild(memberGrid);
+
+    // Usage overview
+    container.appendChild(
+      el("h3", { className: "mt-6 text-xl font-display" }, "Pro Fahrt")
+    );
+
+    var usageItems = [
+      { label: "Buchungsgebuehr", value: data.usage.booking_fee },
+      { label: "Zeittarif", value: data.usage.time_rate_example },
+      { label: "Kilometertarif", value: data.usage.km_rate_example }
     ];
 
-    var ul = el("ul", { className: "mt-4 space-y-2" });
-    listItems.forEach(function (text) {
+    var ul = el("ul", { className: "mt-3 space-y-2" });
+    usageItems.forEach(function (item) {
       var li = el("li", { className: "flex items-start gap-3 text-brand-ink/80" });
-      var bullet = el("span", { className: "mt-1 text-brand-primary", "aria-hidden": "true" }, "\u2713");
-      var span = el("span", null, text);
-      li.appendChild(bullet);
-      li.appendChild(span);
+      li.appendChild(el("span", { className: "mt-0.5 text-brand-primary", "aria-hidden": "true" }, "\u2713"));
+      var content = el("span");
+      content.appendChild(el("span", { className: "font-semibold" }, item.label + ": "));
+      content.appendChild(valueOrBadge(item.value));
+      li.appendChild(content);
       ul.appendChild(li);
     });
-
-    var includesHeading = el("p", { className: "mt-4 text-sm font-semibold text-brand-ink" }, "Im Preis enthalten:");
-    var includesList = el("p", { className: "text-sm text-brand-ink/70" }, data.usage.includes.join(", "));
-
-    container.appendChild(heading);
-    container.appendChild(desc);
     container.appendChild(ul);
-    container.appendChild(includesHeading);
-    container.appendChild(includesList);
+
+    // Includes
+    container.appendChild(
+      el("p", { className: "mt-4 text-sm font-semibold text-brand-ink" }, "Im Preis enthalten:")
+    );
+    container.appendChild(
+      el("p", { className: "text-sm text-brand-ink/70" }, data.usage.includes.join(", "))
+    );
   }
 
+  /** #pricing-classes — vehicle class cards with rate tables */
   function renderClasses(container, data) {
     clear(container);
 
-    var heading = el("h2", { className: "text-2xl font-display" }, "Unsere Fahrzeugklassen");
+    container.appendChild(
+      el("h2", { className: "text-2xl font-display" }, "Unsere Fahrzeugklassen")
+    );
+    container.appendChild(
+      el("p", { className: "mt-2 text-brand-ink/80" },
+        "Aktuell bieten wir zwei Klassen an. Groessere Fahrzeuge sind ueber Quernutzung verfuegbar (siehe unten)."
+      )
+    );
 
-    var grid = el("div", { className: "mt-4 grid gap-4 sm:grid-cols-2" });
+    var grid = el("div", { className: "mt-4 grid gap-6 sm:grid-cols-2" });
 
     data.classes.forEach(function (cls) {
-      var card = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
-      var title = el("p", { className: "text-lg font-display" }, cls.id + " \u2013 " + cls.label);
-      var note = el("p", { className: "mt-1 text-sm text-brand-ink/70" }, cls.notes);
-      card.appendChild(title);
-      card.appendChild(note);
+      var card = el("div", { className: "rounded-2xl bg-brand-surface p-5" });
+
+      // Title
+      card.appendChild(
+        el("p", { className: "text-lg font-display" }, "Klasse " + cls.id + " \u2013 " + cls.label)
+      );
+      card.appendChild(
+        el("p", { className: "mt-1 text-sm text-brand-ink/70" }, cls.notes)
+      );
+
+      // Rate table
+      var rates = [
+        ["1. Stunde", eur(cls.stunde_eur) + "/Std."],
+        ["Folgestunde", eur(cls.folgestunde_eur) + "/Std."],
+        ["Nachtstunde", eur(cls.nachtstunde_eur) + "/Std."],
+        ["Kilometer", eur(cls.km_eur) + "/km"]
+      ];
+
+      var table = el("dl", { className: "mt-3 space-y-1 text-sm" });
+      rates.forEach(function (pair) {
+        var row = el("div", { className: "flex justify-between" });
+        row.appendChild(el("dt", { className: "text-brand-ink/70" }, pair[0]));
+        row.appendChild(el("dd", { className: "font-semibold text-brand-ink" }, pair[1]));
+        table.appendChild(row);
+      });
+
+      card.appendChild(table);
       grid.appendChild(card);
     });
 
-    container.appendChild(heading);
     container.appendChild(grid);
   }
 
+  /** #pricing-examples — sample trip calculations */
   function renderExamples(container, data) {
     clear(container);
 
-    var heading = el("h2", { className: "text-2xl font-display" }, "Beispielrechnungen");
-    var intro = el("p", { className: "mt-3 text-brand-ink/80" },
-      "Wie viel eine typische Fahrt ungefaehr kostet? Hier zwei Beispiele zur Orientierung."
+    container.appendChild(
+      el("h2", { className: "text-2xl font-display" }, "Beispielrechnungen")
+    );
+    container.appendChild(
+      el("p", { className: "mt-2 text-brand-ink/80" },
+        "Wie viel kostet eine typische Fahrt ungefaehr? Zwei Beispiele zur Orientierung."
+      )
     );
 
-    container.appendChild(heading);
-    container.appendChild(intro);
-
-    var grid = el("div", { className: "mt-4 grid gap-4 sm:grid-cols-2" });
+    var grid = el("div", { className: "mt-4 grid gap-6 sm:grid-cols-2" });
 
     data.examples.forEach(function (ex) {
-      var card = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
-      var title = el("p", { className: "font-semibold text-brand-ink" }, ex.title);
-      var inputs = el("p", { className: "mt-1 text-sm text-brand-ink/70" }, ex.inputs);
-      var output = el("p", { className: "mt-2 text-sm font-semibold text-brand-primary" }, ex.output);
-      card.appendChild(title);
-      card.appendChild(inputs);
-      card.appendChild(output);
+      var card = el("div", { className: "rounded-2xl bg-brand-surface p-5" });
+
+      card.appendChild(
+        el("p", { className: "font-semibold text-brand-ink" }, ex.title)
+      );
+      card.appendChild(
+        el("p", { className: "mt-1 text-sm text-brand-ink/70" }, ex.inputs)
+      );
+
+      // Calculation breakdown
+      card.appendChild(
+        el("p", { className: "mt-2 text-xs font-mono text-brand-ink/50" }, ex.calculation)
+      );
+
+      // Result
+      card.appendChild(
+        el("p", { className: "mt-2 text-lg font-display text-brand-primary" }, ex.output)
+      );
+
       grid.appendChild(card);
     });
 
     container.appendChild(grid);
   }
 
+  /** #pricing-quernutzung — larger vehicles via partner network */
   function renderQuernutzung(container, data) {
     clear(container);
 
-    var heading = el("h2", { className: "text-2xl font-display" }, "Groessere Fahrzeuge");
-    var text = el("p", { className: "mt-3 text-brand-ink/80" }, data.quernutzung);
-    container.appendChild(heading);
-    container.appendChild(text);
+    container.appendChild(
+      el("h2", { className: "text-2xl font-display" }, "Groessere Fahrzeuge")
+    );
+    container.appendChild(
+      el("p", { className: "mt-3 text-brand-ink/80" }, data.quernutzung)
+    );
   }
 
+  /** #pricing-disclaimer — legal notice, rendered last */
   function renderDisclaimer(container, data) {
     clear(container);
 
-    var icon = el("span", { className: "text-brand-primary", "aria-hidden": "true" }, "\u2139\uFE0F");
     var heading = el("p", { className: "flex items-center gap-2 font-semibold text-brand-ink" });
-    heading.appendChild(icon);
+    heading.appendChild(el("span", { className: "text-brand-primary", "aria-hidden": "true" }, "\u24D8"));
     heading.appendChild(el("span", null, "Hinweis"));
-
-    var text = el("p", { className: "mt-2 text-sm text-brand-ink/70" }, data.disclaimer);
-    var updated = el("p", { className: "mt-1 text-xs text-brand-ink/50" }, "Stand: " + data.updated);
-
     container.appendChild(heading);
-    container.appendChild(text);
-    container.appendChild(updated);
+
+    container.appendChild(
+      el("p", { className: "mt-2 text-sm text-brand-ink/70" }, data.disclaimer)
+    );
+    container.appendChild(
+      el("p", { className: "mt-2 text-xs text-brand-ink/50 italic" }, data.source_note)
+    );
+    container.appendChild(
+      el("p", { className: "mt-1 text-xs text-brand-ink/50" }, "Stand: " + data.updated)
+    );
   }
 
+  /** Show a fallback message when fetch fails. */
   function showError(container, message) {
     clear(container);
-    var p = el("p", { className: "text-brand-ink/60" }, message);
-    container.appendChild(p);
+    container.appendChild(el("p", { className: "text-brand-ink/60" }, message));
   }
 
   // ---- main ----
@@ -160,7 +269,7 @@
     disclaimer: document.getElementById("pricing-disclaimer")
   };
 
-  // Only run on the Preise page
+  // Only run on the Preise page (guard for other pages that also load this script)
   if (!sections.values) return;
 
   fetch(PRICING_URL)
@@ -176,7 +285,9 @@
       renderDisclaimer(sections.disclaimer, data);
     })
     .catch(function () {
-      var fallback = "Preisinformationen sind derzeit nicht verfuegbar. Bitte kontaktieren Sie uns telefonisch.";
+      var fallback =
+        "Preisinformationen konnten nicht geladen werden. " +
+        "Bitte versuchen Sie es spaeter erneut oder kontaktieren Sie uns telefonisch.";
       Object.keys(sections).forEach(function (key) {
         if (sections[key]) showError(sections[key], fallback);
       });
