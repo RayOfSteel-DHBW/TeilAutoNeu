@@ -1,14 +1,15 @@
 {
-  "updated": "2026-02-08",
+  "updated": "2026-02-09",
+  "source_note": "Quelle: Tarife.xml (Stand 02/2022–2024). Werte nicht vom Kunden freigegeben — Entwurf.",
   "disclaimer": "Die hier genannten Angaben dienen der Orientierung. Genaue, aktuelle Preise erhalten Sie im persoenlichen Gespraech und in den aktuellen Vertragsunterlagen. Alle Angaben ohne Gewaehr.",
   "membership": {
-    "deposit": "einmalige Kaution im hoeheren dreistelligen Bereich",
-    "annual_fee": "geringe jaehrliche Grundgebuehr"
+    "deposit": "noch offen",
+    "annual_fee": "noch offen"
   },
   "usage": {
-    "booking_fee": "kleine Buchungsgebuehr pro Fahrt",
-    "time_rate": "zeitabhaengiger Tarif mit guenstigeren Nacht- und Folgestunden",
-    "km_rate": "Kilometerpreis je nach Fahrzeugklasse",
+    "booking_fee": "noch offen",
+    "time_rate_example": "ab 2,05 EUR/Std. (Klasse XS) bzw. 2,46 EUR/Std. (Klasse M)",
+    "km_rate_example": "ab 0,32 EUR/km (Klasse XS) bzw. 0,36 EUR/km (Klasse M)",
     "includes": [
       "Kraftstoff",
       "Betriebsstoffe",
@@ -19,24 +20,34 @@
     {
       "id": "XS",
       "label": "Kleinwagen",
-      "notes": "Guenstigste Klasse, ideal fuer kurze Wege und Besorgungen"
+      "notes": "Guenstigste Klasse, ideal fuer kurze Wege und Besorgungen",
+      "stunde_eur": 2.05,
+      "folgestunde_eur": 1.00,
+      "nachtstunde_eur": 0.65,
+      "km_eur": 0.32
     },
     {
       "id": "M",
       "label": "Kompaktklasse",
-      "notes": "Mehr Platz und Komfort, etwas hoeherer Tarif"
+      "notes": "Mehr Platz und Komfort, etwas hoeherer Tarif",
+      "stunde_eur": 2.46,
+      "folgestunde_eur": 1.25,
+      "nachtstunde_eur": 0.75,
+      "km_eur": 0.36
     }
   ],
   "examples": [
     {
       "title": "Wochenendeinkauf",
       "inputs": "ca. 2 Stunden, 15 km mit Klasse XS",
-      "output": "Gesamtbetrag im unteren zweistelligen Bereich"
+      "calculation": "1 × 2,05 + 1 × 1,00 + 15 × 0,32 = 7,85 EUR",
+      "output": "ca. 7,85 EUR (zzgl. Buchungsgebuehr)"
     },
     {
       "title": "Tagesausflug",
       "inputs": "ca. 8 Stunden, 150 km mit Klasse M",
-      "output": "Gesamtbetrag im mittleren zweistelligen Bereich"
+      "calculation": "1 × 2,46 + 7 × 1,25 + 150 × 0,36 = 65,21 EUR",
+      "output": "ca. 65,21 EUR (zzgl. Buchungsgebuehr)"
     }
   ],
   "quernutzung": "Groessere Fahrzeugklassen nutzen Sie ueber Quernutzung bei Partnerorganisationen im bundesweiten Carsharing-Netzwerk."
