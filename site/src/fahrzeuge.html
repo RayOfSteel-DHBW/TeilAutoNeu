@@ -3,5 +3,83 @@
 {% block title %}Fahrzeuge | teilAuto Moessingen{% endblock title %}
 
 {% block main %}
-  <h1>Fahrzeuge</h1>
+<section class="space-y-10">
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-display sm:text-4xl">Fahrzeuge</h1>
+    <p class="mt-4 text-lg text-brand-ink/80">
+      Ob Sie den Wocheneinkauf erledigen, Kinder sicher zum Training bringen
+      oder am Wochenende ins Gruene fahren wollen: teilAuto hat fuer die
+      allermeisten Faelle das passende Auto. Dank der kleinen, festen Flotte
+      ist in den allermeisten Faellen fast immer ein Fahrzeug verfuegbar.
+    </p>
+  </div>
+
+  <div class="grid gap-6 lg:grid-cols-2">
+    <article class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
+      <h2 class="text-2xl font-display">Opel Mokka E</h2>
+      <img
+        src="/img/mokka.png"
+        alt="Opel Mokka E"
+        class="mt-4 w-full rounded-2xl border border-brand-muted bg-brand-surface"
+        loading="lazy"
+      />
+      <p class="mt-2 text-sm text-brand-ink/80">
+        Der elektrische Allrounder fuer Familie, Einkauf und die groessere
+        Runde um Moessingen.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-brand-ink/80">
+        <li><span class="font-semibold">Sitze:</span> 5</li>
+        <li><span class="font-semibold">Ausstattung:</span> Kindersitz, Parkhilfe</li>
+        <li><span class="font-semibold">Standort:</span> Moessingen, Bahnhofstrasse</li>
+      </ul>
+    </article>
+
+    <article class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
+      <h2 class="text-2xl font-display">Opel Adam</h2>
+      <img
+        src="/img/adam.png"
+        alt="Opel Adam"
+        class="mt-4 w-full rounded-2xl border border-brand-muted bg-brand-surface"
+        loading="lazy"
+      />
+      <p class="mt-2 text-sm text-brand-ink/80">
+        Kompakt und wendig, ideal fuer kurze Wege in der Stadt und schnelle
+        Erledigungen.
+      </p>
+      <ul class="mt-4 space-y-2 text-sm text-brand-ink/80">
+        <li><span class="font-semibold">Sitze:</span> 4</li>
+        <li><span class="font-semibold">Ausstattung:</span> Klimaanlage, Parkhilfe</li>
+        <li><span class="font-semibold">Standort:</span> Moessingen, Innenstadt</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <h2 class="text-2xl font-display">Weitere Standorte in Planung</h2>
+    <p class="mt-3 text-sm text-brand-ink/80">
+      Wir halten die Augen offen fuer weitere Stellplaetze in der Umgebung.
+      Genannt werden vor allem diese Bereiche:
+    </p>
+    <ul class="mt-4 grid gap-3 text-sm text-brand-ink/80 sm:grid-cols-3">
+      <li class="rounded-2xl border border-brand-muted bg-brand-surface px-4 py-3">
+        Belsen
+      </li>
+      <li class="rounded-2xl border border-brand-muted bg-brand-surface px-4 py-3">
+        Baestenhardt (Don Bosco)
+      </li>
+      <li class="rounded-2xl border border-brand-muted bg-brand-surface px-4 py-3">
+        Oeschingen
+      </li>
+    </ul>
+  </div>
+
+  <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
+    <h2 class="text-2xl font-display">Quernutzung fuer Sonderfaelle</h2>
+    <p class="mt-3 text-sm text-brand-ink/80">
+      Falls Sie ausnahmsweise etwas Groesseres brauchen, nutzen viele Mitglieder
+      die Quernutzung &ndash; typisch ist etwa ein Sprinter fuer einen Umzug.
+    </p>
+  </div>
+</section>
+
 {% endblock main %}
