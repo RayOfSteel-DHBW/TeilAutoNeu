@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 56" width="96" height="56" role="img" aria-label="Opel Mokka E icon">
+  <rect x="10" y="22" width="76" height="18" rx="8" fill="#0f5f3c"/>
+  <path d="M24 22 L34 12 H62 L72 22 Z" fill="#0f5f3c"/>
+  <rect x="36" y="14" width="24" height="8" rx="2" fill="#ffffff" fill-opacity="0.9"/>
+  <circle cx="28" cy="42" r="7" fill="#0f2d1f"/>
+  <circle cx="68" cy="42" r="7" fill="#0f2d1f"/>
+  <circle cx="28" cy="42" r="3" fill="#ffffff"/>
+  <circle cx="68" cy="42" r="3" fill="#ffffff"/>
+</svg>
