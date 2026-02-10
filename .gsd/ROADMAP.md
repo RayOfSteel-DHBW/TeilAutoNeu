@@ -119,7 +119,7 @@ Plans:
 
 Plans:
 
-- [ ] 05-01: Vehicles page with fleet specs
+- [x] 05-01: Vehicles page with fleet specs
 - [ ] 05-02: MapLibre map with locations and planned marker
 - [ ] 05-03: OSM attribution and map polish
 
@@ -155,5 +155,5 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 | 2. Core UX & Navigation         | 3/3            | Complete    | 2026-02-08 |
 | 3. Homepage & Membership Funnel | 3/3            | Complete    | 2026-02-08 |
 | 4. Pricing & Value System       | 3/3            | Complete    | 2026-02-08 |
-| 5. Fleet & Locations            | 0/TBD          | Not started | -          |
+| 5. Fleet & Locations            | 1/3            | In progress | -          |
 | 6. Trust, Legal, SEO & Quality  | 0/TBD          | Not started | -          |
