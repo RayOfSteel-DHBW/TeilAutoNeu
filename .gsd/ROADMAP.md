@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Core UX & Navigation** - Mobile-first layout, brand system, and navigation.
 - [x] **Phase 3: Homepage & Membership Funnel** - Homepage messaging and phone-only join path.
 - [x] **Phase 4: Pricing & Value System** - Demo-quality pricing page with 1–2 sample values and value-first framing.
-- [ ] **Phase 5: Fleet & Locations** - Vehicles and interactive map with locations.
+- [x] **Phase 5: Fleet & Locations** - Vehicles and interactive map with locations.
 - [ ] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
 
 ## Phase Details
@@ -121,7 +121,7 @@ Plans:
 
 - [x] 05-01: Vehicles page with fleet specs
 - [x] 05-02: MapLibre map with locations and planned marker
-- [ ] 05-03: OSM attribution and map polish
+- [x] 05-03: OSM attribution and map polish
 
 ### Phase 6: Trust, Legal, SEO & Quality
 
@@ -155,5 +155,5 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 | 2. Core UX & Navigation         | 3/3            | Complete    | 2026-02-08 |
 | 3. Homepage & Membership Funnel | 3/3            | Complete    | 2026-02-08 |
 | 4. Pricing & Value System       | 3/3            | Complete    | 2026-02-08 |
-| 5. Fleet & Locations            | 2/3            | In progress | -          |
+| 5. Fleet & Locations            | 3/3            | Complete    | 2026-02-10 |
 | 6. Trust, Legal, SEO & Quality  | 0/TBD          | Not started | -          |
