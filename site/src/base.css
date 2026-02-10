@@ -55,3 +55,86 @@ a {
   outline: 2px solid #0f172a;
   outline-offset: 2px;
 }
+
+.fleet-map {
+  width: 100%;
+  height: 420px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .fleet-map {
+    height: 480px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fleet-map {
+    height: 520px;
+  }
+}
+
+.fleet-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 2px solid #0f5f3c;
+  background: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.fleet-marker::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #0f5f3c;
+}
+
+.fleet-marker--planned {
+  background: #f4f9f6;
+  border-style: dashed;
+}
+
+.fleet-marker--planned::before {
+  background: transparent;
+  border: 2px solid #0f5f3c;
+}
+
+.fleet-popup {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 280px;
+}
+
+.fleet-popup__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+}
+
+.fleet-popup__title {
+  font-weight: 700;
+}
+
+.fleet-popup__meta {
+  margin-top: 2px;
+  font-size: 0.875rem;
+  color: #0f2d1f;
+  opacity: 0.85;
+}
+
+.maplibregl-popup-content {
+  border-radius: 16px;
+  font-family: inherit;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
+  line-height: 1.3;
+  opacity: 1;
+}

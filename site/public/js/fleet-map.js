@@ -63,11 +63,25 @@
     });
 
     map.addControl(new window.maplibregl.NavigationControl({ showCompass: false }), "top-right");
-    map.addControl(new window.maplibregl.AttributionControl({ compact: true }), "bottom-right");
+    map.addControl(new window.maplibregl.AttributionControl({ compact: false }), "bottom-right");
+
+    map.scrollZoom.disable();
 
     const canvasContainer = map.getCanvasContainer();
     canvasContainer.tabIndex = 0;
     canvasContainer.setAttribute("aria-label", "Karte mit Stellplaetzen");
+
+    canvasContainer.addEventListener("mousedown", () => {
+      canvasContainer.focus();
+    });
+
+    canvasContainer.addEventListener("focus", () => {
+      map.scrollZoom.enable();
+    });
+
+    canvasContainer.addEventListener("blur", () => {
+      map.scrollZoom.disable();
+    });
 
     fleetLocations.forEach((location) => {
       const markerEl = document.createElement("button");
