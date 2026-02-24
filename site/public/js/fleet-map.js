@@ -4,18 +4,18 @@
   const fleetLocations = [
     {
       id: "mokka",
-      name: "Moessingen, Bahnhofstrasse",
+      name: "Mössingen, Bahnhofstraße",
       coords: [9.0473, 48.4021],
       status: "active",
       vehicle: {
         title: "Opel Mokka E",
         iconUrl: "/img/cars/mokka-icon.svg",
-        description: "Opel Mokka E \u00b7 5 Sitze \u00b7 Kindersitz \u00b7 Parkhilfe \u00b7 Bahnhofstrasse",
+        description: "Opel Mokka E \u00b7 5 Sitze \u00b7 Kindersitz \u00b7 Parkhilfe \u00b7 Bahnhofstraße",
       },
     },
     {
       id: "adam",
-      name: "Moessingen, Innenstadt",
+      name: "Mössingen, Innenstadt",
       coords: [9.0594, 48.4040],
       status: "active",
       vehicle: {
@@ -26,13 +26,13 @@
     },
     {
       id: "donbosco",
-      name: "Baestenhardt (Don Bosco)",
+      name: "Bästenhardt (Don Bosco)",
       coords: [9.0311, 48.4030],
       status: "planned",
       vehicle: {
         title: "Geplant",
         iconUrl: "/img/cars/planned-icon.svg",
-        description: "Geplant \u00b7 Baestenhardt (Don Bosco)",
+        description: "Geplant \u00b7 Bästenhardt (Don Bosco)",
       },
     },
   ];
@@ -69,7 +69,7 @@
 
     const canvasContainer = map.getCanvasContainer();
     canvasContainer.tabIndex = 0;
-    canvasContainer.setAttribute("aria-label", "Karte mit Stellplaetzen");
+    canvasContainer.setAttribute("aria-label", "Karte mit Stellplätzen");
 
     canvasContainer.addEventListener("mousedown", () => {
       canvasContainer.focus();

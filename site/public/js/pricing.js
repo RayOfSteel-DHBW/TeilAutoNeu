@@ -105,7 +105,7 @@
     );
 
     var usageItems = [
-      { label: "Buchungsgebuehr", value: data.usage.booking_fee },
+      { label: "Buchungsgebühr", value: data.usage.booking_fee },
       { label: "Zeittarif", value: data.usage.time_rate_example },
       { label: "Kilometertarif", value: data.usage.km_rate_example }
     ];
@@ -140,7 +140,7 @@
     );
     container.appendChild(
       el("p", { className: "mt-2 text-brand-ink/80" },
-        "Aktuell bieten wir zwei Klassen an. Groessere Fahrzeuge sind ueber Quernutzung verfuegbar (siehe unten)."
+        "Aktuell bieten wir zwei Klassen an. Größere Fahrzeuge sind über Quernutzung verfügbar (siehe unten)."
       )
     );
 
@@ -189,7 +189,7 @@
     );
     container.appendChild(
       el("p", { className: "mt-2 text-brand-ink/80" },
-        "Wie viel kostet eine typische Fahrt ungefaehr? Zwei Beispiele zur Orientierung."
+        "Wie viel kostet eine typische Fahrt ungefähr? Zwei Beispiele zur Orientierung."
       )
     );
 
@@ -226,7 +226,7 @@
     clear(container);
 
     container.appendChild(
-      el("h2", { className: "text-2xl font-display" }, "Groessere Fahrzeuge")
+      el("h2", { className: "text-2xl font-display" }, "Größere Fahrzeuge")
     );
     container.appendChild(
       el("p", { className: "mt-3 text-brand-ink/80" }, data.quernutzung)
@@ -287,7 +287,7 @@
     .catch(function () {
       var fallback =
         "Preisinformationen konnten nicht geladen werden. " +
-        "Bitte versuchen Sie es spaeter erneut oder kontaktieren Sie uns telefonisch.";
+        "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch.";
       Object.keys(sections).forEach(function (key) {
         if (sections[key]) showError(sections[key], fallback);
       });
