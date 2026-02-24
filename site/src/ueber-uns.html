@@ -1,13 +1,120 @@
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teilAuto Moessingen</title>
-  </head>
-  <body>
-    <main>
-      <h1>Seite</h1>
-    </main>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Ueber uns | teilAuto Moessingen{% endblock title %}
+
+{% block head %}
+  <meta name="description" content="teilAuto Moessingen: Seit ueber zwei Jahrzehnten betreiben Ralf und Ursula Stahl ein persoenliches Carsharing fuer ueber 60 Mitglieder im Steinlachtal.">
+  <meta property="og:title" content="Ueber uns | teilAuto Moessingen">
+  <meta property="og:description" content="Carsharing in Moessingen mit persoenlicher Betreuung. Gegruendet von Ralf und Ursula Stahl, Teil des BCS/DACHverband-Netzwerks.">
+  <meta property="og:image" content="/img/og-image.png">
+  <meta property="og:url" content="https://www.teilautomoessingen.de/ueber-uns.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+{% endblock head %}
+
+{% block main %}
+<section class="space-y-10">
+
+  <div class="max-w-3xl">
+    <h1 class="text-3xl font-display sm:text-4xl">Ueber uns</h1>
+    <p class="mt-4 text-lg text-brand-ink/80">
+      teilAuto Moessingen ist kein Grossanbieter und keine App &ndash; sondern ein
+      persoenlich gefuehrtes Carsharing, das Ralf und Ursula Stahl seit mehr als
+      zwei Jahrzehnten fuer die Menschen im Steinlachtal betreiben.
+    </p>
+  </div>
+
+  <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <h2 class="text-2xl font-display">Unsere Geschichte</h2>
+    <p class="mt-4 text-brand-ink/80">
+      Die Idee entstand um das Jahr 2000 als private Initiative: Warum sollten
+      mehrere Haushalte in Moessingen jeweils ein eigenes Auto kaufen, wenn ein
+      gemeinsam genutztes Fahrzeug den allermeisten Beduerfnissen genuegt?
+      Anfangs waren wir eng mit dem Verein Oekostadt Tuebingen verbunden &ndash;
+      einem Zusammenschluss, der nachhaltige Mobilitaetskonzepte in der Region
+      foerdert.
+    </p>
+    <p class="mt-4 text-brand-ink/80">
+      Was mit einem einzigen Auto begann, ist inzwischen zu einem kleinen, aber
+      stabilen Angebot mit mehreren Fahrzeugen gewachsen. Und die Grundidee ist
+      dieselbe geblieben: Ein Auto, das gut ausgelastet ist, braucht niemand
+      allein zu besitzen.
+    </p>
+  </div>
+
+  <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <h2 class="text-2xl font-display">Wie wir arbeiten</h2>
+    <p class="mt-4 text-brand-ink/80">
+      teilAuto Moessingen wird im Nebenerwerb betrieben &ndash; mit viel
+      persoenlichem Einsatz und ohne das Overhead eines grossen Unternehmens.
+      Das bedeutet: Sie erreichen uns direkt, Buchungen laufen telefonisch, und
+      wenn es eine Frage gibt, sprechen Sie mit jemandem, der die Fahrzeuge und
+      die Mitglieder kennt.
+    </p>
+    <p class="mt-4 text-brand-ink/80">
+      Aktuell zaehlen wir ueber 60 Mitglieder &ndash; eine Gemeinschaft, die
+      sich das Teilen von Fahrzeugen bewusst als Alternative zum Zweitauto
+      entschieden hat. Wir betreiben seit ueber zwei Jahrzehnten ein Modell,
+      bei dem weniger Autos besser genutzt werden.
+    </p>
+    <p class="mt-3 text-sm text-brand-ink/60">
+      Hinweis: Die genaue Mitgliederzahl wird vor dem Launch durch den Inhaber
+      bestaetigt.
+    </p>
+  </div>
+
+  <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8">
+    <h2 class="text-2xl font-display">Mitglied einer groesseren Gemeinschaft</h2>
+    <p class="mt-4 text-brand-ink/80">
+      teilAuto Moessingen ist Mitglied im Bundesverband CarSharing (BCS) und
+      damit Teil des DACHverband-Netzwerks. Das bedeutet fuer unsere Mitglieder
+      mehr als nur die zwei lokalen Fahrzeuge: Ueber die sogenannte Quernutzung
+      koennen Sie bei Bedarf auf ueber 200 Partnerfahrzeuge in der Region und
+      deutschlandweit zurueckgreifen.
+    </p>
+    <p class="mt-4 text-brand-ink/80">
+      Gemeinsam genutzte Fahrzeuge, die gut ausgelastet sind, ersetzen viele
+      Privatautos. Das ist keine Ideologie &ndash; das ist der praktische Kern
+      dessen, was wir seit Jahrzehnten tun.
+    </p>
+    <div class="mt-6">
+      <a
+        href="fahrzeuge.html"
+        class="inline-flex items-center gap-2 rounded-full bg-brand-primary/10 px-4 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary/20"
+        data-track="nav-cta"
+        data-track-label="quernutzung-von-ueber-uns"
+      >
+        Mehr zur Quernutzung auf der Fahrzeuge-Seite
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="rounded-3xl border-2 border-brand-primary bg-brand-primary/5 p-6 text-center shadow-sm sm:p-8"
+  >
+    <p class="text-lg font-display text-brand-ink">
+      Ueberzeugt? Melden Sie sich bei uns:
+    </p>
+    <p class="mt-3 text-3xl font-display text-brand-primary sm:text-4xl">
+      <a
+        href="tel:+497473922202"
+        class="hover:underline"
+        data-track="phone-cta"
+        data-track-page="ueber-uns"
+      >07473-922202</a>
+    </p>
+    <p class="mt-2 text-sm text-brand-ink/70">Mo&ndash;Fr 09:00&ndash;12:00 Uhr</p>
+    <p class="mt-4">
+      <a
+        href="mitglied-werden.html"
+        class="inline-flex items-center gap-2 rounded-full border border-brand-primary px-4 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary hover:text-white"
+        data-track="nav-cta"
+        data-track-label="mitglied-werden-von-ueber-uns"
+      >
+        Wie die Mitgliedschaft funktioniert
+      </a>
+    </p>
+  </div>
+
+</section>
+{% endblock main %}
