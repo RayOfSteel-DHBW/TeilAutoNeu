@@ -9,6 +9,7 @@ endblock title %}
 {% endblock head %}
 
 {% block main %}
+<div data-scroll-milestone="hero-bottom" aria-hidden="true" class="sr-only"></div>
 <section
   class="relative overflow-hidden rounded-3xl border border-brand-muted bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12"
 >
@@ -32,6 +33,8 @@ endblock title %}
         <a
           class="inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-accent"
           href="mitglied-werden.html"
+          data-track="nav-cta"
+          data-track-label="mehr-erfahren"
           >Mehr erfahren</a
         >
         <span class="text-sm text-brand-ink/70"
@@ -80,6 +83,7 @@ endblock title %}
   </div>
 </section>
 
+<div data-scroll-milestone="benefits-section" aria-hidden="true" class="sr-only"></div>
 <section class="mt-12">
   <div class="grid gap-6 md:grid-cols-3">
     <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
@@ -106,6 +110,7 @@ endblock title %}
   </div>
 </section>
 
+<div data-scroll-milestone="cta-visible" aria-hidden="true" class="sr-only"></div>
 <section
   class="mt-12 rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8"
 >
@@ -119,6 +124,8 @@ endblock title %}
     <a
       class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-primary"
       href="mitglied-werden.html"
+      data-track="nav-cta"
+      data-track-label="mehr-zur-mitgliedschaft"
     >
       Mehr zur Mitgliedschaft
       <span aria-hidden="true">→</span>
