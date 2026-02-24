@@ -34,7 +34,7 @@ Progress: [█████████████████░░░] 85%
 | 3     | 3     | 0.22h | 0.07h    |
 | 4     | 3     | 0.18h | 0.06h    |
 | 5     | 3     | 0.0h  | -        |
-| 6     | 2     | 0.07h | 0.04h    |
+| 6     | 3     | 0.12h | 0.04h    |
 
 **Recent Trend:**
 
@@ -55,6 +55,10 @@ Recent decisions affecting current work:
 - Pricing page leads with value framing (neighbours sharing costs), disclaimer at bottom.
 - All content is first-draft for customer review, not final.
 - Missing pricing values (deposit, annual fee, booking fee) labeled "noch offen" with amber badge.
+- Nav restructured to 4 items (Preise | Fahrzeuge | Fuer Firmen | Ueber uns); Nachhaltigkeit, Startseite, Mitglied werden removed from primary nav.
+- Fuer Firmen Kaution amount for legal entities marked "noch offen" (amber badge) — owner to confirm before launch.
+- Mitgliederzahl stated as "ueber 60 Mitglieder" with editorial note for owner verification before launch.
+- Sustainability distributed: About (operations model), Fahrzeuge (Mokka E note), Fuer Firmen (practical CO2 benefit) — no standalone page.
 - Impressum cites §5 DDG (Digitale-Dienste-Gesetz), not the repealed §5 TMG. No ODR link (platform shut down July 2025).
 - Datenschutzerklaerung covers STRATO server logs + OpenFreeMap tile requests only. Forward-looking V2 Google Analytics section included (consent-gated). STRATO log retention not speculated — deferred to their own DPA.
 - Handelsregister number and USt-IdNr marked as "noch offen" in amber for owner to complete before launch.
@@ -70,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 06-02-PLAN.md
+Stopped at: Completed 06-01-PLAN.md (trust content pages, nav restructure)
 Resume file: None
