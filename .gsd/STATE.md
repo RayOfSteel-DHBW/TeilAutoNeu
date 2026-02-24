@@ -10,11 +10,11 @@ See: .gsd/PROJECT.md (updated 2026-02-08)
 ## Current Position
 
 Phase: 6 of 6 (Trust, Legal, SEO & Quality) — In Progress
-Plan: 2 of 4 in current phase
-Status: 06-02 complete; 06-03 (SEO/quality sweep) is next
-Last activity: 2026-02-24 - Completed 06-02-PLAN.md (Impressum + Datenschutz)
+Plan: 3 of 4 in current phase
+Status: 06-03 complete; 06-04 (deployment) is next
+Last activity: 2026-02-24 - Completed 06-03-PLAN.md (SEO meta tags, OG image, quality sweep)
 
-Progress: [█████████████████░░░] 85%
+Progress: [██████████████████░░] 90%
 
 ## Performance Metrics
 
@@ -34,11 +34,11 @@ Progress: [█████████████████░░░] 85%
 | 3     | 3     | 0.22h | 0.07h    |
 | 4     | 3     | 0.18h | 0.06h    |
 | 5     | 3     | 0.0h  | -        |
-| 6     | 3     | 0.12h | 0.04h    |
+| 6     | 4     | 0.20h | 0.05h    |
 
 **Recent Trend:**
 
-- Last 5 plans: 05-03 (1 min), 05-02 (1 min), 05-01 (1 min), 04-03 (3 min), 04-02 (4 min)
+- Last 5 plans: 06-03 (5 min), 06-02 (2 min), 06-01 (3 min), 05-03 (1 min), 05-02 (1 min)
 - Trend: Fast execution, content and UI-driven plans
 
 ## Accumulated Context
@@ -62,6 +62,9 @@ Recent decisions affecting current work:
 - Impressum cites §5 DDG (Digitale-Dienste-Gesetz), not the repealed §5 TMG. No ODR link (platform shut down July 2025).
 - Datenschutzerklaerung covers STRATO server logs + OpenFreeMap tile requests only. Forward-looking V2 Google Analytics section included (consent-gated). STRATO log retention not speculated — deferred to their own DPA.
 - Handelsregister number and USt-IdNr marked as "noch offen" in amber for owner to complete before launch.
+- OG image created as solid-green 1200x630 PNG — owner may supply designed version with logo/text.
+- mokka.png and adam.png replaced with CSS placeholder cards — owner must supply rights-clear photos before launch (see 06-MISSING-IMAGES.md).
+- Legal page phone links intentionally not given data-track — they are contact information, not promotional CTAs.
 
 ### Pending Todos
 
@@ -74,5 +77,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 06-01-PLAN.md (trust content pages, nav restructure)
+Stopped at: Completed 06-03-PLAN.md (SEO meta tags, OG image, quality sweep, tracking hooks)
 Resume file: None
