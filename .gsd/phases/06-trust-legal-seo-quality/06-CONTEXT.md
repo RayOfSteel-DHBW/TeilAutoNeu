@@ -26,17 +26,17 @@ Deliver the trust-building content pages (About, Business, Quernutzung), legally
 - **Impressum**: Use known data (teilAuto Moessingen e.K., Ralf Stahl, 07473-922202) plus placeholders marked "noch offen" for missing details (address, Handelsregister number, etc.). Owner completes before launch.
 - **Datenschutzerklaerung**: Minimal but DSGVO-compliant. Cover: responsible party, data subject rights (Art. 13-15), server logs from hosting, MapLibre/OpenFreeMap tile loading (external service). Short, honest, matching the simple site.
 
-### Analytics & tracking
+### Analytics & tracking (LOCKED)
 
-- **V1: No tracking code shipped.** Design pages with future tracking in mind — semantic IDs, data attributes on CTAs, FAQ toggles, scroll milestone markers.
-- **Future approach: Cookie-based analytics with consent banner.** The Datenschutzerklaerung should include a forward-looking section covering planned cookie-based analytics so the privacy policy is ready when tracking goes live.
-- **Consent banner**: Not implemented in V1, but the privacy policy text should already describe the consent mechanism planned for later.
+- **V1: No tracking script.** Design pages with future tracking in mind — semantic IDs, data attributes on CTAs, FAQ toggles, scroll milestone markers. Zero analytics code ships.
+- **V2: Google Analytics with mandatory consent banner.** Cookie-based. The consent banner MUST load before any GA script executes. No "cookieless" or "no-banner" alternative — this is final.
+- **Datenschutzerklaerung**: Must include a forward-looking section describing the planned cookie-based analytics and consent mechanism, so the privacy policy is already correct when GA goes live in V2.
 
 ### SEO & local search
 
 - **Local targeting**: Primary keyword "Carsharing Moessingen." Secondary: Teilorte (Oeschingen, Talheim, Baestenhardt, Belsen, possibly Ofterdingen). Most Teilorte feel addressed when "Moessingen" is mentioned — only distinguish where relevant (e.g., vehicle locations: "Moessinger Kernstadt" vs "Teilorte").
 - **Meta descriptions**: Sachlich + local keywords. Professional German, informative tone. E.g., "Carsharing in Moessingen — flexibel, guenstig, nachhaltig. teilAuto: Ihr Carsharing vor Ort."
-- **Open Graph**: Use existing teilAuto logo (vectorized) for OG image. Keep the established logo from the student version.
+- **Open Graph**: Use talogo.svg as the design source; export a static 1200x630 PNG for og:image (social platforms don't reliably render SVG). Keep the established logo from the student version.
 - **Semantic HTML**: Fix as we go on Phase 6 pages. ARIA labels are HIGH PRIORITY — a team member (Ursula Stahl, bookings/admin) has a visual impairment and uses the site. Screen-reader support is a genuine usability need, not just a checkbox. Full accessibility sweep deferred to a later roadmap item but ARIA labels on key interactions should be thorough now.
 
 ### Claude's Discretion
@@ -55,7 +55,7 @@ Deliver the trust-building content pages (About, Business, Quernutzung), legally
 - Student-project Ueber uns content was written with the owners — use it as the primary content source, rewrite for our system
 - Student-project Fuer Firmen content (4 benefits structure) as starting point
 - Quernutzung should make the Fahrzeuge page feel bigger than "just 2 cars" — frame it as local fleet + regional network access
-- The logo from the student version (talogo.svg) should be preserved and used in OG images
+- The logo from the student version (talogo.svg) should be preserved; use it as source for a static PNG OG image
 - Sustainability messaging example: on Fahrzeuge, the Mokka E is electric — that's a natural green touchpoint without preaching
 
 </specifics>
@@ -64,8 +64,7 @@ Deliver the trust-building content pages (About, Business, Quernutzung), legally
 ## Deferred Ideas
 
 - Full site accessibility audit (beyond ARIA labels on Phase 6 pages) — future roadmap item
-- Actual analytics implementation (Matomo, Google Analytics, etc.) — V2
-- Cookie consent banner UI — V2 (when analytics goes live)
+- Google Analytics implementation + cookie consent banner UI — V2
 - Structured data / JSON-LD for local business — could improve Google Maps/search presence, consider for V2
 
 </deferred>

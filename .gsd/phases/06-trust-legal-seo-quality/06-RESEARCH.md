@@ -22,10 +22,10 @@
 - Impressum: Use known data (teilAuto Moessingen e.K., Ralf Stahl, 07473-922202) plus "noch offen" placeholders for missing details (address, Handelsregister number, etc.).
 - Datenschutzerklaerung: Minimal but DSGVO-compliant. Cover: responsible party, data subject rights (Art. 13-15), server logs from hosting, MapLibre/OpenFreeMap tile loading. Short, honest.
 
-**Analytics & tracking:**
-- V1: No tracking code shipped. Design pages with future tracking in mind — semantic IDs, data attributes on CTAs, FAQ toggles, scroll milestone markers.
-- Future: Cookie-based analytics with consent banner. Datenschutzerklaerung must include forward-looking section covering planned cookie-based analytics.
-- Consent banner NOT implemented in V1; privacy policy text should already describe consent mechanism for later.
+**Analytics & tracking (LOCKED):**
+- V1: No tracking script. Design pages with future tracking in mind — semantic IDs, data attributes on CTAs, FAQ toggles, scroll milestone markers. Zero analytics code ships.
+- V2: Google Analytics with mandatory consent banner. Cookie-based. Consent banner MUST load before any GA script executes. No cookieless alternative — this is final.
+- Datenschutzerklaerung must include forward-looking section describing planned cookie-based GA analytics and consent mechanism.
 
 **SEO & local search:**
 - Local targeting: Primary keyword "Carsharing Moessingen." Secondary: Oeschingen, Talheim, Baestenhardt, Belsen.
@@ -44,8 +44,7 @@
 ### Deferred Ideas (OUT OF SCOPE)
 
 - Full site accessibility audit (beyond ARIA labels on Phase 6 pages)
-- Actual analytics implementation (Matomo, Google Analytics, etc.) — V2
-- Cookie consent banner UI — V2
+- Google Analytics implementation + cookie consent banner UI — V2
 - Structured data / JSON-LD for local business — V2
 </user_constraints>
 
@@ -197,21 +196,31 @@ The legal basis changed from §5 TMG to §5 DDG on May 14, 2024. Do NOT referenc
 
 **Key rule:** Placeholders must be clearly marked as "noch offen" for owner to complete before launch. No fields should be silently omitted — mark them explicitly.
 
-### Pattern 3: Minimal Datenschutzerklärung Sections
+### Pattern 3: Datenschutzerklärung — Art. 13 DSGVO Checklist
 
-For this static site with no forms, no analytics V1, only server logs + external map tiles:
+For this static site with no forms, no analytics V1, only server logs + external map tiles.
 
-**Required sections (Art. 13 DSGVO):**
-1. Verantwortlicher (responsible party — same data as Impressum)
-2. Datenerfassung auf unserer Website
-   - Server-Logfiles (hosting: STRATO) — IP address, browser, timestamp, referrer
-   - Kartendaten (MapLibre + OpenFreeMap tiles) — connection data sent to OpenFreeMap servers when map loads
-3. Ihre Rechte (data subject rights — Art. 15-22 DSGVO): Auskunft, Berichtigung, Loeschung, Einschraenkung, Widerspruch, Datenportabilitaet, Beschwerde bei Aufsichtsbehoerde
-4. Forward-looking analytics section: "Fuer zuenftigen Einsatz von Webanalyse-Tools ist eine Cookie-Einwilligung geplant" (design for future cookie consent — V2)
+**Art. 13 DSGVO mandatory disclosures (checklist):**
 
-**OpenFreeMap disclosure:** OpenFreeMap explicitly does not log IP addresses by default (verified from their privacy policy), uses no cookies, and no user database. However, tile requests still constitute a data transfer to a third-party server. Disclose as: connection data (Verbindungsdaten) sent to OpenFreeMap servers when loading the interactive map; no cookies or tracking by OpenFreeMap.
+1. **Verantwortlicher + Kontaktdaten** — Name, address, phone, email of the controller (same as Impressum data)
+2. **Zwecke und Rechtsgrundlage** — Purpose and legal basis for each processing activity:
+   - Server-Logfiles: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Betrieb und Sicherheit)
+   - OpenFreeMap tile loading: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Kartendarstellung)
+   - Future Google Analytics: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung via Cookie-Banner — V2)
+3. **Empfaenger / Drittanbieter** — Recipients of personal data:
+   - STRATO AG (hosting provider, server logs)
+   - OpenFreeMap (tile server, connection data)
+4. **Drittlandtransfer** — Whether data is transferred outside EU/EEA. OpenFreeMap servers: disclose server location if known, otherwise state that connection data may be processed outside the EEA and note applicable safeguards
+5. **Speicherdauer** — Retention period per processing activity. Server logs: state hosting provider's retention policy. Do NOT speculate on exact durations without confirmed source — use "gemaess den Aufbewahrungsfristen des Hosting-Anbieters"
+6. **Betroffenenrechte** — Data subject rights (Art. 15-22 DSGVO): Auskunft, Berichtigung, Loeschung, Einschraenkung, Widerspruch, Datenportabilitaet
+7. **Widerruf der Einwilligung** — Right to withdraw consent (relevant for future GA cookie consent)
+8. **Beschwerderecht** — Right to lodge complaint with supervisory authority (Landesbeauftragter fuer Datenschutz Baden-Wuerttemberg)
+9. **Geplante Webanalyse** — Forward-looking section: Google Analytics planned for V2, cookie-based, consent banner mandatory before any GA script loads
 
-**STRATO server logs:** Standard German hosting — logs include IP address, timestamp, referrer, browser. Retention typically 6 months. Mention in Datenschutzerklaerung.
+**Site-specific disclosures:**
+
+- **OpenFreeMap:** Does not log IP addresses by default (verified from their privacy policy), uses no cookies, no user database. However, tile requests still constitute a data transfer to a third-party server under DSGVO. Disclose as: Verbindungsdaten sent to OpenFreeMap servers when loading the interactive map; no cookies or tracking by OpenFreeMap.
+- **STRATO server logs:** IP address, timestamp, referrer, browser. Retention period: defer to STRATO's own data processing terms — do not state a specific duration without STRATO source confirmation.
 
 ### Pattern 4: Tracking Data Attributes (LEGAL-03 / TRACK-01)
 
@@ -299,9 +308,25 @@ H2: Besonderes für Unternehmen
 [Phone CTA block]
 ```
 
+### Pattern 8: Media Compliance Gate (UX-03)
+
+Every image file shipped in the site MUST have an entry in an asset ledger. The quality sweep plan must produce or verify this ledger before Phase 6 is marked complete.
+
+**Required asset ledger format** (can be a markdown table in the quality sweep SUMMARY or a standalone file):
+
+| File | Source | License | Attribution | Proof |
+|---|---|---|---|---|
+| talogo.svg | Owner-supplied (student project, co-created with Ralf Stahl) | Owner permission | None required | Co-authored with business owner |
+| og-image.png | Generated from talogo.svg | Derived from owner asset | None required | — |
+| mokka.png | **COPYRIGHT-FLAGGED** | Unknown — HIGH risk | **Must replace or document** | See COPYRIGHT-FLAGS.md |
+| adam.png | **COPYRIGHT-FLAGGED** | Unknown — HIGH risk | **Must replace or document** | See COPYRIGHT-FLAGS.md |
+| bergrutsch.jpg | **COPYRIGHT-FLAGGED** | Unknown — HIGH risk | **Must replace or document** | See COPYRIGHT-FLAGS.md |
+
+**Rule:** No image may ship without a ledger entry. Flagged images must be resolved as: (a) owner-supplied replacement, (b) AI-generated replacement, or (c) CSS placeholder card with the image removed. The plan must force this resolution — "address later" is not acceptable for UX-03.
+
 ### Anti-Patterns to Avoid
 
-- **Referencing §5 TMG in Impressum:** The TMG was replaced by the DDG on 14 May 2024. Reference §5 DDG. Risk of Abmahnung.
+- **Referencing §5 TMG in Impressum:** The TMG was replaced by the DDG on 14 May 2024. Reference §5 DDG. Risk of Abmahnung. **NOTE: REQUIREMENTS.md (LEGAL-01) still says "§5 TMG" — this is outdated. Implementation MUST use §5 DDG regardless of what REQUIREMENTS.md says. This is a non-negotiable hard rule.**
 - **ODR platform link:** The EU ODR platform was permanently shut down on 20 July 2025. Do NOT add an ODR link to the Impressum.
 - **Copying generic Datenschutzerklärung templates verbatim:** Must be specific to this site's actual data processing (STRATO hosting, OpenFreeMap tiles). Generic templates mention services not used here.
 - **Making Datenschutzerklärung unreachable:** Must be reachable within one click from every page — footer link already exists in base.html footer.
@@ -445,25 +470,26 @@ H2: Besonderes für Unternehmen
 {% endblock main %}
 ```
 
-### Datenschutzerklärung Minimal Structure (key sections)
+### Datenschutzerklärung Structure (Art. 13 compliant)
 
 ```html
-<!-- Section: Verantwortlicher -->
+<!-- 1. Verantwortlicher + Kontakt -->
 <h2>Verantwortlicher</h2>
 <p>teilAuto Moessingen e.K., Inhaber Ralf Stahl, [Adresse], 72116 Moessingen</p>
 <p>Kontakt: 07473-922202, info@teilautomoessingen.de</p>
 
-<!-- Section: Server-Logfiles (STRATO hosting) -->
+<!-- 2. Zwecke + Rechtsgrundlage: Server-Logfiles -->
 <h2>Server-Logfiles</h2>
 <p>
   Beim Aufruf unserer Website werden durch den Hosting-Anbieter (STRATO AG)
   automatisch Informationen in Server-Logfiles gespeichert: IP-Adresse,
   Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browser und Betriebssystem.
   Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
-  Betrieb und Sicherheit der Website). Speicherdauer: bis zu 6 Monate.
+  Betrieb und Sicherheit der Website).
+  Speicherdauer: gemaess den Aufbewahrungsfristen des Hosting-Anbieters.
 </p>
 
-<!-- Section: Kartenintegration (OpenFreeMap via MapLibre) -->
+<!-- 3. Empfaenger: Kartenintegration (OpenFreeMap via MapLibre) -->
 <h2>Interaktive Karte (OpenFreeMap)</h2>
 <p>
   Auf der Seite "Fahrzeuge" verwenden wir die Open-Source-Bibliothek MapLibre GL JS
@@ -474,19 +500,26 @@ H2: Besonderes für Unternehmen
   Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
 </p>
 
-<!-- Section: Ihre Rechte (data subject rights) -->
+<!-- 4. Betroffenenrechte -->
 <h2>Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16),
   Loeschung (Art. 17), Einschraenkung der Verarbeitung (Art. 18),
-  Datenuebertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO).
-  Beschwerden richten Sie an die zustaendige Datenschutzaufsichtsbehoerde.</p>
+  Datenuebertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO).</p>
+<p>Soweit die Verarbeitung auf Ihrer Einwilligung beruht, koennen Sie
+  diese jederzeit mit Wirkung fuer die Zukunft widerrufen.</p>
 
-<!-- Forward-looking analytics section -->
+<!-- 5. Beschwerderecht -->
+<h2>Beschwerderecht</h2>
+<p>Sie haben das Recht, sich bei der zustaendigen Aufsichtsbehoerde zu beschweren:
+  Landesbeauftragter fuer den Datenschutz und die Informationsfreiheit
+  Baden-Wuerttemberg.</p>
+
+<!-- 6. Geplante Webanalyse (V2) -->
 <h2>Geplante Webanalyse (kuenftig)</h2>
 <p>
-  Fuer eine spaetere Version dieser Website ist der Einsatz eines
-  DSGVO-konformen Webanalyse-Tools geplant. Die Nutzung erfolgt nur
-  nach Ihrer ausdruecklichen Einwilligung ueber ein Cookie-Banner.
+  Fuer eine spaetere Version dieser Website ist der Einsatz von Google Analytics
+  geplant. Die Nutzung erfolgt nur nach Ihrer ausdruecklichen Einwilligung
+  ueber ein Cookie-Banner (Art. 6 Abs. 1 lit. a DSGVO).
   Derzeit werden keine Analyse-Cookies gesetzt und kein Nutzerverhalten aufgezeichnet.
 </p>
 ```
@@ -557,23 +590,12 @@ H2: Besonderes für Unternehmen
 
 1. **Owner-supplied or AI-generated images for vehicles**
    - What we know: adam.png and mokka.png are copyright-flagged (HIGH risk per COPYRIGHT-FLAGS.md)
-   - What's unclear: Whether owners have supplied replacement photos; AI-generated car images are permissible
-   - Recommendation: Phase 6 plan must force a resolution — either (a) owners supply photos before plan executes, (b) CSS placeholder cards replace image slots, or (c) AI-generated images are used. Plan should implement placeholder cards as fallback so UX-03 is satisfied regardless.
+   - What's unclear: Whether owners have supplied replacement photos
+   - Resolution required: Phase 6 plan must force a resolution — either (a) owners supply photos before plan executes, (b) CSS placeholder cards replace image slots, or (c) AI-generated images are used. Plan should implement placeholder cards as fallback so UX-03 is satisfied regardless. See Pattern 8 (Media Compliance Gate).
 
 2. **Exact Impressum address and Handelsregister number**
-   - What we know: Address is Dreifürstensteinstraße 8/1, 72116 Mössingen (from references/EXTRACTED.md — the vehicle parking location also lists this as Ralf Stahl's address). Handelsregister number is unknown.
-   - What's unclear: Whether the business address shown in references is current and correct for the Impressum
-   - Recommendation: Use the known address from references with "noch offen" for the Handelsregister number. Owner must complete this before launch. Plan should mark these clearly.
-
-3. **Nachhaltigkeit page disposition**
-   - What we know: Page is removed from nav; file currently has only stub content
-   - What's unclear: Should the file be deleted (risk of 404 for anyone who has the URL) or kept as a redirect/stub
-   - Recommendation: Keep nachhaltig.html as a stub that redirects to index.html or shows a short "Diese Seite ist nicht mehr verfügbar — Informationen zu Nachhaltigkeit finden Sie auf unserer Startseite" message. This avoids 404s and satisfies QUAL-05.
-
-4. **"Für Firmen" vs "Geschäftskunden" naming**
-   - What we know: Context decision says nav should say "Für Firmen"; the file is `geschaeftskunden.html`
-   - What's unclear: Whether the filename should be changed to `fuer-firmen.html` or the nav just displays "Für Firmen" while keeping the filename
-   - Recommendation: Keep `geschaeftskunden.html` as the filename (renaming would create links to update everywhere). Display "Für Firmen" as the nav label text. Low priority rename.
+   - What we know: Address is Dreifuerstensteinstrasse 8/1, 72116 Moessingen (from references/EXTRACTED.md). Handelsregister number is unknown.
+   - Resolution required: Use the known address from references. Mark Handelsregister number as "noch offen". Owner must complete before launch.
 
 ---
 
@@ -595,7 +617,6 @@ H2: Besonderes für Unternehmen
 
 ### Tertiary (LOW confidence — flags for validation)
 - [steuertipps.de DDG/TMG transition](https://www.steuertipps.de/selbststaendigkeit/vom-tmg-zum-ddg-diese-angabe-muss-auf-der-internetseite-geaendert-werden) — confirms TMG→DDG transition but is secondary legal source; validated by official law text
-- STRATO server log retention period (6 months) — standard German hosting practice, STRATO-specific documentation not directly checked; treat as conservative estimate
 
 ---
 
@@ -604,7 +625,7 @@ H2: Besonderes für Unternehmen
 **Confidence breakdown:**
 - Standard Stack: HIGH — no new libraries; existing Tera/Tailwind system confirmed
 - Legal (§5 DDG): HIGH — verified against official gesetze-im-internet.de text; DDG transition confirmed by IHK and multiple legal sources
-- Legal (DSGVO/Datenschutz): MEDIUM — Art. 13 requirements confirmed; site-specific OpenFreeMap disclosure verified against their privacy page; STRATO log retention is conventional wisdom, not STRATO-specific documentation
+- Legal (DSGVO/Datenschutz): MEDIUM — Art. 13 requirements confirmed; site-specific OpenFreeMap disclosure verified against their privacy page; STRATO log retention deferred to hosting provider's own terms (no speculative duration)
 - SEO (meta/OG): HIGH — OG spec from ogp.me; character limits from multiple 2026 sources
 - ARIA/Accessibility: HIGH — MDN + web.dev as authoritative sources
 - Content patterns: HIGH — directly from codebase analysis and CONTEXT.md decisions
