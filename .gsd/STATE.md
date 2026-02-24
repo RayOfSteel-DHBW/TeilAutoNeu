@@ -9,12 +9,12 @@ See: .gsd/PROJECT.md (updated 2026-02-08)
 
 ## Current Position
 
-Phase: 5 of 6 (Fleet & Locations) — COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase 5 complete; ready to advance to Phase 6
-Last activity: 2026-02-10 - Completed 05-03-PLAN.md
+Phase: 6 of 6 (Trust, Legal, SEO & Quality) — In Progress
+Plan: 2 of 4 in current phase
+Status: 06-02 complete; 06-03 (SEO/quality sweep) is next
+Last activity: 2026-02-24 - Completed 06-02-PLAN.md (Impressum + Datenschutz)
 
-Progress: [████████████████░░░░] 79%
+Progress: [█████████████████░░░] 85%
 
 ## Performance Metrics
 
@@ -34,7 +34,7 @@ Progress: [████████████████░░░░] 79%
 | 3     | 3     | 0.22h | 0.07h    |
 | 4     | 3     | 0.18h | 0.06h    |
 | 5     | 3     | 0.0h  | -        |
-| 6     | 0     | 0.0h  | -        |
+| 6     | 2     | 0.07h | 0.04h    |
 
 **Recent Trend:**
 
@@ -55,6 +55,9 @@ Recent decisions affecting current work:
 - Pricing page leads with value framing (neighbours sharing costs), disclaimer at bottom.
 - All content is first-draft for customer review, not final.
 - Missing pricing values (deposit, annual fee, booking fee) labeled "noch offen" with amber badge.
+- Impressum cites §5 DDG (Digitale-Dienste-Gesetz), not the repealed §5 TMG. No ODR link (platform shut down July 2025).
+- Datenschutzerklaerung covers STRATO server logs + OpenFreeMap tile requests only. Forward-looking V2 Google Analytics section included (consent-gated). STRATO log retention not speculated — deferred to their own DPA.
+- Handelsregister number and USt-IdNr marked as "noch offen" in amber for owner to complete before launch.
 
 ### Pending Todos
 
@@ -66,6 +69,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-10
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-02-24
+Stopped at: Completed 06-02-PLAN.md
 Resume file: None
