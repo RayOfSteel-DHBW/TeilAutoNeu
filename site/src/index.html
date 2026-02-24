@@ -1,5 +1,14 @@
 {% extends "base.html" %} {% block title %}Startseite | teilAuto Moessingen{%
-endblock title %} {% block main %}
+endblock title %}
+
+{% block head %}
+  <meta name="description" content="Carsharing in Moessingen, Belsen, Talheim und Oeschingen. teilAuto: flexibel, lokal, guenstig. Teilen statt besitzen im Steinlachtal.">
+  <meta property="og:title" content="Startseite | teilAuto Moessingen">
+  <meta property="og:description" content="Carsharing in Moessingen, Belsen, Talheim und Oeschingen. Flexibel, lokal, guenstig. Teilen statt besitzen.">
+  <meta property="og:url" content="https://www.teilautomoessingen.de/index.html">
+{% endblock head %}
+
+{% block main %}
 <section
   class="relative overflow-hidden rounded-3xl border border-brand-muted bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12"
 >
