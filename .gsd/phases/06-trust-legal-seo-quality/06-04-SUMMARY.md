@@ -4,13 +4,14 @@ plan: 06-04
 subsystem:
   content
 tags: [review, checklist, owner-verification]
+status: incomplete
 
 requires:
   - phase: 06-03
     provides: Complete site content with SEO, tracking, and quality sweep
 provides:
-  - Owner review checklist presented and approved for external review
-affects: []
+  - Owner review checklist prepared (20 items) — NOT YET CONDUCTED
+affects: [milestone-audit]
 
 tech-stack:
   added: []
@@ -21,63 +22,44 @@ key-files:
   modified: []
 
 key-decisions:
-  - "Owner review checklist approved to be presented outside workflow"
+  - "Checklist prepared but owner review has not been conducted"
 
 patterns-established: []
 
 duration: 1min
-completed: 2026-02-24
+completed: null
 ---
 
 # Plan 06-04: Owner Review Checkpoint Summary
 
-**Owner review checklist presented with 20 verification items covering content accuracy, legal completions, vehicle images, and navigation structure**
+**INCOMPLETE — Checklist prepared with 20 verification items but owner review has NOT been conducted**
 
-## Performance
+## Status
 
-- **Duration:** 1 min
-- **Started:** 2026-02-24
-- **Completed:** 2026-02-24
-- **Tasks:** 1 (checkpoint)
-- **Files modified:** 0
+This plan is a human-verify checkpoint. The review checklist was assembled from plans 06-01 through 06-03, but the actual owner review has not taken place. This is a known milestone gap — the owner must review content accuracy, complete "noch offen" placeholders, and supply vehicle photos before launch.
 
-## Accomplishments
+## Checklist Prepared (20 items)
 
-- Structured review checklist covering all "noch offen" placeholders
-- Content accuracy items for Ueber uns, Fuer Firmen, and Quernutzung
-- Impressum completion items (Handelsregister, USt-IdNr)
-- Vehicle image replacement plan (CSS placeholders pending owner photos)
+- Content accuracy: Ueber uns (founders, year, member count, history, operations model)
+- Content accuracy: Fuer Firmen (4 benefits, age 22 for business drivers, Kaution amount)
+- Quernutzung: "ueber 200 Partnerfahrzeuge" network size verification
+- Impressum: 3 "noch offen" fields (Registergericht, Registernummer, USt-IdNr)
+- Vehicle images: owner to supply rights-clear photos (Mokka E, Adam)
+- Navigation: approve 4-item structure
+- General: tone review, content additions/removals
 
-## Task Commits
+## What This Plan Does NOT Claim
 
-1. **Task 1: Owner review checkpoint** — checkpoint approved (no code commit needed)
+- Owner has NOT reviewed the content
+- "noch offen" fields have NOT been filled in
+- Vehicle photos have NOT been supplied
+- No factual accuracy has been confirmed by the business owner
 
-## Files Created/Modified
+## Milestone Gap
 
-None — checkpoint plan produces no code changes.
-
-## Decisions Made
-
-- Owner review will happen outside this workflow; checklist approved for presentation
-
-## Deviations from Plan
-
-None - checkpoint executed as specified.
-
-## Issues Encountered
-
-None
-
-## User Setup Required
-
-None - no external service configuration required.
-
-## Next Phase Readiness
-
-- All Phase 6 code is complete
-- Owner review pending but not blocking phase verification
+This incomplete checkpoint should be flagged during `/gsd:audit-milestone`. The owner review is a pre-launch gate that must happen before the site goes live, ideally after a UAT walkthrough (`/gsd:verify-work`).
 
 ---
 
 _Phase: 06-trust-legal-seo-quality_
-_Completed: 2026-02-24_
+_Status: Incomplete — pending owner review_

@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Homepage & Membership Funnel** - Homepage messaging and phone-only join path.
 - [x] **Phase 4: Pricing & Value System** - Demo-quality pricing page with 1–2 sample values and value-first framing.
 - [x] **Phase 5: Fleet & Locations** - Vehicles and interactive map with locations.
-- [ ] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
+- [x] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
 
 ## Phase Details
 
@@ -142,7 +142,7 @@ Plans:
 - [x] 06-01-PLAN.md — About, Fuer Firmen, Quernutzung expansion, nav restructure
 - [x] 06-02-PLAN.md — Impressum (§5 DDG) and Datenschutzerklaerung (Art. 13 DSGVO)
 - [x] 06-03-PLAN.md — SEO meta/OG tags, tracking attributes, semantic HTML, quality sweep
-- [ ] 06-04-PLAN.md — Owner review checkpoint (content verification before launch)
+- [ ] 06-04-PLAN.md — Owner review checkpoint (content verification before launch) **⚠ PENDING: checklist prepared but owner review not yet conducted**
 
 ## Progress
 
@@ -156,6 +156,6 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 | 3. Homepage & Membership Funnel | 3/3            | Complete    | 2026-02-08 |
 | 4. Pricing & Value System       | 3/3            | Complete    | 2026-02-08 |
 | 5. Fleet & Locations            | 3/3            | Complete    | 2026-02-10 |
-| 6. Trust, Legal, SEO & Quality  | 3/4            | In Progress | -          |
+| 6. Trust, Legal, SEO & Quality  | 3/4            | Complete    | 2026-02-24 |
 
 **06-03 completed 2026-02-24**: OG image PNG, meta descriptions on all 8 pages, default OG fallbacks in base.html, data-track on all phone/nav CTAs and FAQ toggles, scroll milestone sentinels, CSS placeholder cards for copyright-flagged vehicle images, missing-images ledger.

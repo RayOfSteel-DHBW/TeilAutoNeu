@@ -5,16 +5,16 @@
 See: .gsd/PROJECT.md (updated 2026-02-08)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** Phase 6 - Trust, Legal, SEO & Quality (ready to plan/execute)
+**Current focus:** All 6 phases complete — v1.0 milestone ready for audit
 
 ## Current Position
 
-Phase: 6 of 6 (Trust, Legal, SEO & Quality) — In Progress
-Plan: 3 of 4 in current phase
-Status: 06-03 complete; 06-04 (deployment) is next
-Last activity: 2026-02-24 - Completed 06-03-PLAN.md (SEO meta tags, OG image, quality sweep)
+Phase: 6 of 6 (Trust, Legal, SEO & Quality) — COMPLETE
+Plan: 4 of 4 in current phase
+Status: All phases complete; v1.0 milestone ready for audit and closure
+Last activity: 2026-02-24 - Completed Phase 6 (Trust, Legal, SEO & Quality)
 
-Progress: [██████████████████░░] 90%
+Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
@@ -78,5 +78,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 06-03-PLAN.md (SEO meta tags, OG image, quality sweep, tracking hooks)
+Stopped at: Phase 6 complete — all v1.0 phases done
 Resume file: None
