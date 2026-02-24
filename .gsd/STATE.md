@@ -69,6 +69,7 @@ Recent decisions affecting current work:
 ### Pending Todos
 
 - PowerShell (pwsh) required to run npm build on Linux environments.
+- V2: Village interest email signup for expansion areas (Belsen, Oeschingen, Talheim) — see .gsd/todos/pending/2026-02-24-village-interest-email-signup-for-expansion-areas.md
 
 ### Blockers/Concerns
 
