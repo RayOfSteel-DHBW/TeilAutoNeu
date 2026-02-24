@@ -157,7 +157,7 @@ Plans:
 
 Plans:
 
-- [ ] 07-01: Find and replace all ASCII digraphs with UTF-8 umlauts across HTML and JS files
+- [x] 07-01: Find and replace all ASCII digraphs with UTF-8 umlauts across HTML and JS files
 
 ### Phase 8: Mobile Navigation & Responsive Layout
 
@@ -206,7 +206,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 | 4. Pricing & Value System                 | 3/3            | Complete    | 2026-02-08 |
 | 5. Fleet & Locations                      | 3/3            | Complete    | 2026-02-10 |
 | 6. Trust, Legal, SEO & Quality            | 3/4            | Complete    | 2026-02-24 |
-| 7. German Text Correction (Umlaut Fix)    | 0/1            | Pending     |            |
+| 7. German Text Correction (Umlaut Fix)    | 1/1            | Complete    | 2026-02-24 |
 | 8. Mobile Navigation & Responsive Layout  | 0/1            | Pending     |            |
 | 9. Content Accuracy & Dead Code Cleanup   | 0/1            | Pending     |            |
 | 10. Content Messaging & Feature Polish    | 0/2            | Pending     |            |
@@ -214,3 +214,14 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 **06-03 completed 2026-02-24**: OG image PNG, meta descriptions on all 8 pages, default OG fallbacks in base.html, data-track on all phone/nav CTAs and FAQ toggles, scroll milestone sentinels, CSS placeholder cards for copyright-flagged vehicle images, missing-images ledger.
 
 **Gap closure phases 7-10 added 2026-02-24**: Created from v1.0 milestone audit (29/51 satisfied). Addresses 19 requirement gaps, 4 integration issues, 4 broken E2E flows. TRACK-01 deferred to V2.
+
+**07-01 completed 2026-02-24**: Replaced ~280 ASCII digraph substitutions with UTF-8 umlauts across 15 files (8 HTML pages, 2 JS files, 1 JSON data file, 4 templates). Build verified.
+
+### Phase 11: Simplified Datenschutzerklaerung — clean privacy page with Strato mention and no-tracking transparency
+
+**Goal:** Replace current Datenschutzerklaerung — remove the "Geplante Webanalyse" section (no tracking exists yet), keep STRATO server logs and OpenFreeMap disclosures, lean into the no-tracking angle. Clean and honest.
+**Depends on:** Phase 6
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 11 to break down)

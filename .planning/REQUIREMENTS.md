@@ -63,7 +63,7 @@ Requirements for initial launch. Site acts as self-service information hub and m
 - [x] **UX-03**: All images copyright-clear (owner-supplied photos + AI-generated)
 - [x] **UX-04**: Consistent brand casing: "teilAuto" (not "Teilauto" or "TeilAuto")
 - [x] **UX-05**: Consistent phone number format: 07473-922202 (no private numbers)
-- [ ] **UX-06**: German copy with Sie-Ansprache, sachlich/freundlich tone
+- [x] **UX-06**: German copy with Sie-Ansprache, sachlich/freundlich tone
 - [x] **UX-07**: No moralizing, no "you shouldn't own a car" rhetoric, no poverty signals
 - [ ] **UX-08**: Homepage "works" for all 6 personas without explicit self-segmentation tiles
 
@@ -77,8 +77,8 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### Quality
 
-- [ ] **QUAL-01**: Correct German spelling and grammar throughout
-- [ ] **QUAL-02**: No typos (fix issues like "gegegeben," "Moblitätskonzept," "Ihrer→Ihre")
+- [x] **QUAL-01**: Correct German spelling and grammar throughout
+- [x] **QUAL-02**: No typos (fix issues like "gegegeben," "Moblitätskonzept," "Ihrer→Ihre")
 - [ ] **QUAL-03**: No claims about capabilities business doesn't have (24/7 support, app, free-floating, spontaneous returns, "completely paperless")
 - [x] **QUAL-04**: Content validated against 02/2022 usage handbook (abstracted for web)
 - [ ] **QUAL-05**: All links functional (no case-sensitive link bugs like "Preise.html")
@@ -168,7 +168,7 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | UX-03       | Phase 6  | Complete |
 | UX-04       | Phase 2  | Complete |
 | UX-05       | Phase 2  | Complete |
-| UX-06       | Phase 7  | Pending  |
+| UX-06       | Phase 7  | Complete |
 | UX-07       | Phase 2  | Complete |
 | UX-08       | Phase 10 | Pending  |
 | SEO-01      | Phase 9  | Pending  |
@@ -176,8 +176,8 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | SEO-03      | Phase 6  | Complete |
 | SEO-04      | Phase 6  | Complete |
 | TRACK-01    | Phase 6  | Deferred (V2) |
-| QUAL-01     | Phase 7  | Pending  |
-| QUAL-02     | Phase 7  | Pending  |
+| QUAL-01     | Phase 7  | Complete |
+| QUAL-02     | Phase 7  | Complete |
 | QUAL-03     | Phase 9  | Pending  |
 | QUAL-04     | Phase 4  | Complete |
 | QUAL-05     | Phase 9  | Pending  |
@@ -185,8 +185,8 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 **Coverage:**
 
 - v1 requirements: 51 total
-- Satisfied: 29 [x]
-- Pending (gap closure): 18
+- Satisfied: 32 [x]
+- Pending (gap closure): 15
 - Deferred: 2 (FOUND-03, TRACK-01)
 - Overridden: 1 (FEAT-01)
 - Unmapped: 0
