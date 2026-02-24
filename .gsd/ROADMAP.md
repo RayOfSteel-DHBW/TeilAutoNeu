@@ -135,14 +135,14 @@ Plans:
 3. All pages include meta descriptions, Open Graph tags, and semantic HTML with local SEO cues.
 4. Content quality checks pass: correct German, no false capability claims, working links, and copyright-clear images.
 
-**Plans**: TBD
+**Plans**: 4 plans (Wave 1: 06-01 + 06-02 parallel, Wave 2: 06-03, Wave 3: 06-04 checkpoint)
 
 Plans:
 
-- [ ] 06-01: About, business, sustainability, and Quernutzung content
-- [ ] 06-02: Legal pages and analytics concept
-- [ ] 06-03: SEO, semantic HTML, and quality sweep
-- [ ] 06-04: Present questions to teilAuto (content verification, verifying our direction is correct).
+- [ ] 06-01-PLAN.md — About, Fuer Firmen, Quernutzung expansion, nav restructure
+- [ ] 06-02-PLAN.md — Impressum (§5 DDG) and Datenschutzerklaerung (Art. 13 DSGVO)
+- [ ] 06-03-PLAN.md — SEO meta/OG tags, tracking attributes, semantic HTML, quality sweep
+- [ ] 06-04-PLAN.md — Owner review checkpoint (content verification before launch)
 
 ## Progress
 
@@ -156,4 +156,4 @@ Phases execute in numeric order: 1 -> 2 -> 2.1 -> 2.2 -> 3 -> 3.1 -> 4
 | 3. Homepage & Membership Funnel | 3/3            | Complete    | 2026-02-08 |
 | 4. Pricing & Value System       | 3/3            | Complete    | 2026-02-08 |
 | 5. Fleet & Locations            | 3/3            | Complete    | 2026-02-10 |
-| 6. Trust, Legal, SEO & Quality  | 0/TBD          | Not started | -          |
+| 6. Trust, Legal, SEO & Quality  | 0/4            | Not started | -          |
