@@ -9,20 +9,20 @@ See: .planning/PROJECT.md (updated 2026-02-08)
 
 ## Current Position
 
-Phase: 7 of 10 (German Text Correction - Umlaut Fix) — COMPLETE
+Phase: 8 of 10 (Mobile Nav & Responsive Layout) — COMPLETE
 Plan: 1 of 1 in current phase
-Status: Phase 7 complete; Phase 8 (Mobile Nav) and Phase 9 (Content Cleanup) ready
-Last activity: 2026-02-24 - Completed Phase 7 (German Text Correction)
+Status: Phase 8 complete; Phase 9 (Content Cleanup) and Phase 10 (Launch Prep) ready
+Last activity: 2026-02-25 - Completed Phase 8 (Mobile Nav & Responsive Layout)
 
-Progress: [████████████████░░░░] 80%
+Progress: [██████████████████░░] 85%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 16
-- Average duration: 0.15 hours
-- Total execution time: 1.95 hours
+- Total plans completed: 17
+- Average duration: 0.14 hours
+- Total execution time: 2.02 hours
 
 **By Phase:**
 
@@ -35,11 +35,12 @@ Progress: [████████████████░░░░] 80%
 | 5     | 3     | 0.0h  | -        |
 | 6     | 4     | 0.20h | 0.05h    |
 | 7     | 1     | 0.23h | 0.23h    |
+| 8     | 1     | 0.07h | 0.07h    |
 
 **Recent Trend:**
 
-- Last 5 plans: 07-01 (14 min), 06-03 (5 min), 06-02 (2 min), 06-01 (3 min), 05-03 (1 min)
-- Trend: Fast execution, content and text-quality driven plans
+- Last 5 plans: 08-01 (4 min), 07-01 (14 min), 06-03 (5 min), 06-02 (2 min), 06-01 (3 min)
+- Trend: Fast execution, UI and accessibility-driven plans
 
 ## Accumulated Context
 
@@ -70,6 +71,10 @@ Recent decisions affecting current work:
 - mokka.png and adam.png replaced with CSS placeholder cards — owner must supply rights-clear photos before launch (see 06-MISSING-IMAGES.md).
 - Legal page phone links intentionally not given data-track — they are contact information, not promotional CTAs.
 - UTF-8 umlauts: All German visible text uses proper umlauts. Only URLs, filenames, code identifiers, and CSS classes retain ASCII digraphs.
+- Mobile nav uses CSS peer-aria-[expanded=true]:max-h-64 transition (not JS class toggle) for slide-down animation.
+- Active nav indicator: Tera {% set current_page %} in {% block header %} propagates to {% include %} — confirmed working; JS fallback retained in nav.js as belt-and-suspenders.
+- Footer uses CSS Grid auto-fit/minmax(12rem, 1fr) for intrinsic 2-to-1 column layout — no breakpoint snap.
+- Fluid headings: CSS clamp() in base.css for h1–h4, rem units for WCAG zoom compliance.
 
 ### Pending Todos
 
@@ -83,6 +88,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-24
-Stopped at: Phase 7 complete — gap closure phases 8-10 remaining
+Last session: 2026-02-25
+Stopped at: Completed 08-01-PLAN.md — Phase 8 complete, gap closure phases 9-10 remaining
 Resume file: None

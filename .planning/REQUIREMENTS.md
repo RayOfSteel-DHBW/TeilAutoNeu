@@ -44,7 +44,7 @@ Requirements for initial launch. Site acts as self-service information hub and m
 - [ ] **FEAT-03**: Interactive parking map using MapLibre GL JS + OpenFreeMap
 - [x] **FEAT-04**: Map shows 2 active parking locations
 - [x] **FEAT-05**: Map shows Don Bosco as "Geplant" (planned location for local SEO)
-- [ ] **FEAT-06**: Responsive mobile hamburger navigation
+- [x] **FEAT-06**: Responsive mobile hamburger navigation
 - [x] **FEAT-07**: Local village names (Mössingen, Belsen, Talheim, Öschingen) woven into copy for local search discoverability
 
 ### Pricing Display
@@ -58,7 +58,7 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### Design & UX
 
-- [ ] **UX-01**: Mobile-first responsive design
+- [x] **UX-01**: Mobile-first responsive design
 - [x] **UX-02**: White/green color palette (clean, nature-forward, trustworthy)
 - [x] **UX-03**: All images copyright-clear (owner-supplied photos + AI-generated)
 - [x] **UX-04**: Consistent brand casing: "teilAuto" (not "Teilauto" or "TeilAuto")
@@ -155,7 +155,7 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | FEAT-03     | Phase 10 | Pending  |
 | FEAT-04     | Phase 5  | Complete |
 | FEAT-05     | Phase 5  | Complete |
-| FEAT-06     | Phase 8  | Pending  |
+| FEAT-06     | Phase 8  | Complete |
 | FEAT-07     | Phase 3  | Complete |
 | PRICE-01    | Phase 4  | Complete |
 | PRICE-02    | Phase 4  | Complete |
@@ -163,7 +163,7 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | PRICE-04    | Phase 4  | Complete |
 | PRICE-05    | Phase 4  | Complete |
 | PRICE-06    | Phase 4  | Complete |
-| UX-01       | Phase 8  | Pending  |
+| UX-01       | Phase 8  | Complete |
 | UX-02       | Phase 2  | Complete |
 | UX-03       | Phase 6  | Complete |
 | UX-04       | Phase 2  | Complete |

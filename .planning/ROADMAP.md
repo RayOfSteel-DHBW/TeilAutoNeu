@@ -19,8 +19,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Pricing & Value System** - Demo-quality pricing page with 1–2 sample values and value-first framing.
 - [x] **Phase 5: Fleet & Locations** - Vehicles and interactive map with locations.
 - [x] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
-- [ ] **Phase 7: German Text Correction (Umlaut Fix)** - Replace all ASCII digraphs with UTF-8 umlauts. *(Gap Closure)*
-- [ ] **Phase 8: Mobile Navigation & Responsive Layout** - Fix hamburger nav and responsive spacing. *(Gap Closure)*
+- [x] **Phase 7: German Text Correction (Umlaut Fix)** - Replace all ASCII digraphs with UTF-8 umlauts. *(Gap Closure)*
+- [x] **Phase 8: Mobile Navigation & Responsive Layout** - Fix hamburger nav and responsive spacing. *(Gap Closure)*
 - [ ] **Phase 9: Content Accuracy & Dead Code Cleanup** - Fix claims, scope CTAs, remove dead files. *(Gap Closure)*
 - [ ] **Phase 10: Content Messaging & Feature Polish** - Revise messaging, add labels, complete FAQ. *(Gap Closure)*
 
@@ -170,7 +170,7 @@ Plans:
 
 Plans:
 
-- [ ] 08-01-PLAN.md — Slide-down mobile nav, keyboard a11y, active page indicator, fluid headings, intrinsic footer
+- [x] 08-01-PLAN.md — Slide-down mobile nav, keyboard a11y, active page indicator, fluid headings, intrinsic footer
 
 ### Phase 9: Content Accuracy & Dead Code Cleanup
 
@@ -209,7 +209,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 | 5. Fleet & Locations                      | 3/3            | Complete    | 2026-02-10 |
 | 6. Trust, Legal, SEO & Quality            | 3/4            | Complete    | 2026-02-24 |
 | 7. German Text Correction (Umlaut Fix)    | 1/1            | Complete    | 2026-02-24 |
-| 8. Mobile Navigation & Responsive Layout  | 0/1            | Pending     |            |
+| 8. Mobile Navigation & Responsive Layout  | 1/1            | Complete    | 2026-02-25 |
 | 9. Content Accuracy & Dead Code Cleanup   | 0/1            | Pending     |            |
 | 10. Content Messaging & Feature Polish    | 0/2            | Pending     |            |
 
@@ -218,6 +218,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 **Gap closure phases 7-10 added 2026-02-24**: Created from v1.0 milestone audit (29/51 satisfied). Addresses 19 requirement gaps, 4 integration issues, 4 broken E2E flows. TRACK-01 deferred to V2.
 
 **07-01 completed 2026-02-24**: Replaced ~280 ASCII digraph substitutions with UTF-8 umlauts across 15 files (8 HTML pages, 2 JS files, 1 JSON data file, 4 templates). Build verified.
+
+**08-01 completed 2026-02-25**: Slide-down mobile nav via CSS peer-aria-[expanded=true] max-height transition. Escape key closes nav with focus return. Active page pill via aria-current. Fluid headings h1–h4 with CSS clamp(). Footer auto-fit grid. Closes FEAT-06 and UX-01.
 
 ### Phase 11: Simplified Datenschutzerklaerung — clean privacy page with Strato mention and no-tracking transparency
 
