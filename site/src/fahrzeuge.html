@@ -2,6 +2,11 @@
 
 {% block title %}Fahrzeuge | teilAuto Mössingen{% endblock title %}
 
+{% block header %}
+  {% set current_page = "fahrzeuge" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="Unsere Fahrzeuge: Opel Mokka E und Opel Adam in Mössingen. Plus Zugang zu über 200 Partnerfahrzeugen über die Quernutzung.">
   <meta property="og:title" content="Fahrzeuge | teilAuto Mössingen">

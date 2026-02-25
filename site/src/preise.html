@@ -2,6 +2,11 @@
 
 {% block title %}Preise | teilAuto Mössingen{% endblock title %}
 
+{% block header %}
+  {% set current_page = "preise" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="Was kostet Carsharing bei teilAuto Mössingen? Einfacher Tarif mit Zeit- und Kilometerpauschale. Alles inklusive, keine versteckten Kosten.">
   <meta property="og:title" content="Preise | teilAuto Mössingen">

@@ -2,6 +2,11 @@
 
 {% block title %}Für Firmen | teilAuto Mössingen{% endblock title %}
 
+{% block header %}
+  {% set current_page = "geschaeftskunden" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="Carsharing in Mössingen für Unternehmen: Kosten sparen, flexibel bleiben, Fahrzeuge nur bei Bedarf nutzen. teilAuto bietet lokales Carsharing im Steinlachtal.">
   <meta property="og:title" content="Für Firmen | teilAuto Mössingen">

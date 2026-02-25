@@ -2,6 +2,11 @@
 
 {% block title %}Über uns | teilAuto Mössingen{% endblock title %}
 
+{% block header %}
+  {% set current_page = "ueber-uns" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="teilAuto Mössingen: Seit über zwei Jahrzehnten betreiben Ralf und Ursula Stahl ein persönliches Carsharing für über 60 Mitglieder im Steinlachtal.">
   <meta property="og:title" content="Über uns | teilAuto Mössingen">

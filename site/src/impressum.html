@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Impressum | teilAuto Mössingen{% endblock title %}
+
+{% block header %}
+  {% set current_page = "impressum" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="Impressum der teilAuto Mössingen e.K. gemäß § 5 DDG. Angaben zum Anbieter, Kontakt und Handelsregister.">
   <meta property="og:title" content="Impressum | teilAuto Mössingen">

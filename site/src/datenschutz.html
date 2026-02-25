@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Datenschutz | teilAuto Mössingen{% endblock title %}
+
+{% block header %}
+  {% set current_page = "datenschutz" %}
+  {% include "partials/header.html" %}
+{% endblock header %}
+
 {% block head %}
   <meta name="description" content="Datenschutzerklärung der teilAuto Mössingen e.K. gemäß Art. 13 DSGVO. Informationen zur Verarbeitung personenbezogener Daten beim Besuch dieser Website.">
   <meta property="og:title" content="Datenschutz | teilAuto Mössingen">
