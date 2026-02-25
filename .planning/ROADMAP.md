@@ -227,7 +227,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 
 **Goal:** Replace current Datenschutzerklaerung — remove the "Geplante Webanalyse" section (no tracking exists yet), keep STRATO server logs and OpenFreeMap disclosures, lean into the no-tracking angle. Clean and honest.
 **Depends on:** Phase 6
-**Plans:** 1/1 plans complete
+**Requirements:** LEGAL-02
+**Plans:** 1 plan (Wave 1: 11-01)
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 11 to break down)
+- [ ] 11-01-PLAN.md — Remove forward-looking tracking content, simplify Ihre Rechte, verify V2 draft preservation
