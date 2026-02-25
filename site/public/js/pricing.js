@@ -82,14 +82,8 @@
       el("h2", { className: "text-2xl font-display" }, "Mitgliedschaft & Nutzung")
     );
 
-    // Membership row
+    // Membership row (Kaution demoted to footnote below)
     var memberGrid = el("div", { className: "mt-4 grid gap-4 sm:grid-cols-2" });
-
-    var depositCard = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
-    depositCard.appendChild(el("p", { className: "text-sm font-semibold text-brand-ink" }, "Kaution (einmalig)"));
-    depositCard.appendChild(el("p", { className: "mt-1 text-lg font-display" }));
-    depositCard.lastChild.appendChild(valueOrBadge(data.membership.deposit));
-    memberGrid.appendChild(depositCard);
 
     var feeCard = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
     feeCard.appendChild(el("p", { className: "text-sm font-semibold text-brand-ink" }, "Jahresbeitrag"));
@@ -129,6 +123,15 @@
     container.appendChild(
       el("p", { className: "text-sm text-brand-ink/70" }, data.usage.includes.join(", "))
     );
+
+    // Kaution footnote (demoted from prominent card)
+    var kautionNote = el("p", {
+      className: "mt-4 text-xs text-brand-ink/50 border-t border-brand-muted pt-4"
+    });
+    kautionNote.appendChild(document.createTextNode("Kaution: "));
+    kautionNote.appendChild(valueOrBadge(data.membership.deposit));
+    kautionNote.appendChild(document.createTextNode(" \u2014 wird bei Austritt verzinst zur\u00fcckgezahlt."));
+    container.appendChild(kautionNote);
   }
 
   /** #pricing-classes — vehicle class cards with rate tables */
@@ -205,10 +208,21 @@
         el("p", { className: "mt-1 text-sm text-brand-ink/70" }, ex.inputs)
       );
 
-      // Calculation breakdown
-      card.appendChild(
-        el("p", { className: "mt-2 text-xs font-mono text-brand-ink/50" }, ex.calculation)
-      );
+      // Labeled breakdown (or fallback to raw formula)
+      if (ex.labeled_lines && ex.labeled_lines.length > 0) {
+        var breakdown = el("dl", { className: "mt-2 space-y-1 text-sm" });
+        ex.labeled_lines.forEach(function (line) {
+          var row = el("div", { className: "flex justify-between gap-4" });
+          row.appendChild(el("dt", { className: "text-brand-ink/70" }, line.label));
+          row.appendChild(el("dd", { className: "font-semibold text-brand-ink" }, line.value));
+          breakdown.appendChild(row);
+        });
+        card.appendChild(breakdown);
+      } else {
+        card.appendChild(
+          el("p", { className: "mt-2 text-xs font-mono text-brand-ink/50" }, ex.calculation)
+        );
+      }
 
       // Result
       card.appendChild(

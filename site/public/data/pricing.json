@@ -41,12 +41,22 @@
       "title": "Wochenendeinkauf",
       "inputs": "ca. 2 Stunden, 15 km mit Klasse XS",
       "calculation": "1 × 2,05 + 1 × 1,00 + 15 × 0,32 = 7,85 EUR",
+      "labeled_lines": [
+        { "label": "1. Stunde", "value": "2,05 EUR" },
+        { "label": "Folgestunde", "value": "1,00 EUR" },
+        { "label": "15 km × 0,32 EUR/km", "value": "4,80 EUR" }
+      ],
       "output": "ca. 7,85 EUR (zzgl. Buchungsgebühr)"
     },
     {
       "title": "Tagesausflug",
       "inputs": "ca. 8 Stunden, 150 km mit Klasse M",
       "calculation": "1 × 2,46 + 7 × 1,25 + 150 × 0,36 = 65,21 EUR",
+      "labeled_lines": [
+        { "label": "1. Stunde", "value": "2,46 EUR" },
+        { "label": "7 Folgestunden × 1,25 EUR", "value": "8,75 EUR" },
+        { "label": "150 km × 0,36 EUR/km", "value": "54,00 EUR" }
+      ],
       "output": "ca. 65,21 EUR (zzgl. Buchungsgebühr)"
     }
   ],
