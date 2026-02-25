@@ -138,6 +138,26 @@ a {
   opacity: 0.85;
 }
 
+.fleet-popup__location {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: #0f2d1f;
+  opacity: 0.7;
+}
+
+.fleet-popup__features {
+  margin-top: 6px;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: #0f2d1f;
+  opacity: 0.75;
+}
+
+.fleet-popup__features li + li {
+  margin-top: 2px;
+}
+
 .maplibregl-popup-content {
   border-radius: 16px;
   font-family: inherit;

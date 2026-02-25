@@ -10,6 +10,8 @@
       vehicle: {
         title: "Opel Mokka E",
         iconUrl: "/img/cars/mokka-icon.svg",
+        location: "Bahnhofstraße, Mössingen",
+        features: ["5 Sitze", "Kindersitz", "Parkhilfe"],
         description: "Opel Mokka E \u00b7 5 Sitze \u00b7 Kindersitz \u00b7 Parkhilfe \u00b7 Bahnhofstraße",
       },
     },
@@ -21,6 +23,8 @@
       vehicle: {
         title: "Opel Adam",
         iconUrl: "/img/cars/adam-icon.svg",
+        location: "Innenstadt, Mössingen",
+        features: ["4 Sitze", "Klimaanlage", "Parkhilfe"],
         description: "Opel Adam \u00b7 4 Sitze \u00b7 Klimaanlage \u00b7 Parkhilfe \u00b7 Innenstadt",
       },
     },
@@ -32,6 +36,8 @@
       vehicle: {
         title: "Geplant",
         iconUrl: "/img/cars/planned-icon.svg",
+        location: "Bästenhardt (Don Bosco)",
+        features: [],
         description: "Geplant \u00b7 Bästenhardt (Don Bosco)",
       },
     },
@@ -90,12 +96,17 @@
         location.status === "planned" ? "fleet-marker fleet-marker--planned" : "fleet-marker";
       markerEl.setAttribute("aria-label", `${location.vehicle.title} - ${location.name}`);
 
+      const featuresHtml = location.vehicle.features.length > 0
+        ? `<ul class="fleet-popup__features">${location.vehicle.features.map(f => `<li>${escapeHtml(f)}</li>`).join("")}</ul>`
+        : "";
+
       const popupHtml = `
         <div class="fleet-popup">
           <img class="fleet-popup__icon" src="${escapeHtml(location.vehicle.iconUrl)}" alt="" />
           <div class="fleet-popup__body">
             <div class="fleet-popup__title">${escapeHtml(location.vehicle.title)}</div>
-            <div class="fleet-popup__meta">${escapeHtml(location.vehicle.description)}</div>
+            <div class="fleet-popup__location">${escapeHtml(location.vehicle.location)}</div>
+            ${featuresHtml}
           </div>
         </div>
       `;
