@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 6: Trust, Legal, SEO & Quality** - Compliance, credibility pages, analytics, and polish.
 - [x] **Phase 7: German Text Correction (Umlaut Fix)** - Replace all ASCII digraphs with UTF-8 umlauts. *(Gap Closure)*
 - [x] **Phase 8: Mobile Navigation & Responsive Layout** - Fix hamburger nav and responsive spacing. *(Gap Closure)*
-- [ ] **Phase 9: Content Accuracy & Dead Code Cleanup** - Fix claims, scope CTAs, remove dead files. *(Gap Closure)*
+- [x] **Phase 9: Content Accuracy & Dead Code Cleanup** - Fix claims, scope CTAs, remove dead files. *(Gap Closure)* (completed 2026-02-25)
 - [ ] **Phase 10: Content Messaging & Feature Polish** - Revise messaging, add labels, complete FAQ. *(Gap Closure)*
 
 ## Phase Details
@@ -210,7 +210,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 | 6. Trust, Legal, SEO & Quality            | 3/4            | Complete    | 2026-02-24 |
 | 7. German Text Correction (Umlaut Fix)    | 1/1            | Complete    | 2026-02-24 |
 | 8. Mobile Navigation & Responsive Layout  | 1/1            | Complete    | 2026-02-25 |
-| 9. Content Accuracy & Dead Code Cleanup   | 0/1            | Pending     |            |
+| 9. Content Accuracy & Dead Code Cleanup   | 1/1 | Complete   | 2026-02-25 |
 | 10. Content Messaging & Feature Polish    | 0/2            | Pending     |            |
 
 **06-03 completed 2026-02-24**: OG image PNG, meta descriptions on all 8 pages, default OG fallbacks in base.html, data-track on all phone/nav CTAs and FAQ toggles, scroll milestone sentinels, CSS placeholder cards for copyright-flagged vehicle images, missing-images ledger.
@@ -225,7 +225,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 
 **Goal:** Replace current Datenschutzerklaerung — remove the "Geplante Webanalyse" section (no tracking exists yet), keep STRATO server logs and OpenFreeMap disclosures, lean into the no-tracking angle. Clean and honest.
 **Depends on:** Phase 6
-**Plans:** 0 plans
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] TBD (run /gsd:plan-phase 11 to break down)

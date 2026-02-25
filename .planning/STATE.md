@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-25T18:47:31.344Z"
+last_updated: "2026-02-25T19:02:00.000Z"
 progress:
   total_phases: 12
   completed_phases: 8
   total_plans: 22
-  completed_plans: 21
+  completed_plans: 22
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-08)
 
 ## Current Position
 
-Phase: 8 of 10 (Mobile Nav & Responsive Layout) — COMPLETE
+Phase: 9 of 10 (Content Accuracy Cleanup) — COMPLETE
 Plan: 1 of 1 in current phase
-Status: Phase 8 complete; Phase 9 (Content Cleanup) and Phase 10 (Launch Prep) ready
-Last activity: 2026-02-25 - Completed Phase 8 (Mobile Nav & Responsive Layout)
+Status: Phase 9 complete; Phase 10 (Launch Prep) and Phase 11 (Datenschutz) remaining
+Last activity: 2026-02-25 - Completed Phase 9 (Content Accuracy Cleanup)
 
-Progress: [██████████████████░░] 85%
+Progress: [████████████████████░░] 90%
 
 ## Performance Metrics
 
@@ -49,11 +49,12 @@ Progress: [██████████████████░░] 85%
 | 6     | 4     | 0.20h | 0.05h    |
 | 7     | 1     | 0.23h | 0.23h    |
 | 8     | 1     | 0.07h | 0.07h    |
+| 9     | 1     | 0.03h | 0.03h    |
 
 **Recent Trend:**
 
-- Last 5 plans: 08-01 (4 min), 07-01 (14 min), 06-03 (5 min), 06-02 (2 min), 06-01 (3 min)
-- Trend: Fast execution, UI and accessibility-driven plans
+- Last 5 plans: 09-01 (2 min), 08-01 (4 min), 07-01 (14 min), 06-03 (5 min), 06-02 (2 min)
+- Trend: Fast execution, content cleanup and mechanical corrections
 
 ## Accumulated Context
 
@@ -88,6 +89,10 @@ Recent decisions affecting current work:
 - Active nav indicator: Tera {% set current_page %} in {% block header %} propagates to {% include %} — confirmed working; JS fallback retained in nav.js as belt-and-suspenders.
 - Footer uses CSS Grid auto-fit/minmax(12rem, 1fr) for intrinsic 2-to-1 column layout — no breakpoint snap.
 - Fluid headings: CSS clamp() in base.css for h1–h4, rem units for WCAG zoom compliance.
+- Phone CTA blocks removed from ueber-uns.html and geschaeftskunden.html — phone appears only in mitglied-werden.html, impressum.html, datenschutz.html (CONT-10).
+- OG global/page split: base.html provides og:image/type/locale globally; page head blocks own og:title/description/url only (SEO-01/SEO-02).
+- nachhaltig.html stub deleted; sustainability content distributed across ueber-uns.html, geschaeftskunden.html, fahrzeuge.html.
+- CO2-Reduktion sentence added to geschaeftskunden.html Nachhaltigkeit card for stronger business sustainability angle.
 
 ### Pending Todos
 
@@ -102,5 +107,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 08-01-PLAN.md — Phase 8 complete, gap closure phases 9-10 remaining
+Stopped at: Completed 09-01-PLAN.md — Phase 9 complete, Phase 10 (Launch Prep) and Phase 11 (Datenschutz) remaining
 Resume file: None

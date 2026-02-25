@@ -27,14 +27,14 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 - [ ] **CONT-01**: Homepage — hero, value prop, 3-step "how it works," top FAQ accordion, persona-inclusive messaging
 - [ ] **CONT-02**: Preise (Pricing) — key tariff values, sample calculations, abstract presentation, disclaimer
-- [ ] **CONT-03**: Sustainability communicated through storytelling, not a dedicated "green" page — readers who care will see it; others won't feel lectured
+- [x] **CONT-03**: Sustainability communicated through storytelling, not a dedicated "green" page — readers who care will see it; others won't feel lectured
 - [x] **CONT-04**: Fahrzeuge (Vehicles) — fleet display (Opel Mokka E, Opel Adam) with specs, parking map
 - [x] **CONT-05**: Für Firmen (Business) — business customer pitch with 4 benefits
 - [x] **CONT-06**: Über uns (About) — founders, history, 60+ members, operations model
 - [ ] **CONT-07**: Membership info (how to join, expectations, phone number) — may be separate page or baked into homepage "how it works" flow
 - [x] **CONT-08**: Only publish tariff classes XS and M (current fleet); larger classes mentioned via Quernutzung
-- [ ] **CONT-09**: Quernutzung (cross-use network) mentioned as notable benefit, not headline feature
-- [ ] **CONT-10**: Phone number (07473-922202) placed only in membership/how-to-join context — NOT on every page; avoid pushing unqualified callers
+- [x] **CONT-09**: Quernutzung (cross-use network) mentioned as notable benefit, not headline feature
+- [x] **CONT-10**: Phone number (07473-922202) placed only in membership/how-to-join context — NOT on every page; avoid pushing unqualified callers
 - [x] **CONT-11**: No contact forms, no email addresses, no online signup (phone-only by design)
 
 ### Interactive Features
@@ -69,8 +69,8 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### SEO & Analytics
 
-- [ ] **SEO-01**: Meta descriptions on all pages
-- [ ] **SEO-02**: Open Graph tags for social sharing
+- [x] **SEO-01**: Meta descriptions on all pages
+- [x] **SEO-02**: Open Graph tags for social sharing
 - [x] **SEO-03**: Local search optimization (Mössingen, Baden-Württemberg, Carsharing)
 - [x] **SEO-04**: Semantic HTML (proper heading hierarchy, landmarks)
 - [ ] **TRACK-01**: Analytics tracking concept (persona behavior, scroll depth, FAQ opens, contact clicks) *(Deferred to V2: hooks placed, no consumer)*
@@ -79,9 +79,9 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 - [x] **QUAL-01**: Correct German spelling and grammar throughout
 - [x] **QUAL-02**: No typos (fix issues like "gegegeben," "Moblitätskonzept," "Ihrer→Ihre")
-- [ ] **QUAL-03**: No claims about capabilities business doesn't have (24/7 support, app, free-floating, spontaneous returns, "completely paperless")
+- [x] **QUAL-03**: No claims about capabilities business doesn't have (24/7 support, app, free-floating, spontaneous returns, "completely paperless")
 - [x] **QUAL-04**: Content validated against 02/2022 usage handbook (abstracted for web)
-- [ ] **QUAL-05**: All links functional (no case-sensitive link bugs like "Preise.html")
+- [x] **QUAL-05**: All links functional (no case-sensitive link bugs like "Preise.html")
 
 ## v2 Requirements
 
@@ -141,14 +141,14 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | LEGAL-04    | Phase 5  | Complete |
 | CONT-01     | Phase 10 | Pending  |
 | CONT-02     | Phase 10 | Pending  |
-| CONT-03     | Phase 9  | Pending  |
+| CONT-03     | Phase 9  | Complete |
 | CONT-04     | Phase 5  | Complete |
 | CONT-05     | Phase 6  | Complete |
 | CONT-06     | Phase 6  | Complete |
 | CONT-07     | Phase 10 | Pending  |
 | CONT-08     | Phase 4  | Complete |
-| CONT-09     | Phase 9  | Pending  |
-| CONT-10     | Phase 9  | Pending  |
+| CONT-09     | Phase 9  | Complete |
+| CONT-10     | Phase 9  | Complete |
 | CONT-11     | Phase 3  | Complete |
 | FEAT-01     | Phase 3  | Overridden |
 | FEAT-02     | Phase 10 | Pending  |
@@ -171,16 +171,16 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | UX-06       | Phase 7  | Complete |
 | UX-07       | Phase 2  | Complete |
 | UX-08       | Phase 10 | Pending  |
-| SEO-01      | Phase 9  | Pending  |
-| SEO-02      | Phase 9  | Pending  |
+| SEO-01      | Phase 9  | Complete |
+| SEO-02      | Phase 9  | Complete |
 | SEO-03      | Phase 6  | Complete |
 | SEO-04      | Phase 6  | Complete |
 | TRACK-01    | Phase 6  | Deferred (V2) |
 | QUAL-01     | Phase 7  | Complete |
 | QUAL-02     | Phase 7  | Complete |
-| QUAL-03     | Phase 9  | Pending  |
+| QUAL-03     | Phase 9  | Complete |
 | QUAL-04     | Phase 4  | Complete |
-| QUAL-05     | Phase 9  | Pending  |
+| QUAL-05     | Phase 9  | Complete |
 
 **Coverage:**
 
