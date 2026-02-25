@@ -15,75 +15,47 @@ endblock title %}
 
 {% block main %}
 <div data-scroll-milestone="hero-bottom" aria-hidden="true" class="sr-only"></div>
-<section
-  class="relative overflow-hidden rounded-3xl border border-brand-muted bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12"
->
-  <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-    <div>
-      <p
-        class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent"
-      >
-        teilAuto Mössingen
+<section class="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-6 py-12 text-center">
+  <img src="/img/logo.svg" alt="teilAuto Mössingen" class="mx-auto mb-6 h-16 w-auto">
+  <h1 class="text-4xl font-display sm:text-5xl">
+    Die sparsame Art (k)ein Auto zu haben
+  </h1>
+  <p class="mt-4 max-w-xl mx-auto text-lg text-brand-ink/80">
+    Carsharing für Mössingen und die Umgebung &ndash; flexibel, lokal verankert, ohne eigenes Auto.
+  </p>
+  <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+    <a
+      class="rounded-full bg-brand-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-accent"
+      href="mitglied-werden.html"
+      data-track="nav-cta"
+      data-track-label="mehr-erfahren"
+    >Mehr erfahren</a>
+    <a
+      class="rounded-full border border-brand-primary px-6 py-3 text-base font-semibold text-brand-primary transition hover:bg-brand-muted"
+      href="#below-hero"
+      data-track="nav-cta"
+      data-track-label="noch-unsicher"
+    >Noch unsicher?</a>
+  </div>
+</section>
+
+<div id="below-hero" aria-hidden="true"></div>
+
+<section class="mt-12">
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-display">Kurze Wege, klare Organisation</h2>
+      <p class="mt-3 text-brand-ink/80">
+        Die Fahrzeuge stehen an festen Standorten in Mössingen &ndash; nah am Wohnort,
+        immer am selben Platz. Buchung und Abrechnung laufen unkompliziert über einen Anruf.
       </p>
-      <h1 class="mt-4 text-4xl font-display sm:text-5xl">
-        Die sparsame Art (k)ein Auto zu haben
-      </h1>
-      <p class="mt-4 text-lg text-brand-ink/80">
-        Carsharing für Mössingen und die Umgebung &ndash;
-        flexibel, lokal verankert und ohne eigenes Auto. teilAuto ist für alle,
-        die mobil bleiben möchten, ohne die Kosten und den Aufwand eines
-        eigenen Wagens.
-      </p>
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <a
-          class="inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-accent"
-          href="mitglied-werden.html"
-          data-track="nav-cta"
-          data-track-label="mehr-erfahren"
-          >Mehr erfahren</a
-        >
-        <span class="text-sm text-brand-ink/70"
-          >Alle Details zum Mitgliedwerden und zur Nutzung auf einen
-          Blick.</span
-        >
-      </div>
     </div>
-    <div class="relative">
-      <div
-        class="rounded-3xl border border-brand-muted bg-brand-surface p-6 sm:p-8"
-      >
-        <div class="flex items-center gap-4">
-          <div
-            class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-primary/10"
-          >
-            <span class="text-xl font-display text-brand-primary">ta</span>
-          </div>
-          <div>
-            <p class="text-lg font-display">teilAuto Mössingen</p>
-            <p class="text-sm text-brand-ink/70">Carsharing im Steinlachtal</p>
-          </div>
-        </div>
-        <div class="mt-6 space-y-4 text-sm text-brand-ink/70">
-          <div class="rounded-2xl bg-white p-4 shadow-sm">
-            <p class="font-semibold text-brand-ink">
-              Kurze Wege, klare Organisation.
-            </p>
-            <p>
-              Fahrzeuge stehen dort, wo Sie wohnen oder arbeiten - mit kurzen
-              Wegen in der Region.
-            </p>
-          </div>
-          <div class="rounded-2xl bg-white p-4 shadow-sm">
-            <p class="font-semibold text-brand-ink">
-              Gemeinschaftlich statt privat.
-            </p>
-            <p>
-              Sie teilen sich ein Auto mit anderen Mitgliedern und sparen Kosten
-              für Besitz und Unterhalt.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-display">Teilen statt besitzen</h2>
+      <p class="mt-3 text-brand-ink/80">
+        Mehrere Haushalte teilen sich ein Auto und sparen Versicherung, Werkstatt, TÜV und
+        Stellplatz. Sie zahlen nur, wenn Sie tatsächlich fahren.
+      </p>
     </div>
   </div>
 </section>
@@ -94,15 +66,15 @@ endblock title %}
     <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
       <h2 class="text-xl font-display">Sparsam bleiben</h2>
       <p class="mt-3 text-brand-ink/80">
-        Sie zahlen nur, wenn Sie fahren - statt Fixkosten für ein eigenes Auto
-        zu tragen.
+        Kein eigenes Auto bedeutet: keine Versicherung, keine Werkstattkosten, kein TÜV.
+        Bei teilAuto zahlen Sie einen günstigen Jahresbeitrag und nur die Fahrten, die Sie wirklich machen.
       </p>
     </div>
     <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
       <h2 class="text-xl font-display">Flexibel unterwegs</h2>
       <p class="mt-3 text-brand-ink/80">
-        Fahrzeuge nutzen, wenn Sie sie wirklich brauchen - alltagstauglich und
-        planbar.
+        Zwei Fahrzeuge stehen bereit &ndash; vom Kleinwagen für die Besorgung bis zum
+        Kompakt-SUV für den Familienausflug. Reservieren, einsteigen, losfahren.
       </p>
     </div>
     <div class="rounded-3xl border border-brand-muted bg-white p-6 shadow-sm">
@@ -112,29 +84,6 @@ endblock title %}
         Mobilität vor Ort.
       </p>
     </div>
-  </div>
-</section>
-
-<div data-scroll-milestone="cta-visible" aria-hidden="true" class="sr-only"></div>
-<section
-  class="mt-12 rounded-3xl border border-brand-muted bg-white p-6 shadow-sm sm:p-8"
->
-  <div class="max-w-3xl">
-    <h2 class="text-2xl font-display">So funktioniert teilAuto</h2>
-    <p class="mt-3 text-brand-ink/80">
-      Mitglied werden, Fahrzeug reservieren, losfahren - der Ablauf ist bewusst
-      einfach gehalten. Auf der Mitgliedsseite erfahren Sie, wie die Aufnahme
-      läuft und welche Regeln für die Nutzung gelten.
-    </p>
-    <a
-      class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-primary"
-      href="mitglied-werden.html"
-      data-track="nav-cta"
-      data-track-label="mehr-zur-mitgliedschaft"
-    >
-      Mehr zur Mitgliedschaft
-      <span aria-hidden="true">→</span>
-    </a>
   </div>
 </section>
 
