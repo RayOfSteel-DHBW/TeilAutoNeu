@@ -194,8 +194,8 @@ Plans:
 
 Plans:
 
-- [ ] 10-01-PLAN.md — Homepage 100vh hero redesign, info card restructure, mitglied-werden hybrid "So funktioniert's" expansion
-- [ ] 10-02-PLAN.md — Pricing labeled breakdowns, Kaution demotion, FAQ 5th item, map popup hierarchy, Quernutzung text corrections
+- [x] 10-01-PLAN.md — Homepage 100vh hero redesign, info card restructure, mitglied-werden hybrid "So funktioniert's" expansion
+- [x] 10-02-PLAN.md — Pricing labeled breakdowns, Kaution demotion, FAQ 5th item, map popup hierarchy, Quernutzung text corrections
 
 ## Progress
 
