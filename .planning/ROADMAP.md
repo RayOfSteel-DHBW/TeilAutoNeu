@@ -166,9 +166,11 @@ Plans:
 **Requirements**: FEAT-06, UX-01
 **Gap Closure**: Closes 1 blocker + 1 partial gap from v1.0 audit. Fixes E2E flow "Mobile navigation".
 
+**Plans:** 1 plan (Wave 1: 08-01)
+
 Plans:
 
-- [ ] 08-01: Fix hamburger nav CSS toggle and responsive layout issues (padding, footer, H1)
+- [ ] 08-01-PLAN.md — Slide-down mobile nav, keyboard a11y, active page indicator, fluid headings, intrinsic footer
 
 ### Phase 9: Content Accuracy & Dead Code Cleanup
 
