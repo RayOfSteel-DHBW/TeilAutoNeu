@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-25T21:35:05.876Z"
+last_updated: "2026-02-25T21:37:00.019Z"
 progress:
   total_phases: 12
   completed_phases: 10
@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-25)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** Phase 10 — Content Messaging & Feature Polish
+**Current focus:** Phase 11 — Simplified Datenschutzerklärung
 
 ## Current Position
 
-Phase: 10 of 12 (Content Messaging & Feature Polish)
-Plan: 10-02 complete
-Status: Executing phase 10
-Last activity: 2026-02-25 - Completed plans 10-01 and 10-02
+Phase: 11 of 12 (Simplified Datenschutzerklärung)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-02-25 - Completed Phase 10 → transitioning to Phase 11
 
 Progress: [████████████████████] 24/24 plans (100%)
 
@@ -93,6 +93,12 @@ Recent decisions affecting current work:
 - OG global/page split: base.html provides og:image/type/locale globally; page head blocks own og:title/description/url only (SEO-01/SEO-02).
 - nachhaltig.html stub deleted; sustainability content distributed across ueber-uns.html, geschaeftskunden.html, fahrzeuge.html.
 - CO2-Reduktion sentence added to geschaeftskunden.html Nachhaltigkeit card for stronger business sustainability angle.
+- Homepage hero redesigned: 100vh viewport, SVG logo placeholder, dual CTAs ("Mehr erfahren" + "Noch unsicher?" smooth scroll).
+- mitglied-werden.html expanded to hybrid "So funktioniert's" + membership page — practical carsharing how-to before join flow.
+- Pricing labeled breakdowns: line-by-line label+value in example calculations. Kaution demoted to footnote with refund reassurance.
+- FAQ expanded to 5 items: 5th about Quernutzung cross-use network.
+- Map popup restructured: bold title, location line, features list (BEM classes).
+- Quernutzung text corrected: "Fahrzeuge von über 200 Partnern" (not "über 200 Partnerfahrzeuge") across 4 locations.
 
 ### Pending Todos
 
@@ -107,5 +113,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Phase 10 plans 10-01 and 10-02 complete, pending verification
+Stopped at: Phase 10 complete, ready to plan Phase 11 (Simplified Datenschutzerklärung)
 Resume file: None

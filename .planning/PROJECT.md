@@ -116,7 +116,11 @@ A redesigned website for **teilAuto Mössingen e.K.**, a family-run station-base
 | Don Bosco on map as "Geplant" | Subtle local SEO for expansion area; vague enough to be correct without commitment | — Pending |
 | Abstract pricing (no exact unverified numbers) | 2022 handbook data not trusted; fresh price set needed before exact figures | Revised 2026-02-09: 1–2 exact sample values OK as demo; no full tariff table or billing formula. All content is first-draft for customer review. |
 | Build fresh, student project as reference only | UNLICENSED code, copyright-flagged assets; patterns reusable, code is not | — Pending |
+| 100vh hero with dual CTAs, no typing effect | Full-viewport hero with "Mehr erfahren" → membership and "Noch unsicher?" → smooth scroll. Persona-inclusive messaging without segmentation tiles. | Shipped Phase 10 |
+| mitglied-werden.html as hybrid "So funktioniert's" + join page | Practical carsharing how-to section before 3-step join flow. Corrected transactional framing. URL unchanged. | Shipped Phase 10 |
+| Labeled pricing breakdowns | Line-by-line label+value pairs in example calculations. Kaution demoted to footnote with refund reassurance. | Shipped Phase 10 |
+| Quernutzung text: "Fahrzeuge von über 200 Partnern" | Corrected from "über 200 Partnerfahrzeuge" — factual accuracy (partners, not vehicles). | Shipped Phase 10 |
 
 ---
 
-_Last updated: 2026-02-25 after Phase 9 (Content Accuracy Cleanup)_
+_Last updated: 2026-02-25 after Phase 10 (Content Messaging & Feature Polish)_
