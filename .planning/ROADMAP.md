@@ -190,10 +190,12 @@ Plans:
 **Requirements**: CONT-01, CONT-07, CONT-02, FEAT-02, FEAT-03, UX-08
 **Gap Closure**: Closes 6 partial gaps from v1.0 audit. Fixes E2E flow "Pricing comprehension".
 
+**Plans:** 2 plans (Wave 1: 10-01 + 10-02 parallel)
+
 Plans:
 
-- [ ] 10-01: Homepage card messaging and membership text revision
-- [ ] 10-02: Pricing labels, FAQ 5th item, map popup polish
+- [ ] 10-01-PLAN.md — Homepage 100vh hero redesign, info card restructure, mitglied-werden hybrid "So funktioniert's" expansion
+- [ ] 10-02-PLAN.md — Pricing labeled breakdowns, Kaution demotion, FAQ 5th item, map popup hierarchy, Quernutzung text corrections
 
 ## Progress
 
