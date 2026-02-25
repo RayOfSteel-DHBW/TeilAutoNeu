@@ -22,7 +22,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 7: German Text Correction (Umlaut Fix)** - Replace all ASCII digraphs with UTF-8 umlauts. *(Gap Closure)*
 - [x] **Phase 8: Mobile Navigation & Responsive Layout** - Fix hamburger nav and responsive spacing. *(Gap Closure)*
 - [x] **Phase 9: Content Accuracy & Dead Code Cleanup** - Fix claims, scope CTAs, remove dead files. *(Gap Closure)* (completed 2026-02-25)
-- [ ] **Phase 10: Content Messaging & Feature Polish** - Revise messaging, add labels, complete FAQ. *(Gap Closure)*
+- [x] **Phase 10: Content Messaging & Feature Polish** - Revise messaging, add labels, complete FAQ. *(Gap Closure)* (completed 2026-02-25)
 
 ## Phase Details
 
@@ -190,7 +190,7 @@ Plans:
 **Requirements**: CONT-01, CONT-07, CONT-02, FEAT-02, FEAT-03, UX-08
 **Gap Closure**: Closes 6 partial gaps from v1.0 audit. Fixes E2E flow "Pricing comprehension".
 
-**Plans:** 2 plans (Wave 1: 10-01 + 10-02 parallel)
+**Plans:** 2/2 plans complete
 
 Plans:
 
@@ -213,7 +213,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 + 9 (paral
 | 7. German Text Correction (Umlaut Fix)    | 1/1            | Complete    | 2026-02-24 |
 | 8. Mobile Navigation & Responsive Layout  | 1/1            | Complete    | 2026-02-25 |
 | 9. Content Accuracy & Dead Code Cleanup   | 1/1 | Complete   | 2026-02-25 |
-| 10. Content Messaging & Feature Polish    | 0/2            | Pending     |            |
+| 10. Content Messaging & Feature Polish    | 0/2            | Complete    | 2026-02-25 |
 
 **06-03 completed 2026-02-24**: OG image PNG, meta descriptions on all 8 pages, default OG fallbacks in base.html, data-track on all phone/nav CTAs and FAQ toggles, scroll milestone sentinels, CSS placeholder cards for copyright-flagged vehicle images, missing-images ledger.
 

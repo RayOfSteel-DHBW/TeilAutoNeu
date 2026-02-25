@@ -25,13 +25,13 @@ Requirements for initial launch. Site acts as self-service information hub and m
 
 ### Content Pages
 
-- [ ] **CONT-01**: Homepage — hero, value prop, 3-step "how it works," top FAQ accordion, persona-inclusive messaging
-- [ ] **CONT-02**: Preise (Pricing) — key tariff values, sample calculations, abstract presentation, disclaimer
+- [x] **CONT-01**: Homepage — hero, value prop, 3-step "how it works," top FAQ accordion, persona-inclusive messaging
+- [x] **CONT-02**: Preise (Pricing) — key tariff values, sample calculations, abstract presentation, disclaimer
 - [x] **CONT-03**: Sustainability communicated through storytelling, not a dedicated "green" page — readers who care will see it; others won't feel lectured
 - [x] **CONT-04**: Fahrzeuge (Vehicles) — fleet display (Opel Mokka E, Opel Adam) with specs, parking map
 - [x] **CONT-05**: Für Firmen (Business) — business customer pitch with 4 benefits
 - [x] **CONT-06**: Über uns (About) — founders, history, 60+ members, operations model
-- [ ] **CONT-07**: Membership info (how to join, expectations, phone number) — may be separate page or baked into homepage "how it works" flow
+- [x] **CONT-07**: Membership info (how to join, expectations, phone number) — may be separate page or baked into homepage "how it works" flow
 - [x] **CONT-08**: Only publish tariff classes XS and M (current fleet); larger classes mentioned via Quernutzung
 - [x] **CONT-09**: Quernutzung (cross-use network) mentioned as notable benefit, not headline feature
 - [x] **CONT-10**: Phone number (07473-922202) placed only in membership/how-to-join context — NOT on every page; avoid pushing unqualified callers
@@ -40,8 +40,8 @@ Requirements for initial launch. Site acts as self-service information hub and m
 ### Interactive Features
 
 - [ ] **FEAT-01**: Hero section with dynamic typing effect cycling words ("flexibel, vernünftig, praktisch, regional") *(Overridden: Hero simplified, no typing effect)*
-- [ ] **FEAT-02**: FAQ accordion on homepage (5 most common questions)
-- [ ] **FEAT-03**: Interactive parking map using MapLibre GL JS + OpenFreeMap
+- [x] **FEAT-02**: FAQ accordion on homepage (5 most common questions)
+- [x] **FEAT-03**: Interactive parking map using MapLibre GL JS + OpenFreeMap
 - [x] **FEAT-04**: Map shows 2 active parking locations
 - [x] **FEAT-05**: Map shows Don Bosco as "Geplant" (planned location for local SEO)
 - [x] **FEAT-06**: Responsive mobile hamburger navigation
@@ -65,7 +65,7 @@ Requirements for initial launch. Site acts as self-service information hub and m
 - [x] **UX-05**: Consistent phone number format: 07473-922202 (no private numbers)
 - [x] **UX-06**: German copy with Sie-Ansprache, sachlich/freundlich tone
 - [x] **UX-07**: No moralizing, no "you shouldn't own a car" rhetoric, no poverty signals
-- [ ] **UX-08**: Homepage "works" for all 6 personas without explicit self-segmentation tiles
+- [x] **UX-08**: Homepage "works" for all 6 personas without explicit self-segmentation tiles
 
 ### SEO & Analytics
 
@@ -139,20 +139,20 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | LEGAL-02    | Phase 6  | Complete |
 | LEGAL-03    | Phase 6  | Complete |
 | LEGAL-04    | Phase 5  | Complete |
-| CONT-01     | Phase 10 | Pending  |
-| CONT-02     | Phase 10 | Pending  |
+| CONT-01     | Phase 10 | Complete |
+| CONT-02     | Phase 10 | Complete |
 | CONT-03     | Phase 9  | Complete |
 | CONT-04     | Phase 5  | Complete |
 | CONT-05     | Phase 6  | Complete |
 | CONT-06     | Phase 6  | Complete |
-| CONT-07     | Phase 10 | Pending  |
+| CONT-07     | Phase 10 | Complete |
 | CONT-08     | Phase 4  | Complete |
 | CONT-09     | Phase 9  | Complete |
 | CONT-10     | Phase 9  | Complete |
 | CONT-11     | Phase 3  | Complete |
 | FEAT-01     | Phase 3  | Overridden |
-| FEAT-02     | Phase 10 | Pending  |
-| FEAT-03     | Phase 10 | Pending  |
+| FEAT-02     | Phase 10 | Complete |
+| FEAT-03     | Phase 10 | Complete |
 | FEAT-04     | Phase 5  | Complete |
 | FEAT-05     | Phase 5  | Complete |
 | FEAT-06     | Phase 8  | Complete |
@@ -170,7 +170,7 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 | UX-05       | Phase 2  | Complete |
 | UX-06       | Phase 7  | Complete |
 | UX-07       | Phase 2  | Complete |
-| UX-08       | Phase 10 | Pending  |
+| UX-08       | Phase 10 | Complete |
 | SEO-01      | Phase 9  | Complete |
 | SEO-02      | Phase 9  | Complete |
 | SEO-03      | Phase 6  | Complete |
@@ -185,8 +185,8 @@ Which phases cover which requirements. Updated after v1.0 milestone audit (2026-
 **Coverage:**
 
 - v1 requirements: 51 total
-- Satisfied: 32 [x]
-- Pending (gap closure): 15
+- Satisfied: 38 [x]
+- Pending (gap closure): 9
 - Deferred: 2 (FOUND-03, TRACK-01)
 - Overridden: 1 (FEAT-01)
 - Unmapped: 0
