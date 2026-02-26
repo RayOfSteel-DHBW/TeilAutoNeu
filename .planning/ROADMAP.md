@@ -34,7 +34,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 **Pages in scope:** index.html, fahrzeuge.html, preise.html, geschaeftskunden.html, ueber-uns.html, mitglied-werden.html, datenschutz.html, impressum.html
 
-- [ ] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented
+- [x] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented — completed 2026-02-26
 - [ ] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean
 - [ ] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; remaining issues catalogued
 - [ ] **Phase 15: Review Fix** — All joint review findings fixed and Puppeteer-verified clean
@@ -50,7 +50,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. Puppeteer has captured screenshots of all 8 pages at 375px width
   3. A written issue log exists naming each page, the affected area, and the observed defect for every problem found
   4. No page is skipped — coverage is 8/8 at both widths
-**Plans**: 0/1
+**Plans**: 1/1 complete
 
 ### Phase 13: Auto-Fix
 **Goal**: Every layout/rendering issue found in the audit is fixed, with Puppeteer re-screenshot verification confirming each page is clean before moving on.
@@ -109,7 +109,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 9. Content Accuracy & Dead Code Cleanup | v1.0 | 1/1 | Complete | 2026-02-25 |
 | 10. Content Messaging & Feature Polish | v1.0 | 2/2 | Complete | 2026-02-25 |
 | 11. Simplified Datenschutzerklärung | v1.0 | 1/1 | Complete | 2026-02-25 |
-| 12. Visual Audit | v1.1 | 0/1 | In Progress | - |
+| 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 13. Auto-Fix | v1.1 | 0/1 | Not started | - |
 | 14. Joint Review | v1.1 | 0/1 | Not started | - |
 | 15. Review Fix | v1.1 | 0/? | Not started | - |
