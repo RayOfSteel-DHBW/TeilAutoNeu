@@ -367,13 +367,13 @@ Gather verification context from the phase directory and project state.
 ```bash
 # Normalize phase and find directory
 PADDED_PHASE=$(printf "%02d" $PHASE_ARG 2>/dev/null || echo "$PHASE_ARG")
-PHASE_DIR=$(ls -d .gsd/phases/$PADDED_PHASE-* .gsd/phases/$PHASE_ARG-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/$PADDED_PHASE-* .planning/phases/$PHASE_ARG-* 2>/dev/null | head -1)
 
 # List all PLAN.md files
 ls "$PHASE_DIR"/*-PLAN.md 2>/dev/null
 
 # Get phase goal from ROADMAP
-grep -A 10 "Phase $PHASE_NUM" .gsd/ROADMAP.md | head -15
+grep -A 10 "Phase $PHASE_NUM" .planning/ROADMAP.md | head -15
 
 # Get phase brief if exists
 ls "$PHASE_DIR"/*-BRIEF.md 2>/dev/null

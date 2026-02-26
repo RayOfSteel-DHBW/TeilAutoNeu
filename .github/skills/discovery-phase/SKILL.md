@@ -50,7 +50,7 @@ Copilot's training data is 6-18 months stale. Always verify.
 - `company_research_exa` — Research companies
 - `deep_search_exa` — Deep research with query expansion
 
-See ~/.gsd/templates/discovery.md `<discovery_protocol>` for full protocol.
+See .planning/templates/discovery.md `<discovery_protocol>` for full protocol.
 </source_hierarchy>
 
 <process>
@@ -132,7 +132,7 @@ For: Choosing between options, new external integration.
 
 5. **Cross-verify:** Any Web Search finding → confirm with Context7/official docs.
 
-6. **Create DISCOVERY.md** using ~/.gsd/templates/discovery.md structure:
+6. **Create DISCOVERY.md** using .planning/templates/discovery.md structure:
    - Summary with recommendation
    - Key findings per option
    - Code examples from Context7
@@ -140,7 +140,7 @@ For: Choosing between options, new external integration.
 
 7. Return to plan-phase.md.
 
-**Output:** `.gsd/phases/XX-name/DISCOVERY.md`
+**Output:** `.planning/phases/XX-name/DISCOVERY.md`
 </step>
 
 <step name="level_3_deep_dive">
@@ -150,7 +150,7 @@ For: Architectural decisions, novel problems, high-risk choices.
 
 **Process:**
 
-1. **Scope the discovery** using ~/.gsd/templates/discovery.md:
+1. **Scope the discovery** using .planning/templates/discovery.md:
    - Define clear scope
    - Define include/exclude boundaries
    - List specific questions to answer
@@ -183,7 +183,7 @@ For: Architectural decisions, novel problems, high-risk choices.
    - Flag contradictions
 
 6. **Create comprehensive DISCOVERY.md:**
-   - Full structure from ~/.gsd/templates/discovery.md
+   - Full structure from .planning/templates/discovery.md
    - Quality report with source attribution
    - Confidence by finding
    - If LOW confidence on any critical finding → add validation checkpoints
@@ -192,7 +192,7 @@ For: Architectural decisions, novel problems, high-risk choices.
 
 8. Return to plan-phase.md.
 
-**Output:** `.gsd/phases/XX-name/DISCOVERY.md` (comprehensive)
+**Output:** `.planning/phases/XX-name/DISCOVERY.md` (comprehensive)
 </step>
 
 <step name="identify_unknowns">
@@ -207,7 +207,7 @@ Ask: What do we need to learn before we can plan this phase?
   </step>
 
 <step name="create_discovery_scope">
-Use ~/.gsd/templates/discovery.md.
+Use .planning/templates/discovery.md.
 
 Include:
 
@@ -226,7 +226,7 @@ Run the discovery:
 </step>
 
 <step name="create_discovery_output">
-Write `.gsd/phases/XX-name/DISCOVERY.md`:
+Write `.planning/phases/XX-name/DISCOVERY.md`:
 - Summary with recommendation
 - Key findings with sources
 - Code examples if applicable
@@ -269,7 +269,7 @@ If "address first": Gather user input on questions, update discovery.
 
 <step name="offer_next">
 ```
-Discovery complete: .gsd/phases/XX-name/DISCOVERY.md
+Discovery complete: .planning/phases/XX-name/DISCOVERY.md
 Recommendation: [one-liner]
 Confidence: [level]
 

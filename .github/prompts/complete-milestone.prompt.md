@@ -15,15 +15,15 @@ Output: Milestone archived (roadmap + requirements), PROJECT.md evolved, git tag
 **Load these files NOW (before proceeding):**
 
 - ../skills/complete-milestone/SKILL.md (main workflow)
-- @.gsd/templates/milestone-archive.md (archive template)
+- @.planning/templates/milestone-archive.md (archive template)
   </execution_context>
 
 <context>
 **Project files:**
-- `.gsd/ROADMAP.md`
-- `.gsd/REQUIREMENTS.md`
-- `.gsd/STATE.md`
-- `.gsd/PROJECT.md`
+- `.planning/ROADMAP.md`
+- `.planning/REQUIREMENTS.md`
+- `.planning/STATE.md`
+- `.planning/PROJECT.md`
 
 **User input:**
 
@@ -35,7 +35,7 @@ Output: Milestone archived (roadmap + requirements), PROJECT.md evolved, git tag
 **Follow complete-milestone.md workflow:**
 
 0. **Check for audit:**
-   - Look for `.gsd/v{{version}}-MILESTONE-AUDIT.md`
+   - Look for `.planning/v{{version}}-MILESTONE-AUDIT.md`
    - If missing or stale: recommend `/audit-milestone.md` first
    - If audit status is `gaps_found`: recommend `/plan-milestone-gaps.md` first
    - If audit status is `passed`: proceed to step 1
@@ -72,16 +72,16 @@ Output: Milestone archived (roadmap + requirements), PROJECT.md evolved, git tag
    - Present for approval
 
 4. **Archive milestone:**
-   - Create `.gsd/milestones/v{{version}}-ROADMAP.md`
+   - Create `.planning/milestones/v{{version}}-ROADMAP.md`
    - Extract full phase details from ROADMAP.md
    - Fill milestone-archive.md template
    - Update ROADMAP.md to one-line summary with link
 
 5. **Archive requirements:**
-   - Create `.gsd/milestones/v{{version}}-REQUIREMENTS.md`
+   - Create `.planning/milestones/v{{version}}-REQUIREMENTS.md`
    - Mark all v1 requirements as complete (checkboxes checked)
    - Note requirement outcomes (validated, adjusted, dropped)
-   - Delete `.gsd/REQUIREMENTS.md` (fresh one created for next milestone)
+   - Delete `.planning/REQUIREMENTS.md` (fresh one created for next milestone)
 
 6. **Update PROJECT.md:**
    - Add "Current State" section with shipped version
@@ -101,9 +101,9 @@ Output: Milestone archived (roadmap + requirements), PROJECT.md evolved, git tag
 
 <success_criteria>
 
-- Milestone archived to `.gsd/milestones/v{{version}}-ROADMAP.md`
-- Requirements archived to `.gsd/milestones/v{{version}}-REQUIREMENTS.md`
-- `.gsd/REQUIREMENTS.md` deleted (fresh for next milestone)
+- Milestone archived to `.planning/milestones/v{{version}}-ROADMAP.md`
+- Requirements archived to `.planning/milestones/v{{version}}-REQUIREMENTS.md`
+- `.planning/REQUIREMENTS.md` deleted (fresh for next milestone)
 - ROADMAP.md collapsed to one-line entry
 - PROJECT.md updated with current state
 - Git tag v{{version}} created

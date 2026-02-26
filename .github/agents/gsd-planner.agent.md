@@ -448,13 +448,13 @@ Output: [What artifacts will be created]
 
 <execution_context>
 ../skills/execute-plan/SKILL.md
-@.gsd/templates/summary.md
+@.planning/templates/summary.md
 </execution_context>
 
 <context>
-@.gsd/PROJECT.md
-@.gsd/ROADMAP.md
-@.gsd/STATE.md
+@.planning/PROJECT.md
+@.planning/ROADMAP.md
+@.planning/STATE.md
 
 # Only reference prior plan SUMMARYs if genuinely needed
 
@@ -482,7 +482,7 @@ Output: [What artifacts will be created]
 </success_criteria>
 
 <output>
-After completion, create `.gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md`
+After completion, create `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 </output>
 ```
 
@@ -878,7 +878,7 @@ Triggered by `--gaps` flag. Creates plans to address verification or UAT failure
 ```bash
 # Match both zero-padded (05-*) and unpadded (5-*) folders
 PADDED_PHASE=$(printf "%02d" $PHASE_ARG 2>/dev/null || echo "$PHASE_ARG")
-PHASE_DIR=$(ls -d .gsd/phases/$PADDED_PHASE-* .gsd/phases/$PHASE_ARG-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/$PADDED_PHASE-* .planning/phases/$PHASE_ARG-* 2>/dev/null | head -1)
 
 # Check for VERIFICATION.md (code verification gaps)
 ls "$PHASE_DIR"/*-VERIFICATION.md 2>/dev/null
@@ -959,7 +959,7 @@ Triggered when orchestrator provides `<revision_context>` with checker issues. Y
 Read all PLAN.md files in the phase directory:
 
 ```bash
-cat .gsd/phases/$PHASE-*/*-PLAN.md
+cat .planning/phases/$PHASE-*/*-PLAN.md
 ```
 
 Build mental model of:
@@ -1033,7 +1033,7 @@ After making edits, self-check:
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/phases/$PHASE-*/$PHASE-*-PLAN.md
+git add .planning/phases/$PHASE-*/$PHASE-*-PLAN.md
 git commit -m "fix($PHASE): revise plans based on checker feedback"
 ```
 
@@ -1053,8 +1053,8 @@ git commit -m "fix($PHASE): revise plans based on checker feedback"
 
 ### Files Updated
 
-- .gsd/phases/16-xxx/16-01-PLAN.md
-- .gsd/phases/16-xxx/16-02-PLAN.md
+- .planning/phases/16-xxx/16-01-PLAN.md
+- .planning/phases/16-xxx/16-02-PLAN.md
 
 {If any issues NOT addressed:}
 
@@ -1070,21 +1070,21 @@ git commit -m "fix($PHASE): revise plans based on checker feedback"
 <execution_flow>
 
 <step name="load_project_state" priority="first">
-Read `.gsd/STATE.md` and parse:
+Read `.planning/STATE.md` and parse:
 - Current position (which phase we're planning)
 - Accumulated decisions (constraints on this phase)
 - Pending todos (candidates for inclusion)
 - Blockers/concerns (things this phase may address)
 
-If STATE.md missing but .gsd/ exists, offer to reconstruct or continue without.
+If STATE.md missing but .planning/ exists, offer to reconstruct or continue without.
 
 **Load planning config:**
 
 ```bash
 # Check if planning docs should be committed (default: true)
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 # Auto-detect gitignored (overrides config)
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 Store `COMMIT_PLANNING_DOCS` for use in git operations.
@@ -1094,7 +1094,7 @@ Store `COMMIT_PLANNING_DOCS` for use in git operations.
 Check for codebase map:
 
 ```bash
-ls .gsd/codebase/*.md 2>/dev/null
+ls .planning/codebase/*.md 2>/dev/null
 ```
 
 If exists, load relevant documents based on phase type:
@@ -1116,8 +1116,8 @@ If exists, load relevant documents based on phase type:
 Check roadmap and existing phases:
 
 ```bash
-cat .gsd/ROADMAP.md
-ls .gsd/phases/
+cat .planning/ROADMAP.md
+ls .planning/phases/
 ```
 
 If multiple phases available, ask which one to plan. If obvious (first incomplete phase), proceed.
@@ -1137,7 +1137,7 @@ Apply discovery level protocol (see discovery_levels section).
 1. Scan all summary frontmatter (first ~25 lines):
 
 ```bash
-for f in .gsd/phases/*/*-SUMMARY.md; do
+for f in .planning/phases/*/*-SUMMARY.md; do
   sed -n '1,/^---$/p; /^---$/q' "$f" | head -30
 done
 ```
@@ -1174,7 +1174,7 @@ Understand:
 ```bash
 # Match both zero-padded (05-*) and unpadded (5-*) folders
 PADDED_PHASE=$(printf "%02d" $PHASE 2>/dev/null || echo "$PHASE")
-PHASE_DIR=$(ls -d .gsd/phases/$PADDED_PHASE-* .gsd/phases/$PHASE-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/$PADDED_PHASE-* .planning/phases/$PHASE-* 2>/dev/null | head -1)
 
 # Read CONTEXT.md if exists (from /discuss-phase.md)
 cat "$PHASE_DIR"/*-CONTEXT.md 2>/dev/null
@@ -1272,7 +1272,7 @@ Wait for confirmation in interactive mode. Auto-approve in yolo mode.
 <step name="write_phase_prompt">
 Use template structure for each PLAN.md.
 
-Write to `.gsd/phases/XX-name/{phase}-{NN}-PLAN.md` (e.g., `01-02-PLAN.md` for Phase 1, Plan 2)
+Write to `.planning/phases/XX-name/{phase}-{NN}-PLAN.md` (e.g., `01-02-PLAN.md` for Phase 1, Plan 2)
 
 Include frontmatter (phase, plan, type, wave, depends_on, files_modified, autonomous, must_haves).
 </step>
@@ -1280,7 +1280,7 @@ Include frontmatter (phase, plan, type, wave, depends_on, files_modified, autono
 <step name="update_roadmap">
 Update ROADMAP.md to finalize phase placeholders created by add-phase or insert-phase.
 
-1. Read `.gsd/ROADMAP.md`
+1. Read `.planning/ROADMAP.md`
 2. Find the phase entry (`### Phase {N}:`)
 3. Update placeholders:
 
@@ -1315,7 +1315,7 @@ Commit phase plan(s) and updated roadmap:
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/phases/$PHASE-*/$PHASE-*-PLAN.md .gsd/ROADMAP.md
+git add .planning/phases/$PHASE-*/$PHASE-*-PLAN.md .planning/ROADMAP.md
 git commit -m "docs($PHASE): create phase plan
 
 Phase $PHASE: $PHASE_NAME
@@ -1420,7 +1420,7 @@ Execute: `/execute-phase.md {phase} --gaps-only`
 
 ### Files Updated
 
-- .gsd/phases/{phase_dir}/{phase}-{plan}-PLAN.md
+- .planning/phases/{phase_dir}/{phase}-{plan}-PLAN.md
 
 {If any issues NOT addressed:}
 

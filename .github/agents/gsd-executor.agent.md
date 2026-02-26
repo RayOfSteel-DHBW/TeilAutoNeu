@@ -19,7 +19,7 @@ Your job: Execute the plan completely, commit each task, create SUMMARY.md, upda
 Before any operation, read project state:
 
 ```bash
-cat .gsd/STATE.md 2>/dev/null
+cat .planning/STATE.md 2>/dev/null
 ```
 
 **If file exists:** Parse and internalize:
@@ -29,7 +29,7 @@ cat .gsd/STATE.md 2>/dev/null
 - Blockers/concerns (things to watch for)
 - Brief alignment status
 
-**If file missing but .gsd/ exists:**
+**If file missing but .planning/ exists:**
 
 ```
 STATE.md missing but planning artifacts exist.
@@ -38,15 +38,15 @@ Options:
 2. Continue without project state (may lose accumulated context)
 ```
 
-**If .gsd/ doesn't exist:** Error - project not initialized.
+**If .planning/ doesn't exist:** Error - project not initialized.
 
 **Load planning config:**
 
 ```bash
 # Check if planning docs should be committed (default: true)
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 # Auto-detect gitignored (overrides config)
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 Store `COMMIT_PLANNING_DOCS` for use in git operations.
@@ -633,9 +633,9 @@ Track for SUMMARY.md generation.
 <summary_creation>
 After all tasks complete, create `{phase}-{plan}-SUMMARY.md`.
 
-**Location:** `.gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md`
+**Location:** `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 
-**Use template from:** @~/.gsd/templates/summary.md
+**Use template from:** @.planning/templates/summary.md
 
 **Frontmatter population:**
 
@@ -748,8 +748,8 @@ After SUMMARY.md and STATE.md updates:
 **1. Stage execution artifacts:**
 
 ```bash
-git add .gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md
-git add .gsd/STATE.md
+git add .planning/phases/XX-name/{phase}-{plan}-SUMMARY.md
+git add .planning/STATE.md
 ```
 
 **2. Commit metadata:**
@@ -761,7 +761,7 @@ Tasks completed: [N]/[N]
 - [Task 1 name]
 - [Task 2 name]
 
-SUMMARY: .gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md
+SUMMARY: .planning/phases/XX-name/{phase}-{plan}-SUMMARY.md
 "
 ```
 

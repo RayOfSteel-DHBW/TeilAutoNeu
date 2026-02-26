@@ -11,20 +11,20 @@ Enables "thought → capture → continue" flow without losing context or derail
 </objective>
 
 <context>
-@.gsd/STATE.md
+@.planning/STATE.md
 </context>
 
 <process>
 
 <step name="ensure_directory">
 ```bash
-mkdir -p .gsd/todos/pending .gsd/todos/done
+mkdir -p .planning/todos/pending .planning/todos/done
 ```
 </step>
 
 <step name="check_existing_areas">
 ```bash
-ls .gsd/todos/pending/*.md 2>/dev/null | xargs -I {} grep "^area:" {} 2>/dev/null | cut -d' ' -f2 | sort -u
+ls .planning/todos/pending/*.md 2>/dev/null | xargs -I {} grep "^area:" {} 2>/dev/null | cut -d' ' -f2 | sort -u
 ```
 
 Note existing areas for consistency in infer_area step.
@@ -59,7 +59,7 @@ Infer area from file paths:
 | `src/db/*`, `database/*`       | `database` |
 | `tests/*`, `__tests__/*`       | `testing`  |
 | `docs/*`                       | `docs`     |
-| `.gsd/*`                       | `planning` |
+| `.planning/*`                       | `planning` |
 | `scripts/*`, `bin/*`           | `tooling`  |
 | No files or unclear            | `general`  |
 
@@ -68,7 +68,7 @@ Use existing area from step 2 if similar match exists.
 
 <step name="check_duplicates">
 ```bash
-grep -l -i "[key words from title]" .gsd/todos/pending/*.md 2>/dev/null
+grep -l -i "[key words from title]" .planning/todos/pending/*.md 2>/dev/null
 ```
 
 If potential duplicate found:
@@ -94,7 +94,7 @@ date_prefix=$(date "+%Y-%m-%d")
 
 Generate slug from title (lowercase, hyphens, no special chars in FILENAME only).
 
-Write to `.gsd/todos/pending/${date_prefix}-${slug}.md`:
+Write to `.planning/todos/pending/${date_prefix}-${slug}.md`:
 
 ```markdown
 ---
@@ -117,9 +117,9 @@ files:
 </step>
 
 <step name="update_state">
-If `.gsd/STATE.md` exists:
+If `.planning/STATE.md` exists:
 
-1. Count todos: `ls .gsd/todos/pending/*.md 2>/dev/null | wc -l`
+1. Count todos: `ls .planning/todos/pending/*.md 2>/dev/null | wc -l`
 2. Update "### Pending Todos" under "## Accumulated Context"
    </step>
 
@@ -129,8 +129,8 @@ Commit the todo and any updated state:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations, log "Todo saved (not committed - commit_docs: false)"
@@ -138,8 +138,8 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/todos/pending/[filename]
-[ -f .gsd/STATE.md ] && git add .gsd/STATE.md
+git add .planning/todos/pending/[filename]
+[ -f .planning/STATE.md ] && git add .planning/STATE.md
 git commit -m "$(cat <<'EOF'
 docs: capture todo - [title]
 
@@ -153,7 +153,7 @@ Confirm: "Committed: docs: capture todo - [title]"
 
 <step name="confirm">
 ```
-Todo saved: .gsd/todos/pending/[filename]
+Todo saved: .planning/todos/pending/[filename]
 
 [title]
 Area: [area]
@@ -173,8 +173,8 @@ Would you like to:
 </process>
 
 <output>
-- `.gsd/todos/pending/[date]-[slug].md`
-- Updated `.gsd/STATE.md` (if exists)
+- `.planning/todos/pending/[date]-[slug].md`
+- Updated `.planning/STATE.md` (if exists)
 </output>
 
 <anti_patterns>

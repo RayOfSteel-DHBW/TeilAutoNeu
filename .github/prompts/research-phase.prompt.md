@@ -33,7 +33,7 @@ Normalize phase input in step 1 before any directory lookups.
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -58,7 +58,7 @@ else
   PHASE="$ARGUMENTS"
 fi
 
-grep -A5 "Phase ${PHASE}:" .gsd/ROADMAP.md 2>/dev/null
+grep -A5 "Phase ${PHASE}:" .planning/ROADMAP.md 2>/dev/null
 ```
 
 **If not found:** Error and exit. **If found:** Extract phase number, name, description.
@@ -66,7 +66,7 @@ grep -A5 "Phase ${PHASE}:" .gsd/ROADMAP.md 2>/dev/null
 ## 2. Check Existing Research
 
 ```bash
-ls .gsd/phases/${PHASE}-*/RESEARCH.md 2>/dev/null
+ls .planning/phases/${PHASE}-*/RESEARCH.md 2>/dev/null
 ```
 
 **If exists:** Offer: 1) Update research, 2) View existing, 3) Skip. Wait for response.
@@ -76,10 +76,10 @@ ls .gsd/phases/${PHASE}-*/RESEARCH.md 2>/dev/null
 ## 3. Gather Phase Context
 
 ```bash
-grep -A20 "Phase ${PHASE}:" .gsd/ROADMAP.md
-cat .gsd/REQUIREMENTS.md 2>/dev/null
-cat .gsd/phases/${PHASE}-*/*-CONTEXT.md 2>/dev/null
-grep -A30 "### Decisions Made" .gsd/STATE.md 2>/dev/null
+grep -A20 "Phase ${PHASE}:" .planning/ROADMAP.md
+cat .planning/REQUIREMENTS.md 2>/dev/null
+cat .planning/phases/${PHASE}-*/*-CONTEXT.md 2>/dev/null
+grep -A30 "### Decisions Made" .planning/STATE.md 2>/dev/null
 ```
 
 Present summary with phase description, requirements, prior decisions.
@@ -142,7 +142,7 @@ Before declaring complete, verify:
       </quality_gate>
 
 <output>
-Write to: .gsd/phases/${PHASE}-{slug}/${PHASE}-RESEARCH.md
+Write to: .planning/phases/${PHASE}-{slug}/${PHASE}-RESEARCH.md
 </output>
 ```
 
@@ -171,7 +171,7 @@ Continue research for Phase {phase_number}: {phase_name}
 </objective>
 
 <prior_state>
-Research file: @.gsd/phases/${PHASE}-{slug}/${PHASE}-RESEARCH.md
+Research file: @.planning/phases/${PHASE}-{slug}/${PHASE}-RESEARCH.md
 </prior_state>
 
 <checkpoint_response>

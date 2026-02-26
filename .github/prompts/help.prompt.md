@@ -51,7 +51,7 @@ One command takes you from idea to ready-for-planning:
 - Requirements definition with v1/v2/out-of-scope scoping
 - Roadmap creation with phase breakdown and success criteria
 
-Creates all `.gsd/` artifacts:
+Creates all `.planning/` artifacts:
 
 - `PROJECT.md` — vision and requirements
 - `config.json` — workflow mode (interactive/yolo)
@@ -66,7 +66,7 @@ Usage: `/new-project.md`
 Map an existing codebase for brownfield projects.
 
 - Analyzes codebase with parallel Explore agents
-- Creates `.gsd/codebase/` with 7 focused documents
+- Creates `.planning/codebase/` with 7 focused documents
 - Covers stack, architecture, structure, conventions, testing, integrations, concerns
 - Use before `/new-project.md` on existing codebases
 
@@ -105,13 +105,13 @@ Usage: `/list-phase-assumptions.md 3`
 **`/plan-phase.md <number>`**
 Create detailed execution plan for a specific phase.
 
-- Generates `.gsd/phases/XX-phase-name/XX-YY-PLAN.md`
+- Generates `.planning/phases/XX-phase-name/XX-YY-PLAN.md`
 - Breaks phase into concrete, actionable tasks
 - Includes verification criteria and success measures
 - Multiple plans per phase supported (XX-01, XX-02, etc.)
 
 Usage: `/plan-phase.md 1`
-Result: Creates `.gsd/phases/01-foundation/01-01-PLAN.md`
+Result: Creates `.planning/phases/01-foundation/01-01-PLAN.md`
 
 ### Execution
 
@@ -133,13 +133,13 @@ Execute small, ad-hoc tasks with GSD guarantees but skip optional agents.
 Quick mode uses the same system with a shorter path:
 
 - Spawns planner + executor (skips researcher, checker, verifier)
-- Quick tasks live in `.gsd/quick/` separate from planned phases
+- Quick tasks live in `.planning/quick/` separate from planned phases
 - Updates STATE.md tracking (not ROADMAP.md)
 
 Use when you know exactly what to do and the task is small enough to not need research or verification.
 
 Usage: `/quick.md`
-Result: Creates `.gsd/quick/NNN-slug/PLAN.md`, `.gsd/quick/NNN-slug/SUMMARY.md`
+Result: Creates `.planning/quick/NNN-slug/PLAN.md`, `.planning/quick/NNN-slug/SUMMARY.md`
 
 ### Roadmap Management
 
@@ -237,10 +237,10 @@ Usage: `/pause-work.md`
 Systematic debugging with persistent state across context resets.
 
 - Gathers symptoms through adaptive questioning
-- Creates `.gsd/debug/[slug].md` to track investigation
+- Creates `.planning/debug/[slug].md` to track investigation
 - Investigates using scientific method (evidence → hypothesis → test)
 - Survives `/clear` — run `/debug.md` with no args to resume
-- Archives resolved issues to `.gsd/debug/resolved/`
+- Archives resolved issues to `.planning/debug/resolved/`
 
 Usage: `/debug.md "login button doesn't work"`
 Usage: `/debug.md` (resume active session)
@@ -251,7 +251,7 @@ Usage: `/debug.md` (resume active session)
 Capture idea or task as todo from current conversation.
 
 - Extracts context from conversation (or uses provided description)
-- Creates structured todo file in `.gsd/todos/pending/`
+- Creates structured todo file in `.planning/todos/pending/`
 - Infers area from file paths for grouping
 - Checks for duplicates before creating
 - Updates STATE.md todo count
@@ -312,7 +312,7 @@ Configure workflow toggles and model profile interactively.
 
 - Toggle researcher, plan checker, verifier agents
 - Select model profile (quality/balanced/budget)
-- Updates `.gsd/config.json`
+- Updates `.planning/config.json`
 
 Usage: `/settings.md`
 
@@ -352,7 +352,7 @@ Usage: `/join-discord.md`
 ## Files & Structure
 
 ```
-.gsd/
+.planning/
 ├── PROJECT.md            # Project vision
 ├── ROADMAP.md            # Current phase breakdown
 ├── STATE.md              # Project memory & context
@@ -395,11 +395,11 @@ Set during `/new-project.md`:
 - Executes plans without confirmation
 - Only stops for critical checkpoints
 
-Change anytime by editing `.gsd/config.json`
+Change anytime by editing `.planning/config.json`
 
 ## Planning Configuration
 
-Configure how planning artifacts are managed in `.gsd/config.json`:
+Configure how planning artifacts are managed in `.planning/config.json`:
 
 **`planning.commit_docs`** (default: `true`)
 
@@ -408,14 +408,14 @@ Configure how planning artifacts are managed in `.gsd/config.json`:
 
 When `commit_docs: false`:
 
-- Add `.gsd/` to your `.gitignore`
+- Add `.planning/` to your `.gitignore`
 - Useful for OSS contributions, client projects, or keeping planning private
 - All planning files still work normally, just not tracked in git
 
 **`planning.search_gitignored`** (default: `false`)
 
 - `true`: Add `--no-ignore` to broad ripgrep searches
-- Only needed when `.gsd/` is gitignored and you want project-wide searches to include it
+- Only needed when `.planning/` is gitignored and you want project-wide searches to include it
 
 Example config:
 
@@ -482,8 +482,8 @@ Example config:
 
 ## Getting Help
 
-- Read `.gsd/PROJECT.md` for project vision
-- Read `.gsd/STATE.md` for current context
-- Check `.gsd/ROADMAP.md` for phase status
+- Read `.planning/PROJECT.md` for project vision
+- Read `.planning/STATE.md` for current context
+- Check `.planning/ROADMAP.md` for phase status
 - Run `/progress.md` to check where you're up to
   </reference>

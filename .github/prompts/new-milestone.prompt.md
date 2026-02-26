@@ -11,11 +11,11 @@ This is the brownfield equivalent of new-project. The project exists, PROJECT.md
 
 **Creates/Updates:**
 
-- `.gsd/PROJECT.md` — updated with new milestone goals
-- `.gsd/research/` — domain research (optional, focuses on NEW features)
-- `.gsd/REQUIREMENTS.md` — scoped requirements for this milestone
-- `.gsd/ROADMAP.md` — phase structure (continues numbering)
-- `.gsd/STATE.md` — reset for new milestone
+- `.planning/PROJECT.md` — updated with new milestone goals
+- `.planning/research/` — domain research (optional, focuses on NEW features)
+- `.planning/REQUIREMENTS.md` — scoped requirements for this milestone
+- `.planning/ROADMAP.md` — phase structure (continues numbering)
+- `.planning/STATE.md` — reset for new milestone
 
 **After this command:** Run `/plan-phase.md [N]` to start execution.
 </objective>
@@ -23,21 +23,21 @@ This is the brownfield equivalent of new-project. The project exists, PROJECT.md
 <execution_context>
 ../instructions/questioning.instructions.md
 ../instructions/ui-brand.instructions.md
-@.gsd/templates/project.md
-@.gsd/templates/requirements.md
+@.planning/templates/project.md
+@.planning/templates/requirements.md
 </execution_context>
 
 <context>
 Milestone name: $ARGUMENTS (optional - will prompt if not provided)
 
 **Load project context:**
-@.gsd/PROJECT.md
-@.gsd/STATE.md
-@.gsd/MILESTONES.md
-@.gsd/config.json
+@.planning/PROJECT.md
+@.planning/STATE.md
+@.planning/MILESTONES.md
+@.planning/config.json
 
 **Load milestone context (if exists, from /discuss-milestone.md):**
-@.gsd/MILESTONE-CONTEXT.md
+@.planning/MILESTONE-CONTEXT.md
 </context>
 
 <process>
@@ -109,8 +109,8 @@ Delete MILESTONE-CONTEXT.md if exists (consumed).
 Check planning config:
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 If `COMMIT_PLANNING_DOCS=false`: Skip git operations
@@ -118,7 +118,7 @@ If `COMMIT_PLANNING_DOCS=false`: Skip git operations
 If `COMMIT_PLANNING_DOCS=true` (default):
 
 ```bash
-git add .gsd/PROJECT.md .gsd/STATE.md
+git add .planning/PROJECT.md .planning/STATE.md
 git commit -m "docs: start milestone v[X.Y] [Name]"
 ```
 
@@ -127,7 +127,7 @@ git commit -m "docs: start milestone v[X.Y] [Name]"
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -167,7 +167,7 @@ Researching [new features] ecosystem...
 Create research directory:
 
 ```bash
-mkdir -p .gsd/research
+mkdir -p .planning/research
 ```
 
 Display spawning indicator:
@@ -219,8 +219,8 @@ Your STACK.md feeds into roadmap creation. Be prescriptive:
 </quality_gate>
 
 <output>
-Write to: .gsd/research/STACK.md
-Use template: ~/.gsd/templates/research-project/STACK.md
+Write to: .planning/research/STACK.md
+Use template: .planning/templates/research-project/STACK.md
 </output>
 ", subagent_type="gsd-project-researcher", model="{researcher_model}", description="Stack research")
 
@@ -260,8 +260,8 @@ Your FEATURES.md feeds into requirements definition. Categorize clearly:
 </quality_gate>
 
 <output>
-Write to: .gsd/research/FEATURES.md
-Use template: ~/.gsd/templates/research-project/FEATURES.md
+Write to: .planning/research/FEATURES.md
+Use template: .planning/templates/research-project/FEATURES.md
 </output>
 ", subagent_type="gsd-project-researcher", model="{researcher_model}", description="Features research")
 
@@ -302,8 +302,8 @@ Your ARCHITECTURE.md informs phase structure in roadmap. Include:
 </quality_gate>
 
 <output>
-Write to: .gsd/research/ARCHITECTURE.md
-Use template: ~/.gsd/templates/research-project/ARCHITECTURE.md
+Write to: .planning/research/ARCHITECTURE.md
+Use template: .planning/templates/research-project/ARCHITECTURE.md
 </output>
 ", subagent_type="gsd-project-researcher", model="{researcher_model}", description="Architecture research")
 
@@ -340,8 +340,8 @@ Your PITFALLS.md prevents mistakes in roadmap/planning. For each pitfall:
 </quality_gate>
 
 <output>
-Write to: .gsd/research/PITFALLS.md
-Use template: ~/.gsd/templates/research-project/PITFALLS.md
+Write to: .planning/research/PITFALLS.md
+Use template: .planning/templates/research-project/PITFALLS.md
 </output>
 ", subagent_type="gsd-project-researcher", model="{researcher_model}", description="Pitfalls research")
 ```
@@ -356,15 +356,15 @@ Synthesize research outputs into SUMMARY.md.
 
 <research_files>
 Read these files:
-- .gsd/research/STACK.md
-- .gsd/research/FEATURES.md
-- .gsd/research/ARCHITECTURE.md
-- .gsd/research/PITFALLS.md
+- .planning/research/STACK.md
+- .planning/research/FEATURES.md
+- .planning/research/ARCHITECTURE.md
+- .planning/research/PITFALLS.md
 </research_files>
 
 <output>
-Write to: .gsd/research/SUMMARY.md
-Use template: ~/.gsd/templates/research-project/SUMMARY.md
+Write to: .planning/research/SUMMARY.md
+Use template: .planning/templates/research-project/SUMMARY.md
 Commit after writing.
 </output>
 ", subagent_type="gsd-research-synthesizer", model="{synthesizer_model}", description="Synthesize research")
@@ -383,7 +383,7 @@ Display research complete banner and key findings:
 **New feature table stakes:** [from SUMMARY.md]
 **Watch Out For:** [from SUMMARY.md]
 
-Files: `.gsd/research/`
+Files: `.planning/research/`
 ```
 
 **If "Skip research":** Continue to Phase 8.
@@ -471,7 +471,7 @@ Use HumanAgent MCP (HumanAgent_Chat):
 
 **Generate REQUIREMENTS.md:**
 
-Create `.gsd/REQUIREMENTS.md` with:
+Create `.planning/REQUIREMENTS.md` with:
 
 - v1 Requirements for THIS milestone grouped by category (checkboxes, REQ-IDs)
 - Future Requirements (deferred to later milestones)
@@ -521,7 +521,7 @@ Check planning config (same pattern as Phase 6).
 If committing:
 
 ```bash
-git add .gsd/REQUIREMENTS.md
+git add .planning/REQUIREMENTS.md
 git commit -m "$(cat <<'EOF'
 docs: define milestone v[X.Y] requirements
 
@@ -554,19 +554,19 @@ Task(prompt="
 <planning_context>
 
 **Project:**
-@.gsd/PROJECT.md
+@.planning/PROJECT.md
 
 **Requirements:**
-@.gsd/REQUIREMENTS.md
+@.planning/REQUIREMENTS.md
 
 **Research (if exists):**
-@.gsd/research/SUMMARY.md
+@.planning/research/SUMMARY.md
 
 **Config:**
-@.gsd/config.json
+@.planning/config.json
 
 **Previous milestone (for phase numbering):**
-@.gsd/MILESTONES.md
+@.planning/MILESTONES.md
 
 </planning_context>
 
@@ -648,7 +648,7 @@ Use HumanAgent MCP (HumanAgent_Chat):
   User feedback on roadmap:
   [user's notes]
 
-  Current ROADMAP.md: @.gsd/ROADMAP.md
+  Current ROADMAP.md: @.planning/ROADMAP.md
 
   Update the roadmap based on feedback. Edit files in place.
   Return ROADMAP REVISED with changes made.
@@ -659,7 +659,7 @@ Use HumanAgent MCP (HumanAgent_Chat):
 - Present revised roadmap
 - Loop until user approves
 
-**If "Review full file":** Display raw `cat .gsd/ROADMAP.md`, then re-ask.
+**If "Review full file":** Display raw `cat .planning/ROADMAP.md`, then re-ask.
 
 **Commit roadmap (after approval):**
 
@@ -668,7 +668,7 @@ Check planning config (same pattern as Phase 6).
 If committing:
 
 ```bash
-git add .gsd/ROADMAP.md .gsd/STATE.md .gsd/REQUIREMENTS.md
+git add .planning/ROADMAP.md .planning/STATE.md .planning/REQUIREMENTS.md
 git commit -m "$(cat <<'EOF'
 docs: create milestone v[X.Y] roadmap ([N] phases)
 
@@ -695,10 +695,10 @@ Present completion with next steps:
 
 | Artifact       | Location                    |
 |----------------|-----------------------------|
-| Project        | `.gsd/PROJECT.md`      |
-| Research       | `.gsd/research/`       |
-| Requirements   | `.gsd/REQUIREMENTS.md` |
-| Roadmap        | `.gsd/ROADMAP.md`      |
+| Project        | `.planning/PROJECT.md`      |
+| Research       | `.planning/research/`       |
+| Requirements   | `.planning/REQUIREMENTS.md` |
+| Roadmap        | `.planning/ROADMAP.md`      |
 
 **[N] phases** | **[X] requirements** | Ready to build ✓
 

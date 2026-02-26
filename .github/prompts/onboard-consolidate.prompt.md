@@ -17,13 +17,13 @@ tools:
 
 Merge investigation outputs from `/onboard-investigate.md` into a single truth document that feeds into `gsd:new-project`.
 
-Reads `.gsd/codebase/` and `.gsd/sources/*/`, applies precedence rules, resolves conflicts, flags copyright issues, and produces a consolidated analysis.
+Reads `.planning/codebase/` and `.planning/sources/*/`, applies precedence rules, resolves conflicts, flags copyright issues, and produces a consolidated analysis.
 
 **Creates:**
 
-- `.gsd/sources/CONSOLIDATED.md` — single truth document with resolved conflicts and clear open questions
+- `.planning/sources/CONSOLIDATED.md` — single truth document with resolved conflicts and clear open questions
 
-**After this command:** Run `gsd:new-project`. During questioning, point the agent at `.gsd/sources/CONSOLIDATED.md` and tell it to focus questions on the Open Questions section.
+**After this command:** Run `gsd:new-project`. During questioning, point the agent at `.planning/sources/CONSOLIDATED.md` and tell it to focus questions on the Open Questions section.
 
 </objective>
 
@@ -35,11 +35,11 @@ Reads `.gsd/codebase/` and `.gsd/sources/*/`, applies precedence rules, resolves
 
 <context>
 
-@.gsd/codebase/ARCHITECTURE.md
-@.gsd/codebase/STRUCTURE.md
-@.gsd/codebase/STACK.md
+@.planning/codebase/ARCHITECTURE.md
+@.planning/codebase/STRUCTURE.md
+@.planning/codebase/STACK.md
 
-**Additional source docs loaded dynamically from `.gsd/sources/*/`**
+**Additional source docs loaded dynamically from `.planning/sources/*/`**
 
 </context>
 
@@ -49,18 +49,18 @@ Reads `.gsd/codebase/` and `.gsd/sources/*/`, applies precedence rules, resolves
 
 ```bash
 echo "=== Codebase Docs ==="
-ls .gsd/codebase/*.md 2>/dev/null
+ls .planning/codebase/*.md 2>/dev/null
 
 echo "=== Source Directories ==="
-ls -d .gsd/sources/*/ 2>/dev/null
+ls -d .planning/sources/*/ 2>/dev/null
 
 echo "=== All Source Docs ==="
-find .gsd/sources/ -name "*.md" -not -name "CONSOLIDATED.md" | sort
+find .planning/sources/ -name "*.md" -not -name "CONSOLIDATED.md" | sort
 ```
 
-**If `.gsd/codebase/` is empty or missing:** Error — run `/onboard-investigate.md` first.
+**If `.planning/codebase/` is empty or missing:** Error — run `/onboard-investigate.md` first.
 
-**If `.gsd/sources/` has no subdirectories:** Warning — no additional sources found. CONSOLIDATED.md will reflect primary codebase only. Continue anyway.
+**If `.planning/sources/` has no subdirectories:** Warning — no additional sources found. CONSOLIDATED.md will reflect primary codebase only. Continue anyway.
 
 ## Phase 2: Load All Investigation Documents
 
@@ -68,9 +68,9 @@ Read every `.md` file discovered in Phase 1.
 
 Build a structured understanding of:
 
-- **Primary codebase** (from `.gsd/codebase/`): what the code currently IS — architecture, stack, structure, conventions, integrations, testing, concerns
-- **Primary content** (from `.gsd/sources/primary/`): what pages, assets, text, components exist
-- **Each additional source** (from `.gsd/sources/{label}/`): what it contributes, at what precedence level
+- **Primary codebase** (from `.planning/codebase/`): what the code currently IS — architecture, stack, structure, conventions, integrations, testing, concerns
+- **Primary content** (from `.planning/sources/primary/`): what pages, assets, text, components exist
+- **Each additional source** (from `.planning/sources/{label}/`): what it contributes, at what precedence level
 
 **Precedence loading:** Each `EXTRACTED.md` has a `**Precedence:**` field set during investigation. Use this to rank sources:
 
@@ -106,7 +106,7 @@ Carry forward into the consolidated Open Questions section. Deduplicate across s
 
 ## Phase 4: Write CONSOLIDATED.md
 
-Write `.gsd/sources/CONSOLIDATED.md`:
+Write `.planning/sources/CONSOLIDATED.md`:
 
 ```markdown
 # Consolidated Source Analysis
@@ -117,8 +117,8 @@ Write `.gsd/sources/CONSOLIDATED.md`:
 
 | Label | Type | Precedence | Location |
 |-------|------|------------|----------|
-| (primary) | codebase | baseline | .gsd/codebase/ + .gsd/sources/primary/ |
-| {label} | {type} | {precedence} | .gsd/sources/{label}/ |
+| (primary) | codebase | baseline | .planning/codebase/ + .planning/sources/primary/ |
+| {label} | {type} | {precedence} | .planning/sources/{label}/ |
 | ... | ... | ... | ... |
 
 **Precedence order:** Authoritative > Baseline > Ideas-only
@@ -134,18 +134,18 @@ Write `.gsd/sources/CONSOLIDATED.md`:
 ## 2. Current State (What Exists Today)
 
 ### Architecture
-[Summary from .gsd/codebase/ARCHITECTURE.md — key patterns, layers, entry points]
+[Summary from .planning/codebase/ARCHITECTURE.md — key patterns, layers, entry points]
 
 ### Technology Stack
-[Summary from .gsd/codebase/STACK.md — languages, frameworks, key dependencies]
+[Summary from .planning/codebase/STACK.md — languages, frameworks, key dependencies]
 
 ### Pages & Content
 [From primary CONTENT-INVENTORY.md — page count, key pages, content volume]
 
 ### Known Issues
-[From .gsd/codebase/CONCERNS.md — major tech debt, fragile areas]
+[From .planning/codebase/CONCERNS.md — major tech debt, fragile areas]
 
-**Sources:** .gsd/codebase/*, .gsd/sources/primary/
+**Sources:** .planning/codebase/*, .planning/sources/primary/
 
 ## 3. Design Inputs & Reusable Ideas
 
@@ -216,7 +216,7 @@ _Run `gsd:new-project` next — point it at this file during questioning._
 **Commit:**
 
 ```bash
-git add .gsd/sources/CONSOLIDATED.md
+git add .planning/sources/CONSOLIDATED.md
 git commit -m "$(cat <<'EOF'
 docs: consolidate onboarding sources
 
@@ -243,14 +243,14 @@ EOF
 
 ```
 ⚠️ [N] copyright-restricted items excluded from reusable ideas
-   Review: .gsd/sources/{label}/COPYRIGHT-FLAGS.md
+   Review: .planning/sources/{label}/COPYRIGHT-FLAGS.md
 ```
 
 [If open questions > 0:]
 
 ```
 📋 [N] questions need your input during project initialization
-   Preview: .gsd/sources/CONSOLIDATED.md § Open Questions
+   Preview: .planning/sources/CONSOLIDATED.md § Open Questions
 ```
 
 ```
@@ -262,7 +262,7 @@ Run `gsd:new-project` to initialize the project.
 
 During questioning, tell the agent:
 
-  "Read .gsd/sources/CONSOLIDATED.md — it has the full context
+  "Read .planning/sources/CONSOLIDATED.md — it has the full context
    from all sources already analyzed and merged.
    Focus your questions on the Open Questions section
    (§7 in CONSOLIDATED.md) — those are what still need my input."
@@ -272,7 +272,7 @@ During questioning, tell the agent:
 ───────────────────────────────────────────────────────
 
 **Also available:**
-- Review sources: cat .gsd/sources/CONSOLIDATED.md
+- Review sources: cat .planning/sources/CONSOLIDATED.md
 - Re-investigate: /onboard-investigate.md
 - Edit CONSOLIDATED.md manually before proceeding
 
@@ -283,7 +283,7 @@ During questioning, tell the agent:
 
 <success_criteria>
 
-- [ ] All investigation docs from `.gsd/codebase/` and `.gsd/sources/*/` read
+- [ ] All investigation docs from `.planning/codebase/` and `.planning/sources/*/` read
 - [ ] Precedence rules applied: Authoritative > Baseline > Ideas-only
 - [ ] Every conflict between sources explicitly resolved or flagged as open question
 - [ ] Copyright-restricted items excluded from reusable ideas section

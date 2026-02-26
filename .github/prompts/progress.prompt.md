@@ -15,13 +15,13 @@ Provides situational awareness before continuing work.
 <step name="verify">
 **Verify planning structure exists:**
 
-Use Bash (not Glob) to check—Glob respects .gitignore but .gsd/ is often gitignored:
+Use Bash (not Glob) to check—Glob respects .gitignore but .planning/ is often gitignored:
 
 ```bash
-test -d .gsd && echo "exists" || echo "missing"
+test -d .planning && echo "exists" || echo "missing"
 ```
 
-If no `.gsd/` directory:
+If no `.planning/` directory:
 
 ```
 No planning structure found.
@@ -43,10 +43,10 @@ If missing both ROADMAP.md and PROJECT.md: suggest `/new-project.md`.
 <step name="load">
 **Load full project context:**
 
-- Read `.gsd/STATE.md` for living memory (position, decisions, issues)
-- Read `.gsd/ROADMAP.md` for phase structure and objectives
-- Read `.gsd/PROJECT.md` for current state (What This Is, Core Value, Requirements)
-- Read `.gsd/config.json` for settings (model_profile, workflow toggles)
+- Read `.planning/STATE.md` for living memory (position, decisions, issues)
+- Read `.planning/ROADMAP.md` for phase structure and objectives
+- Read `.planning/PROJECT.md` for current state (What This Is, Core Value, Requirements)
+- Read `.planning/config.json` for settings (model_profile, workflow toggles)
   </step>
 
 <step name="recent">
@@ -64,8 +64,8 @@ If missing both ROADMAP.md and PROJECT.md: suggest `/new-project.md`.
 - Calculate: total plans, completed plans, remaining plans
 - Note any blockers or concerns
 - Check for CONTEXT.md: For phases without PLAN.md files, check if `{phase}-CONTEXT.md` exists in phase directory
-- Count pending todos: `ls .gsd/todos/pending/*.md 2>/dev/null | wc -l`
-- Check for active debug sessions: `ls .gsd/debug/*.md 2>/dev/null | grep -v resolved | wc -l`
+- Count pending todos: `ls .planning/todos/pending/*.md 2>/dev/null | wc -l`
+- Check for active debug sessions: `ls .planning/debug/*.md 2>/dev/null | grep -v resolved | wc -l`
   </step>
 
 <step name="report">
@@ -114,9 +114,9 @@ CONTEXT: [✓ if CONTEXT.md exists | - if not]
 List files in the current phase directory:
 
 ```bash
-ls -1 .gsd/phases/[current-phase-dir]/*-PLAN.md 2>/dev/null | wc -l
-ls -1 .gsd/phases/[current-phase-dir]/*-SUMMARY.md 2>/dev/null | wc -l
-ls -1 .gsd/phases/[current-phase-dir]/*-UAT.md 2>/dev/null | wc -l
+ls -1 .planning/phases/[current-phase-dir]/*-PLAN.md 2>/dev/null | wc -l
+ls -1 .planning/phases/[current-phase-dir]/*-SUMMARY.md 2>/dev/null | wc -l
+ls -1 .planning/phases/[current-phase-dir]/*-UAT.md 2>/dev/null | wc -l
 ```
 
 State: "This phase has {X} plans, {Y} summaries."
@@ -127,7 +127,7 @@ Check for UAT.md files with status "diagnosed" (has gaps needing fixes).
 
 ```bash
 # Check for diagnosed UAT with gaps
-grep -l "status: diagnosed" .gsd/phases/[current-phase-dir]/*-UAT.md 2>/dev/null
+grep -l "status: diagnosed" .planning/phases/[current-phase-dir]/*-UAT.md 2>/dev/null
 ```
 
 Track:

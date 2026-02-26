@@ -313,7 +313,7 @@ After roadmap creation, REQUIREMENTS.md gets updated with phase mappings:
 
 ## ROADMAP.md Structure
 
-Use template from `~/.gsd/templates/roadmap.md`.
+Use template from `.planning/templates/roadmap.md`.
 
 Key sections:
 
@@ -323,7 +323,7 @@ Key sections:
 
 ## STATE.md Structure
 
-Use template from `~/.gsd/templates/state.md`.
+Use template from `.planning/templates/state.md`.
 
 Key sections:
 
@@ -485,12 +485,12 @@ When files are written and returning to orchestrator:
 
 **Files written:**
 
-- .gsd/ROADMAP.md
-- .gsd/STATE.md
+- .planning/ROADMAP.md
+- .planning/STATE.md
 
 **Updated:**
 
-- .gsd/REQUIREMENTS.md (traceability section)
+- .planning/REQUIREMENTS.md (traceability section)
 
 ### Summary
 
@@ -519,8 +519,8 @@ When files are written and returning to orchestrator:
 
 User can review actual files:
 
-- `cat .gsd/ROADMAP.md`
-- `cat .gsd/STATE.md`
+- `cat .planning/ROADMAP.md`
+- `cat .planning/STATE.md`
 
 {If gaps found during creation:}
 
@@ -546,9 +546,9 @@ After incorporating user feedback and updating files:
 
 **Files updated:**
 
-- .gsd/ROADMAP.md
-- .gsd/STATE.md (if needed)
-- .gsd/REQUIREMENTS.md (if traceability changed)
+- .planning/ROADMAP.md
+- .planning/STATE.md (if needed)
+- .planning/REQUIREMENTS.md (if traceability changed)
 
 ### Updated Summary
 

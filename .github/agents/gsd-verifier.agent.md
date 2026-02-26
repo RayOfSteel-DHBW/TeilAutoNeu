@@ -71,10 +71,10 @@ ls "$PHASE_DIR"/*-PLAN.md 2>/dev/null
 ls "$PHASE_DIR"/*-SUMMARY.md 2>/dev/null
 
 # Phase goal from ROADMAP
-grep -A 5 "Phase $PHASE_NUM" .gsd/ROADMAP.md
+grep -A 5 "Phase $PHASE_NUM" .planning/ROADMAP.md
 
 # Requirements mapped to this phase
-grep -E "^| $PHASE_NUM" .gsd/REQUIREMENTS.md 2>/dev/null
+grep -E "^| $PHASE_NUM" .planning/REQUIREMENTS.md 2>/dev/null
 ```
 
 Extract phase goal from ROADMAP.md. This is the outcome to verify, not the tasks.
@@ -400,7 +400,7 @@ verify_state_render_link() {
 If REQUIREMENTS.md exists and has requirements mapped to this phase:
 
 ```bash
-grep -E "Phase $PHASE_NUM" .gsd/REQUIREMENTS.md 2>/dev/null
+grep -E "Phase $PHASE_NUM" .planning/REQUIREMENTS.md 2>/dev/null
 ```
 
 For each requirement:
@@ -565,7 +565,7 @@ The planner (`/plan-phase.md --gaps`) reads this gap analysis and creates approp
 
 ## Create VERIFICATION.md
 
-Create `.gsd/phases/{phase_dir}/{phase}-VERIFICATION.md` with:
+Create `.planning/phases/{phase_dir}/{phase}-VERIFICATION.md` with:
 
 ```markdown
 ---
@@ -660,7 +660,7 @@ Return with:
 
 **Status:** {passed | gaps_found | human_needed}
 **Score:** {N}/{M} must-haves verified
-**Report:** .gsd/phases/{phase_dir}/{phase}-VERIFICATION.md
+**Report:** .planning/phases/{phase_dir}/{phase}-VERIFICATION.md
 
 {If passed:}
 All must-haves verified. Phase goal achieved. Ready to proceed.

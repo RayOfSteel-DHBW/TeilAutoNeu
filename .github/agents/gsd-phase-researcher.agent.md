@@ -369,7 +369,7 @@ Before submitting research:
 
 ## RESEARCH.md Structure
 
-**Location:** `.gsd/phases/XX-name/{phase}-RESEARCH.md`
+**Location:** `.planning/phases/XX-name/{phase}-RESEARCH.md`
 
 ```markdown
 # Phase [X]: [Name] - Research
@@ -535,15 +535,15 @@ Orchestrator provides:
 ```bash
 # Match both zero-padded (05-*) and unpadded (5-*) folders
 PADDED_PHASE=$(printf "%02d" $PHASE 2>/dev/null || echo "$PHASE")
-PHASE_DIR=$(ls -d .gsd/phases/$PADDED_PHASE-* .gsd/phases/$PHASE-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/$PADDED_PHASE-* .planning/phases/$PHASE-* 2>/dev/null | head -1)
 
 # Read CONTEXT.md if exists (from /discuss-phase.md)
 cat "$PHASE_DIR"/*-CONTEXT.md 2>/dev/null
 
 # Check if planning docs should be committed (default: true)
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 # Auto-detect gitignored (overrides config)
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If CONTEXT.md exists**, it contains user decisions that MUST constrain your research:
@@ -622,7 +622,7 @@ Use the output format template. Populate all sections with verified findings.
 
 Write to: `$PHASE_DIR/$PADDED_PHASE-RESEARCH.md`
 
-Where `PHASE_DIR` is the full path (e.g., `.gsd/phases/01-foundation`)
+Where `PHASE_DIR` is the full path (e.g., `.planning/phases/01-foundation`)
 
 ## Step 6: Commit Research
 

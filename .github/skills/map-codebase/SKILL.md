@@ -1,14 +1,14 @@
 ---
 name: map-codebase
-description: Orchestrate parallel codebase mapper agents to analyze codebase and produce structured documents in .gsd/codebase/ with 7 structured documents.
+description: Orchestrate parallel codebase mapper agents to analyze codebase and produce structured documents in .planning/codebase/ with 7 structured documents.
 ---
 
 <purpose>
-Orchestrate parallel codebase mapper agents to analyze codebase and produce structured documents in .gsd/codebase/
+Orchestrate parallel codebase mapper agents to analyze codebase and produce structured documents in .planning/codebase/
 
 Each agent has fresh context, explores a specific focus area, and **writes documents directly**. The orchestrator only receives confirmation + line counts, then writes a summary.
 
-Output: .gsd/codebase/ folder with 7 structured documents about the codebase state.
+Output: .planning/codebase/ folder with 7 structured documents about the codebase state.
 </purpose>
 
 <philosophy>
@@ -31,7 +31,7 @@ Documents are reference material for Copilot when planning/executing. Always inc
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -46,16 +46,16 @@ Store resolved model for use in Task calls below.
 </step>
 
 <step name="check_existing">
-Check if .gsd/codebase/ already exists:
+Check if .planning/codebase/ already exists:
 
 ```bash
-ls -la .gsd/codebase/ 2>/dev/null
+ls -la .planning/codebase/ 2>/dev/null
 ```
 
 **If exists:**
 
 ```
-.gsd/codebase/ already exists with these documents:
+.planning/codebase/ already exists with these documents:
 [List files found]
 
 What's next?
@@ -66,7 +66,7 @@ What's next?
 
 Wait for user response.
 
-If "Refresh": Delete .gsd/codebase/, continue to create_structure
+If "Refresh": Delete .planning/codebase/, continue to create_structure
 If "Update": Ask which documents to update, continue to spawn_agents (filtered)
 If "Skip": Exit workflow
 
@@ -75,10 +75,10 @@ Continue to create_structure.
 </step>
 
 <step name="create_structure">
-Create .gsd/codebase/ directory:
+Create .planning/codebase/ directory:
 
 ```bash
-mkdir -p .gsd/codebase
+mkdir -p .planning/codebase
 ```
 
 **Expected output files:**
@@ -119,7 +119,7 @@ Focus: tech
 
 Analyze this codebase for technology stack and external integrations.
 
-Write these documents to .gsd/codebase/:
+Write these documents to .planning/codebase/:
 - STACK.md - Languages, runtime, frameworks, dependencies, configuration
 - INTEGRATIONS.md - External APIs, databases, auth providers, webhooks
 
@@ -144,7 +144,7 @@ Focus: arch
 
 Analyze this codebase architecture and directory structure.
 
-Write these documents to .gsd/codebase/:
+Write these documents to .planning/codebase/:
 - ARCHITECTURE.md - Pattern, layers, data flow, abstractions, entry points
 - STRUCTURE.md - Directory layout, key locations, naming conventions
 
@@ -169,7 +169,7 @@ Focus: quality
 
 Analyze this codebase for coding conventions and testing patterns.
 
-Write these documents to .gsd/codebase/:
+Write these documents to .planning/codebase/:
 - CONVENTIONS.md - Code style, naming, patterns, error handling
 - TESTING.md - Framework, structure, mocking, coverage
 
@@ -194,7 +194,7 @@ Focus: concerns
 
 Analyze this codebase for technical debt, known issues, and areas of concern.
 
-Write this document to .gsd/codebase/:
+Write this document to .planning/codebase/:
 - CONCERNS.md - Tech debt, bugs, security, performance, fragile areas
 
 Explore thoroughly. Write document directly using template. Return confirmation only.
@@ -215,8 +215,8 @@ Read each agent's output file to collect confirmations.
 
 **Focus:** {focus}
 **Documents written:**
-- `.gsd/codebase/{DOC1}.md` ({N} lines)
-- `.gsd/codebase/{DOC2}.md` ({N} lines)
+- `.planning/codebase/{DOC1}.md` ({N} lines)
+- `.planning/codebase/{DOC2}.md` ({N} lines)
 
 Ready for orchestrator summary.
 ```
@@ -232,8 +232,8 @@ Continue to verify_output.
 Verify all documents created successfully:
 
 ```bash
-ls -la .gsd/codebase/
-wc -l .gsd/codebase/*.md
+ls -la .planning/codebase/
+wc -l .planning/codebase/*.md
 ```
 
 **Verification checklist:**
@@ -252,8 +252,8 @@ Commit the codebase map:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -261,7 +261,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/codebase/*.md
+git add .planning/codebase/*.md
 git commit -m "$(cat <<'EOF'
 docs: map existing codebase
 
@@ -285,7 +285,7 @@ Present completion summary and next steps.
 **Get line counts:**
 
 ```bash
-wc -l .gsd/codebase/*.md
+wc -l .planning/codebase/*.md
 ```
 
 **Output format:**
@@ -293,7 +293,7 @@ wc -l .gsd/codebase/*.md
 ```
 Codebase mapping complete.
 
-Created .gsd/codebase/:
+Created .planning/codebase/:
 - STACK.md ([N] lines) - Technologies and dependencies
 - ARCHITECTURE.md ([N] lines) - System design and patterns
 - STRUCTURE.md ([N] lines) - Directory layout and organization
@@ -317,7 +317,7 @@ Created .gsd/codebase/:
 
 **Also available:**
 - Re-run mapping: `/map-codebase.md`
-- Review specific file: `cat .gsd/codebase/STACK.md`
+- Review specific file: `cat .planning/codebase/STACK.md`
 - Edit any document before proceeding
 
 ---
@@ -330,7 +330,7 @@ End workflow.
 
 <success_criteria>
 
-- .gsd/codebase/ directory created
+- .planning/codebase/ directory created
 - 4 parallel gsd-codebase-mapper agents spawned with run_in_background=true
 - Agents write documents directly (orchestrator doesn't receive document contents)
 - Read agent output files to collect confirmations

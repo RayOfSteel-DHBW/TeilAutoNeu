@@ -28,16 +28,16 @@ Verify milestone achieved its definition of done. Check requirements coverage, c
 Version: $ARGUMENTS (optional — defaults to current milestone)
 
 **Original Intent:**
-@.gsd/PROJECT.md
-@.gsd/REQUIREMENTS.md
+@.planning/PROJECT.md
+@.planning/REQUIREMENTS.md
 
 **Planned Work:**
-@.gsd/ROADMAP.md
-@.gsd/config.json (if exists)
+@.planning/ROADMAP.md
+@.planning/config.json (if exists)
 
 **Completed Work:**
-Glob: .gsd/phases/_/_-SUMMARY.md
-Glob: .gsd/phases/_/_-VERIFICATION.md
+Glob: .planning/phases/_/_-SUMMARY.md
+Glob: .planning/phases/_/_-VERIFICATION.md
 </context>
 
 <process>
@@ -47,7 +47,7 @@ Glob: .gsd/phases/_/_-VERIFICATION.md
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -64,7 +64,7 @@ Store resolved model for use in Task call below.
 
 ```bash
 # Get phases in milestone
-ls -d .gsd/phases/*/ | sort -V
+ls -d .planning/phases/*/ | sort -V
 ```
 
 - Parse version from arguments or detect current from ROADMAP.md
@@ -77,8 +77,8 @@ ls -d .gsd/phases/*/ | sort -V
 For each phase directory, read the VERIFICATION.md:
 
 ```bash
-cat .gsd/phases/01-*/*-VERIFICATION.md
-cat .gsd/phases/02-*/*-VERIFICATION.md
+cat .planning/phases/01-*/*-VERIFICATION.md
+cat .planning/phases/02-*/*-VERIFICATION.md
 # etc.
 ```
 
@@ -127,7 +127,7 @@ For each requirement in REQUIREMENTS.md mapped to this milestone:
 
 ## 6. Aggregate into v{version}-MILESTONE-AUDIT.md
 
-Create `.gsd/v{version}-v{version}-MILESTONE-AUDIT.md` with:
+Create `.planning/v{version}-v{version}-MILESTONE-AUDIT.md` with:
 
 ```yaml
 ---
@@ -178,7 +178,7 @@ Output this markdown directly (not as a code block). Route based on status:
 ## ✓ Milestone {version} — Audit Passed
 
 **Score:** {N}/{M} requirements satisfied
-**Report:** .gsd/v{version}-MILESTONE-AUDIT.md
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
 
 All requirements covered. Cross-phase integration verified. E2E flows complete.
 
@@ -201,7 +201,7 @@ All requirements covered. Cross-phase integration verified. E2E flows complete.
 ## ⚠ Milestone {version} — Gaps Found
 
 **Score:** {N}/{M} requirements satisfied
-**Report:** .gsd/v{version}-MILESTONE-AUDIT.md
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
 
 ### Unsatisfied Requirements
 
@@ -236,7 +236,7 @@ All requirements covered. Cross-phase integration verified. E2E flows complete.
 
 **Also available:**
 
-- cat .gsd/v{version}-MILESTONE-AUDIT.md — see full report
+- cat .planning/v{version}-MILESTONE-AUDIT.md — see full report
 - /complete-milestone.md {version} — proceed anyway (accept tech debt)
 
 ───────────────────────────────────────────────────────────────
@@ -248,7 +248,7 @@ All requirements covered. Cross-phase integration verified. E2E flows complete.
 ## ⚡ Milestone {version} — Tech Debt Review
 
 **Score:** {N}/{M} requirements satisfied
-**Report:** .gsd/v{version}-MILESTONE-AUDIT.md
+**Report:** .planning/v{version}-MILESTONE-AUDIT.md
 
 All requirements met. No critical blockers. Accumulated tech debt needs review.
 

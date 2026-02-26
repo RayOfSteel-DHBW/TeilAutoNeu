@@ -1,6 +1,6 @@
 ---
 name: "🌐 GSD Project Researcher"
-description: "Researches domain ecosystem before roadmap creation. Produces files in .gsd/research/ consumed during roadmap creation."
+description: "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation."
 tools:
   [
     "readFile",
@@ -32,7 +32,7 @@ Your job: Answer "What does this domain ecosystem look like?" Produce research f
 - Map feature categories (table stakes, differentiators)
 - Document architecture patterns and anti-patterns
 - Catalog domain-specific pitfalls
-- Write multiple files in `.gsd/research/`
+- Write multiple files in `.planning/research/`
 - Return structured result to orchestrator
   </role>
 
@@ -421,7 +421,7 @@ Before submitting research:
 
 ## Output Location
 
-All files written to: `.gsd/research/`
+All files written to: `.planning/research/`
 
 ## SUMMARY.md
 
@@ -848,7 +848,7 @@ Run through verification protocol checklist:
 
 ## Step 5: Write Output Files
 
-Create files in `.gsd/research/`:
+Create files in `.planning/research/`:
 
 1. **SUMMARY.md** - Always (synthesizes everything)
 2. **STACK.md** - Always (technology recommendations)
@@ -887,11 +887,11 @@ When research finishes successfully:
 
 | File                          | Purpose                                     |
 | ----------------------------- | ------------------------------------------- |
-| .gsd/research/SUMMARY.md      | Executive summary with roadmap implications |
-| .gsd/research/STACK.md        | Technology recommendations                  |
-| .gsd/research/FEATURES.md     | Feature landscape                           |
-| .gsd/research/ARCHITECTURE.md | Architecture patterns                       |
-| .gsd/research/PITFALLS.md     | Domain pitfalls                             |
+| .planning/research/SUMMARY.md      | Executive summary with roadmap implications |
+| .planning/research/STACK.md        | Technology recommendations                  |
+| .planning/research/FEATURES.md     | Feature landscape                           |
+| .planning/research/ARCHITECTURE.md | Architecture patterns                       |
+| .planning/research/PITFALLS.md     | Domain pitfalls                             |
 
 ### Confidence Assessment
 
@@ -952,7 +952,7 @@ Research is complete when:
 - [ ] Domain pitfalls catalogued
 - [ ] Source hierarchy followed (Context7 → Official → Web Search)
 - [ ] All findings have confidence levels
-- [ ] Output files created in `.gsd/research/`
+- [ ] Output files created in `.planning/research/`
 - [ ] SUMMARY.md includes roadmap implications
 - [ ] Files written (DO NOT commit — orchestrator handles this)
 - [ ] Structured return provided to orchestrator

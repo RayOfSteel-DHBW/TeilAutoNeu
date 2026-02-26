@@ -30,10 +30,10 @@ if $ARGUMENTS.profile not in ["quality", "balanced", "budget"]:
 ## 2. Check for project
 
 ```bash
-ls .gsd/config.json 2>/dev/null
+ls .planning/config.json 2>/dev/null
 ```
 
-If no `.gsd/` directory:
+If no `.planning/` directory:
 
 ```
 Error: No GSD project found.
@@ -45,7 +45,7 @@ Run /new-project.md first to initialize a project.
 Read current config:
 
 ```bash
-cat .gsd/config.json
+cat .planning/config.json
 ```
 
 Update `model_profile` field (or add if missing):
@@ -56,7 +56,7 @@ Update `model_profile` field (or add if missing):
 }
 ```
 
-Write updated config back to `.gsd/config.json`.
+Write updated config back to `.planning/config.json`.
 
 ## 4. Confirm
 

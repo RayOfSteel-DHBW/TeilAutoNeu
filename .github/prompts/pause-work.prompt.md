@@ -11,7 +11,7 @@ Enables seamless resumption in fresh session with full context restoration.
 </objective>
 
 <context>
-@.gsd/STATE.md
+@.planning/STATE.md
 </context>
 
 <process>
@@ -35,7 +35,7 @@ Ask user for clarifications if needed.
 </step>
 
 <step name="write">
-**Write handoff to `.gsd/phases/XX-name/.continue-here.md`:**
+**Write handoff to `.planning/phases/XX-name/.continue-here.md`:**
 
 ```markdown
 ---
@@ -90,8 +90,8 @@ Be specific enough for a fresh Copilot to understand immediately.
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -99,7 +99,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/phases/*/.continue-here.md
+git add .planning/phases/*/.continue-here.md
 git commit -m "wip: [phase-name] paused at task [X]/[Y]"
 ```
 
@@ -107,7 +107,7 @@ git commit -m "wip: [phase-name] paused at task [X]/[Y]"
 
 <step name="confirm">
 ```
-✓ Handoff created: .gsd/phases/[XX-name]/.continue-here.md
+✓ Handoff created: .planning/phases/[XX-name]/.continue-here.md
 
 Current state:
 

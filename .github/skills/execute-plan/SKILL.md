@@ -20,7 +20,7 @@ Read config.json for planning behavior settings.
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -38,7 +38,7 @@ Store resolved model for use in Task calls below.
 Before any operation, read project state:
 
 ```bash
-cat .gsd/STATE.md 2>/dev/null
+cat .planning/STATE.md 2>/dev/null
 ```
 
 **If file exists:** Parse and internalize:
@@ -48,7 +48,7 @@ cat .gsd/STATE.md 2>/dev/null
 - Blockers/concerns (things to watch for)
 - Brief alignment status
 
-**If file missing but .gsd/ exists:**
+**If file missing but .planning/ exists:**
 
 ```
 STATE.md missing but planning artifacts exist.
@@ -57,7 +57,7 @@ Options:
 2. Continue without project state (may lose accumulated context)
 ```
 
-**If .gsd/ doesn't exist:** Error - project not initialized.
+**If .planning/ doesn't exist:** Error - project not initialized.
 
 This ensures every execution has full project context.
 
@@ -65,9 +65,9 @@ This ensures every execution has full project context.
 
 ```bash
 # Check if planning docs should be committed (default: true)
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 # Auto-detect gitignored (overrides config)
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 Store `COMMIT_PLANNING_DOCS` for use in git operations.
@@ -80,11 +80,11 @@ Find the next plan to execute:
 - Identify first plan without corresponding SUMMARY
 
 ```bash
-cat .gsd/ROADMAP.md
+cat .planning/ROADMAP.md
 # Look for phase with "In progress" status
 # Then find plans in that phase
-ls .gsd/phases/XX-name/*-PLAN.md 2>/dev/null | sort
-ls .gsd/phases/XX-name/*-SUMMARY.md 2>/dev/null | sort
+ls .planning/phases/XX-name/*-PLAN.md 2>/dev/null | sort
+ls .planning/phases/XX-name/*-SUMMARY.md 2>/dev/null | sort
 ```
 
 **Logic:**
@@ -97,8 +97,8 @@ ls .gsd/phases/XX-name/*-SUMMARY.md 2>/dev/null | sort
 
 Phase directories can be integer or decimal format:
 
-- Integer: `.gsd/phases/01-foundation/01-01-PLAN.md`
-- Decimal: `.gsd/phases/01.1-hotfix/01.1-01-PLAN.md`
+- Integer: `.planning/phases/01-foundation/01-01-PLAN.md`
+- Decimal: `.planning/phases/01.1-hotfix/01.1-01-PLAN.md`
 
 Parse phase number from path (handles both formats):
 
@@ -116,7 +116,7 @@ Confirm with user if ambiguous.
 
 <config-check>
 ```bash
-cat .gsd/config.json 2>/dev/null
+cat .planning/config.json 2>/dev/null
 ```
 </config-check>
 
@@ -168,7 +168,7 @@ Plans are divided into segments by checkpoints. Each segment is routed to optima
 
 ```bash
 # Find all checkpoints and their types
-grep -n "type=\"checkpoint" .gsd/phases/XX-name/{phase}-{plan}-PLAN.md
+grep -n "type=\"checkpoint" .planning/phases/XX-name/{phase}-{plan}-PLAN.md
 ```
 
 **2. Analyze execution strategy:**
@@ -235,7 +235,7 @@ No segmentation benefit - execute entirely in main
 
 2. Use Task tool with subagent_type="gsd-executor" and model="{executor_model}":
 
-   Prompt: "Execute plan at .gsd/phases/{phase}-{plan}-PLAN.md
+   Prompt: "Execute plan at .planning/phases/{phase}-{plan}-PLAN.md
 
    This is an autonomous plan (no checkpoints). Execute all tasks, create SUMMARY.md in phase directory, commit with message following plan's commit guidance.
 
@@ -246,7 +246,7 @@ No segmentation benefit - execute entirely in main
 3. After Task tool returns with agent_id:
 
    a. Write agent_id to current-agent-id.txt:
-      echo "[agent_id]" > .gsd/current-agent-id.txt
+      echo "[agent_id]" > .planning/current-agent-id.txt
 
    b. Append spawn entry to agent-history.json:
       {
@@ -270,7 +270,7 @@ No segmentation benefit - execute entirely in main
       - Set completion_timestamp: "[ISO timestamp]"
 
    b. Clear current-agent-id.txt:
-      rm .gsd/current-agent-id.txt
+      rm .planning/current-agent-id.txt
 
 6. Report completion to user
 ```
@@ -281,7 +281,7 @@ No segmentation benefit - execute entirely in main
 Execute segment-by-segment:
 
 For each autonomous segment:
-  Spawn subagent with prompt: "Execute tasks [X-Y] from plan at .gsd/phases/{phase}-{plan}-PLAN.md. Read the plan for full context and deviation rules. Do NOT create SUMMARY or commit - just execute these tasks and report results."
+  Spawn subagent with prompt: "Execute tasks [X-Y] from plan at .planning/phases/{phase}-{plan}-PLAN.md. Read the plan for full context and deviation rules. Do NOT create SUMMARY or commit - just execute these tasks and report results."
 
   Wait for subagent completion
 
@@ -316,21 +316,21 @@ Before spawning any subagents, set up tracking infrastructure:
 
 ```bash
 # Create agent history file if doesn't exist
-if [ ! -f .gsd/agent-history.json ]; then
-  echo '{"version":"1.0","max_entries":50,"entries":[]}' > .gsd/agent-history.json
+if [ ! -f .planning/agent-history.json ]; then
+  echo '{"version":"1.0","max_entries":50,"entries":[]}' > .planning/agent-history.json
 fi
 
 # Clear any stale current-agent-id (from interrupted sessions)
 # Will be populated when subagent spawns
-rm -f .gsd/current-agent-id.txt
+rm -f .planning/current-agent-id.txt
 ```
 
 **2. Check for interrupted agents (resume detection):**
 
 ```bash
 # Check if current-agent-id.txt exists from previous interrupted session
-if [ -f .gsd/current-agent-id.txt ]; then
-  INTERRUPTED_ID=$(cat .gsd/current-agent-id.txt)
+if [ -f .planning/current-agent-id.txt ]; then
+  INTERRUPTED_ID=$(cat .planning/current-agent-id.txt)
   echo "Found interrupted agent: $INTERRUPTED_ID"
 fi
 ```
@@ -413,7 +413,7 @@ For Pattern A (fully autonomous) and Pattern C (decision-dependent), skip this s
       **After Task tool returns with agent_id:**
 
       1. Write agent_id to current-agent-id.txt:
-         echo "[agent_id]" > .gsd/current-agent-id.txt
+         echo "[agent_id]" > .planning/current-agent-id.txt
 
       2. Append spawn entry to agent-history.json:
          {
@@ -438,7 +438,7 @@ For Pattern A (fully autonomous) and Pattern C (decision-dependent), skip this s
          - Set completion_timestamp: "[ISO timestamp]"
 
       2. Clear current-agent-id.txt:
-         rm .gsd/current-agent-id.txt
+         rm .planning/current-agent-id.txt
 
       ```
 
@@ -539,7 +539,7 @@ Committing...
 <step name="load_prompt">
 Read the plan prompt:
 ```bash
-cat .gsd/phases/XX-name/{phase}-{plan}-PLAN.md
+cat .planning/phases/XX-name/{phase}-{plan}-PLAN.md
 ````
 
 This IS the execution instructions. Follow it exactly.
@@ -553,7 +553,7 @@ Before executing, check if previous phase had issues:
 
 ```bash
 # Find previous phase summary
-ls .gsd/phases/*/SUMMARY.md 2>/dev/null | sort -r | head -2 | tail -1
+ls .planning/phases/*/SUMMARY.md 2>/dev/null | sort -r | head -2 | tail -1
 ```
 
 If previous phase SUMMARY.md has "Issues Encountered" != "None" or "Next Phase Readiness" mentions blockers:
@@ -1278,12 +1278,12 @@ Pass timing data to SUMMARY.md creation.
 Check PLAN.md frontmatter for `user_setup` field:
 
 ```bash
-grep -A 50 "^user_setup:" .gsd/phases/XX-name/{phase}-{plan}-PLAN.md | head -50
+grep -A 50 "^user_setup:" .planning/phases/XX-name/{phase}-{plan}-PLAN.md | head -50
 ```
 
 **If user_setup exists and is not empty:**
 
-Create `.gsd/phases/XX-name/{phase}-USER-SETUP.md` using template from `~/.gsd/templates/user-setup.md`.
+Create `.planning/phases/XX-name/{phase}-USER-SETUP.md` using template from `.planning/templates/user-setup.md`.
 
 **Content generation:**
 
@@ -1345,9 +1345,9 @@ Set `USER_SETUP_CREATED=true` if file was generated, for use in completion messa
 
 <step name="create_summary">
 Create `{phase}-{plan}-SUMMARY.md` as specified in the prompt's `<output>` section.
-Use ~/.gsd/templates/summary.md for structure.
+Use .planning/templates/summary.md for structure.
 
-**File location:** `.gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md`
+**File location:** `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 
 **Frontmatter population:**
 
@@ -1517,7 +1517,7 @@ Present issues and wait for acknowledgment before proceeding.
 Update the roadmap file:
 
 ```bash
-ROADMAP_FILE=".gsd/ROADMAP.md"
+ROADMAP_FILE=".planning/ROADMAP.md"
 ```
 
 **If more plans remain in this phase:**
@@ -1541,7 +1541,7 @@ PLAN.md was already committed during plan-phase. This final commit captures exec
 
 If `COMMIT_PLANNING_DOCS=false` (set in load_project_state):
 
-- Skip all git operations for .gsd/ files
+- Skip all git operations for .planning/ files
 - Planning docs exist locally but are gitignored
 - Log: "Skipping planning docs commit (commit_docs: false)"
 - Proceed to next step
@@ -1553,14 +1553,14 @@ If `COMMIT_PLANNING_DOCS=true` (default):
 **1. Stage execution artifacts:**
 
 ```bash
-git add .gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md
-git add .gsd/STATE.md
+git add .planning/phases/XX-name/{phase}-{plan}-SUMMARY.md
+git add .planning/STATE.md
 ```
 
 **2. Stage roadmap:**
 
 ```bash
-git add .gsd/ROADMAP.md
+git add .planning/ROADMAP.md
 ```
 
 **3. Verify staging:**
@@ -1581,7 +1581,7 @@ Tasks completed: [N]/[N]
 - [Task 2 name]
 - [Task 3 name]
 
-SUMMARY: .gsd/phases/XX-name/{phase}-{plan}-SUMMARY.md
+SUMMARY: .planning/phases/XX-name/{phase}-{plan}-SUMMARY.md
 EOF
 )"
 ```
@@ -1597,7 +1597,7 @@ Tasks completed: 3/3
 - Password hashing with bcrypt
 - Email confirmation flow
 
-SUMMARY: .gsd/phases/08-user-auth/08-02-registration-SUMMARY.md
+SUMMARY: .planning/phases/08-user-auth/08-02-registration-SUMMARY.md
 EOF
 )"
 ```
@@ -1617,7 +1617,7 @@ See `git-integration.md` (loaded via required_reading) for commit message conven
 </step>
 
 <step name="update_codebase_map">
-**If .gsd/codebase/ exists:**
+**If .planning/codebase/ exists:**
 
 Check what changed across all task commits in this plan:
 
@@ -1650,11 +1650,11 @@ git diff --name-only ${FIRST_TASK}^..HEAD 2>/dev/null
 Make single targeted edits - add a bullet point, update a path, or remove a stale entry. Don't rewrite sections.
 
 ```bash
-git add .gsd/codebase/*.md
+git add .planning/codebase/*.md
 git commit --amend --no-edit  # Include in metadata commit
 ```
 
-**If .gsd/codebase/ doesn't exist:**
+**If .planning/codebase/ doesn't exist:**
 Skip this step.
 </step>
 
@@ -1672,7 +1672,7 @@ If `USER_SETUP_CREATED=true` (from generate_user_setup step), always include thi
 
 This phase introduced external services requiring manual configuration:
 
-📋 .gsd/phases/{phase-dir}/{phase}-USER-SETUP.md
+📋 .planning/phases/{phase-dir}/{phase}-USER-SETUP.md
 
 Quick view:
 - [ ] {ENV_VAR_1}
@@ -1680,7 +1680,7 @@ Quick view:
 - [ ] {Dashboard config task}
 
 Complete this setup for the integration to function.
-Run `cat .gsd/phases/{phase-dir}/{phase}-USER-SETUP.md` for full details.
+Run `cat .planning/phases/{phase-dir}/{phase}-USER-SETUP.md` for full details.
 
 ---
 ```
@@ -1692,8 +1692,8 @@ This warning appears BEFORE "Plan complete" messaging. User sees setup requireme
 List files in the phase directory:
 
 ```bash
-ls -1 .gsd/phases/[current-phase-dir]/*-PLAN.md 2>/dev/null | wc -l
-ls -1 .gsd/phases/[current-phase-dir]/*-SUMMARY.md 2>/dev/null | wc -l
+ls -1 .planning/phases/[current-phase-dir]/*-PLAN.md 2>/dev/null | wc -l
+ls -1 .planning/phases/[current-phase-dir]/*-SUMMARY.md 2>/dev/null | wc -l
 ```
 
 State the counts: "This phase has [X] plans and [Y] summaries."
@@ -1719,7 +1719,7 @@ Identify the next unexecuted plan:
 <if mode="yolo">
 ```
 Plan {phase}-{plan} complete.
-Summary: .gsd/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
+Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 {Y} of {X} plans complete for Phase {Z}.
 
@@ -1734,7 +1734,7 @@ Loop back to identify_plan step automatically.
 ```
 
 Plan {phase}-{plan} complete.
-Summary: .gsd/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
+Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 {Y} of {X} plans complete for Phase {Z}.
 
@@ -1796,7 +1796,7 @@ Read ROADMAP.md to get the next phase's name and goal.
 ```
 
 Plan {phase}-{plan} complete.
-Summary: .gsd/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
+Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 ## ✓ Phase {Z}: {Phase Name} Complete
 
@@ -1833,7 +1833,7 @@ All {Y} plans finished.
 🎉 MILESTONE COMPLETE!
 
 Plan {phase}-{plan} complete.
-Summary: .gsd/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
+Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 ## ✓ Phase {Z}: {Phase Name} Complete
 

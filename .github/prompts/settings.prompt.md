@@ -7,7 +7,7 @@ tools: ["readFile", "editFiles", "createFile"]
 <objective>
 Allow users to toggle workflow agents on/off and select model profile via interactive settings.
 
-Updates `.gsd/config.json` with workflow preferences and model profile selection.
+Updates `.planning/config.json` with workflow preferences and model profile selection.
 </objective>
 
 <process>
@@ -15,7 +15,7 @@ Updates `.gsd/config.json` with workflow preferences and model profile selection
 ## 1. Validate Environment
 
 ```bash
-ls .gsd/config.json 2>/dev/null
+ls .planning/config.json 2>/dev/null
 ```
 
 **If not found:** Error - run `/new-project.md` first.
@@ -23,7 +23,7 @@ ls .gsd/config.json 2>/dev/null
 ## 2. Read Current Config
 
 ```bash
-cat .gsd/config.json
+cat .planning/config.json
 ```
 
 Parse current values (default to `true` if not present):
@@ -111,7 +111,7 @@ Merge new settings into existing config.json:
 }
 ```
 
-Write updated config to `.gsd/config.json`.
+Write updated config to `.planning/config.json`.
 
 ## 5. Confirm Changes
 

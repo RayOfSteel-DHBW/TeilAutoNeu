@@ -19,17 +19,17 @@ Extract implementation decisions that downstream agents need — researcher and 
 
 <execution_context>
 ../skills/discuss-phase/SKILL.md
-@.gsd/templates/context.md
+@.planning/templates/context.md
 </execution_context>
 
 <context>
 Phase number: $ARGUMENTS (required)
 
 **Load project state:**
-@.gsd/STATE.md
+@.planning/STATE.md
 
 **Load roadmap:**
-@.gsd/ROADMAP.md
+@.planning/ROADMAP.md
 </context>
 
 <process>

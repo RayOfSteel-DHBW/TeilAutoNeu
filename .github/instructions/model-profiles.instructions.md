@@ -50,7 +50,7 @@ Model profiles control which Copilot model each GSD agent uses. This allows bala
 Orchestrators resolve model before spawning:
 
 ```
-1. Read .gsd/config.json
+1. Read .planning/config.json
 2. Get model_profile (default: "balanced")
 3. Look up agent in table above
 4. Pass model parameter to Task call
@@ -60,7 +60,7 @@ Orchestrators resolve model before spawning:
 
 Runtime: `/set-profile.md <profile>`
 
-Per-project default: Set in `.gsd/config.json`:
+Per-project default: Set in `.planning/config.json`:
 
 ```json
 {

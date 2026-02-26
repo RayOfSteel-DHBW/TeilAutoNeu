@@ -46,7 +46,7 @@ Normalize phase input in step 2 before any directory lookups.
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-ls .gsd/ 2>/dev/null
+ls .planning/ 2>/dev/null
 ```
 
 **If not found:** Error - user should run `/new-project.md` first.
@@ -54,7 +54,7 @@ ls .gsd/ 2>/dev/null
 **Resolve model profile for agent spawning:**
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -95,14 +95,14 @@ fi
 **Check for existing research and plans:**
 
 ```bash
-ls .gsd/phases/${PHASE}-*/*-RESEARCH.md 2>/dev/null
-ls .gsd/phases/${PHASE}-*/*-PLAN.md 2>/dev/null
+ls .planning/phases/${PHASE}-*/*-RESEARCH.md 2>/dev/null
+ls .planning/phases/${PHASE}-*/*-PLAN.md 2>/dev/null
 ```
 
 ## 3. Validate Phase
 
 ```bash
-grep -A5 "Phase ${PHASE}:" .gsd/ROADMAP.md 2>/dev/null
+grep -A5 "Phase ${PHASE}:" .planning/ROADMAP.md 2>/dev/null
 ```
 
 **If not found:** Error with available phases. **If found:** Extract phase number, name, description.
@@ -111,12 +111,12 @@ grep -A5 "Phase ${PHASE}:" .gsd/ROADMAP.md 2>/dev/null
 
 ```bash
 # PHASE is already normalized (08, 02.1, etc.) from step 2
-PHASE_DIR=$(ls -d .gsd/phases/${PHASE}-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/${PHASE}-* 2>/dev/null | head -1)
 if [ -z "$PHASE_DIR" ]; then
   # Create phase directory from roadmap name
-  PHASE_NAME=$(grep "Phase ${PHASE}:" .gsd/ROADMAP.md | sed 's/.*Phase [0-9]*: //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
-  mkdir -p ".gsd/phases/${PHASE}-${PHASE_NAME}"
-  PHASE_DIR=".gsd/phases/${PHASE}-${PHASE_NAME}"
+  PHASE_NAME=$(grep "Phase ${PHASE}:" .planning/ROADMAP.md | sed 's/.*Phase [0-9]*: //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+  mkdir -p ".planning/phases/${PHASE}-${PHASE_NAME}"
+  PHASE_DIR=".planning/phases/${PHASE}-${PHASE_NAME}"
 fi
 
 # Load CONTEXT.md immediately - this informs ALL downstream agents
@@ -141,7 +141,7 @@ If CONTEXT.md exists, display: `Using phase context from: ${PHASE_DIR}/*-CONTEXT
 **Check config for research setting:**
 
 ```bash
-WORKFLOW_RESEARCH=$(cat .gsd/config.json 2>/dev/null | grep -o '"research"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+WORKFLOW_RESEARCH=$(cat .planning/config.json 2>/dev/null | grep -o '"research"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 **If `workflow.research` is `false` AND `--research` flag NOT set:** Skip to step 6.
@@ -179,13 +179,13 @@ Gather additional context for research prompt:
 
 ```bash
 # Get phase description from roadmap
-PHASE_DESC=$(grep -A3 "Phase ${PHASE}:" .gsd/ROADMAP.md)
+PHASE_DESC=$(grep -A3 "Phase ${PHASE}:" .planning/ROADMAP.md)
 
 # Get requirements if they exist
-REQUIREMENTS=$(cat .gsd/REQUIREMENTS.md 2>/dev/null | grep -A100 "## Requirements" | head -50)
+REQUIREMENTS=$(cat .planning/REQUIREMENTS.md 2>/dev/null | grep -A100 "## Requirements" | head -50)
 
 # Get prior decisions from STATE.md
-DECISIONS=$(grep -A20 "### Decisions Made" .gsd/STATE.md 2>/dev/null)
+DECISIONS=$(grep -A20 "### Decisions Made" .planning/STATE.md 2>/dev/null)
 
 # CONTEXT_CONTENT already loaded in step 4
 ```
@@ -261,11 +261,11 @@ Read and store context file contents for the planner agent. The `@` syntax does 
 
 ```bash
 # Read required files
-STATE_CONTENT=$(cat .gsd/STATE.md)
-ROADMAP_CONTENT=$(cat .gsd/ROADMAP.md)
+STATE_CONTENT=$(cat .planning/STATE.md)
+ROADMAP_CONTENT=$(cat .planning/ROADMAP.md)
 
 # Read optional files (empty string if missing)
-REQUIREMENTS_CONTENT=$(cat .gsd/REQUIREMENTS.md 2>/dev/null)
+REQUIREMENTS_CONTENT=$(cat .planning/REQUIREMENTS.md 2>/dev/null)
 # CONTEXT_CONTENT already loaded in step 4
 RESEARCH_CONTENT=$(cat "${PHASE_DIR}"/*-RESEARCH.md 2>/dev/null)
 
@@ -361,7 +361,7 @@ Parse planner output:
 
 - Display: `Planner created {N} plan(s). Files on disk.`
 - If `--skip-verify`: Skip to step 13
-- Check config: `WORKFLOW_PLAN_CHECK=$(cat .gsd/config.json 2>/dev/null | grep -o '"plan_check"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")`
+- Check config: `WORKFLOW_PLAN_CHECK=$(cat .planning/config.json 2>/dev/null | grep -o '"plan_check"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")`
 - If `workflow.plan_check` is `false`: Skip to step 13
 - Otherwise: Proceed to step 10
 
@@ -563,7 +563,7 @@ Verification: {Passed | Passed with override | Skipped}
 
 **Also available:**
 
-- cat .gsd/phases/{phase-dir}/\*-PLAN.md — review plans
+- cat .planning/phases/{phase-dir}/\*-PLAN.md — review plans
 - /plan-phase.md {X} --research — re-research first
 
 ───────────────────────────────────────────────────────────────
@@ -571,7 +571,7 @@ Verification: {Passed | Passed with override | Skipped}
 
 <success_criteria>
 
-- [ ] .gsd/ directory validated
+- [ ] .planning/ directory validated
 - [ ] Phase validated against roadmap
 - [ ] Phase directory created if needed
 - [ ] CONTEXT.md loaded early (step 4) and passed to ALL agents

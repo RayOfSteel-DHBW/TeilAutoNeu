@@ -7,9 +7,9 @@ description: Mark current phase complete and advance to next. Handles progress t
 
 **Read these files NOW:**
 
-1. `.gsd/STATE.md`
-2. `.gsd/PROJECT.md`
-3. `.gsd/ROADMAP.md`
+1. `.planning/STATE.md`
+2. `.planning/PROJECT.md`
+3. `.planning/ROADMAP.md`
 4. Current phase's plan files (`*-PLAN.md`)
 5. Current phase's summary files (`*-SUMMARY.md`)
 
@@ -30,8 +30,8 @@ Mark current phase complete and advance to next. This is the natural point where
 Before transition, read project state:
 
 ```bash
-cat .gsd/STATE.md 2>/dev/null
-cat .gsd/PROJECT.md 2>/dev/null
+cat .planning/STATE.md 2>/dev/null
+cat .planning/PROJECT.md 2>/dev/null
 ```
 
 Parse current position to verify we're transitioning the right phase.
@@ -44,8 +44,8 @@ Note accumulated context that may need updating after transition.
 Check current phase has all plan summaries:
 
 ```bash
-ls .gsd/phases/XX-current/*-PLAN.md 2>/dev/null | sort
-ls .gsd/phases/XX-current/*-SUMMARY.md 2>/dev/null | sort
+ls .planning/phases/XX-current/*-PLAN.md 2>/dev/null | sort
+ls .planning/phases/XX-current/*-SUMMARY.md 2>/dev/null | sort
 ```
 
 **Verification logic:**
@@ -58,7 +58,7 @@ ls .gsd/phases/XX-current/*-SUMMARY.md 2>/dev/null | sort
 <config-check>
 
 ```bash
-cat .gsd/config.json 2>/dev/null
+cat .planning/config.json 2>/dev/null
 ```
 
 </config-check>
@@ -116,7 +116,7 @@ Wait for user decision.
 Check for lingering handoffs:
 
 ```bash
-ls .gsd/phases/XX-current/.continue-here*.md 2>/dev/null
+ls .planning/phases/XX-current/.continue-here*.md 2>/dev/null
 ```
 
 If found, delete them — phase is complete, handoffs are stale.
@@ -128,7 +128,7 @@ If found, delete them — phase is complete, handoffs are stale.
 Update the roadmap file:
 
 ```bash
-ROADMAP_FILE=".gsd/ROADMAP.md"
+ROADMAP_FILE=".planning/ROADMAP.md"
 ```
 
 Update the file:
@@ -173,7 +173,7 @@ Evolve PROJECT.md to reflect learnings from completed phase.
 **Read phase summaries:**
 
 ```bash
-cat .gsd/phases/XX-current/*-SUMMARY.md
+cat .planning/phases/XX-current/*-SUMMARY.md
 ```
 
 **Assess requirement changes:**
@@ -322,7 +322,7 @@ Update Project Reference section in STATE.md.
 ```markdown
 ## Project Reference
 
-See: .gsd/PROJECT.md (updated [today])
+See: .planning/PROJECT.md (updated [today])
 
 **Core value:** [Current core value from PROJECT.md]
 **Current focus:** [Next phase name]

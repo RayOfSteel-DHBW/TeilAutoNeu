@@ -1,6 +1,6 @@
 ---
 name: "gsd:map-codebase"
-description: "Analyze codebase with parallel mapper agents to produce .gsd/codebase/ documents"
+description: "Analyze codebase with parallel mapper agents to produce .planning/codebase/ documents"
 tools:
   [
     "readFile",
@@ -15,9 +15,9 @@ tools:
 <objective>
 Analyze existing codebase using parallel gsd-codebase-mapper agents to produce structured codebase documents.
 
-Each mapper agent explores a focus area and **writes documents directly** to `.gsd/codebase/`. The orchestrator only receives confirmations, keeping context usage minimal.
+Each mapper agent explores a focus area and **writes documents directly** to `.planning/codebase/`. The orchestrator only receives confirmations, keeping context usage minimal.
 
-Output: .gsd/codebase/ folder with 7 structured documents about the codebase state.
+Output: .planning/codebase/ folder with 7 structured documents about the codebase state.
 </objective>
 
 <execution_context>
@@ -28,7 +28,7 @@ Output: .gsd/codebase/ folder with 7 structured documents about the codebase sta
 Focus area: $ARGUMENTS (optional - if provided, tells agents to focus on specific subsystem)
 
 **Load project state if exists:**
-Check for .gsd/STATE.md - loads context if project already initialized
+Check for .planning/STATE.md - loads context if project already initialized
 
 **This command can run:**
 
@@ -53,8 +53,8 @@ Check for .gsd/STATE.md - loads context if project already initialized
   </when_to_use>
 
 <process>
-1. Check if .gsd/codebase/ already exists (offer to refresh or skip)
-2. Create .gsd/codebase/ directory structure
+1. Check if .planning/codebase/ already exists (offer to refresh or skip)
+2. Create .planning/codebase/ directory structure
 3. Spawn 4 parallel gsd-codebase-mapper agents:
    - Agent 1: tech focus → writes STACK.md, INTEGRATIONS.md
    - Agent 2: arch focus → writes ARCHITECTURE.md, STRUCTURE.md
@@ -68,7 +68,7 @@ Check for .gsd/STATE.md - loads context if project already initialized
 
 <success_criteria>
 
-- [ ] .gsd/codebase/ directory created
+- [ ] .planning/codebase/ directory created
 - [ ] All 7 codebase documents written by mapper agents
 - [ ] Documents follow template structure
 - [ ] Parallel agents completed without errors

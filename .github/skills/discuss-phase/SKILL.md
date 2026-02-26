@@ -123,7 +123,7 @@ Phase number from argument (required).
 
 Load and validate:
 
-- Read `.gsd/ROADMAP.md`
+- Read `.planning/ROADMAP.md`
 - Find phase entry
 - Extract: number, name, description, status
 
@@ -146,7 +146,7 @@ Check if CONTEXT.md already exists:
 ```bash
 # Match both zero-padded (05-*) and unpadded (5-*) folders
 PADDED_PHASE=$(printf "%02d" ${PHASE})
-ls .gsd/phases/${PADDED_PHASE}-*/*-CONTEXT.md .gsd/phases/${PHASE}-*/*-CONTEXT.md 2>/dev/null
+ls .planning/phases/${PADDED_PHASE}-*/*-CONTEXT.md .planning/phases/${PHASE}-*/*-CONTEXT.md 2>/dev/null
 ```
 
 **If exists:**
@@ -309,12 +309,12 @@ Create CONTEXT.md capturing decisions made.
 ```bash
 # Match existing directory (padded or unpadded)
 PADDED_PHASE=$(printf "%02d" ${PHASE})
-PHASE_DIR=$(ls -d .gsd/phases/${PADDED_PHASE}-* .gsd/phases/${PHASE}-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/${PADDED_PHASE}-* .planning/phases/${PHASE}-* 2>/dev/null | head -1)
 if [ -z "$PHASE_DIR" ]; then
   # Create from roadmap name (lowercase, hyphens)
-  PHASE_NAME=$(grep "Phase ${PHASE}:" .gsd/ROADMAP.md | sed 's/.*Phase [0-9]*: //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
-  mkdir -p ".gsd/phases/${PADDED_PHASE}-${PHASE_NAME}"
-  PHASE_DIR=".gsd/phases/${PADDED_PHASE}-${PHASE_NAME}"
+  PHASE_NAME=$(grep "Phase ${PHASE}:" .planning/ROADMAP.md | sed 's/.*Phase [0-9]*: //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+  mkdir -p ".planning/phases/${PADDED_PHASE}-${PHASE_NAME}"
+  PHASE_DIR=".planning/phases/${PADDED_PHASE}-${PHASE_NAME}"
 fi
 ```
 
@@ -384,7 +384,7 @@ Write file.
 Present summary and next steps:
 
 ```
-Created: .gsd/phases/${PADDED_PHASE}-${SLUG}/${PADDED_PHASE}-CONTEXT.md
+Created: .planning/phases/${PADDED_PHASE}-${SLUG}/${PADDED_PHASE}-CONTEXT.md
 
 ## Decisions Captured
 
@@ -425,8 +425,8 @@ Commit phase context:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
