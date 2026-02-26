@@ -50,7 +50,12 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-(None — next milestone requirements to be defined via `/gsd:new-milestone`)
+<!-- Current milestone: v1.1 Visual Fixes -->
+
+- [ ] Audit all pages visually via Puppeteer and identify layout/rendering bugs
+- [ ] Fix all identified visual issues (spacing, flex direction, overflow, alignment)
+- [ ] Joint page-by-page review with owner to catch remaining issues
+- [ ] Fix all issues identified during joint review
 
 ### Out of Scope
 
@@ -126,4 +131,15 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-_Last updated: 2026-02-26 after v1.0 milestone_
+## Current Milestone: v1.1 Visual Fixes
+
+**Goal:** Eliminate obvious visual/layout bugs across all pages so the site renders as intended before owner review.
+
+**Target features:**
+- Autonomous visual audit of all 9 pages via Puppeteer
+- Fix layout issues (spacing, flex direction, overflow, alignment, responsiveness)
+- Joint page-by-page review with owner
+- Fix all remaining issues from joint review
+
+---
+_Last updated: 2026-02-26 after v1.1 milestone start_
