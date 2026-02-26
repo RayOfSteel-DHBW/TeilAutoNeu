@@ -5,7 +5,7 @@ milestone_name: Visual Fixes
 status: active
 last_updated: "2026-02-26"
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,14 +18,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-26)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.1 Visual Fixes — eliminate layout/rendering bugs across all pages
+**Current focus:** v1.1 Visual Fixes — Phase 12: Visual Audit
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 12 of 15 (Visual Audit)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-02-26 — Milestone v1.1 started
+Status: Ready to plan
+Last activity: 2026-02-26 — v1.1 roadmap created (Phases 12-15)
+
+Progress: [░░░░░░░░░░] 0%
+
+## Performance Metrics
+
+**Velocity (v1.0 baseline):**
+- Total plans completed: 22
+- v1.0 total execution time: ~17 days
+- Trend: Stable
+
+*v1.1 metrics will accumulate as plans complete*
 
 ## Accumulated Context
 
@@ -43,11 +54,12 @@ All v1.0 decisions logged in PROJECT.md Key Decisions table with outcomes.
 
 ### Blockers/Concerns
 
-None.
+- Phase 14 (Joint Review) requires owner availability — cannot be executed autonomously.
+- Site must be running at http://127.0.0.1:5500/site/build/dist/ for Puppeteer phases.
 
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Defining v1.1 requirements
-Next step: Complete requirements and roadmap
+Stopped at: Roadmap created for v1.1 (Phases 12-15)
+Next step: Plan Phase 12 (Visual Audit)
 Resume file: None
