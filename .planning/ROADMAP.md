@@ -50,18 +50,28 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. Puppeteer has captured screenshots of all 8 pages at 375px width
   3. A written issue log exists naming each page, the affected area, and the observed defect for every problem found
   4. No page is skipped — coverage is 8/8 at both widths
-**Plans**: TBD
+**Plans**: 1/1 complete
 
 ### Phase 13: Auto-Fix
 **Goal**: Every layout/rendering issue found in the audit is fixed, with Puppeteer re-screenshot verification confirming each page is clean before moving on.
 **Depends on**: Phase 12
 **Requirements**: AFIX-01, AFIX-02, AFIX-03, AFIX-04, AFIX-05, AFIX-06, AFIX-07, AFIX-08
+**Execution model — ITERATIVE PER PAGE:**
+  For each page (index → fahrzeuge → preise → geschaeftskunden → ueber-uns → mitglied-werden → datenschutz → impressum):
+  1. Screenshot page at 1280px and 375px
+  2. Identify issues from audit log for this page
+  3. Fix issues in source files
+  4. Rebuild (`npm run build`)
+  5. Re-screenshot and verify page is clean at both widths
+  6. If new issues found, loop back to step 3
+  7. Only proceed to next page when current page is verified clean
+  Note: Global issues (e.g. nav, footer, build config) should be fixed first since they affect all pages — then verify per-page.
 **Success Criteria** (what must be TRUE):
   1. index.html renders without layout defects at both widths (Puppeteer verified)
   2. fahrzeuge.html, preise.html, geschaeftskunden.html, ueber-uns.html, mitglied-werden.html each render without layout defects at both widths (Puppeteer verified)
   3. datenschutz.html and impressum.html render without layout defects at both widths (Puppeteer verified)
   4. Each page's fix cycle runs until screenshots are clean — no page is left with known defects from the audit log
-**Plans**: TBD
+**Plans**: 1/1 complete
 
 ### Phase 14: Joint Review
 **Goal**: Owner and Claude review every page side by side at desktop and mobile widths; any issues invisible to automated checks are identified and logged for fixing.
