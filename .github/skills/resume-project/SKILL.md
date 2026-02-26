@@ -7,7 +7,7 @@ description: Instantly restore full project context when resuming work. Use when
 Use this workflow when:
 - Starting a new session on an existing project
 - User says "continue", "what's next", "where were we", "resume"
-- Any planning operation when .gsd/ already exists
+- Any planning operation when .planning/ already exists
 - User returns after time away from project
 </trigger>
 
@@ -25,14 +25,14 @@ Instantly restore full project context so "Where were we?" has an immediate, com
 Check if this is an existing project:
 
 ```bash
-ls .gsd/STATE.md 2>/dev/null && echo "Project exists"
-ls .gsd/ROADMAP.md 2>/dev/null && echo "Roadmap exists"
-ls .gsd/PROJECT.md 2>/dev/null && echo "Project file exists"
+ls .planning/STATE.md 2>/dev/null && echo "Project exists"
+ls .planning/ROADMAP.md 2>/dev/null && echo "Roadmap exists"
+ls .planning/PROJECT.md 2>/dev/null && echo "Project file exists"
 ```
 
 **If STATE.md exists:** Proceed to load_state
 **If only ROADMAP.md/PROJECT.md exist:** Offer to reconstruct STATE.md
-**If .gsd/ doesn't exist:** This is a new project - route to /new-project.md
+**If .planning/ doesn't exist:** This is a new project - route to /new-project.md
 </step>
 
 <step name="load_state">
@@ -40,8 +40,8 @@ ls .gsd/PROJECT.md 2>/dev/null && echo "Project file exists"
 Read and parse STATE.md, then PROJECT.md:
 
 ```bash
-cat .gsd/STATE.md
-cat .gsd/PROJECT.md
+cat .planning/STATE.md
+cat .planning/PROJECT.md
 ```
 
 **From STATE.md extract:**
@@ -68,17 +68,17 @@ Look for incomplete work that needs attention:
 
 ```bash
 # Check for continue-here files (mid-plan resumption)
-ls .gsd/phases/*/.continue-here*.md 2>/dev/null
+ls .planning/phases/*/.continue-here*.md 2>/dev/null
 
 # Check for plans without summaries (incomplete execution)
-for plan in .gsd/phases/*/*-PLAN.md; do
+for plan in .planning/phases/*/*-PLAN.md; do
   summary="${plan/PLAN/SUMMARY}"
   [ ! -f "$summary" ] && echo "Incomplete: $plan"
 done 2>/dev/null
 
 # Check for interrupted agents
-if [ -f .gsd/current-agent-id.txt ] && [ -s .gsd/current-agent-id.txt ]; then
-  AGENT_ID=$(cat .gsd/current-agent-id.txt | tr -d '\n')
+if [ -f .planning/current-agent-id.txt ] && [ -s .planning/current-agent-id.txt ]; then
+  AGENT_ID=$(cat .planning/current-agent-id.txt | tr -d '\n')
   echo "Interrupted agent: $AGENT_ID"
 fi
 ```
@@ -202,7 +202,7 @@ What would you like to do?
 **Note:** When offering phase planning, check for CONTEXT.md existence first:
 
 ```bash
-ls .gsd/phases/XX-name/*-CONTEXT.md 2>/dev/null
+ls .planning/phases/XX-name/*-CONTEXT.md 2>/dev/null
 ```
 
 If missing, suggest discuss-phase before plan. If exists, offer plan directly.
@@ -252,7 +252,7 @@ Based on user selection, route to appropriate workflow:
   ```
 
 - **Transition** → ./transition.md
-- **Check todos** → Read .gsd/todos/pending/, present summary
+- **Check todos** → Read .planning/todos/pending/, present summary
 - **Review alignment** → Read PROJECT.md, compare to current state
 - **Something else** → Ask what they need
   </step>
@@ -283,7 +283,7 @@ If STATE.md is missing but other artifacts exist:
 1. Read PROJECT.md → Extract "What This Is" and Core Value
 2. Read ROADMAP.md → Determine phases, find current position
 3. Scan \*-SUMMARY.md files → Extract decisions, concerns
-4. Count pending todos in .gsd/todos/pending/
+4. Count pending todos in .planning/todos/pending/
 5. Check for .continue-here files → Session continuity
 
 Reconstruct and write STATE.md, then proceed normally.
@@ -292,7 +292,7 @@ This handles cases where:
 
 - Project predates STATE.md introduction
 - File was accidentally deleted
-- Cloning repo without full .gsd/ state
+- Cloning repo without full .planning/ state
   </reconstruction>
 
 <quick_resume>

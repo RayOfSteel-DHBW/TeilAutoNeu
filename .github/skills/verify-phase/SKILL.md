@@ -25,7 +25,7 @@ Then verify each level against the actual codebase.
 
 <required_reading>
 ../../instructions/verification-patterns.instructions.md
-@.gsd/templates/verification-report.md
+@.planning/templates/verification-report.md
 </required_reading>
 
 <process>
@@ -36,13 +36,13 @@ Then verify each level against the actual codebase.
 ```bash
 # Phase directory (match both zero-padded and unpadded)
 PADDED_PHASE=$(printf "%02d" ${PHASE_ARG} 2>/dev/null || echo "${PHASE_ARG}")
-PHASE_DIR=$(ls -d .gsd/phases/${PADDED_PHASE}-* .gsd/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/${PADDED_PHASE}-* .planning/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
 
 # Phase goal from ROADMAP
-grep -A 5 "Phase ${PHASE_NUM}" .gsd/ROADMAP.md
+grep -A 5 "Phase ${PHASE_NUM}" .planning/ROADMAP.md
 
 # Requirements mapped to this phase
-grep -E "^| ${PHASE_NUM}" .gsd/REQUIREMENTS.md 2>/dev/null
+grep -E "^| ${PHASE_NUM}" .planning/REQUIREMENTS.md 2>/dev/null
 
 # All SUMMARY files (claims to verify)
 ls "$PHASE_DIR"/*-SUMMARY.md 2>/dev/null
@@ -398,7 +398,7 @@ For each key link in must_haves:
 
 ```bash
 # Find requirements mapped to this phase
-grep -E "Phase ${PHASE_NUM}" .gsd/REQUIREMENTS.md 2>/dev/null
+grep -E "Phase ${PHASE_NUM}" .planning/REQUIREMENTS.md 2>/dev/null
 ```
 
 For each requirement:
@@ -599,7 +599,7 @@ Fill template sections:
 9. **Recommended Fix Plans:** If gaps_found
 10. **Verification Metadata:** Approach, timing, counts
 
-See ~/.gsd/templates/verification-report.md for complete template.
+See .planning/templates/verification-report.md for complete template.
 </step>
 
 <step name="return_to_orchestrator">
@@ -612,7 +612,7 @@ See ~/.gsd/templates/verification-report.md for complete template.
 
 **Status:** {passed | gaps_found | human_needed}
 **Score:** {N}/{M} must-haves verified
-**Report:** .gsd/phases/{phase_dir}/{phase}-VERIFICATION.md
+**Report:** .planning/phases/{phase_dir}/{phase}-VERIFICATION.md
 
 {If passed:}
 All must-haves verified. Phase goal achieved. Ready to proceed.

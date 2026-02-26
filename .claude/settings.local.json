@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.gesetze-im-internet.de)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

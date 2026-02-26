@@ -19,7 +19,7 @@ Quick mode is the same system with a shorter path:
 
 - Spawns gsd-planner (quick mode) + gsd-executor(s)
 - Skips gsd-phase-researcher, gsd-plan-checker, gsd-verifier
-- Quick tasks live in `.gsd/quick/` separate from planned phases
+- Quick tasks live in `.planning/quick/` separate from planned phases
 - Updates STATE.md "Quick Tasks Completed" table (NOT ROADMAP.md)
 
 Use when: You know exactly what to do and the task is small enough to not need research or verification.
@@ -30,7 +30,7 @@ Orchestration is inline - no separate workflow file. Quick mode is deliberately 
 </execution_context>
 
 <context>
-@.gsd/STATE.md
+@.planning/STATE.md
 </context>
 
 <process>
@@ -39,7 +39,7 @@ Orchestration is inline - no separate workflow file. Quick mode is deliberately 
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -60,7 +60,7 @@ Store resolved models for use in Task calls below.
 Check that an active GSD project exists:
 
 ```bash
-if [ ! -f .gsd/ROADMAP.md ]; then
+if [ ! -f .planning/ROADMAP.md ]; then
   echo "Quick mode requires an active project with ROADMAP.md."
   echo "Run /new-project.md first."
   exit 1
@@ -99,14 +99,14 @@ slug=$(echo "$DESCRIPTION" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' 
 
 **Step 3: Calculate next quick task number**
 
-Ensure `.gsd/quick/` directory exists and find the next sequential number:
+Ensure `.planning/quick/` directory exists and find the next sequential number:
 
 ```bash
-# Ensure .gsd/quick/ exists
-mkdir -p .gsd/quick
+# Ensure .planning/quick/ exists
+mkdir -p .planning/quick
 
 # Find highest existing number and increment
-last=$(ls -1d .gsd/quick/[0-9][0-9][0-9]-* 2>/dev/null | sort -r | head -1 | xargs -I{} basename {} | grep -oE '^[0-9]+')
+last=$(ls -1d .planning/quick/[0-9][0-9][0-9]-* 2>/dev/null | sort -r | head -1 | xargs -I{} basename {} | grep -oE '^[0-9]+')
 
 if [ -z "$last" ]; then
   next_num="001"
@@ -122,7 +122,7 @@ fi
 Create the directory for this quick task:
 
 ```bash
-QUICK_DIR=".gsd/quick/${next_num}-${slug}"
+QUICK_DIR=".planning/quick/${next_num}-${slug}"
 mkdir -p "$QUICK_DIR"
 ```
 
@@ -151,7 +151,7 @@ Task(
 **Description:** ${DESCRIPTION}
 
 **Project State:**
-@.gsd/STATE.md
+@.planning/STATE.md
 
 </planning_context>
 
@@ -193,7 +193,7 @@ Task(
 Execute quick task ${next_num}.
 
 Plan: @${QUICK_DIR}/${next_num}-PLAN.md
-Project state: @.gsd/STATE.md
+Project state: @.planning/STATE.md
 
 <constraints>
 - Execute all tasks in the plan
@@ -265,7 +265,7 @@ Stage and commit quick task artifacts:
 # Stage quick task artifacts
 git add ${QUICK_DIR}/${next_num}-PLAN.md
 git add ${QUICK_DIR}/${next_num}-SUMMARY.md
-git add .gsd/STATE.md
+git add .planning/STATE.md
 
 # Commit with quick task format
 git commit -m "$(cat <<'EOF'
@@ -309,7 +309,7 @@ Ready for next task: /quick.md
 - [ ] User provides task description
 - [ ] Slug generated (lowercase, hyphens, max 40 chars)
 - [ ] Next number calculated (001, 002, 003...)
-- [ ] Directory created at `.gsd/quick/NNN-slug/`
+- [ ] Directory created at `.planning/quick/NNN-slug/`
 - [ ] `${next_num}-PLAN.md` created by planner
 - [ ] `${next_num}-SUMMARY.md` created by executor
 - [ ] STATE.md updated with quick task row

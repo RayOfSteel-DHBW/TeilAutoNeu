@@ -33,8 +33,8 @@ Phase: $ARGUMENTS
 
 - `--gaps-only` — Execute only gap closure plans (plans with `gap_closure: true` in frontmatter). Use after verify-work creates fix plans.
 
-@.gsd/ROADMAP.md
-@.gsd/STATE.md
+@.planning/ROADMAP.md
+@.planning/STATE.md
 </context>
 
 <process>
@@ -43,7 +43,7 @@ Phase: $ARGUMENTS
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -100,7 +100,7 @@ Store resolved models for use in Task calls below.
    **If clean:** Continue to verification.
 
 7. **Verify phase goal**
-   Check config: `WORKFLOW_VERIFIER=$(cat .gsd/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")`
+   Check config: `WORKFLOW_VERIFIER=$(cat .planning/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")`
 
    **If `workflow.verifier` is `false`:** Skip to step 8 (treat as passed).
 
@@ -126,10 +126,10 @@ Store resolved models for use in Task calls below.
 
 10. **Commit phase completion**
     Check `COMMIT_PLANNING_DOCS` from config.json (default: true).
-    If false: Skip git operations for .gsd/ files.
+    If false: Skip git operations for .planning/ files.
     If true: Bundle all phase metadata updates in one commit:
-    - Stage: `git add .gsd/ROADMAP.md .gsd/STATE.md`
-    - Stage REQUIREMENTS.md if updated: `git add .gsd/REQUIREMENTS.md`
+    - Stage: `git add .planning/ROADMAP.md .planning/STATE.md`
+    - Stage REQUIREMENTS.md if updated: `git add .planning/REQUIREMENTS.md`
     - Commit: `docs({phase}): complete {phase-name} phase`
 
 11. **Offer next steps** - Route to next action (see `<offer_next>`)
@@ -220,7 +220,7 @@ GSD ► PHASE {Z} GAPS FOUND ⚠
 **Phase {Z}: {Name}**
 
 Score: {N}/{M} must-haves verified
-Report: .gsd/phases/{phase_dir}/{phase}-VERIFICATION.md
+Report: .planning/phases/{phase_dir}/{phase}-VERIFICATION.md
 
 ### What's Missing
 
@@ -240,7 +240,7 @@ Report: .gsd/phases/{phase_dir}/{phase}-VERIFICATION.md
 
 **Also available:**
 
-- cat .gsd/phases/{phase_dir}/{phase}-VERIFICATION.md — see full report
+- cat .planning/phases/{phase_dir}/{phase}-VERIFICATION.md — see full report
 - /verify-work.md {Z} — manual testing before planning
 
 ───────────────────────────────────────────────────────────────
@@ -266,7 +266,7 @@ Before spawning, read file contents. The `@` syntax does not work across Task() 
 PLAN_01_CONTENT=$(cat "{plan_01_path}")
 PLAN_02_CONTENT=$(cat "{plan_02_path}")
 PLAN_03_CONTENT=$(cat "{plan_03_path}")
-STATE_CONTENT=$(cat .gsd/STATE.md)
+STATE_CONTENT=$(cat .planning/STATE.md)
 ```
 
 Spawn all plans in a wave with a single message containing multiple Task calls, with inlined content:

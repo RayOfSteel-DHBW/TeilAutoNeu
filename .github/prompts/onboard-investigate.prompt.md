@@ -22,7 +22,7 @@ Investigate all inputs for a project onboarding when multiple conflicting or ove
 
 Combines:
 
-- **Standard codebase mapping** (`.gsd/codebase/`) for the primary codebase via `gsd-codebase-mapper`
+- **Standard codebase mapping** (`.planning/codebase/`) for the primary codebase via `gsd-codebase-mapper`
 - **Content inventory** for code sources (pages, routes, assets, components)
 - **Copyright/licensing scan** for reference sources with reuse restrictions
 - **Document extraction** for planning docs, notes, specs
@@ -31,8 +31,8 @@ Each source gets dedicated investigation agent(s) who write documents directly. 
 
 **Creates:**
 
-- `.gsd/codebase/` — 7 standard GSD codebase docs from the primary source
-- `.gsd/sources/{label}/` — investigation docs per additional source
+- `.planning/codebase/` — 7 standard GSD codebase docs from the primary source
+- `.planning/sources/{label}/` — investigation docs per additional source
 
 **After this command:** Run `/onboard-consolidate.md` to merge findings.
 
@@ -64,13 +64,13 @@ If not provided, the orchestrator will ask interactively.
 **Check for existing investigation:**
 
 ```bash
-ls .gsd/sources/ 2>/dev/null && echo "SOURCES_EXIST" || echo "NO_SOURCES"
-ls .gsd/codebase/ 2>/dev/null && echo "CODEBASE_EXIST" || echo "NO_CODEBASE"
+ls .planning/sources/ 2>/dev/null && echo "SOURCES_EXIST" || echo "NO_SOURCES"
+ls .planning/codebase/ 2>/dev/null && echo "CODEBASE_EXIST" || echo "NO_CODEBASE"
 ```
 
-**If `.gsd/sources/` exists:** Offer: Refresh (delete and re-investigate) / Skip (keep existing) / Update specific sources.
+**If `.planning/sources/` exists:** Offer: Refresh (delete and re-investigate) / Skip (keep existing) / Update specific sources.
 
-**If `.gsd/codebase/` exists:** Offer: Refresh / Skip (reuse existing map).
+**If `.planning/codebase/` exists:** Offer: Refresh / Skip (reuse existing map).
 
 **Initialize git if needed:**
 
@@ -85,13 +85,13 @@ fi
 **Create base directory:**
 
 ```bash
-mkdir -p .gsd/sources
+mkdir -p .planning/sources
 ```
 
 **Resolve model profile:**
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -107,7 +107,7 @@ Default to "balanced" if not set.
 
 ## Phase 2: Map Primary Codebase
 
-**If `.gsd/codebase/` does not exist (or user chose Refresh):**
+**If `.planning/codebase/` does not exist (or user chose Refresh):**
 
 Display stage banner:
 
@@ -119,7 +119,7 @@ Display stage banner:
 
 Follow the **map-codebase** skill (`../skills/map-codebase/SKILL.md`):
 
-1. Create `.gsd/codebase/` directory
+1. Create `.planning/codebase/` directory
 2. Spawn 4 parallel `gsd-codebase-mapper` agents (tech, arch, quality, concerns)
 3. Collect confirmations (file + line count only)
 4. Verify all 7 documents exist
@@ -146,7 +146,7 @@ Examine the codebase. Produce a structured inventory covering:
 4. **Navigation**: Site navigation structure (menus, footer links, cross-page links)
 5. **Components**: Reusable UI components/partials with purpose
 
-Write to: .gsd/sources/primary/CONTENT-INVENTORY.md
+Write to: .planning/sources/primary/CONTENT-INVENTORY.md
 
 Format:
 
@@ -185,7 +185,7 @@ Return confirmation only (files written + line counts).
 ", description="Inventory primary content")
 ```
 
-**If `.gsd/codebase/` already exists and user chose Skip:** Continue to Phase 3.
+**If `.planning/codebase/` already exists and user chose Skip:** Continue to Phase 3.
 
 ## Phase 3: Identify Additional Sources
 
@@ -255,7 +255,7 @@ Store per source: `{ label, path, type, precedence, copyright_scan }`
 For each source, create directory:
 
 ```bash
-mkdir -p ".gsd/sources/{label}"
+mkdir -p ".planning/sources/{label}"
 ```
 
 **Spawn agents per source in parallel. Agent selection by source type:**
@@ -273,11 +273,11 @@ Focus: arch
 
 Analyze the codebase at {path} for architecture and directory structure.
 
-Write these documents to .gsd/sources/{label}/:
+Write these documents to .planning/sources/{label}/:
 - ARCHITECTURE.md — Pattern, layers, data flow, abstractions, entry points
 - STRUCTURE.md — Directory layout, key locations, naming conventions
 
-IMPORTANT: The output path is .gsd/sources/{label}/, NOT .gsd/codebase/.
+IMPORTANT: The output path is .planning/sources/{label}/, NOT .planning/codebase/.
 
 Explore thoroughly. Write documents directly using templates from your agent instructions. Return confirmation only.
 ", subagent_type="gsd-codebase-mapper", model="{mapper_model}", description="Map {label} architecture")
@@ -305,7 +305,7 @@ Examine every relevant file in {path}. Produce a structured inventory:
 4. **Navigation**: Site navigation structure
 5. **Components**: Reusable UI components/partials with purpose
 
-Write to: .gsd/sources/{label}/CONTENT-INVENTORY.md
+Write to: .planning/sources/{label}/CONTENT-INVENTORY.md
 
 Return confirmation only (files written + line counts).
 </task>
@@ -350,7 +350,7 @@ For each flagged item record:
 - Risk level: HIGH (clearly restricted), MEDIUM (uncertain), LOW (probably fine)
 - Recommendation: REPLACE / VERIFY LICENSE / SAFE
 
-Write to: .gsd/sources/{label}/COPYRIGHT-FLAGS.md
+Write to: .planning/sources/{label}/COPYRIGHT-FLAGS.md
 
 Format:
 
@@ -425,7 +425,7 @@ For each file, extract and categorize ALL relevant information into:
 
 **CRITICAL:** If documents contradict each other, flag it explicitly in Open Questions.
 
-Write to: .gsd/sources/{label}/EXTRACTED.md
+Write to: .planning/sources/{label}/EXTRACTED.md
 
 Format:
 
@@ -482,14 +482,14 @@ Return confirmation only (files written + line counts).
 
 ```bash
 echo "=== Primary Codebase ==="
-wc -l .gsd/codebase/*.md 2>/dev/null
+wc -l .planning/codebase/*.md 2>/dev/null
 
 echo "=== Primary Content ==="
-wc -l .gsd/sources/primary/*.md 2>/dev/null
+wc -l .planning/sources/primary/*.md 2>/dev/null
 
 echo "=== Additional Sources ==="
-for dir in .gsd/sources/*/; do
-  [ "$dir" = ".gsd/sources/primary/" ] && continue
+for dir in .planning/sources/*/; do
+  [ "$dir" = ".planning/sources/primary/" ] && continue
   echo "--- $(basename $dir) ---"
   wc -l "$dir"*.md 2>/dev/null
 done
@@ -500,11 +500,11 @@ Check for empty or missing expected documents. Note any agent failures.
 **Commit:**
 
 ```bash
-git add .gsd/codebase/ .gsd/sources/
+git add .planning/codebase/ .planning/sources/
 git commit -m "$(cat <<'EOF'
 docs: investigate onboarding sources
 
-Primary codebase: .gsd/codebase/ (7 docs) + .gsd/sources/primary/
+Primary codebase: .planning/codebase/ (7 docs) + .planning/sources/primary/
 Additional sources: [list each label]
 EOF
 )"
@@ -517,10 +517,10 @@ EOF
  GSD ► SOURCE INVESTIGATION COMPLETE ✓
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-**Primary codebase** (.gsd/codebase/)
+**Primary codebase** (.planning/codebase/)
 [list 7 docs + line counts]
 
-**Primary content** (.gsd/sources/primary/)
+**Primary content** (.planning/sources/primary/)
 [CONTENT-INVENTORY.md + line count]
 
 **Additional sources:**
@@ -528,7 +528,7 @@ EOF
 
 [If any copyright flags found:]
 ⚠️ COPYRIGHT FLAGS FOUND — review:
-  .gsd/sources/{label}/COPYRIGHT-FLAGS.md
+  .planning/sources/{label}/COPYRIGHT-FLAGS.md
 
 ───────────────────────────────────────────────────────
 
@@ -545,9 +545,9 @@ EOF
 
 <success_criteria>
 
-- [ ] Primary codebase mapped to `.gsd/codebase/` (7 documents)
-- [ ] Primary content inventory in `.gsd/sources/primary/`
-- [ ] Each additional source investigated in `.gsd/sources/{label}/`
+- [ ] Primary codebase mapped to `.planning/codebase/` (7 documents)
+- [ ] Primary content inventory in `.planning/sources/primary/`
+- [ ] Each additional source investigated in `.planning/sources/{label}/`
 - [ ] Code sources have: ARCHITECTURE.md, STRUCTURE.md, CONTENT-INVENTORY.md
 - [ ] Doc sources have: EXTRACTED.md
 - [ ] Copyright-flagged sources have: COPYRIGHT-FLAGS.md

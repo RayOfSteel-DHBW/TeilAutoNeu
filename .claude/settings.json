@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Skill(gsd:add-todo)",
+      "Skill(gsd:add-todo:*)",
+      "Bash(node /c/Dev/Repos/TeilAuto/.claude/get-shit-done/bin/gsd-tools.cjs init milestone-op)",
+      "Bash(node /c/Dev/Repos/TeilAuto/.claude/get-shit-done/bin/gsd-tools.cjs phases list)",
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs commit \"docs\\(09\\): capture phase context\" --files \".planning/phases/09-content-accuracy-cleanup/09-CONTEXT.md .planning/phases/10-content-messaging-feature-polish/10-CONTEXT-DRAFT.md\")",
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs state record-session --stopped-at \"Phase 9 context gathered\" --resume-file \".planning/phases/09-content-accuracy-cleanup/09-CONTEXT.md\")",
+      "Bash(ls tailwind.config.*)",
+      "Bash(ls src/*.html)",
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs init plan-phase \"9\")",
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs roadmap get-phase \"9\")",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(0,''utf8''\\);const j=JSON.parse\\(d\\);console.log\\(j.section\\)\")",
+      "Bash(git add \".planning/phases/09-content-accuracy-cleanup/09-RESEARCH.md\")",
+      "Bash(git commit:*)",
+      "Bash(git add -f \".planning/phases/09-content-accuracy-cleanup/09-RESEARCH.md\")",
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs commit \"docs\\(11\\): capture phase context\" --files \".planning/phases/11-simplified-datenschutzerklaerung-clean-privacy-page-with-strato-mention-and-no-tracking-transparency/11-CONTEXT.md .planning/todos/pending/2026-02-25-v2-datenschutz-tracking-draft-wording.md\")",
+      "Bash(git checkout gsd/dev)",
+      "Bash(git merge gsd/v1.0-milestone --ff-only)"
+    ],
+    "additionalDirectories": [
+      "C:\\Dev\\Repos\\TeilAuto\\.planning\\phases"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/gsd-check-update.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/gsd-context-monitor.js"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node .claude/hooks/gsd-statusline.js"
+  }
+}

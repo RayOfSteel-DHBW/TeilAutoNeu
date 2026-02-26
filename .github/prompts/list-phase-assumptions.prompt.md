@@ -19,10 +19,10 @@ Output: Conversational output only (no file creation) - ends with "What do you t
 Phase number: $ARGUMENTS (required)
 
 **Load project state first:**
-@.gsd/STATE.md
+@.planning/STATE.md
 
 **Load roadmap:**
-@.gsd/ROADMAP.md
+@.planning/ROADMAP.md
 </context>
 
 <process>

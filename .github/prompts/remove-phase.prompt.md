@@ -12,8 +12,8 @@ Output: Phase deleted, all subsequent phases renumbered, git commit as historica
 </objective>
 
 <execution_context>
-@.gsd/ROADMAP.md
-@.gsd/STATE.md
+@.planning/ROADMAP.md
+@.planning/STATE.md
 </execution_context>
 
 <process>
@@ -39,8 +39,8 @@ Exit.
 Load project state:
 
 ```bash
-cat .gsd/STATE.md 2>/dev/null
-cat .gsd/ROADMAP.md 2>/dev/null
+cat .planning/STATE.md 2>/dev/null
+cat .planning/ROADMAP.md 2>/dev/null
 ```
 
 Parse current phase number from STATE.md "Current Position" section.
@@ -83,7 +83,7 @@ Exit.
 3. Check for SUMMARY.md files in phase directory:
 
 ```bash
-ls .gsd/phases/{target}-*/*-SUMMARY.md 2>/dev/null
+ls .planning/phases/{target}-*/*-SUMMARY.md 2>/dev/null
 ```
 
 If any SUMMARY.md files exist:
@@ -104,7 +104,7 @@ Exit.
 Collect information about the phase being removed:
 
 1. Extract phase name from ROADMAP.md heading: `### Phase {target}: {Name}`
-2. Find phase directory: `.gsd/phases/{target}-{slug}/`
+2. Find phase directory: `.planning/phases/{target}-{slug}/`
 3. Find all subsequent phases (integer and decimal) that need renumbering
 
 **Subsequent phase detection:**
@@ -130,7 +130,7 @@ Present removal summary and confirm:
 Removing Phase {target}: {Name}
 
 This will:
-- Delete: .gsd/phases/{target}-{slug}/
+- Delete: .planning/phases/{target}-{slug}/
 - Renumber {N} subsequent phases:
   - Phase 18 → Phase 17
   - Phase 18.1 → Phase 17.1
@@ -147,9 +147,9 @@ Wait for confirmation.
 Delete the target phase directory if it exists:
 
 ```bash
-if [ -d ".gsd/phases/{target}-{slug}" ]; then
-  rm -rf ".gsd/phases/{target}-{slug}"
-  echo "Deleted: .gsd/phases/{target}-{slug}/"
+if [ -d ".planning/phases/{target}-{slug}" ]; then
+  rm -rf ".planning/phases/{target}-{slug}"
+  echo "Deleted: .planning/phases/{target}-{slug}/"
 fi
 ```
 
@@ -163,7 +163,7 @@ For each phase directory that needs renumbering (in reverse order to avoid confl
 
 ```bash
 # Example: renaming 18-dashboard to 17-dashboard
-mv ".gsd/phases/18-dashboard" ".gsd/phases/17-dashboard"
+mv ".planning/phases/18-dashboard" ".planning/phases/17-dashboard"
 ```
 
 Process in descending order (20→19, then 19→18, then 18→17) to avoid overwriting.
@@ -239,8 +239,8 @@ Search for and update phase references inside plan files:
 
 ```bash
 # Find files that reference the old phase numbers
-grep -r "Phase 18" .gsd/phases/17-*/ 2>/dev/null
-grep -r "Phase 19" .gsd/phases/18-*/ 2>/dev/null
+grep -r "Phase 18" .planning/phases/17-*/ 2>/dev/null
+grep -r "Phase 19" .planning/phases/18-*/ 2>/dev/null
 # etc.
 ```
 
@@ -253,8 +253,8 @@ Stage and commit the removal:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -262,7 +262,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/
+git add .planning/
 git commit -m "chore: remove phase {target} ({original-phase-name})"
 ```
 
@@ -276,7 +276,7 @@ Present completion summary:
 Phase {target} ({original-name}) removed.
 
 Changes:
-- Deleted: .gsd/phases/{target}-{slug}/
+- Deleted: .planning/phases/{target}-{slug}/
 - Renumbered: Phases {first-renumbered}-{last-old} → {first-renumbered-1}-{last-new}
 - Updated: ROADMAP.md, STATE.md
 - Committed: chore: remove phase {target} ({original-name})

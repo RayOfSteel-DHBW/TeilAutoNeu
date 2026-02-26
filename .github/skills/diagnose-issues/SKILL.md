@@ -12,9 +12,9 @@ Orchestrator stays lean: parse gaps, spawn agents, collect results, update UAT.
 </purpose>
 
 <paths>
-DEBUG_DIR=.gsd/debug
+DEBUG_DIR=.planning/debug
 
-Debug files use the `.gsd/debug/` path (hidden directory with leading dot).
+Debug files use the `.planning/debug/` path (hidden directory with leading dot).
 </paths>
 
 <core_principle>
@@ -164,7 +164,7 @@ For each gap in the Gaps section, add artifacts and missing fields:
   missing:
     - "Add commentCount to useEffect dependency array"
     - "Trigger re-render when new comment added"
-  debug_session: .gsd/debug/comment-not-refreshing.md
+  debug_session: .planning/debug/comment-not-refreshing.md
 ```
 
 Update status in frontmatter to "diagnosed".
@@ -172,8 +172,8 @@ Update status in frontmatter to "diagnosed".
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -183,7 +183,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 Commit the updated UAT.md:
 
 ```bash
-git add ".gsd/phases/XX-name/{phase}-UAT.md"
+git add ".planning/phases/XX-name/{phase}-UAT.md"
 git commit -m "docs({phase}): add root causes from diagnosis"
 ```
 

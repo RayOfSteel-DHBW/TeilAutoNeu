@@ -20,15 +20,15 @@ One command creates all fix phases — no manual `/add-phase.md` per gap.
 
 <context>
 **Audit results:**
-Glob: .gsd/v*-MILESTONE-AUDIT.md (use most recent)
+Glob: .planning/v*-MILESTONE-AUDIT.md (use most recent)
 
 **Original intent (for prioritization):**
-@.gsd/PROJECT.md
-@.gsd/REQUIREMENTS.md
+@.planning/PROJECT.md
+@.planning/REQUIREMENTS.md
 
 **Current state:**
-@.gsd/ROADMAP.md
-@.gsd/STATE.md
+@.planning/ROADMAP.md
+@.planning/STATE.md
 </context>
 
 <process>
@@ -37,7 +37,7 @@ Glob: .gsd/v*-MILESTONE-AUDIT.md (use most recent)
 
 ```bash
 # Find the most recent audit file
-ls -t .gsd/v*-MILESTONE-AUDIT.md 2>/dev/null | head -1
+ls -t .planning/v*-MILESTONE-AUDIT.md 2>/dev/null | head -1
 ```
 
 Parse YAML frontmatter to extract structured gaps:
@@ -94,7 +94,7 @@ Gap: Flow "View dashboard" broken at data fetch
 Find highest existing phase:
 
 ```bash
-ls -d .gsd/phases/*/ | sort -V | tail -1
+ls -d .planning/phases/*/ | sort -V | tail -1
 ```
 
 New phases continue from there:
@@ -160,7 +160,7 @@ Add new phases to current milestone:
 ## 7. Create Phase Directories
 
 ```bash
-mkdir -p ".gsd/phases/{NN}-{name}"
+mkdir -p ".planning/phases/{NN}-{name}"
 ```
 
 ## 8. Commit Roadmap Update
@@ -168,8 +168,8 @@ mkdir -p ".gsd/phases/{NN}-{name}"
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -177,7 +177,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/ROADMAP.md
+git add .planning/ROADMAP.md
 git commit -m "docs(roadmap): add gap closure phases {N}-{M}"
 ```
 
@@ -204,7 +204,7 @@ git commit -m "docs(roadmap): add gap closure phases {N}-{M}"
 **Also available:**
 
 - `/execute-phase.md {N}` — if plans already exist
-- `cat .gsd/ROADMAP.md` — see updated roadmap
+- `cat .planning/ROADMAP.md` — see updated roadmap
 
 ---
 

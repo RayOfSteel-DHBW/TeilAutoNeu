@@ -59,8 +59,8 @@ Output: [Working, tested feature]
 </objective>
 
 <context>
-@.gsd/PROJECT.md
-@.gsd/ROADMAP.md
+@.planning/PROJECT.md
+@.planning/ROADMAP.md
 @relevant/source/files.ts
 </context>
 

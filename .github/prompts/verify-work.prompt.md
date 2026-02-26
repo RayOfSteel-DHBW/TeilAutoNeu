@@ -22,7 +22,7 @@ Output: {phase}-UAT.md tracking all test results. If issues found: diagnosed gap
 
 <execution_context>
 ../skills/verify-work/SKILL.md
-@.gsd/templates/UAT.md
+@.planning/templates/UAT.md
 </execution_context>
 
 <context>
@@ -30,8 +30,8 @@ Phase: $ARGUMENTS (optional)
 - If provided: Test specific phase (e.g., "4")
 - If not provided: Check for active sessions or prompt for phase
 
-@.gsd/STATE.md
-@.gsd/ROADMAP.md
+@.planning/STATE.md
+@.planning/ROADMAP.md
 </context>
 
 <process>
@@ -167,7 +167,7 @@ Fix plans verified ✓
 
 **Also available:**
 
-- cat .gsd/phases/{phase_dir}/\*-PLAN.md — review fix plans
+- cat .planning/phases/{phase_dir}/\*-PLAN.md — review fix plans
 - /plan-phase.md {Z} --gaps — regenerate fix plans
 
 ───────────────────────────────────────────────────────────────

@@ -21,7 +21,7 @@ No Pass/Fail buttons. No severity questions. Just: "Here's what should happen. D
 </philosophy>
 
 <template>
-@~/.gsd/templates/UAT.md
+@.planning/templates/UAT.md
 </template>
 
 <process>
@@ -30,7 +30,7 @@ No Pass/Fail buttons. No severity questions. Just: "Here's what should happen. D
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -49,7 +49,7 @@ Store resolved models for use in Task calls below.
 **First: Check for active UAT sessions**
 
 ```bash
-find .gsd/phases -name "*-UAT.md" -type f 2>/dev/null | head -5
+find .planning/phases -name "*-UAT.md" -type f 2>/dev/null | head -5
 ```
 
 **If active sessions exist AND no $ARGUMENTS provided:**
@@ -100,7 +100,7 @@ Parse $ARGUMENTS as phase number (e.g., "4") or plan number (e.g., "04-02").
 ```bash
 # Find phase directory (match both zero-padded and unpadded)
 PADDED_PHASE=$(printf "%02d" ${PHASE_ARG} 2>/dev/null || echo "${PHASE_ARG}")
-PHASE_DIR=$(ls -d .gsd/phases/${PADDED_PHASE}-* .gsd/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/${PADDED_PHASE}-* .planning/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
 
 # Find SUMMARY files
 ls "$PHASE_DIR"/*-SUMMARY.md 2>/dev/null
@@ -190,7 +190,7 @@ skipped: 0
 [none yet]
 ```
 
-Write to `.gsd/phases/XX-name/{phase}-UAT.md`
+Write to `.planning/phases/XX-name/{phase}-UAT.md`
 
 Proceed to `present_test`.
 </step>
@@ -330,8 +330,8 @@ Clear Current Test section:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations
@@ -341,7 +341,7 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 Commit the UAT file:
 
 ```bash
-git add ".gsd/phases/XX-name/{phase}-UAT.md"
+git add ".planning/phases/XX-name/{phase}-UAT.md"
 git commit -m "test({phase}): complete UAT - {passed} passed, {issues} issues"
 ```
 
@@ -420,13 +420,13 @@ Task(
 **Mode:** gap_closure
 
 **UAT with diagnoses:**
-@.gsd/phases/{phase_dir}/{phase}-UAT.md
+@.planning/phases/{phase_dir}/{phase}-UAT.md
 
 **Project State:**
-@.gsd/STATE.md
+@.planning/STATE.md
 
 **Roadmap:**
-@.gsd/ROADMAP.md
+@.planning/ROADMAP.md
 
 </planning_context>
 
@@ -473,7 +473,7 @@ Task(
 **Phase Goal:** Close diagnosed gaps from UAT
 
 **Plans to verify:**
-@.gsd/phases/{phase_dir}/*-PLAN.md
+@.planning/phases/{phase_dir}/*-PLAN.md
 
 </verification_context>
 
@@ -513,7 +513,7 @@ Task(
 **Mode:** revision
 
 **Existing plans:**
-@.gsd/phases/{phase_dir}/*-PLAN.md
+@.planning/phases/{phase_dir}/*-PLAN.md
 
 **Checker issues:**
 {structured_issues_from_checker}

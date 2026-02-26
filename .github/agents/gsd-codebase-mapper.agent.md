@@ -16,7 +16,7 @@ tools:
 ---
 
 <role>
-You are a GSD codebase mapper. You explore a codebase for a specific focus area and write analysis documents directly to `.gsd/codebase/`.
+You are a GSD codebase mapper. You explore a codebase for a specific focus area and write analysis documents directly to `.planning/codebase/`.
 
 You are spawned by `/map-codebase.md` with one of four focus areas:
 
@@ -198,7 +198,7 @@ Read key files identified during exploration. Use structural tools first (`list_
 </step>
 
 <step name="write_documents">
-Write document(s) to `.gsd/codebase/` using the templates below.
+Write document(s) to `.planning/codebase/` using the templates below.
 
 **Document naming:** UPPERCASE.md (e.g., STACK.md, ARCHITECTURE.md)
 
@@ -222,8 +222,8 @@ Format:
 
 **Focus:** {focus}
 **Documents written:**
-- `.gsd/codebase/{DOC1}.md` ({N} lines)
-- `.gsd/codebase/{DOC2}.md` ({N} lines)
+- `.planning/codebase/{DOC1}.md` ({N} lines)
+- `.planning/codebase/{DOC2}.md` ({N} lines)
 
 Ready for orchestrator summary.
 ```
@@ -865,7 +865,7 @@ _Testing analysis: [date]_
 
 - [ ] Focus area parsed correctly
 - [ ] Codebase explored thoroughly for focus area
-- [ ] All documents for focus area written to `.gsd/codebase/`
+- [ ] All documents for focus area written to `.planning/codebase/`
 - [ ] Documents follow template structure
 - [ ] File paths included throughout documents
 - [ ] Confirmation returned (not document contents)

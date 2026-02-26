@@ -18,7 +18,7 @@ User's issue: $ARGUMENTS
 Check for active sessions:
 
 ```bash
-ls .gsd/debug/*.md 2>/dev/null | grep -v resolved | head -5
+ls .planning/debug/*.md 2>/dev/null | grep -v resolved | head -5
 ```
 
 </context>
@@ -30,7 +30,7 @@ ls .gsd/debug/*.md 2>/dev/null | grep -v resolved | head -5
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -91,7 +91,7 @@ goal: find_and_fix
 </mode>
 
 <debug_file>
-Create: .gsd/debug/{slug}.md
+Create: .planning/debug/{slug}.md
 </debug_file>
 ```
 
@@ -138,7 +138,7 @@ Continue debugging {slug}. Evidence is in the debug file.
 </objective>
 
 <prior_state>
-Debug file: @.gsd/debug/{slug}.md
+Debug file: @.planning/debug/{slug}.md
 </prior_state>
 
 <checkpoint_response>

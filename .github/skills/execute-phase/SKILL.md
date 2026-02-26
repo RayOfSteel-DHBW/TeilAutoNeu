@@ -22,7 +22,7 @@ Read config.json for planning behavior settings.
 Read model profile for agent spawning:
 
 ```bash
-MODEL_PROFILE=$(cat .gsd/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 Default to "balanced" if not set.
@@ -42,7 +42,7 @@ Store resolved models for use in Task calls below.
 Before any operation, read project state:
 
 ```bash
-cat .gsd/STATE.md 2>/dev/null
+cat .planning/STATE.md 2>/dev/null
 ```
 
 **If file exists:** Parse and internalize:
@@ -51,7 +51,7 @@ cat .gsd/STATE.md 2>/dev/null
 - Accumulated decisions (constraints on this execution)
 - Blockers/concerns (things to watch for)
 
-**If file missing but .gsd/ exists:**
+**If file missing but .planning/ exists:**
 
 ```
 STATE.md missing but planning artifacts exist.
@@ -60,15 +60,15 @@ Options:
 2. Continue without project state (may lose accumulated context)
 ```
 
-**If .gsd/ doesn't exist:** Error - project not initialized.
+**If .planning/ doesn't exist:** Error - project not initialized.
 
 **Load planning config:**
 
 ```bash
 # Check if planning docs should be committed (default: true)
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 # Auto-detect gitignored (overrides config)
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 Store `COMMIT_PLANNING_DOCS` for use in git operations.
@@ -77,11 +77,11 @@ Store `COMMIT_PLANNING_DOCS` for use in git operations.
 
 ```bash
 # Get branching strategy (default: none)
-BRANCHING_STRATEGY=$(cat .gsd/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "none")
+BRANCHING_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "none")
 
 # Get templates
-PHASE_BRANCH_TEMPLATE=$(cat .gsd/config.json 2>/dev/null | grep -o '"phase_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "gsd/phase-{phase}-{slug}")
-MILESTONE_BRANCH_TEMPLATE=$(cat .gsd/config.json 2>/dev/null | grep -o '"milestone_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "gsd/{milestone}-{slug}")
+PHASE_BRANCH_TEMPLATE=$(cat .planning/config.json 2>/dev/null | grep -o '"phase_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "gsd/phase-{phase}-{slug}")
+MILESTONE_BRANCH_TEMPLATE=$(cat .planning/config.json 2>/dev/null | grep -o '"milestone_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | sed 's/.*:.*"\([^"]*\)"/\1/' || echo "gsd/{milestone}-{slug}")
 ```
 
 Store `BRANCHING_STRATEGY` and templates for use in branch creation step.
@@ -124,8 +124,8 @@ fi
 ```bash
 if [ "$BRANCHING_STRATEGY" = "milestone" ]; then
   # Get current milestone info from ROADMAP.md
-  MILESTONE_VERSION=$(grep -oE 'v[0-9]+\.[0-9]+' .gsd/ROADMAP.md | head -1 || echo "v1.0")
-  MILESTONE_NAME=$(grep -A1 "## .*$MILESTONE_VERSION" .gsd/ROADMAP.md | tail -1 | sed 's/.*- //' | cut -d'(' -f1 | tr -d ' ' || echo "milestone")
+  MILESTONE_VERSION=$(grep -oE 'v[0-9]+\.[0-9]+' .planning/ROADMAP.md | head -1 || echo "v1.0")
+  MILESTONE_NAME=$(grep -A1 "## .*$MILESTONE_VERSION" .planning/ROADMAP.md | tail -1 | sed 's/.*- //' | cut -d'(' -f1 | tr -d ' ' || echo "milestone")
 
   # Create slug
   MILESTONE_SLUG=$(echo "$MILESTONE_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//')
@@ -155,7 +155,7 @@ Confirm phase exists and has plans:
 ```bash
 # Match both zero-padded (05-*) and unpadded (5-*) folders
 PADDED_PHASE=$(printf "%02d" ${PHASE_ARG} 2>/dev/null || echo "${PHASE_ARG}")
-PHASE_DIR=$(ls -d .gsd/phases/${PADDED_PHASE}-* .gsd/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
+PHASE_DIR=$(ls -d .planning/phases/${PADDED_PHASE}-* .planning/phases/${PHASE_ARG}-* 2>/dev/null | head -1)
 if [ -z "$PHASE_DIR" ]; then
   echo "ERROR: No phase directory matching '${PHASE_ARG}'"
   exit 1
@@ -285,8 +285,8 @@ Execute each wave in sequence. Autonomous plans within a wave run in parallel.
    ```bash
    # Read each plan in the wave
    PLAN_CONTENT=$(cat "{plan_path}")
-   STATE_CONTENT=$(cat .gsd/STATE.md)
-   CONFIG_CONTENT=$(cat .gsd/config.json 2>/dev/null)
+   STATE_CONTENT=$(cat .planning/STATE.md)
+   CONFIG_CONTENT=$(cat .planning/config.json 2>/dev/null)
    ```
 
    Use Task tool with multiple parallel calls. Each agent gets prompt with inlined content:
@@ -300,7 +300,7 @@ Execute each wave in sequence. Autonomous plans within a wave run in parallel.
 
    <execution_context>
    ../execute-plan/SKILL.md
-   @.gsd/templates/summary.md
+   @.planning/templates/summary.md
    ../../instructions/checkpoints.instructions.md
    ../../instructions/tdd.instructions.md
    </execution_context>
@@ -606,7 +606,7 @@ Update ROADMAP.md to reflect phase completion:
 
 If `COMMIT_PLANNING_DOCS=false` (set in load_project_state):
 
-- Skip all git operations for .gsd/ files
+- Skip all git operations for .planning/ files
 - Planning docs exist locally but are gitignored
 - Log: "Skipping planning docs commit (commit_docs: false)"
 - Proceed to offer_next step
@@ -618,8 +618,8 @@ If `COMMIT_PLANNING_DOCS=true` (default):
 Commit phase completion (roadmap, state, verification):
 
 ```bash
-git add .gsd/ROADMAP.md .gsd/STATE.md .gsd/phases/{phase_dir}/*-VERIFICATION.md
-git add .gsd/REQUIREMENTS.md  # if updated
+git add .planning/ROADMAP.md .planning/STATE.md .planning/phases/{phase_dir}/*-VERIFICATION.md
+git add .planning/REQUIREMENTS.md  # if updated
 git commit -m "docs(phase-{X}): complete phase execution"
 ```
 

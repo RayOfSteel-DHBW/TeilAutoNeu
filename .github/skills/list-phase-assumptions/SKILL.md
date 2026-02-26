@@ -29,7 +29,7 @@ Exit workflow.
 Validate phase exists in roadmap:
 
 ```bash
-cat .gsd/ROADMAP.md | grep -i "Phase ${PHASE}"
+cat .planning/ROADMAP.md | grep -i "Phase ${PHASE}"
 ```
 
 **If phase not found:**

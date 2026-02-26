@@ -11,15 +11,15 @@ Enables reviewing captured ideas and deciding what to work on next.
 </objective>
 
 <context>
-@.gsd/STATE.md
-@.gsd/ROADMAP.md
+@.planning/STATE.md
+@.planning/ROADMAP.md
 </context>
 
 <process>
 
 <step name="check_exist">
 ```bash
-TODO_COUNT=$(ls .gsd/todos/pending/*.md 2>/dev/null | wc -l | tr -d ' ')
+TODO_COUNT=$(ls .planning/todos/pending/*.md 2>/dev/null | wc -l | tr -d ' ')
 echo "Pending todos: $TODO_COUNT"
 ```
 
@@ -49,7 +49,7 @@ Check for area filter in arguments:
 
 <step name="list_todos">
 ```bash
-for file in .gsd/todos/pending/*.md; do
+for file in .planning/todos/pending/*.md; do
   created=$(grep "^created:" "$file" | cut -d' ' -f2)
   title=$(grep "^title:" "$file" | cut -d':' -f2- | xargs)
   area=$(grep "^area:" "$file" | cut -d' ' -f2)
@@ -105,7 +105,7 @@ If `files` field has entries, read and briefly summarize each.
 
 <step name="check_roadmap">
 ```bash
-ls .gsd/ROADMAP.md 2>/dev/null && echo "Roadmap exists"
+ls .planning/ROADMAP.md 2>/dev/null && echo "Roadmap exists"
 ```
 
 If roadmap exists:
@@ -144,7 +144,7 @@ Use HumanAgent MCP (HumanAgent_Chat):
 <step name="execute_action">
 **Work on it now:**
 ```bash
-mv ".gsd/todos/pending/[filename]" ".gsd/todos/done/"
+mv ".planning/todos/pending/[filename]" ".planning/todos/done/"
 ```
 Update STATE.md todo count. Present problem/solution context. Begin work or ask how to proceed.
 
@@ -166,7 +166,7 @@ Return to list_todos step.
 After any action that changes todo count:
 
 ```bash
-ls .gsd/todos/pending/*.md 2>/dev/null | wc -l
+ls .planning/todos/pending/*.md 2>/dev/null | wc -l
 ```
 
 Update STATE.md "### Pending Todos" section if exists.
@@ -178,8 +178,8 @@ If todo was moved to done/, commit the change:
 **Check planning config:**
 
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .gsd/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 
 **If `COMMIT_PLANNING_DOCS=false`:** Skip git operations, log "Todo moved (not committed - commit_docs: false)"
@@ -187,9 +187,9 @@ git check-ignore -q .gsd 2>/dev/null && COMMIT_PLANNING_DOCS=false
 **If `COMMIT_PLANNING_DOCS=true` (default):**
 
 ```bash
-git add .gsd/todos/done/[filename]
-git rm --cached .gsd/todos/pending/[filename] 2>/dev/null || true
-[ -f .gsd/STATE.md ] && git add .gsd/STATE.md
+git add .planning/todos/done/[filename]
+git rm --cached .planning/todos/pending/[filename] 2>/dev/null || true
+[ -f .planning/STATE.md ] && git add .planning/STATE.md
 git commit -m "$(cat <<'EOF'
 docs: start work on todo - [title]
 
@@ -204,8 +204,8 @@ Confirm: "Committed: docs: start work on todo - [title]"
 </process>
 
 <output>
-- Moved todo to `.gsd/todos/done/` (if "Work on it now")
-- Updated `.gsd/STATE.md` (if todo count changed)
+- Moved todo to `.planning/todos/done/` (if "Work on it now")
+- Updated `.planning/STATE.md` (if todo count changed)
 </output>
 
 <anti_patterns>

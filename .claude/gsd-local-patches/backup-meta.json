@@ -1,0 +1,10 @@
+{
+  "backed_up_at": "2026-02-25T18:01:11.570Z",
+  "from_version": "1.20.6",
+  "files": [
+    "get-shit-done/bin/lib/config.cjs",
+    "get-shit-done/bin/lib/init.cjs",
+    "get-shit-done/workflows/new-project.md",
+    "get-shit-done/workflows/settings.md"
+  ]
+}
