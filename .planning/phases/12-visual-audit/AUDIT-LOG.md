@@ -5,65 +5,55 @@
 **Widths:** Desktop 1280px, Mobile 375px
 **Pages:** 8/8 (full coverage)
 
-## Root Cause: Broken Tailwind CSS Build
+## Previous Fixes Verified
 
-The site uses Tailwind CSS v4 (`@tailwindcss/cli@4.1.18`) but the source CSS (`src/tailwind.css`) still uses v3 directives (`@tailwind base/components/utilities`). This causes:
+The previous agent's Tailwind v4 migration (commit `7d30192`) successfully resolved:
+- ✓ G1 (old): Nav vertical on desktop → now horizontal
+- ✓ G2 (old): Hamburger visible on desktop → now hidden
+- ✓ G3 (old): Nav links always visible on mobile → now behind hamburger, toggle works
+- ✓ P1 (old): Broken logo image → resolved (text-based heading)
+- ✓ G4 (old): Visible cell borders → proper card styling with rounded corners
 
-- **Zero `@media` queries** in the compiled CSS — no responsive breakpoints at all
-- **Missing utility classes**: `max-h-0`, `max-h-none`, `max-h-64`, `peer-aria-*` variants not generated
-- This single build issue is the root cause of issues G1–G3 below
+## Current Issues Found
 
-### Fix Required
+### I1: FAQ accordion leaks answer text when collapsed
 
-Update `src/tailwind.css` from v3 to v4 syntax:
-- Replace `@tailwind base/components/utilities` with `@import "tailwindcss"`
-- Add `@theme` block for custom brand colors and fonts (currently in `tailwind.config.js`)
-- Rebuild CSS
+- **Page:** index.html
+- **Location:** "Häufige Fragen" section — all 5 accordion items
+- **Width:** Both (desktop and mobile)
+- **Severity:** Medium — visually distracting, reveals answers that should be hidden
+- **Description:** Each FAQ item shows ~1 line of answer text below the question even when collapsed (showing "+" icon). The `.accordion-content` panels use `pb-4` (padding-bottom: 16px) which creates visible space even when `max-height: 0px; overflow: hidden` is applied. The 16px of padding is enough to display one line of `text-sm` text.
+- **Root cause:** `padding-bottom` on `.accordion-content` is not zeroed when collapsed. `max-height: 0` hides the content area but padding remains visible.
+- **Secondary issue:** The "+" icon does not change to "−" when the accordion is expanded (`aria-expanded="true"`). The toggle state works (content expands) but the icon provides no visual feedback.
+- **Fix approach:** Zero the padding when collapsed (transition padding alongside max-height), OR wrap the content text in an inner `<div>` and move the padding there.
 
-## Global Issues (All 8 Pages)
+### I2: Hero section full-viewport whitespace
 
-### G1: Navigation links stacked vertically on desktop
-- **Location:** Header nav
-- **Width:** Desktop (1280px)
-- **Description:** Nav items (Preise, Fahrzeuge, Für Firmen, Über uns) render as a vertical list at top-left instead of a horizontal row. Caused by missing `md:flex-row`, `md:items-center`, `md:gap-6` responsive utilities.
-
-### G2: Hamburger "Menü" button visible on desktop
-- **Location:** Header, top-right corner
-- **Width:** Desktop (1280px)
-- **Description:** The mobile menu toggle button shows at 1280px. Caused by missing `md:hidden` responsive utility.
-
-### G3: Nav links always visible on mobile (should be behind hamburger)
-- **Location:** Header nav
-- **Width:** Mobile (375px)
-- **Description:** Nav links always show below the header instead of being hidden behind the hamburger menu. Caused by missing `max-h-0` utility and `peer-aria-[expanded=true]:max-h-64` variant. Clicking "Menü" has no visual effect.
-
-### G4: Content sections show visible cell borders
-- **Location:** Main content area — feature cards, step sections, info blocks
-- **Width:** Both
-- **Pages:** index.html, fahrzeuge.html, preise.html, geschaeftskunden.html, mitglied-werden.html, ueber-uns.html
-- **Description:** Thin border lines around content sections create a raw "table cell" appearance. These borders come from Tailwind utility classes (e.g. `border`, `divide-y`) that ARE being generated, but without proper card styling or responsive layout they look like raw borders.
-
-## Page-Specific Issues
-
-### P1: index.html — Broken logo image
-- **Location:** Hero section, center
-- **Width:** Both
-- **Description:** Logo `<img>` shows broken image icon with alt text "teilAuto Mössingen". The `src="/img/logo.svg"` uses an absolute path that resolves to `http://127.0.0.1:5500/img/logo.svg` instead of `http://127.0.0.1:5500/site/build/dist/img/logo.svg`. File exists at correct location. Fix: change to relative path `img/logo.svg`.
-
-### P2: index.html — Excessive whitespace in hero section
+- **Page:** index.html
 - **Location:** Hero section (between nav and first feature card)
-- **Width:** Both
-- **Description:** Large empty area above and below the hero content. The hero uses `min-h-[calc(100vh-4rem)]` which forces full viewport height, but the content is minimal (logo + heading + subtitle + 2 buttons). This creates disproportionate whitespace. May be acceptable if the hero is intentionally full-viewport — will revisit after Tailwind fix.
+- **Width:** Both (desktop and mobile)
+- **Severity:** Low — may be intentional design
+- **Description:** The hero section takes full viewport height (`min-h-[calc(100vh-4rem)]`) with minimal content (heading + subtitle + 2 buttons), creating large empty areas above and below. On desktop this means ~200px of whitespace above and ~200px below the content.
+- **Note:** This may be an intentional "splash page" design. Flagged for owner review during Phase 14.
+
+## Pages Without Issues
+
+| Page | Desktop 1280px | Mobile 375px | Notes |
+|------|:---:|:---:|-------|
+| index.html | I1, I2 | I1, I2 | FAQ leak + hero whitespace |
+| fahrzeuge.html | ✓ | ✓ | Vehicle cards, map, all clean |
+| preise.html | ✓ | ✓ | Pricing tables align well at both widths |
+| geschaeftskunden.html | ✓ | ✓ | Benefit cards stack properly on mobile |
+| ueber-uns.html | ✓ | ✓ | Text sections, CTA link, all clean |
+| mitglied-werden.html | ✓ | ✓ | Step cards, phone CTA, all clean |
+| datenschutz.html | ✓ | ✓ | Legal text page, no layout issues |
+| impressum.html | ✓ | ✓ | Legal text page, no layout issues |
 
 ## Summary
 
-| # | Issue | Root Cause | Fix |
-|---|-------|-----------|-----|
-| G1 | Nav vertical on desktop | Tailwind v3→v4 migration incomplete | Update source CSS to v4 syntax, rebuild |
-| G2 | Hamburger on desktop | Same | Same |
-| G3 | Nav always visible on mobile | Same + missing max-h/peer utilities | Same |
-| G4 | Visible section borders | Intentional borders but look raw without proper layout | Review after Tailwind fix — responsive layout may resolve |
-| P1 | Broken logo | Absolute path `/img/logo.svg` | Change to relative `img/logo.svg` |
-| P2 | Hero whitespace | `min-h-[calc(100vh-4rem)]` + minimal content | Review after Tailwind fix |
+| # | Issue | Page | Severity | Fix |
+|---|-------|------|----------|-----|
+| I1 | FAQ accordion leaks text when collapsed | index.html | Medium | Zero padding when collapsed; fix icon toggle |
+| I2 | Hero full-viewport whitespace | index.html | Low | Defer to owner review (Phase 14) |
 
-**Primary fix:** Update `src/tailwind.css` to Tailwind v4 syntax, rebuild. This alone should resolve G1–G3 and may improve G4/P2.
+**Overall state:** The Tailwind v4 migration resolved all critical layout bugs. The site renders well across all 8 pages at both widths. Only index.html has remaining issues — a medium-severity FAQ accordion bug and a low-severity whitespace concern (likely intentional).
