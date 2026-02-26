@@ -35,7 +35,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Pages in scope:** index.html, fahrzeuge.html, preise.html, geschaeftskunden.html, ueber-uns.html, mitglied-werden.html, datenschutz.html, impressum.html
 
 - [x] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented — completed 2026-02-26
-- [ ] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean
+- [x] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean — completed 2026-02-26
 - [ ] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; remaining issues catalogued
 - [ ] **Phase 15: Review Fix** — All joint review findings fixed and Puppeteer-verified clean
 
@@ -71,7 +71,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. fahrzeuge.html, preise.html, geschaeftskunden.html, ueber-uns.html, mitglied-werden.html each render without layout defects at both widths (Puppeteer verified)
   3. datenschutz.html and impressum.html render without layout defects at both widths (Puppeteer verified)
   4. Each page's fix cycle runs until screenshots are clean — no page is left with known defects from the audit log
-**Plans**: 0/1
+**Plans**: 1/1 complete
 
 ### Phase 14: Joint Review
 **Goal**: Owner and Claude review every page side by side at desktop and mobile widths; any issues invisible to automated checks are identified and logged for fixing.
@@ -110,6 +110,6 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 10. Content Messaging & Feature Polish | v1.0 | 2/2 | Complete | 2026-02-25 |
 | 11. Simplified Datenschutzerklärung | v1.0 | 1/1 | Complete | 2026-02-25 |
 | 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
-| 13. Auto-Fix | v1.1 | 0/1 | Not started | - |
+| 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 14. Joint Review | v1.1 | 0/1 | Not started | - |
 | 15. Review Fix | v1.1 | 0/? | Not started | - |
