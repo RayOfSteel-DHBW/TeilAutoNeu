@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-26)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.1 Visual Fixes — Phase 15: Site-Wide Fixes (executing)
+**Current focus:** v1.1 Visual Fixes — Phase 18: Preise Page Restructure (complete, verification pending)
 
 ## Current Position
 
-Phase: 15 of 19 (Site-Wide Fixes)
+Phase: 18 of 19 (Preise Page Restructure)
 Plan: 01 of 01 (complete)
-Status: Plan 15-01 complete, phase verification pending
-Last activity: 2026-02-27 — Plan 15-01 executed (card borders, placeholders, nav CTA)
+Status: Plan 18-01 complete, phase verification pending
+Last activity: 2026-02-27 — Plan 18-01 executed (remove rate tables, Quernutzung, rephrase Kaution, shorten disclaimer)
 
-Progress: [████████░░] 80%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
@@ -63,6 +63,6 @@ All v1.0 decisions logged in PROJECT.md Key Decisions table with outcomes.
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Phase 15 plan 01 executed, awaiting verification
-Next step: Phase 15 verification, then phases 16-19
+Stopped at: Phase 18 plan 01 executed, awaiting verification
+Next step: Phase 18 verification, then phase 19
 Resume file: None
