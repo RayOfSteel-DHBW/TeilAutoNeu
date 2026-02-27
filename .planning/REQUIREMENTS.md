@@ -69,20 +69,20 @@ Deferred to post-v1.2 (once winning design selected):
 | RES-01 | Phase 20 | Pending |
 | RES-02 | Phase 20 | Pending |
 | RES-03 | Phase 20 | Pending |
-| IMPL-01 | Phase 21-23 | Pending |
-| IMPL-02 | Phase 21-23 | Pending |
-| IMPL-03 | Phase 21-23 | Pending |
-| IMPL-04 | Phase 21-23 | Pending |
-| IMPL-05 | Phase 21-23 | Pending |
-| IMPL-06 | Phase 21-23 | Pending |
-| VIS-01 | Phase 21-23 | Pending |
-| VIS-02 | Phase 21-23 | Pending |
-| VIS-03 | Phase 21-23 | Pending |
-| VIS-04 | Phase 21-23 | Pending |
-| CONV-01 | Phase 21-23 | Pending |
-| CONV-02 | Phase 21-23 | Pending |
-| CONV-03 | Phase 21-23 | Pending |
-| CONV-04 | Phase 21-23 | Pending |
+| IMPL-01 | Phase 21, 22, 23 | Pending |
+| IMPL-02 | Phase 21, 22, 23 | Pending |
+| IMPL-03 | Phase 21, 22, 23 | Pending |
+| IMPL-04 | Phase 21, 22, 23 | Pending |
+| IMPL-05 | Phase 21, 22, 23 | Pending |
+| IMPL-06 | Phase 21, 22, 23 | Pending |
+| VIS-01 | Phase 21, 22, 23 | Pending |
+| VIS-02 | Phase 21, 22, 23 | Pending |
+| VIS-03 | Phase 21, 22, 23 | Pending |
+| VIS-04 | Phase 21, 22, 23 | Pending |
+| CONV-01 | Phase 21, 22, 23 | Pending |
+| CONV-02 | Phase 21, 22, 23 | Pending |
+| CONV-03 | Phase 21, 22, 23 | Pending |
+| CONV-04 | Phase 21, 22, 23 | Pending |
 | REV-01 | Phase 24 | Pending |
 | REV-02 | Phase 24 | Pending |
 
@@ -93,4 +93,4 @@ Deferred to post-v1.2 (once winning design selected):
 
 ---
 *Requirements defined: 2026-02-27*
-*Last updated: 2026-02-27 after initial definition*
+*Last updated: 2026-02-27 after roadmap creation*

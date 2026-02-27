@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: ClaudesDesigns
-status: defining_requirements
+status: ready_to_plan
 last_updated: "2026-02-27"
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,21 +18,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.2 ClaudesDesigns — visual redesign exploration (3 design directions)
+**Current focus:** v1.2 ClaudesDesigns — Phase 20: Research
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-02-27 — Milestone v1.2 started
+Phase: 20 of 24 (Research)
+Plan: — (not yet planned)
+Status: Ready to plan
+Last activity: 2026-02-27 — Roadmap created for v1.2 ClaudesDesigns (phases 20-24)
+
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
-**Velocity (v1.0 baseline):**
-- Total plans completed: 22
-- v1.0 total execution time: ~17 days
-- v1.1: 8 phases, 7 plans, 2 days
+**Velocity (prior milestones):**
+- v1.0: 25 plans, ~17 days
+- v1.1: 7 plans, 2 days
 - Trend: Stable
 
 ## Accumulated Context
@@ -48,17 +49,19 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 - V2: Re-add full Datenschutzerklärung consent & analytics sections when tracking is implemented
 - V2: STRATO SFTP deployment script (FOUND-03)
 - V2: Analytics tracking implementation (TRACK-01)
-- V2: Fahrzeuge page redesign — carousel for vehicles (Tailwind or lightweight JS lib), Quernutzung visible below carousel to prevent "only 2 cars?!" bounce. Final polish: carousel ↔ map integration (select car → highlight marker, click marker → scroll carousel). Eliminates need for content-heavy map tooltips.
-- V3: Preise page redesign — center on example trip cost calculation + example yearly cost comparison (vs. own car). Needs real verified pricing values from owner. Plan after real owner review.
-- V2: Phone number bot protection — obfuscate/protect phone numbers from crawlers across all pages where displayed
+- V2: Fahrzeuge page carousel (carousel ↔ map integration)
+- V3: Preise page redesign — example trip cost calculation + yearly cost comparison
+- V2: Phone number bot protection
 
 ### Blockers/Concerns
 
 - Site must be running at http://127.0.0.1:5500/site/build/dist/ for visual audit phases.
+- Design phases (21-23) require Frontend Design Plugin skill.
+- Student project branches (Rainer-4-V2, Rainer3-akkordeon) must be accessible for Phase 20 research.
 
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Milestone v1.2 initialization
-Next step: Define requirements, create roadmap
+Stopped at: Roadmap created — ready to plan Phase 20
+Next step: /gsd:plan-phase 20
 Resume file: None

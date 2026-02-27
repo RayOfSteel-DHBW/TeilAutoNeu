@@ -4,6 +4,7 @@
 
 - ✅ **v1.0 MVP** — Phases 1-11 (shipped 2026-02-26)
 - ✅ **v1.1 Visual Fixes** — Phases 12-19 (shipped 2026-02-27)
+- 🚧 **v1.2 ClaudesDesigns** — Phases 20-24 (in progress)
 
 ## Phases
 
@@ -42,9 +43,83 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 </details>
 
+### 🚧 v1.2 ClaudesDesigns (In Progress)
+
+**Milestone Goal:** Produce three production-ready visual redesign directions for the 8-page site, refine each through screenshot loops, then select a winner in joint review.
+
+- [ ] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales
+- [ ] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality
+- [ ] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality
+- [ ] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality
+- [ ] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; select winning direction
+
+## Phase Details
+
+### Phase 20: Research
+**Goal**: Design direction rationales documented from real source material — student branches and old content docs studied, 3 distinct concepts defined before a line of code is written
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: RES-01, RES-02, RES-03
+**Success Criteria** (what must be TRUE):
+  1. Student branches reviewed (priority: Rainer-4-V2, Rainer3-akkordeon) and UI patterns catalogued as inspiration notes
+  2. Old site and owner content documents reviewed; content enhancement opportunities noted (without inventing facts)
+  3. Three distinct design direction rationales written — each covering visual concept, type/color approach, and layout philosophy
+  4. Rationale document makes clear how each direction differs from the others and from v1.1
+**Plans**: TBD
+
+### Phase 21: Design A
+**Goal**: A complete, production-ready 8-page site on `design/a` branch — visually distinct concept A, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Depends on**: Phase 20
+**Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
+**Success Criteria** (what must be TRUE):
+  1. All 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz) exist and render correctly on `design/a`
+  2. Design A has a cohesive, distinct visual identity (type + color system) that differs clearly from v1.1 and the other two designs
+  3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
+  4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
+  5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
+**Plans**: TBD
+
+### Phase 22: Design B
+**Goal**: A complete, production-ready 8-page site on `design/b` branch — visually distinct concept B, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Depends on**: Phase 21
+**Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
+**Success Criteria** (what must be TRUE):
+  1. All 8 pages exist and render correctly on `design/b`
+  2. Design B has a cohesive, distinct visual identity that differs clearly from v1.1, Design A, and Design C
+  3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
+  4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
+  5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
+**Plans**: TBD
+
+### Phase 23: Design C
+**Goal**: A complete, production-ready 8-page site on `design/c` branch — visually distinct concept C, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Depends on**: Phase 22
+**Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
+**Success Criteria** (what must be TRUE):
+  1. All 8 pages exist and render correctly on `design/c`
+  2. Design C has a cohesive, distinct visual identity that differs clearly from v1.1, Design A, and Design B
+  3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
+  4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
+  5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
+**Plans**: TBD
+
+### Phase 24: Joint Review
+**Goal**: User has reviewed all three designs side-by-side and selected one direction as the go-forward basis for production
+**Depends on**: Phase 23
+**Requirements**: REV-01, REV-02
+**Success Criteria** (what must be TRUE):
+  1. All three designs can be viewed side-by-side (screenshots or live branches) for direct comparison
+  2. User has evaluated each design against Zweitwagen conversion goal and aesthetic preference
+  3. One design is selected and documented as the winning direction with rationale recorded in PROJECT.md
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
+| 20. Research | v1.2 | 0/TBD | Not started | - |
+| 21. Design A | v1.2 | 0/TBD | Not started | - |
+| 22. Design B | v1.2 | 0/TBD | Not started | - |
+| 23. Design C | v1.2 | 0/TBD | Not started | - |
+| 24. Joint Review | v1.2 | 0/TBD | Not started | - |
