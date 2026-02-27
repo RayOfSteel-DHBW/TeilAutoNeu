@@ -30,7 +30,7 @@ Requirements for visual fixes milestone. Each maps to roadmap phases.
 
 ### Review Fix
 
-- [ ] **RFIX-01**: Site-wide fixes — card borders/shadows visible, placeholders standardized, mitglied-werden in nav (R2, R23, R28)
+- [x] **RFIX-01**: Site-wide fixes — card borders/shadows visible, placeholders standardized, mitglied-werden in nav (R2, R23, R28)
 - [ ] **RFIX-02**: Homepage hero logo + value cards rewritten per owner guidance (R1, R3-R8)
 - [ ] **RFIX-03**: Fahrzeuge copy fixes, vehicle data corrected, card alignment, map, BCS naming (R9-R16)
 - [ ] **RFIX-04**: Preise page restructured — rate tables removed, references fixed, disclaimer shortened (R17-R21)
@@ -78,7 +78,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AFIX-07 | Phase 13 | Pending |
 | AFIX-08 | Phase 13 | Pending |
 | JREV-01 | Phase 14 | Pending |
-| RFIX-01 | Phase 15 | Pending |
+| RFIX-01 | Phase 15 | Complete |
 | RFIX-02 | Phase 16 | Pending |
 | RFIX-03 | Phase 17 | Pending |
 | RFIX-04 | Phase 18 | Pending |

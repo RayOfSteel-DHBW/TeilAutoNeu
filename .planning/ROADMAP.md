@@ -37,7 +37,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 - [x] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented — completed 2026-02-26
 - [x] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean — completed 2026-02-26
 - [x] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; 31 issues catalogued — completed 2026-02-27
-- [ ] **Phase 15: Site-Wide Fixes** — Card borders, TODO standardization, nav fix (R2, R23, R28)
+- [x] **Phase 15: Site-Wide Fixes** — Card borders, TODO standardization, nav fix (R2, R23, R28) (completed 2026-02-27)
 - [ ] **Phase 16: Homepage Content Rewrite** — Hero logo + value card rewrites (R1, R3-R8)
 - [ ] **Phase 17: Fahrzeuge Page Overhaul** — Copy, cards, map, BCS naming (R9-R16)
 - [ ] **Phase 18: Preise Page Restructure** — Remove sections, fix references (R17-R21)
@@ -186,7 +186,7 @@ Plans:
 | 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
-| 15. Site-Wide Fixes | v1.1 | 0/1 | Planned | - |
+| 15. Site-Wide Fixes | 1/1 | Complete    | 2026-02-27 | - |
 | 16. Homepage Content Rewrite | v1.1 | 0/1 | Planned | - |
 | 17. Fahrzeuge Page Overhaul | v1.1 | 0/1 | Planned | - |
 | 18. Preise Page Restructure | v1.1 | 0/1 | Planned | - |
