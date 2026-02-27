@@ -164,7 +164,9 @@ Plans:
   6. mitglied-werden: two step sequences visually differentiated (R30)
   7. mitglied-werden: content ordering addresses how-it-works before sign-up (R31)
   8. Puppeteer screenshots confirm all three pages clean at both widths
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 19-01-PLAN.md &mdash; Reframe geschaeftskunden, replace ueber-uns text, fix mitglied-werden identity
 
 ## Progress
 
@@ -188,4 +190,4 @@ Plans:
 | 16. Homepage Content Rewrite | v1.1 | 0/1 | Planned | - |
 | 17. Fahrzeuge Page Overhaul | v1.1 | 0/1 | Planned | - |
 | 18. Preise Page Restructure | v1.1 | 0/1 | Planned | - |
-| 19. Secondary Pages | v1.1 | 0/? | Not started | - |
+| 19. Secondary Pages | v1.1 | 0/1 | Planned | - |
