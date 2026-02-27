@@ -113,7 +113,9 @@ Plans:
   2. Value cards rewritten per owner guidance — "Sie fahren, wir kümmern uns", "Sie zahlen nur wenn Sie fahren", "Merklich günstiger", Quernutzung framing
   3. Card count reflects actual strong propositions (no padding)
   4. Puppeteer screenshots confirm homepage clean at both widths
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 16-01-PLAN.md &mdash; Hero logo swap + value card rewrites (R1, R3-R8)
 
 ### Phase 17: Fahrzeuge Page Overhaul
 **Goal**: Fix copy errors, correct vehicle data, align card layout, replace standalone Standorte section with map, and fix BCS naming across the site.
@@ -136,7 +138,7 @@ Plans:
 **Requirements**: RFIX-04
 **Issues**: R17-R21 (reference fix, Kaution rephrase, remove rate tables + Größere Fahrzeuge, shrink disclaimer)
 **Success Criteria** (what must be TRUE):
-  1. "siehe unten" corrected to link to fahrzeuge.html (R17)
+  1. "siehe unten" reference removed (auto-resolved by R19 rate table deletion)
   2. Kaution rephrased with soft description, no specific amount (R18)
   3. "Unsere Fahrzeugklassen" rate tables removed (R19)
   4. "Größere Fahrzeuge" section removed (R20)
@@ -179,7 +181,7 @@ Plans:
 | 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
 | 15. Site-Wide Fixes | v1.1 | 0/1 | Planned | - |
-| 16. Homepage Content Rewrite | v1.1 | 0/? | Not started | - |
+| 16. Homepage Content Rewrite | v1.1 | 0/1 | Planned | - |
 | 17. Fahrzeuge Page Overhaul | v1.1 | 0/? | Not started | - |
 | 18. Preise Page Restructure | v1.1 | 0/? | Not started | - |
 | 19. Secondary Pages | v1.1 | 0/? | Not started | - |
