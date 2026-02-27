@@ -64,7 +64,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   2. Old site and owner content documents reviewed; content enhancement opportunities noted (without inventing facts)
   3. Three distinct design direction rationales written — each covering visual concept, type/color approach, and layout philosophy
   4. Rationale document makes clear how each direction differs from the others and from v1.1
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 20-01-PLAN.md — Study student branches and old content docs; catalogue UI patterns and content opportunities
+- [ ] 20-02-PLAN.md — Synthesize research into 3 distinct design direction rationales
 
 ### Phase 21: Design A
 **Goal**: A complete, production-ready 8-page site on `design/a` branch — visually distinct concept A, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
@@ -118,7 +120,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 |-------|-----------|----------------|--------|-----------|
 | 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
-| 20. Research | v1.2 | 0/TBD | Not started | - |
+| 20. Research | v1.2 | 0/2 | Planned | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 0/TBD | Not started | - |
 | 23. Design C | v1.2 | 0/TBD | Not started | - |
