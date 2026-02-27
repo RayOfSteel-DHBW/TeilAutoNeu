@@ -3,6 +3,7 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** — Phases 1-11 (shipped 2026-02-26)
+- ✅ **v1.1 Visual Fixes** — Phases 12-19 (shipped 2026-02-27)
 
 ## Phases
 
@@ -25,18 +26,25 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 </details>
 
+<details>
+<summary>✅ v1.1 Visual Fixes (Phases 12-19) — SHIPPED 2026-02-27</summary>
+
+- [x] Phase 12: Visual Audit (1/1 plan) — completed 2026-02-26
+- [x] Phase 13: Auto-Fix (1/1 plan) — completed 2026-02-26
+- [x] Phase 14: Joint Review (1/1 plan) — completed 2026-02-27
+- [x] Phase 15: Site-Wide Fixes (1/1 plan) — completed 2026-02-27
+- [x] Phase 16: Homepage Content Rewrite (1/1 plan) — completed 2026-02-27
+- [x] Phase 17: Fahrzeuge Page Overhaul (1/1 plan) — completed 2026-02-27
+- [x] Phase 18: Preise Page Restructure (1/1 plan) — completed 2026-02-27
+- [x] Phase 19: Secondary Pages (1/1 plan) — completed 2026-02-27
+
+Full details: `.planning/milestones/v1.1-ROADMAP.md`
+
+</details>
+
 ## Progress
 
-| Phase                                     | Milestone | Plans Complete | Status   | Completed  |
-| ----------------------------------------- | --------- | -------------- | -------- | ---------- |
-| 1. Foundation & Deployment                | v1.0      | 3/3            | Complete | 2026-02-08 |
-| 2. Core UX & Navigation                   | v1.0      | 3/3            | Complete | 2026-02-08 |
-| 3. Homepage & Membership Funnel           | v1.0      | 3/3            | Complete | 2026-02-08 |
-| 4. Pricing & Value System                 | v1.0      | 3/3            | Complete | 2026-02-08 |
-| 5. Fleet & Locations                      | v1.0      | 3/3            | Complete | 2026-02-10 |
-| 6. Trust, Legal, SEO & Quality            | v1.0      | 4/4            | Complete | 2026-02-24 |
-| 7. German Text Correction (Umlaut Fix)    | v1.0      | 1/1            | Complete | 2026-02-24 |
-| 8. Mobile Navigation & Responsive Layout  | v1.0      | 1/1            | Complete | 2026-02-25 |
-| 9. Content Accuracy & Dead Code Cleanup   | v1.0      | 1/1            | Complete | 2026-02-25 |
-| 10. Content Messaging & Feature Polish    | v1.0      | 2/2            | Complete | 2026-02-25 |
-| 11. Simplified Datenschutzerklärung       | v1.0      | 1/1            | Complete | 2026-02-25 |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
+| 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |

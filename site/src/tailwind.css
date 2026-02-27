@@ -1,3 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0f5f3c;
+  --color-brand-accent: #2f8f5b;
+  --color-brand-muted: #dcebe3;
+  --color-brand-surface: #f4f9f6;
+  --color-brand-ink: #0f2d1f;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Source Sans 3", system-ui, sans-serif;
+}

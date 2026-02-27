@@ -13,6 +13,11 @@ if (headers.length > 0) {
         other.setAttribute("aria-expanded", "false");
         other.classList.remove("is-open");
 
+        const otherIcon = other.querySelector("[aria-hidden]");
+        if (otherIcon) {
+          otherIcon.textContent = "+";
+        }
+
         const otherContentId = other.getAttribute("aria-controls");
         const otherContent = otherContentId ? document.getElementById(otherContentId) : null;
         if (otherContent) {
@@ -22,6 +27,11 @@ if (headers.length > 0) {
 
       header.setAttribute("aria-expanded", String(!isOpen));
       header.classList.toggle("is-open", !isOpen);
+
+      const icon = header.querySelector("[aria-hidden]");
+      if (icon) {
+        icon.textContent = !isOpen ? "\u2212" : "+";
+      }
 
       const contentId = header.getAttribute("aria-controls");
       const content = contentId ? document.getElementById(contentId) : null;

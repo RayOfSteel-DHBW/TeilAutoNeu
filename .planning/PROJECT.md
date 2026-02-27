@@ -41,6 +41,14 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 - ✓ All images copyright-clear (placeholder cards for flagged images) — v1.0
 - ✓ Consistent brand casing (teilAuto) and phone format (07473-922202) — v1.0
 - ✓ White/green color palette — v1.0
+- ✓ Visual audit + auto-fix of all 8 pages at desktop and mobile widths — v1.1
+- ✓ Joint owner review with 31 issues identified and resolved — v1.1
+- ✓ Homepage hero logo (car icon) and value cards rewritten to Zweitwagen persona — v1.1
+- ✓ Fahrzeuge page copy, images, locations, card alignment, map markers, BCS naming — v1.1
+- ✓ Preise page simplified (rate tables removed, Kaution rephrased, disclaimer shortened) — v1.1
+- ✓ Secondary pages reframed (geschaeftskunden, ueber-uns, mitglied-werden) — v1.1
+- ✓ Nav CTA for mitglied-werden on every page — v1.1
+- ✓ Card border contrast and placeholder standardization site-wide — v1.1
 
 ### Deferred
 
@@ -50,7 +58,9 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-(None — next milestone requirements to be defined via `/gsd:new-milestone`)
+<!-- Next milestone: TBD -->
+
+(No active requirements — next milestone not yet defined)
 
 ### Out of Scope
 
@@ -71,13 +81,15 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 **Target outcome:** ~20 additional suitable members. The site should reduce "tire-kicker" calls while increasing calls from genuinely interested prospects.
 
-**6 defined personas:**
+**6 defined personas (weighted):**
 1. Simone — young mother, practical need for occasional second car
 2. Johannes — eco-conscious, values sustainability
 3. Günther — cross-use traveler, values network access
 4. Brigitte — frugal retiree, values cost savings
 5. Mirjam — business user, needs fleet flexibility
 6. Michael — motorcycle owner, needs car occasionally
+
+**Persona weighting:** The dominant use case is carsharing as a Zweitwagen (second car). Out of 60+ customers, only ~2 do NOT fit the second-car pattern. When making content or design decisions, default to optimizing for the second-car persona. Simone is the most representative: one household car is at work, she needs wheels during the day for errands/kids.
 
 **Parking locations:**
 - 2 active (current fleet)
@@ -126,4 +138,11 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-_Last updated: 2026-02-26 after v1.0 milestone_
+## Current State
+
+v1.1 shipped. All 31 joint-review issues resolved. Site is clean at both desktop and mobile widths. Owner review complete. Ready for production handoff or next milestone planning.
+
+**Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
+
+---
+_Last updated: 2026-02-27 after v1.1 milestone completion_

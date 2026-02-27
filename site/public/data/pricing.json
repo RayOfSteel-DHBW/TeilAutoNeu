@@ -1,13 +1,13 @@
 {
   "updated": "2026-02-09",
-  "source_note": "Werte basieren auf den aktuellen Tarifinformationen (Stand 2022–2024). Entwurf — noch nicht freigegeben.",
-  "disclaimer": "Die hier genannten Angaben dienen der Orientierung. Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den aktuellen Vertragsunterlagen. Alle Angaben ohne Gewähr.",
+  "source_note": "",
+  "disclaimer": "Alle Preise sind Richtwerte und k\u00f6nnen sich \u00e4ndern. Genaue Konditionen erhalten Sie im pers\u00f6nlichen Gespr\u00e4ch.",
   "membership": {
-    "deposit": "noch offen",
-    "annual_fee": "noch offen"
+    "deposit": "TODO",
+    "annual_fee": "TODO"
   },
   "usage": {
-    "booking_fee": "noch offen",
+    "booking_fee": "TODO",
     "time_rate_example": "ab 2,05 EUR/Std. (Klasse XS) bzw. 2,46 EUR/Std. (Klasse M)",
     "km_rate_example": "ab 0,32 EUR/km (Klasse XS) bzw. 0,36 EUR/km (Klasse M)",
     "includes": [

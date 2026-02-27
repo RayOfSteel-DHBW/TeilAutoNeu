@@ -1,69 +1,81 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 
-:root {
-  color-scheme: light;
-}
+@layer base {
+  :root {
+    color-scheme: light;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  margin: 0;
-  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  background-color: #f4f9f6;
-  color: #0f2d1f;
-}
+  body {
+    margin: 0;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    background-color: #f4f9f6;
+    color: #0f2d1f;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Space Grotesk", "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
-  letter-spacing: -0.01em;
-  color: #0f2d1f;
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Space Grotesk", "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    letter-spacing: -0.01em;
+    color: #0f2d1f;
+  }
 
-h1 {
-  font-size: clamp(1.75rem, calc(1.5rem + 1.25vw), 2.5rem);
-  line-height: 1.1;
-}
+  h1 {
+    font-size: clamp(1.75rem, calc(1.5rem + 1.25vw), 2.5rem);
+    line-height: 1.1;
+  }
 
-h2 {
-  font-size: clamp(1.375rem, calc(1.2rem + 0.875vw), 1.875rem);
-  line-height: 1.2;
-}
+  h2 {
+    font-size: clamp(1.375rem, calc(1.2rem + 0.875vw), 1.875rem);
+    line-height: 1.2;
+  }
 
-h3 {
-  font-size: clamp(1.125rem, calc(1rem + 0.625vw), 1.5rem);
-  line-height: 1.3;
-}
+  h3 {
+    font-size: clamp(1.125rem, calc(1rem + 0.625vw), 1.5rem);
+    line-height: 1.3;
+  }
 
-h4 {
-  font-size: clamp(1rem, calc(0.95rem + 0.25vw), 1.125rem);
-  line-height: 1.4;
-}
+  h4 {
+    font-size: clamp(1rem, calc(0.95rem + 0.25vw), 1.125rem);
+    line-height: 1.4;
+  }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 
-a {
-  color: #0f5f3c;
-  text-decoration: none;
-}
+  a {
+    color: #0f5f3c;
+    text-decoration: none;
+  }
 
-:focus-visible {
-  outline: 2px solid #0f172a;
-  outline-offset: 2px;
+  :focus-visible {
+    outline: 2px solid #0f172a;
+    outline-offset: 2px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
 
 .fleet-map {
@@ -167,14 +179,4 @@ a {
   font-size: 11px;
   line-height: 1.3;
   opacity: 1;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }

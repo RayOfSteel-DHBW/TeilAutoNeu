@@ -16,7 +16,9 @@
       "Bash(git add \".planning/phases/09-content-accuracy-cleanup/09-RESEARCH.md\")",
       "Bash(git commit:*)",
       "Bash(git add -f \".planning/phases/09-content-accuracy-cleanup/09-RESEARCH.md\")",
-      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs commit \"docs\\(11\\): capture phase context\" --files \".planning/phases/11-simplified-datenschutzerklaerung-clean-privacy-page-with-strato-mention-and-no-tracking-transparency/11-CONTEXT.md .planning/todos/pending/2026-02-25-v2-datenschutz-tracking-draft-wording.md\")"
+      "Bash(node ./.claude/get-shit-done/bin/gsd-tools.cjs commit \"docs\\(11\\): capture phase context\" --files \".planning/phases/11-simplified-datenschutzerklaerung-clean-privacy-page-with-strato-mention-and-no-tracking-transparency/11-CONTEXT.md .planning/todos/pending/2026-02-25-v2-datenschutz-tracking-draft-wording.md\")",
+      "Bash(git checkout gsd/dev)",
+      "Bash(git merge gsd/v1.0-milestone --ff-only)"
     ],
     "additionalDirectories": [
       "C:\\Dev\\Repos\\TeilAuto\\.planning\\phases"
