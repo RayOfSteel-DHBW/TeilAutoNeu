@@ -4,28 +4,28 @@
   const fleetLocations = [
     {
       id: "mokka",
-      name: "Mössingen, Bahnhofstraße",
+      name: "Mössingen, Nähe Bahnhof",
       coords: [9.0473, 48.4021],
       status: "active",
       vehicle: {
         title: "Opel Mokka E",
         iconUrl: "/img/cars/mokka-icon.svg",
-        location: "Bahnhofstraße, Mössingen",
+        location: "Nähe Bahnhof, Mössingen",
         features: ["5 Sitze", "Kindersitz", "Parkhilfe"],
-        description: "Opel Mokka E \u00b7 5 Sitze \u00b7 Kindersitz \u00b7 Parkhilfe \u00b7 Bahnhofstraße",
+        description: "Opel Mokka E \u00b7 5 Sitze \u00b7 Kindersitz \u00b7 Parkhilfe \u00b7 Nähe Bahnhof",
       },
     },
     {
       id: "adam",
-      name: "Mössingen, Innenstadt",
+      name: "Mössingen, Nähe Stadtmitte",
       coords: [9.0594, 48.4040],
       status: "active",
       vehicle: {
         title: "Opel Adam",
         iconUrl: "/img/cars/adam-icon.svg",
-        location: "Innenstadt, Mössingen",
+        location: "Nähe Stadtmitte, Mössingen",
         features: ["4 Sitze", "Klimaanlage", "Parkhilfe"],
-        description: "Opel Adam \u00b7 4 Sitze \u00b7 Klimaanlage \u00b7 Parkhilfe \u00b7 Innenstadt",
+        description: "Opel Adam \u00b7 4 Sitze \u00b7 Klimaanlage \u00b7 Parkhilfe \u00b7 Nähe Stadtmitte",
       },
     },
     {
@@ -39,6 +39,45 @@
         location: "Bästenhardt (Don Bosco)",
         features: [],
         description: "Geplant \u00b7 Bästenhardt (Don Bosco)",
+      },
+    },
+    {
+      id: "belsen",
+      name: "Belsen",
+      coords: [9.0217, 48.4239],
+      status: "planned",
+      vehicle: {
+        title: "Geplant",
+        iconUrl: "/img/cars/planned-icon.svg",
+        location: "Belsen",
+        features: [],
+        description: "Geplant \u00b7 Belsen",
+      },
+    },
+    {
+      id: "oeschingen",
+      name: "Öschingen",
+      coords: [9.0050, 48.3873],
+      status: "planned",
+      vehicle: {
+        title: "Geplant",
+        iconUrl: "/img/cars/planned-icon.svg",
+        location: "Öschingen",
+        features: [],
+        description: "Geplant \u00b7 Öschingen",
+      },
+    },
+    {
+      id: "talheim",
+      name: "Talheim",
+      coords: [9.0128, 48.4267],
+      status: "planned",
+      vehicle: {
+        title: "Geplant",
+        iconUrl: "/img/cars/planned-icon.svg",
+        location: "Talheim",
+        features: [],
+        description: "Geplant \u00b7 Talheim",
       },
     },
   ];
@@ -63,8 +102,8 @@
     const map = new window.maplibregl.Map({
       container: mapEl,
       style: STYLE_URL,
-      center: [9.0502, 48.4032],
-      zoom: 13,
+      center: [9.035, 48.410],
+      zoom: 11,
       minZoom: 10,
     });
 
