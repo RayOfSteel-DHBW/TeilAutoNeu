@@ -99,7 +99,9 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. All "noch offen" placeholders replaced with standardized `TODO` markers
   3. mitglied-werden.html appears in navigation as a prominent CTA
   4. Puppeteer screenshots confirm changes at both widths
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Card borders, placeholder standardization, and nav CTA
 
 ### Phase 16: Homepage Content Rewrite
 **Goal**: Replace hero placeholder and rewrite all value cards with messaging aligned to the Zweitwagen persona and owner's framing from the joint review.
@@ -176,7 +178,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
-| 15. Site-Wide Fixes | v1.1 | 0/? | Not started | - |
+| 15. Site-Wide Fixes | v1.1 | 0/1 | Planned | - |
 | 16. Homepage Content Rewrite | v1.1 | 0/? | Not started | - |
 | 17. Fahrzeuge Page Overhaul | v1.1 | 0/? | Not started | - |
 | 18. Preise Page Restructure | v1.1 | 0/? | Not started | - |
