@@ -120,7 +120,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 |-------|-----------|----------------|--------|-----------|
 | 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
-| 20. Research | v1.2 | 0/2 | Plans created | - |
+| 20. Research | 1/2 | In Progress|  | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 0/TBD | Not started | - |
 | 23. Design C | v1.2 | 0/TBD | Not started | - |

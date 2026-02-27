@@ -9,8 +9,8 @@ Requirements for milestone v1.2 ClaudesDesigns. Visual redesign exploration — 
 
 ### Research
 
-- [ ] **RES-01**: Study student project design branches (priority: `student/Rainer-4-V2`, `student/Rainer3-akkordeon`; also: `student/combine`, `student/v3`, `student/tam-nav`, `student/mobile-wireframe`) as UI design inspiration (not replication)
-- [ ] **RES-02**: Study old site (`references/old/website_alt/`) and owner content documents (`references/old/markdown/`) as content enhancement source (not trusted as facts — verify against PROJECT.md)
+- [x] **RES-01**: Study student project design branches (priority: `student/Rainer-4-V2`, `student/Rainer3-akkordeon`; also: `student/combine`, `student/v3`, `student/tam-nav`, `student/mobile-wireframe`) as UI design inspiration (not replication)
+- [x] **RES-02**: Study old site (`references/old/website_alt/`) and owner content documents (`references/old/markdown/`) as content enhancement source (not trusted as facts — verify against PROJECT.md)
 - [ ] **RES-03**: Document design direction rationale for each of the 3 concepts before implementation
 
 ### Design Implementation
@@ -66,8 +66,8 @@ Deferred to post-v1.2 (once winning design selected):
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| RES-01 | Phase 20 | Pending |
-| RES-02 | Phase 20 | Pending |
+| RES-01 | Phase 20 | Complete |
+| RES-02 | Phase 20 | Complete |
 | RES-03 | Phase 20 | Pending |
 | IMPL-01 | Phase 21, 22, 23 | Pending |
 | IMPL-02 | Phase 21, 22, 23 | Pending |
