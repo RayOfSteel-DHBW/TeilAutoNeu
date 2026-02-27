@@ -130,7 +130,9 @@ Plans:
   5. "Weitere Standorte" section replaced with map showing planned Teilorte markers (R15)
   6. BCS naming corrected to "Bundesverband Carsharing (BCS)" on all pages (R16)
   7. Puppeteer screenshots confirm fahrzeuge page clean at both widths
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 17-01-PLAN.md &mdash; Copy fixes, card alignment, map markers, BCS naming (R9-R16)
 
 ### Phase 18: Preise Page Restructure
 **Goal**: Simplify pricing page by removing redundant sections and fixing references, so it centers on example calculations rather than detailed rate tables.
@@ -184,6 +186,6 @@ Plans:
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
 | 15. Site-Wide Fixes | v1.1 | 0/1 | Planned | - |
 | 16. Homepage Content Rewrite | v1.1 | 0/1 | Planned | - |
-| 17. Fahrzeuge Page Overhaul | v1.1 | 0/? | Not started | - |
+| 17. Fahrzeuge Page Overhaul | v1.1 | 0/1 | Planned | - |
 | 18. Preise Page Restructure | v1.1 | 0/1 | Planned | - |
 | 19. Secondary Pages | v1.1 | 0/? | Not started | - |
