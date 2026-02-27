@@ -39,7 +39,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 - [x] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; 31 issues catalogued — completed 2026-02-27
 - [x] **Phase 15: Site-Wide Fixes** — Card borders, TODO standardization, nav fix (R2, R23, R28) (completed 2026-02-27)
 - [x] **Phase 16: Homepage Content Rewrite** — Hero logo + value card rewrites (R1, R3-R8) (completed 2026-02-27)
-- [ ] **Phase 17: Fahrzeuge Page Overhaul** — Copy, cards, map, BCS naming (R9-R16)
+- [x] **Phase 17: Fahrzeuge Page Overhaul** — Copy, cards, map, BCS naming (R9-R16) (completed 2026-02-27)
 - [ ] **Phase 18: Preise Page Restructure** — Remove sections, fix references (R17-R21)
 - [ ] **Phase 19: Secondary Pages** — geschaeftskunden, ueber-uns, mitglied-werden (R24-R27, R29-R31)
 
@@ -188,6 +188,6 @@ Plans:
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
 | 15. Site-Wide Fixes | 1/1 | Complete    | 2026-02-27 | - |
 | 16. Homepage Content Rewrite | 1/1 | Complete    | 2026-02-27 | - |
-| 17. Fahrzeuge Page Overhaul | v1.1 | 0/1 | Planned | - |
+| 17. Fahrzeuge Page Overhaul | 1/1 | Complete   | 2026-02-27 | - |
 | 18. Preise Page Restructure | v1.1 | 0/1 | Planned | - |
 | 19. Secondary Pages | v1.1 | 0/1 | Planned | - |
