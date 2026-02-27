@@ -58,9 +58,16 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-<!-- Next milestone: TBD -->
+<!-- v1.2 ClaudesDesigns — visual redesign milestone -->
 
-(No active requirements — next milestone not yet defined)
+- [ ] Three distinct visual design approaches, each on a separate branch
+- [ ] All designs cover all 8 current pages
+- [ ] Playwright/Puppeteer visual refinement loops per design
+- [ ] Mobile-first responsive at all breakpoints
+- [ ] Content: snappier wording based on existing copy (no invented claims)
+- [ ] Conversion-optimized for Zweitwagen persona
+- [ ] Clear membership gate to prevent false positive calls
+- [ ] Joint review to select winning design direction
 
 ### Out of Scope
 
@@ -138,11 +145,23 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
+## Current Milestone: v1.2 ClaudesDesigns
+
+**Goal:** Explore 3 distinct visual redesign directions for the site, implement each on a separate branch with visual refinement, then pick a winner.
+
+**Target features:**
+- Design A, B, C: three visually distinct approaches to the same 8-page site
+- Each refined through automated screenshot-refine loops (Playwright/Puppeteer)
+- Frontend Design Plugin for implementation
+- Snappier copy based on existing content (no invented claims)
+- Conversion-optimized for Zweitwagen persona (Simone)
+- Modern, professional aesthetic (not artsy); color palette open to change
+
 ## Current State
 
-v1.1 shipped. All 31 joint-review issues resolved. Site is clean at both desktop and mobile widths. Owner review complete. Ready for production handoff or next milestone planning.
+v1.1 shipped. All 31 joint-review issues resolved. Site is clean at both desktop and mobile widths. Owner review complete.
 
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-02-27 after v1.1 milestone completion_
+_Last updated: 2026-02-27 after v1.2 milestone start_
