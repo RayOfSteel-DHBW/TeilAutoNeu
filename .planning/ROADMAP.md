@@ -125,3 +125,21 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 22. Design B | v1.2 | 0/TBD | Not started | - |
 | 23. Design C | v1.2 | 0/TBD | Not started | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
+| 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
+
+### Phase 25: Design D — Claude's Own Vision
+
+**Goal:** A complete, production-ready 8-page site on `design/d` branch — Claude's autonomous design vision, unconstrained by Phase 20 rationales. May refine the best ideas from Designs A-C or create an entirely new strategy. Must use the frontend-design skill. Same conversion requirements as Phases 21-23 but design approach is entirely Claude's choice.
+**Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
+**Depends on:** Phase 23
+**Success Criteria** (what must be TRUE):
+  1. All 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz) exist and render correctly on `design/d`
+  2. Design D has a cohesive, distinct visual identity that differs clearly from v1.1, Design A, Design B, and Design C
+  3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
+  4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
+  5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
+  6. Frontend-design skill was used for implementation
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 25 to break down)

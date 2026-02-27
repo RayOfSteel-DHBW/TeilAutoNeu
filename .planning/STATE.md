@@ -64,10 +64,14 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 - Phase 20 Plan 02: No direction uses green as primary (v1.1 occupies that space)
 - Phase 20 Plan 02: All copy examples grounded in verified source material from old site
 
+### Roadmap Evolution
+
+- Phase 25 added: Design D — Claude's Own Vision (no predefined direction, full creative autonomy, must use frontend-design skill)
+
 ### Blockers/Concerns
 
 - Site must be running at http://127.0.0.1:5500/site/build/dist/ for visual audit phases.
-- Design phases (21-23) require Frontend Design Plugin skill.
+- Design phases (21-23, 25) require Frontend Design Plugin skill.
 - RESOLVED: Student project branches (Rainer-4-V2, Rainer3-akkordeon) do not exist in repo — workaround documented in 20-INSPIRATION-NOTES.md.
 
 ## Session Continuity
