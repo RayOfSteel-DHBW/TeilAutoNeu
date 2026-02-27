@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-26)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.1 Visual Fixes — Phase 18: Preise Page Restructure (complete, verification pending)
+**Current focus:** v1.1 Visual Fixes — Phase 19: Secondary Pages (complete, verification pending)
 
 ## Current Position
 
-Phase: 18 of 19 (Preise Page Restructure)
+Phase: 19 of 19 (Secondary Pages)
 Plan: 01 of 01 (complete)
-Status: Plan 18-01 complete, phase verification pending
-Last activity: 2026-02-27 — Plan 18-01 executed (remove rate tables, Quernutzung, rephrase Kaution, shorten disclaimer)
+Status: Plan 19-01 complete, phase verification pending
+Last activity: 2026-02-27 — Plan 19-01 executed (geschaeftskunden reframe, ueber-uns text replacement, mitglied-werden identity fix)
 
-Progress: [█████████░] 90%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -63,6 +63,6 @@ All v1.0 decisions logged in PROJECT.md Key Decisions table with outcomes.
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Phase 18 plan 01 executed, awaiting verification
-Next step: Phase 18 verification, then phase 19
+Stopped at: Phase 19 plan 01 executed, awaiting verification
+Next step: Phase 19 verification, then milestone v1.1 complete
 Resume file: None
