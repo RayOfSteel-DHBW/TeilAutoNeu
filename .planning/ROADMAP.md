@@ -188,6 +188,6 @@ Plans:
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
 | 15. Site-Wide Fixes | 1/1 | Complete    | 2026-02-27 | - |
 | 16. Homepage Content Rewrite | 1/1 | Complete    | 2026-02-27 | - |
-| 17. Fahrzeuge Page Overhaul | 1/1 | Complete   | 2026-02-27 | - |
+| 17. Fahrzeuge Page Overhaul | 1/1 | Complete    | 2026-02-27 | - |
 | 18. Preise Page Restructure | 1/1 | Complete   | 2026-02-27 | - |
 | 19. Secondary Pages | v1.1 | 0/1 | Planned | - |
