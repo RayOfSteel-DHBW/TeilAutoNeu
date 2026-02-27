@@ -76,13 +76,15 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 **Target outcome:** ~20 additional suitable members. The site should reduce "tire-kicker" calls while increasing calls from genuinely interested prospects.
 
-**6 defined personas:**
+**6 defined personas (weighted):**
 1. Simone — young mother, practical need for occasional second car
 2. Johannes — eco-conscious, values sustainability
 3. Günther — cross-use traveler, values network access
 4. Brigitte — frugal retiree, values cost savings
 5. Mirjam — business user, needs fleet flexibility
 6. Michael — motorcycle owner, needs car occasionally
+
+**Persona weighting:** The dominant use case is carsharing as a Zweitwagen (second car). Out of 60+ customers, only ~2 do NOT fit the second-car pattern. When making content or design decisions, default to optimizing for the second-car persona. Simone is the most representative: one household car is at work, she needs wheels during the day for errands/kids.
 
 **Parking locations:**
 - 2 active (current fleet)

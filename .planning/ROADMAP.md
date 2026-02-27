@@ -36,7 +36,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 - [x] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented — completed 2026-02-26
 - [x] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean — completed 2026-02-26
-- [ ] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; remaining issues catalogued
+- [x] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; 31 issues catalogued — completed 2026-02-27
 - [ ] **Phase 15: Review Fix** — All joint review findings fixed and Puppeteer-verified clean
 
 ## Phase Details
@@ -82,7 +82,8 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. All 8 pages are reviewed with the owner at 375px width
   3. Every issue the owner flags is recorded with page, location, and description
   4. Owner explicitly confirms no further issues on each page before the review is closed
-**Plans**: TBD
+**Plans**: 1/1 complete (interactive review session)
+**Review log**: `.planning/phases/14-joint-review/REVIEW-LOG.md`
 
 ### Phase 15: Review Fix
 **Goal**: Every issue identified during the joint review is fixed and Puppeteer-verified clean, leaving the site ready for production handoff.
@@ -111,5 +112,5 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 11. Simplified Datenschutzerklärung | v1.0 | 1/1 | Complete | 2026-02-25 |
 | 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
-| 14. Joint Review | v1.1 | 0/1 | Not started | - |
+| 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
 | 15. Review Fix | v1.1 | 0/? | Not started | - |
