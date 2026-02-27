@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** — Phases 1-11 (shipped 2026-02-26)
-- 🚧 **v1.1 Visual Fixes** — Phases 12-15 (in progress)
+- 🚧 **v1.1 Visual Fixes** — Phases 12-19 (in progress)
 
 ## Phases
 
@@ -37,7 +37,11 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 - [x] **Phase 12: Visual Audit** — Autonomous Puppeteer audit of all 8 pages at desktop and mobile widths; all issues documented — completed 2026-02-26
 - [x] **Phase 13: Auto-Fix** — All audit findings fixed per page via iterative Puppeteer fix-verify loop until each page is clean — completed 2026-02-26
 - [x] **Phase 14: Joint Review** — Collaborative owner review of all pages at both widths; 31 issues catalogued — completed 2026-02-27
-- [ ] **Phase 15: Review Fix** — All joint review findings fixed and Puppeteer-verified clean
+- [ ] **Phase 15: Site-Wide Fixes** — Card borders, TODO standardization, nav fix (R2, R23, R28)
+- [ ] **Phase 16: Homepage Content Rewrite** — Hero logo + value card rewrites (R1, R3-R8)
+- [ ] **Phase 17: Fahrzeuge Page Overhaul** — Copy, cards, map, BCS naming (R9-R16)
+- [ ] **Phase 18: Preise Page Restructure** — Remove sections, fix references (R17-R21)
+- [ ] **Phase 19: Secondary Pages** — geschaeftskunden, ueber-uns, mitglied-werden (R24-R27, R29-R31)
 
 ## Phase Details
 
@@ -85,14 +89,73 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Plans**: 1/1 complete (interactive review session)
 **Review log**: `.planning/phases/14-joint-review/REVIEW-LOG.md`
 
-### Phase 15: Review Fix
-**Goal**: Every issue identified during the joint review is fixed and Puppeteer-verified clean, leaving the site ready for production handoff.
+### Phase 15: Site-Wide Fixes
+**Goal**: Fix global visual/content issues that affect multiple pages — card borders, placeholder standardization, and navigation completeness.
 **Depends on**: Phase 14
 **Requirements**: RFIX-01
+**Issues**: R2 (card borders/shadows), R23 ("noch offen" → TODO), R28 (mitglied-werden missing from nav)
 **Success Criteria** (what must be TRUE):
-  1. All issues from the joint review issue log are resolved
-  2. Puppeteer screenshots confirm each affected page is clean at both widths after fixes
-  3. No known visual defects remain on any of the 8 pages
+  1. Card borders and shadows are visible and consistent across all pages
+  2. All "noch offen" placeholders replaced with standardized `TODO` markers
+  3. mitglied-werden.html appears in navigation as a prominent CTA
+  4. Puppeteer screenshots confirm changes at both widths
+**Plans**: TBD
+
+### Phase 16: Homepage Content Rewrite
+**Goal**: Replace hero placeholder and rewrite all value cards with messaging aligned to the Zweitwagen persona and owner's framing from the joint review.
+**Depends on**: Phase 15
+**Requirements**: RFIX-02
+**Issues**: R1 (hero logo), R3-R8 (value cards reframe + no artificial card minimum)
+**Success Criteria** (what must be TRUE):
+  1. Hero section displays TeilAuto car icon (not placeholder)
+  2. Value cards rewritten per owner guidance — "Sie fahren, wir kümmern uns", "Sie zahlen nur wenn Sie fahren", "Merklich günstiger", Quernutzung framing
+  3. Card count reflects actual strong propositions (no padding)
+  4. Puppeteer screenshots confirm homepage clean at both widths
+**Plans**: TBD
+
+### Phase 17: Fahrzeuge Page Overhaul
+**Goal**: Fix copy errors, correct vehicle data, align card layout, replace standalone Standorte section with map, and fix BCS naming across the site.
+**Depends on**: Phase 15
+**Requirements**: RFIX-03
+**Issues**: R9-R16 (copy, vehicle data, card alignment, map, BCS naming)
+**Success Criteria** (what must be TRUE):
+  1. Redundant/double-word copy errors fixed (R9, R10)
+  2. Vehicle placeholders use PNG format (R11)
+  3. Mokka → "Mössingen, Nähe Bahnhof", Adam → "Mössingen, Nähe Stadtmitte" (R12, R13)
+  4. Vehicle cards aligned horizontally via flex/grid (R14)
+  5. "Weitere Standorte" section replaced with map showing planned Teilorte markers (R15)
+  6. BCS naming corrected to "Bundesverband Carsharing (BCS)" on all pages (R16)
+  7. Puppeteer screenshots confirm fahrzeuge page clean at both widths
+**Plans**: TBD
+
+### Phase 18: Preise Page Restructure
+**Goal**: Simplify pricing page by removing redundant sections and fixing references, so it centers on example calculations rather than detailed rate tables.
+**Depends on**: Phase 15
+**Requirements**: RFIX-04
+**Issues**: R17-R21 (reference fix, Kaution rephrase, remove rate tables + Größere Fahrzeuge, shrink disclaimer)
+**Success Criteria** (what must be TRUE):
+  1. "siehe unten" corrected to link to fahrzeuge.html (R17)
+  2. Kaution rephrased with soft description, no specific amount (R18)
+  3. "Unsere Fahrzeugklassen" rate tables removed (R19)
+  4. "Größere Fahrzeuge" section removed (R20)
+  5. Disclaimer shortened and less prominent (R21)
+  6. Puppeteer screenshots confirm preise page clean at both widths
+**Plans**: TBD
+
+### Phase 19: Secondary Pages
+**Goal**: Fix content framing on geschaeftskunden, replace ueber-uns with owner's text, and resolve mitglied-werden identity/structure issues.
+**Depends on**: Phase 15
+**Requirements**: RFIX-05
+**Issues**: R24-R27 (geschaeftskunden reframe + ueber-uns replace), R29-R31 (mitglied-werden identity + structure)
+**Success Criteria** (what must be TRUE):
+  1. geschaeftskunden: "Kosteneinsparungen" reframed around "Günstig" (R24)
+  2. geschaeftskunden: insurance framed as organizational relief (R25)
+  3. geschaeftskunden: personal CTA with phone number added (R26)
+  4. ueber-uns: replaced with student version text, BCS/Quernutzung section kept (R27)
+  5. mitglied-werden: clear identity decision resolved (R29)
+  6. mitglied-werden: two step sequences visually differentiated (R30)
+  7. mitglied-werden: content ordering addresses how-it-works before sign-up (R31)
+  8. Puppeteer screenshots confirm all three pages clean at both widths
 **Plans**: TBD
 
 ## Progress
@@ -113,4 +176,8 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 12. Visual Audit | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 13. Auto-Fix | v1.1 | 1/1 | Complete | 2026-02-26 |
 | 14. Joint Review | v1.1 | 1/1 | Complete | 2026-02-27 |
-| 15. Review Fix | v1.1 | 0/? | Not started | - |
+| 15. Site-Wide Fixes | v1.1 | 0/? | Not started | - |
+| 16. Homepage Content Rewrite | v1.1 | 0/? | Not started | - |
+| 17. Fahrzeuge Page Overhaul | v1.1 | 0/? | Not started | - |
+| 18. Preise Page Restructure | v1.1 | 0/? | Not started | - |
+| 19. Secondary Pages | v1.1 | 0/? | Not started | - |
