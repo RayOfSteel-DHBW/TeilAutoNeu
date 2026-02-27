@@ -4,7 +4,7 @@
  * Rendering rules:
  *   - DOM APIs only (createElement / textContent / appendChild)
  *   - NO innerHTML, NO insertAdjacentHTML
- *   - "noch offen" values get an amber badge so placeholders are visible
+ *   - "TODO" values get an amber badge so placeholders are visible
  */
 (function () {
   "use strict";
@@ -40,21 +40,21 @@
     while (container.firstChild) container.removeChild(container.firstChild);
   }
 
-  /** True when a value is the placeholder string "noch offen". */
-  function isNochOffen(val) {
-    return typeof val === "string" && val.toLowerCase().trim() === "noch offen";
+  /** True when a value is the placeholder string "TODO". */
+  function isTodo(val) {
+    return typeof val === "string" && val.toLowerCase().trim() === "todo";
   }
 
   /**
-   * Return either a plain text node or an amber "noch offen" badge,
+   * Return either a plain text node or an amber "TODO" badge,
    * depending on the value.
    */
   function valueOrBadge(val, prefix) {
-    if (isNochOffen(val)) {
+    if (isTodo(val)) {
       var badge = el(
         "span",
         { className: "inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800" },
-        "noch offen"
+        "TODO"
       );
       if (prefix) {
         var wrapper = el("span", { className: "inline-flex items-center gap-2" });
@@ -126,7 +126,7 @@
 
     // Kaution footnote (demoted from prominent card)
     var kautionNote = el("p", {
-      className: "mt-4 text-xs text-brand-ink/50 border-t border-brand-muted pt-4"
+      className: "mt-4 text-xs text-brand-ink/50 border-t border-brand-primary/20 pt-4"
     });
     kautionNote.appendChild(document.createTextNode("Kaution: "));
     kautionNote.appendChild(valueOrBadge(data.membership.deposit));

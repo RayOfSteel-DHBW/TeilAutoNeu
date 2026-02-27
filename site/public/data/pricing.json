@@ -3,11 +3,11 @@
   "source_note": "Werte basieren auf den aktuellen Tarifinformationen (Stand 2022–2024). Entwurf — noch nicht freigegeben.",
   "disclaimer": "Die hier genannten Angaben dienen der Orientierung. Genaue, aktuelle Preise erhalten Sie im persönlichen Gespräch und in den aktuellen Vertragsunterlagen. Alle Angaben ohne Gewähr.",
   "membership": {
-    "deposit": "noch offen",
-    "annual_fee": "noch offen"
+    "deposit": "TODO",
+    "annual_fee": "TODO"
   },
   "usage": {
-    "booking_fee": "noch offen",
+    "booking_fee": "TODO",
     "time_rate_example": "ab 2,05 EUR/Std. (Klasse XS) bzw. 2,46 EUR/Std. (Klasse M)",
     "km_rate_example": "ab 0,32 EUR/km (Klasse XS) bzw. 0,36 EUR/km (Klasse M)",
     "includes": [
