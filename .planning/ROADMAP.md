@@ -144,7 +144,9 @@ Plans:
   4. "Größere Fahrzeuge" section removed (R20)
   5. Disclaimer shortened and less prominent (R21)
   6. Puppeteer screenshots confirm preise page clean at both widths
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 18-01-PLAN.md &mdash; Remove rate tables + Quernutzung, rephrase Kaution, shorten disclaimer
 
 ### Phase 19: Secondary Pages
 **Goal**: Fix content framing on geschaeftskunden, replace ueber-uns with owner's text, and resolve mitglied-werden identity/structure issues.
@@ -183,5 +185,5 @@ Plans:
 | 15. Site-Wide Fixes | v1.1 | 0/1 | Planned | - |
 | 16. Homepage Content Rewrite | v1.1 | 0/1 | Planned | - |
 | 17. Fahrzeuge Page Overhaul | v1.1 | 0/? | Not started | - |
-| 18. Preise Page Restructure | v1.1 | 0/? | Not started | - |
+| 18. Preise Page Restructure | v1.1 | 0/1 | Planned | - |
 | 19. Secondary Pages | v1.1 | 0/? | Not started | - |
