@@ -47,7 +47,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 **Milestone Goal:** Produce three production-ready visual redesign directions for the 8-page site, refine each through screenshot loops, then select a winner in joint review.
 
-- [ ] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales
+- [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
 - [ ] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality
 - [ ] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality
 - [ ] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality
@@ -65,8 +65,8 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   3. Three distinct design direction rationales written — each covering visual concept, type/color approach, and layout philosophy
   4. Rationale document makes clear how each direction differs from the others and from v1.1
 **Plans**: 2 plans
-- [ ] 20-01-PLAN.md — Study student branches and old content docs; catalogue UI patterns and content opportunities
-- [ ] 20-02-PLAN.md — Synthesize research into 3 distinct design direction rationales
+- [x] 20-01-PLAN.md -- Study student branches and old content docs; catalogue UI patterns and content opportunities
+- [x] 20-02-PLAN.md -- Synthesize research into 3 distinct design direction rationales
 
 ### Phase 21: Design A
 **Goal**: A complete, production-ready 8-page site on `design/a` branch — visually distinct concept A, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
@@ -120,7 +120,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 |-------|-----------|----------------|--------|-----------|
 | 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
-| 20. Research | 1/2 | In Progress|  | - |
+| 20. Research | 2/2 | Complete   | 2026-02-27 | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 0/TBD | Not started | - |
 | 23. Design C | v1.2 | 0/TBD | Not started | - |

@@ -6,9 +6,9 @@ status: in_progress
 last_updated: "2026-02-27"
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-27)
 
 ## Current Position
 
-Phase: 20 of 24 (Research)
-Plan: 2 of 2 in Phase 20 (20-01 complete, next: 20-02)
-Status: In progress
-Last activity: 2026-02-27 — Completed 20-01 (Inspiration Notes Catalogue)
+Phase: 20 of 24 (Research) -- COMPLETE
+Plan: 2 of 2 in Phase 20 (all plans complete)
+Status: Phase 20 complete, ready for Phase 21
+Last activity: 2026-02-27 -- Completed 20-02 (Design Direction Rationales)
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
@@ -55,9 +55,14 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 
 ### Decisions
 
-- Phase 20 Plan 01: Named student branches (Rainer-4-V2, Rainer3-akkordeon) not in repo — used references/old/student-project/ via dev/studi-version-updated as authoritative student source
+- Phase 20 Plan 01: Named student branches (Rainer-4-V2, Rainer3-akkordeon) not in repo -- used references/old/student-project/ via dev/studi-version-updated as authoritative student source
 - Phase 20 Plan 01: Three-tier content verification (VERIFIED/PLAUSIBLE/UNVERIFIED) used for old-site content opportunities
-- Phase 20 Plan 01: 401,49 EUR/month savings figure flagged UNVERIFIED — not to be cited without owner validation
+- Phase 20 Plan 01: 401,49 EUR/month savings figure flagged UNVERIFIED -- not to be cited without owner validation
+- Phase 20 Plan 02: Direction A "Editorial Broadsheet" -- Playfair Display + Inter, navy/amber, separator-line layout
+- Phase 20 Plan 02: Direction B "Nordic Signal" -- Outfit single-font, teal on near-white, alternating color bands
+- Phase 20 Plan 02: Direction C "Nachbarschaftlich" -- Nunito + DM Sans, terracotta/cream, rounded warm cards
+- Phase 20 Plan 02: No direction uses green as primary (v1.1 occupies that space)
+- Phase 20 Plan 02: All copy examples grounded in verified source material from old site
 
 ### Blockers/Concerns
 
@@ -68,6 +73,6 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Completed 20-01-PLAN.md (Inspiration Notes Catalogue)
-Next step: Execute 20-02-PLAN.md (Design Direction Rationales)
+Stopped at: Completed 20-02-PLAN.md (Design Direction Rationales) -- Phase 20 complete
+Next step: Execute Phase 21 (Design A implementation on design/a branch)
 Resume file: None
