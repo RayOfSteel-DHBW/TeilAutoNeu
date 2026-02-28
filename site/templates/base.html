@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}teilAuto Mössingen{% endblock title %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="tailwind.css">
         <link rel="stylesheet" href="base.css">
         <meta property="og:type" content="website">
@@ -15,17 +18,22 @@
     <body class="min-h-screen bg-brand-surface text-brand-ink font-sans">
         <a class="sr-only focus:not-sr-only focus:relative focus:mx-4 focus:my-2 focus:inline-flex focus:rounded-full focus:bg-white focus:px-3 focus:py-2" href="#main-content">Zum Inhalt springen</a>
         <div class="min-h-screen flex flex-col">
-            <header class="border-b border-brand-muted bg-white">
+            <header class="sticky top-0 z-50 bg-brand-surface">
                 {% block header %}{% include "partials/header.html" %}{% endblock header %}
             </header>
             <main id="main-content" class="flex-1">
-                <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-                    {% block main %}{% endblock main %}
-                </div>
+                {% block main %}{% endblock main %}
             </main>
-            <footer class="border-t border-brand-muted bg-brand-surface">
+            <footer class="bg-brand-primary text-white">
                 {% block footer %}{% include "partials/footer.html" %}{% endblock footer %}
             </footer>
+        </div>
+        <!-- Fixed bottom phone bar for mobile -->
+        <div class="fixed inset-x-0 bottom-0 z-40 border-t border-brand-muted bg-brand-surface/95 p-3 backdrop-blur-sm lg:hidden">
+          <a href="tel:+4974739222020"
+             class="flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-brand-accent">
+            Jetzt anrufen: 07473-922202
+          </a>
         </div>
         <script src="js/nav.js" defer></script>
         <script src="js/accordion.js" defer></script>
