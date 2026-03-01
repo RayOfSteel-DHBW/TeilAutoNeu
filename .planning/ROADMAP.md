@@ -128,7 +128,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 20. Research | 2/2 | Complete    | 2026-02-27 | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
-| 23. Design C | 3/5 | In Progress|  | - |
+| 23. Design C | 4/5 | In Progress|  | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
 | 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
 
@@ -144,7 +144,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
   6. Frontend-design skill was used for implementation
-**Plans:** 3/5 plans executed
+**Plans:** 4/5 plans executed
 
 Plans:
 - [ ] TBD (run /gsd:plan-phase 25 to break down)
