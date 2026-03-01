@@ -128,7 +128,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 20. Research | 2/2 | Complete    | 2026-02-27 | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
-| 23. Design C | 5/5 | Complete   | 2026-03-01 | - |
+| 23. Design C | 5/5 | Complete    | 2026-03-01 | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
 | 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
 
