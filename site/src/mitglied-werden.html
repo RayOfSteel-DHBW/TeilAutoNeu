@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% block title %}So funktioniert's &amp; Mitglied werden | teilAuto
-Mössingen{% endblock title %}
+{% extends "base.html" %} {% block title %}Mitglied werden | teilAuto Mössingen{% endblock title %}
 
 {% block header %}
   {% set current_page = "mitglied-werden" %}
@@ -7,153 +6,100 @@ Mössingen{% endblock title %}
 {% endblock header %}
 
 {% block head %}
-  <meta name="description" content="So funktioniert Carsharing bei teilAuto Mössingen: Fahrzeug reservieren, Schlüssel holen, losfahren. In drei Schritten Mitglied werden.">
-  <meta property="og:title" content="So funktioniert's &amp; Mitglied werden | teilAuto Mössingen">
-  <meta property="og:description" content="Carsharing im Alltag: Reservieren, Schlüssel holen, losfahren. Mitglied werden bei teilAuto Mössingen — persönlich und unkompliziert.">
+  <meta name="description" content="So funktioniert Carsharing bei teilAuto Mössingen: Anrufen, kennenlernen, losfahren. In drei Schritten Mitglied werden — persönlich und unkompliziert.">
+  <meta property="og:title" content="Mitglied werden | teilAuto Mössingen">
+  <meta property="og:description" content="Mitglied werden bei teilAuto Mössingen — persönlich und unkompliziert. Anrufen, kennenlernen, losfahren.">
   <meta property="og:url" content="https://www.teilautomoessingen.de/mitglied-werden.html">
 {% endblock head %}
 
 {% block main %}
-<section class="space-y-8">
-  <div class="max-w-3xl">
-    <h1 class="text-3xl font-display sm:text-4xl">So funktioniert teilAuto &ndash; und so werden Sie Mitglied</h1>
-    <p class="mt-4 text-lg text-brand-ink/80">
-      Carsharing bei teilAuto ist unkompliziert: Sie reservieren telefonisch ein Fahrzeug,
-      holen den Schlüssel am Standort ab und fahren los. Nach der Fahrt stellen Sie das
-      Auto an denselben Platz zurück. Der Alltag mit teilAuto in Kürze:
-    </p>
-  </div>
-
-  <h2 id="so-funktionierts" class="text-2xl font-display">So funktioniert's</h2>
-
-  <div class="grid gap-6 sm:grid-cols-2">
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary text-lg font-bold text-white">1</div>
-      <h3 class="text-lg font-display">Reservieren</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Telefonisch ein Fahrzeug für den gewünschten Zeitraum buchen (Mo&ndash;Fr 09:00&ndash;12:00).
-      </p>
-    </div>
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary text-lg font-bold text-white">2</div>
-      <h3 class="text-lg font-display">Abholen</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Schlüssel am festen Standort abholen &ndash; die Fahrzeuge stehen immer am selben Platz.
-      </p>
-    </div>
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary text-lg font-bold text-white">3</div>
-      <h3 class="text-lg font-display">Fahren</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Fahrzeug nutzen wie Ihr eigenes. Kraftstoff, Versicherung und Betriebsstoffe sind im Preis enthalten.
-      </p>
-    </div>
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-primary text-lg font-bold text-white">4</div>
-      <h3 class="text-lg font-display">Zurückbringen</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Auto an denselben Standort zurückstellen. Abgerechnet wird nach Zeit und Kilometern.
-      </p>
-    </div>
-  </div>
-
-  <div class="max-w-3xl">
-    <h2 id="mitglied-werden" class="text-2xl font-display">Mitglied werden</h2>
-    <p class="mt-3 text-brand-ink/80">
-      Die Aufnahme läuft persönlich &ndash; kein Online-Formular, kein Papierkram.
-      Drei Schritte genügen:
-    </p>
-  </div>
-
-  <div class="grid gap-6 sm:grid-cols-3">
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div
-        class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-brand-primary text-lg font-bold text-brand-primary"
-      >
-        1
-      </div>
-      <h3 class="text-lg font-display">Anrufen</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Rufen Sie uns an und vereinbaren Sie einen kurzen Kennenlerntermin.
-      </p>
-    </div>
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div
-        class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-brand-primary text-lg font-bold text-brand-primary"
-      >
-        2
-      </div>
-      <h3 class="text-lg font-display">Kennenlernen</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Wir zeigen Ihnen das Fahrzeug, erklären den Ablauf und beantworten Ihre
-        Fragen.
-      </p>
-    </div>
-    <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <div
-        class="mb-3 flex h-10 w-10 items-center justify-center rounded-full border-2 border-brand-primary text-lg font-bold text-brand-primary"
-      >
-        3
-      </div>
-      <h3 class="text-lg font-display">Losfahren</h3>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Nach der Aufnahme können Sie die Fahrzeuge direkt nutzen.
-      </p>
-    </div>
-  </div>
-
-  <div
-    class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8"
-  >
-    <h2 class="text-2xl font-display">Was Sie wissen sollten</h2>
-    <ul class="mt-4 space-y-3 text-brand-ink/80">
-      <li class="flex items-start gap-3">
-        <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
-        <span
-          >Mitgliedschaft heißt Zugang zu Fahrzeugen, klare Regeln und faire
-          Kosten &ndash; kein Abo mit versteckten Gebühren.</span
-        >
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
-        <span
-          >Die Fahrzeuge stehen an festen Stationen in Mössingen und
-          Umgebung.</span
-        >
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
-        <span
-          >Buchungen erfolgen telefonisch &ndash; einfach und persönlich.</span
-        >
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
-        <span
-          >Die Kosten setzen sich aus einem Grundbeitrag und der tatsächlichen
-          Nutzung zusammen. Details erfahren Sie auf der Seite
-          <a
-            class="font-semibold text-brand-primary hover:underline"
-            href="preise.html"
-            >Preise</a
-          >.</span
-        >
-      </li>
-    </ul>
-  </div>
-
-  <div
-    class="rounded-3xl border-2 border-brand-primary bg-brand-primary/5 p-6 text-center shadow-sm sm:p-8"
-  >
-    <p class="text-lg font-display text-brand-ink">
-      Überzeugt? Melden Sie sich bei uns:
-    </p>
-    <p class="mt-3 text-3xl font-display text-brand-primary sm:text-4xl">
-      <a href="tel:+497473922202" class="hover:underline" data-track="phone-cta" data-track-page="mitglied-werden">07473-922202</a>
-    </p>
-    <p class="mt-2 text-sm text-brand-ink/70">
-      Mo&ndash;Fr 09:00&ndash;12:00 Uhr
-    </p>
+<!-- Hero/Intro -->
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h1 class="font-display text-4xl font-extrabold text-brand-ink sm:text-5xl">Mitglied werden</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-ink/70">So einfach starten Sie mit teilAuto &mdash; pers&ouml;nlich und unkompliziert.</p>
   </div>
 </section>
+
+<!-- 3-Step process in sand cards -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="rounded-2xl bg-brand-muted p-8 text-center shadow-md">
+        <span class="font-display text-5xl font-extrabold text-brand-primary">1</span>
+        <h2 class="mt-4 font-display text-xl font-bold text-brand-ink">Anrufen</h2>
+        <p class="mt-2 text-brand-ink/70">Rufen Sie uns an unter 07473-922202. Wir besprechen alles Pers&ouml;nliche mit Ihnen.</p>
+      </div>
+      <div class="rounded-2xl bg-brand-muted p-8 text-center shadow-md">
+        <span class="font-display text-5xl font-extrabold text-brand-primary">2</span>
+        <h2 class="mt-4 font-display text-xl font-bold text-brand-ink">Kennenlernen</h2>
+        <p class="mt-2 text-brand-ink/70">Wir zeigen Ihnen das Fahrzeug, erkl&auml;ren den Ablauf und beantworten Ihre Fragen &mdash; ganz pers&ouml;nlich.</p>
+      </div>
+      <div class="rounded-2xl bg-brand-muted p-8 text-center shadow-md">
+        <span class="font-display text-5xl font-extrabold text-brand-primary">3</span>
+        <h2 class="mt-4 font-display text-xl font-bold text-brand-ink">Losfahren</h2>
+        <p class="mt-2 text-brand-ink/70">Nach der Aufnahme k&ouml;nnen Sie die Fahrzeuge direkt nutzen. Einfach reservieren und losfahren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Details: what membership includes -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Was ist alles dabei?</h2>
+        <ul class="mt-4 space-y-3 text-brand-ink/80">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Versicherung, Steuern und Wartung &mdash; alles inklusive.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Fahrzeuge an festen Stationen in M&ouml;ssingen und Umgebung.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Buchung telefonisch &mdash; einfach und pers&ouml;nlich.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Kosten: Grundbeitrag plus tats&auml;chliche Nutzung. Details auf der Seite <a class="font-semibold text-brand-primary hover:underline" href="preise.html">Preise</a>.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Gut zu wissen</h2>
+        <ul class="mt-4 space-y-3 text-brand-ink/80">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Mitgliedschaft ab drei Monaten, danach monatlich k&uuml;ndbar.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>Kein Abo mit versteckten Geb&uuml;hren &mdash; klare Regeln und faire Kosten.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 text-brand-primary" aria-hidden="true">&#10003;</span>
+            <span>&Uuml;ber Quernutzung Zugang zu &uuml;ber 200 Partnerfahrzeugen bundesweit.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA block (terracotta) -->
+<section class="bg-brand-primary py-16">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Jetzt anrufen</h2>
+    <a href="tel:+4974739222020" class="mt-6 inline-block text-3xl font-bold text-white/90 transition hover:text-white sm:text-4xl">07473-922202</a>
+    <p class="mt-4 text-lg text-white/80">Pers&ouml;nlich und unkompliziert &mdash; kein Callcenter, Sie sprechen direkt mit uns.</p>
+    <p class="mt-2 text-sm text-white/60">Mo&ndash;Fr 09:00&ndash;12:00 Uhr</p>
+  </div>
+</section>
+
+<!-- Bottom padding for fixed phone bar -->
+<div class="pb-20 lg:pb-0"></div>
 {% endblock main %}
