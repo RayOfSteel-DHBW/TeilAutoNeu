@@ -10,92 +10,129 @@
 {% block head %}
   <meta name="description" content="teilAuto Mössingen: Seit über zwei Jahrzehnten betreiben Ralf und Ursula Stahl ein persönliches Carsharing für über 60 Mitglieder im Steinlachtal.">
   <meta property="og:title" content="Über uns | teilAuto Mössingen">
-  <meta property="og:description" content="Carsharing in Mössingen mit persönlicher Betreuung. Gegründet von Ralf und Ursula Stahl, Teil des Bundesverband Carsharing (BCS)-Netzwerks.">
+  <meta property="og:description" content="Carsharing in Mössingen mit persönlicher Betreuung. Gegründet von Ralf und Ursula Stahl, Teil des BCS-Netzwerks.">
   <meta property="og:url" content="https://www.teilautomoessingen.de/ueber-uns.html">
 {% endblock head %}
 
 {% block main %}
-<section class="space-y-10">
-
-  <div class="max-w-3xl">
-    <h1 class="text-3xl font-display sm:text-4xl">Über uns</h1>
-    <p class="mt-4 text-lg text-brand-ink/80">
-      teilAuto Mössingen, das sind wir: Firmeninhaber Ralf Stahl und
-      Ursula&nbsp;Stahl (Buchungszentrale / &bdquo;Office-Managerin&ldquo;).
-    </p>
+<!-- Intro -->
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h1 class="font-display text-4xl font-extrabold text-brand-ink sm:text-5xl">&Uuml;ber uns</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-ink/70">Kein Callcenter &mdash; Sie sprechen direkt mit uns.</p>
   </div>
+</section>
 
-  <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8">
-    <h2 class="text-2xl font-display">Unsere Geschichte</h2>
-    <p class="mt-4 text-brand-ink/80">
-      Das Unternehmen entstand auf private Initiative im Jahr 2000. Wir waren
-      zuvor Mitglied beim Projekt teilAuto des damaligen Vereins Ökostadt
-      Tübingen. Der dortige Verein steckte selbst noch in den Anfängen, und eine
-      Erweiterung des Angebots auf Mössingen war noch nicht in Sicht. Da wir
-      jedoch vom Konzept und der Nachhaltigkeit des Autoteilens überzeugt waren,
-      beschlossen wir, selbst die Initiative zu ergreifen und unser &ndash;
-      zunächst einziges und nur wenig genutztes &ndash; Fahrzeug mit anderen zu
-      teilen.
-    </p>
-    <p class="mt-4 text-brand-ink/80">
-      Wir gaben der Sache einen offiziellen Rahmen, meldeten ein Gewerbe in der
-      Rechtsform des eingetragenen Kaufmanns (e.K.) an und konnten nach und nach
-      immer mehr Nutzer dazugewinnen. Im Jahr 2025 sind über 60
-      Fahrt&shy;berechtigte angemeldet. Darunter befinden sich sowohl
-      Privatpersonen als auch Firmen und Behörden.
-    </p>
-  </div>
-
-  <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8">
-    <h2 class="text-2xl font-display">Wie wir arbeiten</h2>
-    <p class="mt-4 text-brand-ink/80">
-      Für die einen ist es die Ausweichmöglichkeit zu Fahrrad und ÖPNV, für die
-      anderen das hin und wieder benötigte Zweitauto, wieder andere möchten nur
-      ein &bdquo;Backup&ldquo;, falls das eigene Fahrzeug einmal ausfällt. Bei
-      dieser Aufteilung reichen derzeit unsere zwei Fahrzeuge aus, ohne dass
-      nennenswerte Engpässe entstehen. Bei weiterem Wachstum wird der Fuhrpark
-      entsprechend vergrößert.
-    </p>
-    <p class="mt-4 text-brand-ink/80">
-      Da wir das Unternehmen nebenberuflich und im Grunde ehrenamtlich führen,
-      ist die Verwaltung sehr schlicht gehalten: das Buchen der Fahrzeuge
-      erfolgt telefonisch zu unseren Bürozeiten
-      (Mo&ndash;Fr 09:00&ndash;12:00 Uhr); Auswertung der Fahrberichte,
-      Abrechnung sowie Pflege und Wartung der Fahrzeuge findet am Feierabend und
-      am Wochenende statt. Beim jetzigen Umfang des Betriebs ist das gut zu
-      bewältigen, und auch Zuwachs ist ohne Probleme möglich. Sollte sich das
-      ändern, kommt auch bei uns ein Online-Buchungs&shy;system und die Nutzung
-      von Bordcomputern ins Spiel. Ab da wird es auch gewerbliche Büroräume und
-      Personal geben.
-    </p>
-  </div>
-
-  <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8">
-    <h2 class="text-2xl font-display">Mitglied einer größeren Gemeinschaft</h2>
-    <p class="mt-4 text-brand-ink/80">
-      teilAuto Mössingen ist Mitglied im Bundesverband Carsharing (BCS) und
-      damit Teil des DACHverband-Netzwerks. Das bedeutet für unsere Mitglieder
-      mehr als nur die zwei lokalen Fahrzeuge: Über die sogenannte Quernutzung
-      können Sie bei Bedarf auf Fahrzeuge von über 200 Partnern in der Region und
-      deutschlandweit zurückgreifen.
-    </p>
-    <p class="mt-4 text-brand-ink/80">
-      Gemeinsam genutzte Fahrzeuge, die gut ausgelastet sind, ersetzen viele
-      Privatautos. Das ist keine Ideologie &ndash; das ist der praktische Kern
-      dessen, was wir seit Jahrzehnten tun.
-    </p>
-    <div class="mt-6">
-      <a
-        href="fahrzeuge.html"
-        class="inline-flex items-center gap-2 rounded-full bg-brand-primary/10 px-4 py-2 text-sm font-semibold text-brand-primary transition hover:bg-brand-primary/20"
-        data-track="nav-cta"
-        data-track-label="quernutzung-von-ueber-uns"
-      >
-        Mehr zur Quernutzung auf der Fahrzeuge-Seite
-      </a>
+<!-- Who we are -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-bold text-brand-ink">Wer wir sind</h2>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          teilAuto M&ouml;ssingen, das sind wir: Firmeninhaber Ralf Stahl und
+          Ursula&nbsp;Stahl (Buchungszentrale / &bdquo;Office-Managerin&ldquo;).
+          Pers&ouml;nlich, lokal und unkompliziert &mdash; so arbeiten wir seit &uuml;ber zwei Jahrzehnten.
+        </p>
+      </div>
     </div>
   </div>
-
-
 </section>
+
+<!-- Our story -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-bold text-brand-ink">Unsere Geschichte</h2>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          Das Unternehmen entstand auf private Initiative im Jahr 2000. Wir waren
+          zuvor Mitglied beim Projekt teilAuto des damaligen Vereins &Ouml;kostadt
+          T&uuml;bingen. Der dortige Verein steckte selbst noch in den Anf&auml;ngen, und eine
+          Erweiterung des Angebots auf M&ouml;ssingen war noch nicht in Sicht. Da wir
+          jedoch vom Konzept und der Nachhaltigkeit des Autoteilens &uuml;berzeugt waren,
+          beschlossen wir, selbst die Initiative zu ergreifen und unser &ndash;
+          zun&auml;chst einziges und nur wenig genutztes &ndash; Fahrzeug mit anderen zu
+          teilen.
+        </p>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          Wir gaben der Sache einen offiziellen Rahmen, meldeten ein Gewerbe in der
+          Rechtsform des eingetragenen Kaufmanns (e.K.) an und konnten nach und nach
+          immer mehr Nutzer dazugewinnen. Im Jahr 2025 sind &uuml;ber 60
+          Fahrt&shy;berechtigte angemeldet. Darunter befinden sich sowohl
+          Privatpersonen als auch Firmen und Beh&ouml;rden.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How we work -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-bold text-brand-ink">Wie wir arbeiten</h2>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          F&uuml;r die einen ist es die Ausweichm&ouml;glichkeit zu Fahrrad und &Ouml;PNV, f&uuml;r die
+          anderen das hin und wieder ben&ouml;tigte Zweitauto, wieder andere m&ouml;chten nur
+          ein &bdquo;Backup&ldquo;, falls das eigene Fahrzeug einmal ausf&auml;llt. Bei
+          dieser Aufteilung reichen derzeit unsere zwei Fahrzeuge aus, ohne dass
+          nennenswerte Engp&auml;sse entstehen. Bei weiterem Wachstum wird der Fuhrpark
+          entsprechend vergr&ouml;&szlig;ert.
+        </p>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          Da wir das Unternehmen nebenberuflich und im Grunde ehrenamtlich f&uuml;hren,
+          ist die Verwaltung sehr schlicht gehalten: das Buchen der Fahrzeuge
+          erfolgt telefonisch zu unseren B&uuml;rozeiten
+          (Mo&ndash;Fr 09:00&ndash;12:00 Uhr); Auswertung der Fahrberichte,
+          Abrechnung sowie Pflege und Wartung der Fahrzeuge findet am Feierabend und
+          am Wochenende statt. Beim jetzigen Umfang des Betriebs ist das gut zu
+          bew&auml;ltigen, und auch Zuwachs ist ohne Probleme m&ouml;glich.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="font-display text-2xl font-bold text-brand-ink">Mitglied einer gr&ouml;&szlig;eren Gemeinschaft</h2>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          teilAuto M&ouml;ssingen ist Mitglied im Bundesverband Carsharing (BCS) und
+          damit Teil des DACHverband-Netzwerks. Das bedeutet f&uuml;r unsere Mitglieder
+          mehr als nur die zwei lokalen Fahrzeuge: &Uuml;ber die sogenannte Quernutzung
+          k&ouml;nnen Sie bei Bedarf auf Fahrzeuge von &uuml;ber 200 Partnern in der Region und
+          deutschlandweit zur&uuml;ckgreifen.
+        </p>
+        <p class="mt-4 leading-relaxed text-brand-ink/80">
+          Gemeinsam genutzte Fahrzeuge, die gut ausgelastet sind, ersetzen viele
+          Privatautos. Das ist keine Ideologie &ndash; das ist der praktische Kern
+          dessen, was wir seit Jahrzehnten tun.
+        </p>
+        <div class="mt-6">
+          <a href="fahrzeuge.html"
+             class="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-accent">
+            Mehr zur Quernutzung &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA block (terracotta section) -->
+<section class="bg-brand-primary py-16">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Lernen Sie uns kennen</h2>
+    <a href="tel:+4974739222020" class="mt-6 inline-block text-3xl font-bold text-white/90 transition hover:text-white sm:text-4xl">07473-922202</a>
+    <p class="mt-4 text-lg text-white/80">Wir freuen uns auf Ihren Anruf.</p>
+  </div>
+</section>
+
+<!-- Bottom padding for fixed phone bar -->
+<div class="pb-20 lg:pb-0"></div>
 {% endblock main %}
