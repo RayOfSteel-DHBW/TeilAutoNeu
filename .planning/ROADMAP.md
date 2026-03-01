@@ -49,7 +49,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 - [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
 - [ ] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality
-- [ ] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality
+- [x] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality (completed 2026-02-28)
 - [ ] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality
 - [ ] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; select winning direction
 
@@ -90,7 +90,12 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
-**Plans**: TBD
+**Plans**: 5 plans (complete)
+- [x] 22-01-PLAN.md -- Design system foundation (theme tokens, typography, base template, nav, footer)
+- [x] 22-02-PLAN.md -- Homepage + mitglied-werden
+- [x] 22-03-PLAN.md -- Preise + fahrzeuge
+- [x] 22-04-PLAN.md -- Geschaeftskunden, ueber-uns, impressum, datenschutz
+- [x] 22-05-PLAN.md -- Playwright visual audit + user review
 
 ### Phase 23: Design C
 **Goal**: A complete, production-ready 8-page site on `design/c` branch — visually distinct concept C, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
@@ -122,7 +127,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
 | 20. Research | 2/2 | Complete    | 2026-02-27 | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
-| 22. Design B | v1.2 | 0/TBD | Not started | - |
+| 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 23. Design C | v1.2 | 0/TBD | Not started | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
 | 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
@@ -139,7 +144,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
   6. Frontend-design skill was used for implementation
-**Plans:** 0 plans
+**Plans:** 4/5 plans executed
 
 Plans:
 - [ ] TBD (run /gsd:plan-phase 25 to break down)
