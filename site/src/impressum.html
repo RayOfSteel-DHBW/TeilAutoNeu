@@ -12,58 +12,67 @@
   <meta property="og:description" content="Impressum der teilAuto Mössingen e.K. gemäß § 5 DDG.">
   <meta property="og:url" content="https://www.teilautomoessingen.de/impressum.html">
 {% endblock head %}
+
 {% block main %}
-<section class="max-w-2xl space-y-10">
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
-  <div>
-    <h1 class="text-3xl font-display sm:text-4xl">Impressum</h1>
-    <p class="mt-2 text-sm text-brand-ink/60">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
+    <div>
+      <h1 class="font-display text-3xl font-extrabold text-brand-ink sm:text-4xl">Impressum</h1>
+      <p class="mt-2 text-sm text-brand-ink/60">Angaben gem&auml;&szlig; &sect; 5 DDG (Digitale-Dienste-Gesetz)</p>
+    </div>
+
+    <div class="mt-10 space-y-10">
+
+      <div class="space-y-3">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Anbieter</h2>
+        <address class="not-italic leading-relaxed text-brand-ink/80">
+          teilAuto M&ouml;ssingen e.K.<br>
+          Inhaber: Ralf Stahl<br>
+          Dreif&uuml;rstensteinstra&szlig;e 8/1<br>
+          72116 M&ouml;ssingen<br>
+          Baden-W&uuml;rttemberg, Deutschland
+        </address>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Kontakt</h2>
+        <p class="leading-relaxed text-brand-ink/80">
+          Telefon: <a href="tel:+497473922202" class="text-brand-primary hover:text-brand-accent underline">07473-922202</a><br>
+          E-Mail: <a href="mailto:info@teilautomoessingen.de" class="text-brand-primary hover:text-brand-accent underline">info@teilautomoessingen.de</a>
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Handelsregister</h2>
+        <p class="leading-relaxed text-brand-ink/80">
+          Registergericht: Amtsgericht
+          <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600 ml-1">[TODO]</span><br>
+          Registernummer:
+          <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600 ml-1">[TODO]</span>
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Umsatzsteuer-Identifikationsnummer</h2>
+        <p class="text-brand-ink/80">
+          <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600">[TODO]</span>
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Verantwortlich f&uuml;r den Inhalt gem&auml;&szlig; &sect; 18 Abs. 2 MStV</h2>
+        <p class="leading-relaxed text-brand-ink/80">
+          Ralf Stahl<br>
+          Dreif&uuml;rstensteinstra&szlig;e 8/1<br>
+          72116 M&ouml;ssingen
+        </p>
+      </div>
+
+    </div>
   </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xl font-semibold">Anbieter</h2>
-    <address class="not-italic text-brand-ink/80 leading-relaxed">
-      teilAuto Mössingen e.K.<br>
-      Inhaber: Ralf Stahl<br>
-      Dreifürstensteinstraße 8/1<br>
-      72116 Mössingen<br>
-      Baden-Württemberg, Deutschland
-    </address>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xl font-semibold">Kontakt</h2>
-    <p class="text-brand-ink/80 leading-relaxed">
-      Telefon: <a href="tel:+497473922202" class="text-brand-primary hover:underline">07473-922202</a><br>
-      E-Mail: <a href="mailto:info@teilautomoessingen.de" class="text-brand-primary hover:underline">info@teilautomoessingen.de</a>
-    </p>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xl font-semibold">Handelsregister</h2>
-    <p class="text-brand-ink/80 leading-relaxed">
-      Registergericht: Amtsgericht
-      <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600 ml-1">[TODO]</span><br>
-      Registernummer:
-      <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600 ml-1">[TODO]</span>
-    </p>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xl font-semibold">Umsatzsteuer-Identifikationsnummer</h2>
-    <p class="text-brand-ink/80">
-      <span class="inline-flex items-center rounded bg-amber-100 px-2 py-0.5 text-sm font-medium text-amber-600">[TODO]</span>
-    </p>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xl font-semibold">Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV</h2>
-    <p class="text-brand-ink/80 leading-relaxed">
-      Ralf Stahl<br>
-      Dreifürstensteinstraße 8/1<br>
-      72116 Mössingen
-    </p>
-  </div>
-
 </section>
+
+<!-- Bottom padding for fixed phone bar -->
+<div class="pb-20 lg:pb-0"></div>
 {% endblock main %}
