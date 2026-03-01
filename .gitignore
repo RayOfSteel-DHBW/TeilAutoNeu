@@ -1,3 +1,7 @@
+node_modules/
+*.png
+.playwright-mcp/
+
 #_old/
 # Ignore .git folders in student projects but keep source files
 references/old/student-project/TA/TA_Website/.git/
