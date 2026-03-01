@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Fahrzeuge | teilAuto Mössingen{% endblock title %}
+{% block title %}Fahrzeuge &amp; Standorte | teilAuto Mössingen{% endblock title %}
 
 {% block header %}
   {% set current_page = "fahrzeuge" %}
@@ -9,8 +9,8 @@
 
 {% block head %}
   <meta name="description" content="Unsere Fahrzeuge: Opel Mokka E und Opel Adam in Mössingen. Plus Zugang zu Fahrzeugen von über 200 Partnern über die Quernutzung.">
-  <meta property="og:title" content="Fahrzeuge | teilAuto Mössingen">
-  <meta property="og:description" content="Opel Mokka E und Opel Adam in Mössingen. Dazu Zugang zu Fahrzeugen von über 200 Partnern via Quernutzung im Bundesverband Carsharing (BCS)-Netzwerk.">
+  <meta property="og:title" content="Fahrzeuge &amp; Standorte | teilAuto Mössingen">
+  <meta property="og:description" content="Opel Mokka E und Opel Adam in Mössingen. Dazu Zugang zu Fahrzeugen von über 200 Partnern via Quernutzung im BCS-Netzwerk.">
   <meta property="og:url" content="https://www.teilautomoessingen.de/fahrzeuge.html">
   <link href="https://unpkg.com/maplibre-gl@5.17.0/dist/maplibre-gl.css" rel="stylesheet" />
   <script src="https://unpkg.com/maplibre-gl@5.17.0/dist/maplibre-gl.js" defer></script>
@@ -18,97 +18,128 @@
 {% endblock head %}
 
 {% block main %}
-<section class="space-y-10">
-  <div class="max-w-3xl">
-    <h1 class="text-3xl font-display sm:text-4xl">Fahrzeuge</h1>
-    <p class="mt-4 text-lg text-brand-ink/80">
-      Ob Sie den Wocheneinkauf erledigen, Kinder sicher zum Training bringen
-      oder am Wochenende ins Grüne fahren wollen: teilAuto hat für die
-      allermeisten Fälle das passende Auto. Dank der kleinen, festen Flotte
-      ist fast immer ein Fahrzeug verfügbar.
+<!-- Intro -->
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h1 class="font-display text-4xl font-extrabold text-brand-ink sm:text-5xl">Fahrzeuge &amp; Standorte</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-ink/70">
+      Ob Wocheneinkauf, Kinderfahrt oder Wochenendausflug &mdash; teilAuto hat f&uuml;r die
+      allermeisten F&auml;lle das passende Auto. Dank der kleinen, festen Flotte
+      ist fast immer ein Fahrzeug verf&uuml;gbar.
     </p>
-  </div>
-
-  <div class="grid gap-6 lg:grid-cols-2">
-    <article class="flex flex-col rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <h2 class="text-2xl font-display">Opel Mokka E</h2>
-      <div
-        class="mt-4 flex h-40 w-full items-center justify-center rounded-2xl border border-brand-primary/20 bg-brand-primary/5"
-        role="img"
-        aria-label="Opel Mokka E, das elektrische Carsharing-Fahrzeug von teilAuto Mössingen"
-      >
-        <div class="text-center">
-          <img src="img/mokka.png" alt="Opel Mokka E" class="mx-auto h-24 w-24" />
-          <p class="mt-2 text-sm font-semibold text-brand-primary">Opel Mokka E</p>
-          <p class="text-xs text-brand-ink/50">Klasse M &mdash; Elektro</p>
-        </div>
-      </div>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Der elektrische Allrounder für Familie, Einkauf und die größere
-        Runde um Mössingen.
-      </p>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Vollelektrisch unterwegs &ndash; gut für die Umwelt und günstig im Betrieb.
-      </p>
-      <ul class="mt-auto mt-4 space-y-2 text-sm text-brand-ink/80">
-        <li><span class="font-semibold">Sitze:</span> 5</li>
-        <li><span class="font-semibold">Ausstattung:</span> Kindersitz, Parkhilfe</li>
-        <li><span class="font-semibold">Standort:</span> Mössingen, Nähe Bahnhof</li>
-      </ul>
-    </article>
-
-    <article class="flex flex-col rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm">
-      <h2 class="text-2xl font-display">Opel Adam</h2>
-      <div
-        class="mt-4 flex h-40 w-full items-center justify-center rounded-2xl border border-brand-primary/20 bg-brand-primary/5"
-        role="img"
-        aria-label="Opel Adam, das kompakte Carsharing-Fahrzeug von teilAuto Mössingen"
-      >
-        <div class="text-center">
-          <img src="img/adam.png" alt="Opel Adam" class="mx-auto h-24 w-24" />
-          <p class="mt-2 text-sm font-semibold text-brand-primary">Opel Adam</p>
-          <p class="text-xs text-brand-ink/50">Klasse XS &mdash; Kleinwagen</p>
-        </div>
-      </div>
-      <p class="mt-2 text-sm text-brand-ink/80">
-        Kompakt und wendig, ideal für kurze Wege in der Stadt und schnelle
-        Erledigungen.
-      </p>
-      <ul class="mt-auto mt-4 space-y-2 text-sm text-brand-ink/80">
-        <li><span class="font-semibold">Sitze:</span> 4</li>
-        <li><span class="font-semibold">Ausstattung:</span> Klimaanlage, Parkhilfe</li>
-        <li><span class="font-semibold">Standort:</span> Mössingen, Nähe Stadtmitte</li>
-      </ul>
-    </article>
-  </div>
-
-  <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8">
-    <h2 class="text-2xl font-display">Quernutzung: Mehr als nur zwei Fahrzeuge</h2>
-    <p class="mt-4 text-brand-ink/80">
-      Als Mitglied von teilAuto Mössingen sind Sie Teil des bundesweiten
-      Bundesverband Carsharing (BCS)-Netzwerks. Das bedeutet: Sie können bei Bedarf auf
-      Fahrzeuge von über 200 Partnern in der Region und deutschlandweit
-      zurückgreifen &ndash; vom Kleinwagen bis zum Transporter.
-    </p>
-    <p class="mt-4 text-brand-ink/80">
-      Typisches Beispiel: Sie benötigen einmal im Jahr einen Transporter für
-      einen Umzug oder eine größere Anschaffung. Über die Quernutzung buchen
-      Sie ein Fahrzeug bei einem Partneranbieter &ndash; ohne eigene Mitgliedschaft dort.
-    </p>
-    <p class="mt-3 text-sm text-brand-ink/70">
-      Die Abrechnung läuft über teilAuto Mössingen. Sie brauchen keinen
-      separaten Vertrag.
-    </p>
-  </div>
-
-  <div class="rounded-3xl border border-brand-primary/20 bg-white p-6 shadow-sm sm:p-8">
-    <h2 class="text-2xl font-display">Stellplätze</h2>
-    <p class="mt-3 text-sm text-brand-ink/80">
-      Zwei Standorte sind aktiv, weitere sind in Planung. Klicken Sie auf die Marker
-      für eine kurze Zusammenfassung.
-    </p>
-    <div id="fleet-map" class="fleet-map mt-6"></div>
   </div>
 </section>
 
+<!-- Vehicle descriptions in sand cards -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="rounded-2xl bg-brand-muted p-8 shadow-md">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Opel Mokka E</h2>
+        <div class="mt-4 overflow-hidden rounded-xl border border-brand-primary/15">
+          <table class="w-full">
+            <tbody class="divide-y divide-brand-primary/10">
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Antrieb</td>
+                <td class="px-4 py-2">Elektrisch</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Klasse</td>
+                <td class="px-4 py-2">M &mdash; SUV/Kompakt</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Sitze</td>
+                <td class="px-4 py-2">5</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Ausstattung</td>
+                <td class="px-4 py-2">Kindersitz, Parkhilfe</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Standort</td>
+                <td class="px-4 py-2">M&ouml;ssingen, N&auml;he Bahnhof</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-brand-ink/80">Der elektrische Allrounder f&uuml;r Familie, Einkauf und die gr&ouml;&szlig;ere Runde um M&ouml;ssingen. Vollelektrisch unterwegs &mdash; gut f&uuml;r die Umwelt und g&uuml;nstig im Betrieb.</p>
+      </article>
+
+      <article class="rounded-2xl bg-brand-muted p-8 shadow-md">
+        <h2 class="font-display text-xl font-bold text-brand-ink">Opel Adam</h2>
+        <div class="mt-4 overflow-hidden rounded-xl border border-brand-primary/15">
+          <table class="w-full">
+            <tbody class="divide-y divide-brand-primary/10">
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Antrieb</td>
+                <td class="px-4 py-2">Benzin</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Klasse</td>
+                <td class="px-4 py-2">XS &mdash; Kleinwagen</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Sitze</td>
+                <td class="px-4 py-2">4</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Ausstattung</td>
+                <td class="px-4 py-2">Klimaanlage, Parkhilfe</td>
+              </tr>
+              <tr class="text-sm text-brand-ink/80">
+                <td class="px-4 py-2 font-medium">Standort</td>
+                <td class="px-4 py-2">M&ouml;ssingen, N&auml;he Stadtmitte</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-brand-ink/80">Kompakt und wendig, ideal f&uuml;r kurze Wege in der Stadt und schnelle Erledigungen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Cross-use section -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-brand-muted p-8 shadow-md">
+      <h2 class="font-display text-2xl font-bold text-brand-ink">Quernutzung: Mehr als nur zwei Fahrzeuge</h2>
+      <p class="mt-4 text-brand-ink/80">
+        Als Mitglied von teilAuto M&ouml;ssingen sind Sie Teil des bundesweiten
+        Bundesverband Carsharing (BCS)-Netzwerks. Das bedeutet: Sie k&ouml;nnen bei Bedarf auf
+        Fahrzeuge von &uuml;ber 200 Partnern in der Region und deutschlandweit
+        zur&uuml;ckgreifen &mdash; vom Kleinwagen bis zum Transporter.
+      </p>
+      <p class="mt-4 text-brand-ink/80">
+        Typisches Beispiel: Sie ben&ouml;tigen einmal im Jahr einen Transporter f&uuml;r
+        einen Umzug. &Uuml;ber die Quernutzung buchen
+        Sie ein Fahrzeug bei einem Partneranbieter &mdash; ohne eigene Mitgliedschaft dort.
+        Die Abrechnung l&auml;uft &uuml;ber teilAuto M&ouml;ssingen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Map section -->
+<section class="py-14">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <h2 class="mb-6 font-display text-2xl font-bold text-brand-ink sm:text-3xl">Unsere Standorte</h2>
+    <div class="overflow-hidden rounded-2xl shadow-md">
+      <div id="fleet-map" class="fleet-map"></div>
+    </div>
+    <p class="mt-4 text-sm text-brand-ink/60">Zwei Standorte sind aktiv, weitere sind in Planung. Klicken Sie auf die Marker f&uuml;r Details.</p>
+  </div>
+</section>
+
+<!-- CTA block (terracotta section) -->
+<section class="bg-brand-primary py-16">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="font-display text-3xl font-bold text-white sm:text-4xl">Interesse an unseren Fahrzeugen?</h2>
+    <a href="tel:+4974739222020" class="mt-6 inline-block text-3xl font-bold text-white/90 transition hover:text-white sm:text-4xl">07473-922202</a>
+    <p class="mt-4 text-lg text-white/80">Wir beraten Sie gerne pers&ouml;nlich.</p>
+  </div>
+</section>
+
+<!-- Bottom padding for fixed phone bar -->
+<div class="pb-20 lg:pb-0"></div>
 {% endblock main %}
