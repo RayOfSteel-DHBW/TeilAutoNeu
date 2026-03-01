@@ -50,7 +50,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
 - [ ] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality
 - [x] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality (completed 2026-02-28)
-- [ ] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality
+- [x] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality (completed 2026-03-01)
 - [ ] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; select winning direction
 
 ## Phase Details
@@ -128,7 +128,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 20. Research | 2/2 | Complete    | 2026-02-27 | - |
 | 21. Design A | v1.2 | 0/TBD | Not started | - |
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
-| 23. Design C | 4/5 | In Progress|  | - |
+| 23. Design C | 5/5 | Complete   | 2026-03-01 | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
 | 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
 
@@ -144,7 +144,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
   6. Frontend-design skill was used for implementation
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 - [ ] TBD (run /gsd:plan-phase 25 to break down)
