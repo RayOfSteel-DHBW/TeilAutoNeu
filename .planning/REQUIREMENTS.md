@@ -81,20 +81,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STRUCT-03 | Phase 26 | Pending |
 | STRUCT-04 | Phase 26 | Pending |
 | STRUCT-05 | Phase 26 | Pending |
-| IMPL-01 | Phase 27, 28, 29 | Pending |
-| IMPL-02 | Phase 27, 28, 29 | Pending |
-| IMPL-03 | Phase 27, 28, 29 | Pending |
-| IMPL-04 | Phase 27, 28, 29 | Pending |
-| IMPL-05 | Phase 27, 28, 29 | Pending |
-| IMPL-06 | Phase 27, 28, 29 | Pending |
-| VIS-01 | Phase 27, 28, 29 | Pending |
-| VIS-02 | Phase 27, 28, 29 | Pending |
-| VIS-03 | Phase 27, 28, 29 | Pending |
-| VIS-04 | Phase 27, 28, 29 | Pending |
-| CONV-01 | Phase 27, 28, 29 | Pending |
-| CONV-02 | Phase 27, 28, 29 | Pending |
-| CONV-03 | Phase 27, 28, 29 | Pending |
-| CONV-04 | Phase 27, 28, 29 | Pending |
+| IMPL-01 | Phases 27, 28, 29 | Pending |
+| IMPL-02 | Phases 27, 28, 29 | Pending |
+| IMPL-03 | Phases 27, 28, 29 | Pending |
+| IMPL-04 | Phases 27, 28, 29 | Pending |
+| IMPL-05 | Phases 27, 28, 29 | Pending |
+| IMPL-06 | Phases 27, 28, 29 | Pending |
+| VIS-01 | Phases 27, 28, 29 | Pending |
+| VIS-02 | Phases 27, 28, 29 | Pending |
+| VIS-03 | Phases 27, 28, 29 | Pending |
+| VIS-04 | Phases 27, 28, 29 | Pending |
+| CONV-01 | Phases 27, 28, 29 | Pending |
+| CONV-02 | Phases 27, 28, 29 | Pending |
+| CONV-03 | Phases 27, 28, 29 | Pending |
+| CONV-04 | Phases 27, 28, 29 | Pending |
 | SYNTH-01 | Phase 30 | Pending |
 | SYNTH-02 | Phase 30 | Pending |
 | SYNTH-03 | Phase 31 | Pending |
@@ -106,4 +106,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 after initial definition*
+*Last updated: 2026-03-08 — traceability finalized after roadmap creation (Phases 26-31)*
