@@ -18,15 +18,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.2 ClaudesDesigns — All design phases (21-23) COMPLETE, next: Phase 24 Joint Review or Phase 25 Design D
+**Current focus:** v1.2 complete (chromas). v1.3 "Epic Skins" milestone planned — needs `/gsd:new-milestone` to formalize.
 
 ## Current Position
 
-Phase: All design implementations complete (21, 22, 23). Next: Phase 24 (Joint Review) or Phase 25 (Design D).
-Status: Phases 21 (Design A), 22 (Design B), 23 (Design C) all fully executed on their respective branches. Verification passed for phases 21 and 23.
-Last activity: 2026-03-08 -- Completed quick task 1: Multi-design GitHub Pages review site
+Phase: v1.2 complete. Phase 24 (Joint Review) verdict: designs are chromas, not epic skins. Phase 25 (Design D) moved to v1.3.
+Status: v1.3 milestone brief written at `.planning/v1.3-MILESTONE-BRIEF.md`. Next: run `/gsd:new-milestone v1.3 Epic Skins` to formalize requirements and roadmap.
+Last activity: 2026-03-08 -- Phase 24 review complete, v1.3 milestone brief written
 
-Progress: [██████████] 100% (design implementation phases)
+Progress: v1.2 [██████████] 100% | v1.3 [░░░░░░░░░░] 0% (brief written, needs formalization)
 
 ## Performance Metrics
 
@@ -67,6 +67,9 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 ### Roadmap Evolution
 
 - Phase 25 added: Design D — Claude's Own Vision (no predefined direction, full creative autonomy, must use frontend-design skill)
+- v1.2 completed: Phase 24 verdict — all 3 designs are chromas (same skeleton, different paint). Structural distinctness insufficient.
+- Phase 25 moved from v1.2 to v1.3 (becomes Phase 31: Design D — Claude's Synthesis)
+- v1.3 "Epic Skins" milestone brief written at `.planning/v1.3-MILESTONE-BRIEF.md`
 
 ### Blockers/Concerns
 
@@ -83,6 +86,6 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 ## Session Continuity
 
 Last session: 2026-03-08
-Stopped at: All design phases (21-23) complete, planning state synced
-Next step: Phase 24 (Joint Review) or Phase 25 (Design D) — both need planning
-Resume file: None
+Stopped at: v1.2 complete, v1.3 brief written
+Next step: `/gsd:new-milestone v1.3 Epic Skins` — agent reads `.planning/v1.3-MILESTONE-BRIEF.md` as its context
+Resume file: .planning/v1.3-MILESTONE-BRIEF.md

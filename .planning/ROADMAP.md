@@ -4,7 +4,8 @@
 
 - ✅ **v1.0 MVP** — Phases 1-11 (shipped 2026-02-26)
 - ✅ **v1.1 Visual Fixes** — Phases 12-19 (shipped 2026-02-27)
-- 🚧 **v1.2 ClaudesDesigns** — Phases 20-24 (in progress)
+- ✅ **v1.2 ClaudesDesigns** — Phases 20-24 (shipped 2026-03-08, verdict: chromas)
+- 📋 **v1.3 Epic Skins** — Phases 26-31 (planned, see `.planning/v1.3-MILESTONE-BRIEF.md`)
 
 ## Phases
 
@@ -43,15 +44,16 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.2 ClaudesDesigns (In Progress)
+### ✅ v1.2 ClaudesDesigns (Shipped 2026-03-08)
 
 **Milestone Goal:** Produce three production-ready visual redesign directions for the 8-page site, refine each through screenshot loops, then select a winner in joint review.
+**Outcome:** Three chromas produced and reviewed. Verdict: structural distinctness insufficient — designs differed in color/font/containers but shared identical page skeletons. Learning fed into v1.3 "Epic Skins" milestone.
 
 - [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
 - [x] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality (completed 2026-02-28)
 - [x] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality (completed 2026-02-28)
 - [x] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality (completed 2026-03-01)
-- [ ] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; select winning direction
+- [x] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; verdict: chromas, not epic skins (completed 2026-03-08)
 
 ## Phase Details
 
@@ -120,14 +122,16 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] 23-05-PLAN.md -- Visual audit summary
 
 ### Phase 24: Joint Review
-**Goal**: User has reviewed all three designs side-by-side and selected one direction as the go-forward basis for production
+**Goal**: User has reviewed all three designs side-by-side and evaluated distinctness
 **Depends on**: Phase 23
 **Requirements**: REV-01, REV-02
 **Success Criteria** (what must be TRUE):
   1. All three designs can be viewed side-by-side (screenshots or live branches) for direct comparison
   2. User has evaluated each design against Zweitwagen conversion goal and aesthetic preference
-  3. One design is selected and documented as the winning direction with rationale recorded in PROJECT.md
-**Plans**: TBD
+  3. Review verdict documented with rationale
+**Status**: Complete (2026-03-08)
+**Verdict**: All three designs are chromas (recolors) — same page skeleton, different paint. Structural distinctness insufficient. New milestone v1.3 "Epic Skins" created. See `.planning/v1.3-MILESTONE-BRIEF.md`.
+**Plans**: 0 plans (review conducted interactively)
 
 ## Progress
 
@@ -139,22 +143,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 21. Design A | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 23. Design C | 5/5 | Complete    | 2026-03-01 | - |
-| 24. Joint Review | v1.2 | 0/TBD | Not started | - |
-| 25. Design D — Claude's Own Vision | v1.2 | 0/TBD | Not started | - |
+| 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
+| 25. Design D | v1.2 | — | Moved to v1.3 | — |
 
-### Phase 25: Design D — Claude's Own Vision
+### ~~Phase 25: Design D — Claude's Own Vision~~ (Moved to v1.3 as Phase 31)
 
-**Goal:** A complete, production-ready 8-page site on `design/d` branch — Claude's autonomous design vision, unconstrained by Phase 20 rationales. May refine the best ideas from Designs A-C or create an entirely new strategy. Must use the frontend-design skill. Same conversion requirements as Phases 21-23 but design approach is entirely Claude's choice.
-**Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
-**Depends on:** Phase 23
-**Success Criteria** (what must be TRUE):
-  1. All 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz) exist and render correctly on `design/d`
-  2. Design D has a cohesive, distinct visual identity that differs clearly from v1.1, Design A, Design B, and Design C
-  3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
-  4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
-  5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
-  6. Frontend-design skill was used for implementation
-**Plans:** 5/5 plans complete
-
-Plans:
-- [ ] TBD (run /gsd:plan-phase 25 to break down)
+Design D concept moved to v1.3 "Epic Skins" milestone where it becomes the synthesis of epic skin review feedback. See `.planning/v1.3-MILESTONE-BRIEF.md`.
