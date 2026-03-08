@@ -58,16 +58,16 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-<!-- v1.2 ClaudesDesigns — visual redesign milestone -->
+<!-- v1.3 Epic Skins — structurally distinct design explorations + synthesis -->
 
-- [ ] Three distinct visual design approaches, each on a separate branch
-- [ ] All designs cover all 8 current pages
-- [ ] Playwright/Puppeteer visual refinement loops per design
-- [ ] Mobile-first responsive at all breakpoints
-- [ ] Content: snappier wording based on existing copy (no invented claims)
-- [ ] Conversion-optimized for Zweitwagen persona
-- [ ] Clear membership gate to prevent false positive calls
-- [ ] Joint review to select winning design direction
+- [ ] 3 structurally distinct ("epic skin") design directions specified with unique skeletons
+- [ ] Epic Skin A: complete 8-page site on `design/a` with unique page skeleton, hero, nav, visual signature
+- [ ] Epic Skin B: complete 8-page site on `design/b` with unique page skeleton, hero, nav, visual signature
+- [ ] Epic Skin C: complete 8-page site on `design/c` with unique page skeleton, hero, nav, visual signature
+- [ ] No two designs share the same hero composition type
+- [ ] Copy strategy varies per design (same facts, different emphasis)
+- [ ] Epic review captures per-design feedback for synthesis
+- [ ] Design D on `design/d`: Claude's autonomous synthesis of best elements from A/B/C review
 
 ### Out of Scope
 
@@ -145,23 +145,25 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-## Current Milestone: v1.2 ClaudesDesigns
+## Current Milestone: v1.3 Epic Skins
 
-**Goal:** Explore 3 distinct visual redesign directions for the site, implement each on a separate branch with visual refinement, then pick a winner.
+**Goal:** Produce 3 structurally distinct ("epic skin") design explorations, review them with the user, then synthesize feedback into Design D (Claude's autonomous vision).
 
 **Target features:**
-- Design A, B, C: three visually distinct approaches to the same 8-page site
-- Each refined through automated screenshot-refine loops (Playwright/Puppeteer)
-- Frontend Design Plugin for implementation
-- Snappier copy based on existing content (no invented claims)
-- Conversion-optimized for Zweitwagen persona (Simone)
-- Modern, professional aesthetic (not artsy); color palette open to change
+- Phase 26: Epic direction specifications with structural signatures (section ordering, hero type, nav, visual signature)
+- Phases 27-29: Three epic skin implementations on `design/a`, `design/b`, `design/c` — each with unique page skeleton
+- Phase 30: Epic review capturing per-design feedback
+- Phase 31: Design D synthesis on `design/d` — Claude's best synthesis of review feedback
+- Each design must differ in at least 3 structural dimensions (not just colors/fonts)
+- Copy strategy varies per design (same facts, different emphasis and emotional arc)
+
+**Epic skin standard:** Must feel like a different product (not a chroma/recolor). Different section ordering, hero composition, nav pattern, information density, visual signature element.
 
 ## Current State
 
-v1.1 shipped. All 31 joint-review issues resolved. Site is clean at both desktop and mobile widths. Owner review complete.
+v1.2 shipped. Three chromas produced — same skeleton, different paint. Phase 24 review verdict: structural distinctness insufficient. v1.3 focuses on true structural differentiation.
 
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-02-27 after v1.2 milestone start_
+_Last updated: 2026-03-08 after v1.3 milestone start_
