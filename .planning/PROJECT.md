@@ -61,13 +61,13 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 <!-- v1.3 Epic Skins — structurally distinct design explorations + synthesis -->
 
 - [ ] 3 structurally distinct ("epic skin") design directions specified with unique skeletons
-- [ ] Epic Skin A: complete 8-page site on `design/a` with unique page skeleton, hero, nav, visual signature
-- [ ] Epic Skin B: complete 8-page site on `design/b` with unique page skeleton, hero, nav, visual signature
-- [ ] Epic Skin C: complete 8-page site on `design/c` with unique page skeleton, hero, nav, visual signature
+- [ ] Epic Skin A: complete 8-page site in `site/epic/a/` with unique page skeleton, hero, nav, visual signature
+- [ ] Epic Skin B: complete 8-page site in `site/epic/b/` with unique page skeleton, hero, nav, visual signature
+- [ ] Epic Skin C: complete 8-page site in `site/epic/c/` with unique page skeleton, hero, nav, visual signature
 - [ ] No two designs share the same hero composition type
 - [ ] Copy strategy varies per design (same facts, different emphasis)
 - [ ] Epic review captures per-design feedback for synthesis
-- [ ] Design D on `design/d`: Claude's autonomous synthesis of best elements from A/B/C review
+- [ ] Design D in `site/epic/d/`: Claude's autonomous synthesis of best elements from A/B/C review
 
 ### Out of Scope
 
@@ -151,9 +151,9 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 **Target features:**
 - Phase 26: Epic direction specifications with structural signatures (section ordering, hero type, nav, visual signature)
-- Phases 27-29: Three epic skin implementations on `design/a`, `design/b`, `design/c` — each with unique page skeleton
+- Phases 27-29: Three epic skin implementations in `site/epic/a/`, `b/`, `c/` — same branch, parallel-safe directories
 - Phase 30: Epic review capturing per-design feedback
-- Phase 31: Design D synthesis on `design/d` — Claude's best synthesis of review feedback
+- Phase 31: Design D synthesis in `site/epic/d/` — Claude's best synthesis of review feedback
 - Each design must differ in at least 3 structural dimensions (not just colors/fonts)
 - Copy strategy varies per design (same facts, different emphasis and emotional arc)
 
