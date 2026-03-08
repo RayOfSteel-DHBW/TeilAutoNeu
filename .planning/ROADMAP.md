@@ -48,7 +48,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 **Milestone Goal:** Produce three production-ready visual redesign directions for the 8-page site, refine each through screenshot loops, then select a winner in joint review.
 
 - [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
-- [ ] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality
+- [x] **Phase 21: Design A** — Implement complete 8-page site on `design/a` branch, refined to production quality (completed 2026-02-28)
 - [x] **Phase 22: Design B** — Implement complete 8-page site on `design/b` branch, refined to production quality (completed 2026-02-28)
 - [x] **Phase 23: Design C** — Implement complete 8-page site on `design/c` branch, refined to production quality (completed 2026-03-01)
 - [ ] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; select winning direction
@@ -78,7 +78,12 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
-**Plans**: TBD
+**Plans**: 5 plans (complete)
+- [x] 21-01-PLAN.md -- Design system foundation (theme tokens, typography, base template, nav, footer)
+- [x] 21-02-PLAN.md -- Homepage + mitglied-werden editorial restyle
+- [x] 21-03-PLAN.md -- Preise + fahrzeuge data-driven pages
+- [x] 21-04-PLAN.md -- Geschaeftskunden, ueber-uns, impressum, datenschutz
+- [x] 21-05-PLAN.md -- Visual audit + fixes
 
 ### Phase 22: Design B
 **Goal**: A complete, production-ready 8-page site on `design/b` branch — visually distinct concept B, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
@@ -107,7 +112,12 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   3. Homepage hero speaks directly to the Zweitwagen persona (Simone) without generic carsharing claims
   4. Membership gate is clearly communicated — visitor understands this is not a one-time rental service before reaching the phone CTA
   5. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks, overflow, or visual regressions across all 8 pages
-**Plans**: TBD
+**Plans**: 5 plans (complete)
+- [x] 23-01-PLAN.md -- Design system foundation (theme tokens, typography, base template, nav, footer)
+- [x] 23-02-PLAN.md -- Homepage + mitglied-werden warm conversion funnel
+- [x] 23-03-PLAN.md -- Preise + fahrzeuge warm card layout
+- [x] 23-04-PLAN.md -- Geschaeftskunden, ueber-uns, impressum, datenschutz
+- [x] 23-05-PLAN.md -- Visual audit summary
 
 ### Phase 24: Joint Review
 **Goal**: User has reviewed all three designs side-by-side and selected one direction as the go-forward basis for production
@@ -126,7 +136,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 1-11 | v1.0 | 25/25 | Complete | 2026-02-25 |
 | 12-19 | v1.1 | 7/7 | Complete | 2026-02-27 |
 | 20. Research | 2/2 | Complete    | 2026-02-27 | - |
-| 21. Design A | v1.2 | 0/TBD | Not started | - |
+| 21. Design A | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 23. Design C | 5/5 | Complete    | 2026-03-01 | - |
 | 24. Joint Review | v1.2 | 0/TBD | Not started | - |
