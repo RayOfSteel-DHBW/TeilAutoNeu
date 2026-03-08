@@ -82,6 +82,7 @@ All v1.0 and v1.1 decisions logged in PROJECT.md Key Decisions table with outcom
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | Multi-design GitHub Pages with v0/v1/v2/v3 hierarchy on merged branch | 2026-03-08 | bfa95ff | [1-multi-design-github-pages-with-v0-v1-v2-](./quick/1-multi-design-github-pages-with-v0-v1-v2-/) |
+| 2 | v1.2 complete + v1.3 Epic Skins milestone brief | 2026-03-08 | bb8121b | [2-restructure-v1-2-design-phases-for-struc](./quick/2-restructure-v1-2-design-phases-for-struc/) |
 
 ## Session Continuity
 
