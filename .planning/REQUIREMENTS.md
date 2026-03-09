@@ -43,7 +43,7 @@ picker for the shared phases rather than the skin-local phases.
 
 ### Skin Outcomes
 
-- [ ] **READY-A-01**: Design A reaches review-ready state or an explicit
+- [x] **READY-A-01**: Design A reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
 - [ ] **READY-B-01**: Design B reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
@@ -141,7 +141,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LOOP-01 | Phases 33, 34, 35 | Pending |
 | LOOP-02 | Phases 33, 34, 35 | Pending |
 | LOOP-03 | Phases 32, 33, 34, 35 | Complete |
-| READY-A-01 | Phase 33 | Pending |
+| READY-A-01 | Phase 33 | Complete |
 | READY-B-01 | Phase 34 | Pending |
 | READY-C-01 | Phase 35 | Pending |
 | COMP-01 | Phase 36 | Pending |

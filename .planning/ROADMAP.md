@@ -270,7 +270,7 @@ run serially and must not be grouped into the same browser wave.
 - [x] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping, (completed 2026-03-09)
   inventory checks, active-doc alignment, and locked comparison-surface
   contract
-- [ ] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements
+- [x] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements (completed 2026-03-09)
   polish for `site/epic/a/`
 - [ ] **Phase 34: Epic Skin B Polish Loop** — iterative visual + requirements
   polish for `site/epic/b/`
@@ -299,7 +299,7 @@ that later phases must follow.
      review-capture is still needed after Phase 36, it must be proposed as a
      new forward phase.
 **Plans**: 1 plan
-- [ ] 32-01-PLAN.md -- Promote active polish docs, inventory A/B/C, and lock the shared comparison contract
+- [x] 32-01-PLAN.md -- Promote active polish docs, inventory A/B/C, and lock the shared comparison contract
 
 ### Phase 33: Epic Skin A Polish Loop
 **Goal**: Bring `site/epic/a/` to review-ready quality through a bounded
@@ -316,7 +316,7 @@ overlap with Phases 34 or 35.
      implementation, or the 5-iteration cap.
   5. A clean finish is explicitly marked ready for Phase 34.
 **Plans**: 1 plan
-- [ ] 33-01-PLAN.md -- Run the bounded review -> TODO -> batch fix -> verify loop for Design A
+- [x] 33-01-PLAN.md -- Run the bounded review -> TODO -> batch fix -> verify loop for Design A
 
 ### Phase 34: Epic Skin B Polish Loop
 **Goal**: Bring `site/epic/b/` to review-ready quality through a bounded
@@ -391,7 +391,7 @@ Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
 | 32. Polish Baseline & Review Surface | v1.4 | 1/1 | Complete | 2026-03-09 |
-| 33. Epic Skin A Polish Loop | v1.4 | 0/1 | Not started | - |
+| 33. Epic Skin A Polish Loop | v1.4 | 1/1 | Complete | 2026-03-09 |
 | 34. Epic Skin B Polish Loop | v1.4 | 0/1 | Not started | - |
 | 35. Epic Skin C Polish Loop | v1.4 | 0/1 | Not started | - |
 | 36. Comparison Publish & Review Pack | v1.4 | 0/1 | Not started | - |
