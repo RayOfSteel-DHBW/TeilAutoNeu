@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: completed
-stopped_at: Completed 27-02-PLAN.md
-last_updated: "2026-03-09T08:24:46.110Z"
+stopped_at: Completed 27-03-PLAN.md
+last_updated: "2026-03-09T08:26:10.156Z"
 last_activity: 2026-03-09 -- Completed 28-05 visual audit, all Design B pages production-ready
 progress:
   total_phases: 11
   completed_phases: 3
   total_plans: 22
-  completed_plans: 15
+  completed_plans: 16
   percent: 60
 ---
 
@@ -61,6 +61,8 @@ Key v1.3 context:
 - [Phase 27]: No active nav indicator on legal pages (footer-linked only)
 - [Phase 27]: Accepted pricing.js card-like output as one exception to no-cards rule for structured tabular data
 - [Phase 27]: Vehicle specs use definition lists (dl/dt/dd) for editorial consistency instead of table elements
+- [Phase 27]: Created FAQ content from scratch for ueber-uns; sourced from common visitor concerns across pages
+- [Phase 27]: Membership gate uses editorial prose not callout box to maintain no-card identity
 
 ### Pending Todos
 
@@ -81,7 +83,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:24:46.108Z
-Stopped at: Completed 27-02-PLAN.md
+Last session: 2026-03-09T08:26:10.153Z
+Stopped at: Completed 27-03-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None

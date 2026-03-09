@@ -12,7 +12,7 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 - [ ] **STRUCT-01**: Each design direction specifies a unique page skeleton (section ordering, hero type, nav pattern)
 - [ ] **STRUCT-02**: No two designs share the same hero composition type
 - [ ] **STRUCT-03**: Each design has a unique visual signature element that appears consistently across pages
-- [ ] **STRUCT-04**: Copy strategy varies per design (same facts, different emphasis and emotional arc)
+- [x] **STRUCT-04**: Copy strategy varies per design (same facts, different emphasis and emotional arc)
 - [ ] **STRUCT-05**: Differentiation matrix proves at least 3 structural differences between each design pair
 
 ### Design Implementation
@@ -79,7 +79,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STRUCT-01 | Phase 26 | Pending |
 | STRUCT-02 | Phase 26 | Pending |
 | STRUCT-03 | Phase 26 | Pending |
-| STRUCT-04 | Phase 26 | Pending |
+| STRUCT-04 | Phase 26 | Complete |
 | STRUCT-05 | Phase 26 | Pending |
 | IMPL-01 | Phases 27, 28, 29 | Complete |
 | IMPL-02 | Phases 27, 28, 29 | Complete |
