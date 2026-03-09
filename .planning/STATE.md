@@ -4,13 +4,13 @@ milestone: v1.3
 milestone_name: Epic Skins
 status: completed
 stopped_at: Completed 27-07-PLAN.md (gap closure visual audit)
-last_updated: "2026-03-09T09:52:12Z"
-last_activity: 2026-03-09 -- Completed 27-07 Playwright visual audit, all Design A pages verified with screenshots
+last_updated: "2026-03-09T09:59:06.523Z"
+last_activity: 2026-03-09 -- Completed 27-07 Playwright visual audit with screenshot evidence
 progress:
   total_phases: 11
-  completed_phases: 3
-  total_plans: 28
-  completed_plans: 19
+  completed_phases: 4
+  total_plans: 29
+  completed_plans: 20
   percent: 79
 ---
 
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-08)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.3 Epic Skins -- Phase 27: Epic Skin A (complete), Phase 28: Epic Skin B (complete)
+**Current focus:** v1.3 Epic Skins -- Phase 29: Epic Skin C (in progress)
 
 ## Current Position
 
-Phase: 27 of 6 in v1.3 (Epic Skin A) -- parallel with 28, 29
-Plan: 7 of 7 (Gap Closure Visual Audit) -- COMPLETE
-Status: Phase 27 complete (incl. gap closure), Phase 28 complete
-Last activity: 2026-03-09 -- Completed 27-07 Playwright visual audit with screenshot evidence
+Phase: 29 of v1.3 (Epic Skin C) -- parallel with 27 (complete), 28 (complete)
+Plan: 1 of 5 (Foundation + Homepage) -- COMPLETE
+Status: Phase 27 complete, Phase 28 complete, Phase 29 plan 01 complete
+Last activity: 2026-03-09 -- Completed 29-01 Design C homepage with stacked editorial hero
 
-Progress: v1.3 [████████░░] 79%
+Progress: v1.3 [████████░░] 75%
 
 ## Performance Metrics
 
@@ -67,6 +67,9 @@ Key v1.3 context:
 - [Phase 27]: Structural identity verified: full-bleed hero, editorial rules, left-aligned flow, dark sticky nav, no rounded-full, no cards
 - [Phase 27]: Removed USt-ID section entirely from Design A impressum (matches Design B -- not publicly available)
 - [Phase 27]: 27-07 gap closure verified all 8 pages via Playwright at 375/768/1280px with 24 screenshots + 14 runtime JS tests, zero issues
+- [Phase 29]: Custom nav.js for minimal header pattern (not sticky, not floating pill) with full-screen overlay
+- [Phase 29]: Light hero background (bg-brand-surface) distinguishes Design C from A and B dark heroes
+- [Phase 29]: Community-first section ordering: social proof -> membership gate -> how-it-works -> benefits -> CTA
 
 ### Pending Todos
 
@@ -87,7 +90,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T09:52:12Z
-Stopped at: Completed 27-07-PLAN.md (gap closure visual audit)
-Next step: /gsd:execute-plan 29-05 or /gsd:plan-phase 26
+Last session: 2026-03-09T09:58:08Z
+Stopped at: Completed 29-01-PLAN.md (Design C foundation + homepage)
+Next step: /gsd:execute-plan 29-02
 Resume file: None
