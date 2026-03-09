@@ -176,7 +176,12 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Copy emphasis and ordering differ from Designs B and C — same facts, different storytelling arc
   7. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks or overflow across all 8 pages
   8. Navigation pattern is functional and accessible on all breakpoints
-**Plans**: TBD
+**Plans**: 5 plans
+- [ ] 27-01-PLAN.md -- Foundation (theme, base CSS, JS copies) + Homepage with full-bleed immersive hero
+- [ ] 27-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
+- [ ] 27-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
+- [ ] 27-04-PLAN.md -- Impressum + Datenschutz legal pages
+- [ ] 27-05-PLAN.md -- Playwright visual audit + fixes
 
 ### Phase 28: Epic Skin B
 **Goal**: A complete 8-page site in `site/epic/b/` built per Epic Direction B — with its own structurally distinct page skeleton, hero composition, nav pattern, content flow, and visual signature. Refined through Playwright screenshot loops.
@@ -252,7 +257,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 23. Design C | v1.2 | 5/5 | Complete | 2026-03-01 |
 | 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
 | 26. Epic Directions | v1.3 | 0/? | Not started | - |
-| 27. Epic Skin A | v1.3 | 0/? | Not started | - |
+| 27. Epic Skin A | v1.3 | 0/5 | Planned | - |
 | 28. Epic Skin B | 4/5 | In Progress|  | - |
 | 29. Epic Skin C | v1.3 | 0/? | Not started | - |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
