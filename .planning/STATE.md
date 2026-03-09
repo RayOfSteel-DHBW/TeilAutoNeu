@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: planning
-stopped_at: Completed 28-01-PLAN.md
-last_updated: "2026-03-09T08:05:32.200Z"
+stopped_at: Completed 28-04-PLAN.md
+last_updated: "2026-03-09T08:09:49.429Z"
 last_activity: 2026-03-08 — Roadmap created for v1.3 Epic Skins (Phases 26-31)
 progress:
   total_phases: 11
   completed_phases: 2
   total_plans: 17
-  completed_plans: 8
+  completed_plans: 10
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Key v1.3 context:
 - Phases 27, 28, 29 depend ONLY on Phase 26. They can run in parallel with each other.
 - Phase 31 (Design D) is the intended winner — synthesis of review feedback, not a fourth exploration.
 - [Phase 28]: Custom nav.js for floating pill pattern (not adapted from public nav.js)
+- [Phase 28]: Legal pages use full-width max-w-3xl layout with hyphens:auto for German compound words
 
 ### Pending Todos
 
@@ -73,7 +74,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:05:32.197Z
-Stopped at: Completed 28-01-PLAN.md
+Last session: 2026-03-09T08:09:49.426Z
+Stopped at: Completed 28-04-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None

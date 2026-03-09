@@ -20,7 +20,7 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 - [x] **IMPL-01**: Three structurally distinct ("epic skin") designs implemented as complete sites
 - [x] **IMPL-02**: Each design lives on a dedicated git branch (`design/a`, `design/b`, `design/c`)
 - [x] **IMPL-03**: Each design covers all 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz)
-- [ ] **IMPL-04**: Each design is production-ready quality (shippable as-is)
+- [x] **IMPL-04**: Each design is production-ready quality (shippable as-is)
 - [ ] **IMPL-05**: Each design refined through Playwright screenshot-evaluate loops
 - [ ] **IMPL-06**: Frontend Design Plugin used for implementation
 
@@ -28,7 +28,7 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 
 - [x] **VIS-01**: Each design has a cohesive type + color system
 - [ ] **VIS-02**: Modern, professional aesthetic — not artsy or experimental
-- [ ] **VIS-03**: Mobile-first responsive at all standard breakpoints (375px, 768px, 1280px+)
+- [x] **VIS-03**: Mobile-first responsive at all standard breakpoints (375px, 768px, 1280px+)
 - [x] **VIS-04**: Consistent component language per design (cards, buttons, nav, footer)
 
 ### Conversion
@@ -84,12 +84,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | IMPL-01 | Phases 27, 28, 29 | Complete |
 | IMPL-02 | Phases 27, 28, 29 | Complete |
 | IMPL-03 | Phases 27, 28, 29 | Complete |
-| IMPL-04 | Phases 27, 28, 29 | Pending |
+| IMPL-04 | Phases 27, 28, 29 | Complete |
 | IMPL-05 | Phases 27, 28, 29 | Pending |
 | IMPL-06 | Phases 27, 28, 29 | Pending |
 | VIS-01 | Phases 27, 28, 29 | Complete |
 | VIS-02 | Phases 27, 28, 29 | Pending |
-| VIS-03 | Phases 27, 28, 29 | Pending |
+| VIS-03 | Phases 27, 28, 29 | Complete |
 | VIS-04 | Phases 27, 28, 29 | Complete |
 | CONV-01 | Phases 27, 28, 29 | Complete |
 | CONV-02 | Phases 27, 28, 29 | Complete |
