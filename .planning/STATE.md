@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: planning
-stopped_at: Completed 28-03-PLAN.md
-last_updated: "2026-03-09T08:12:30.588Z"
+stopped_at: Completed 27-01-PLAN.md
+last_updated: "2026-03-09T08:20:12.912Z"
 last_activity: 2026-03-08 — Roadmap created for v1.3 Epic Skins (Phases 26-31)
 progress:
   total_phases: 11
   completed_phases: 2
-  total_plans: 19
-  completed_plans: 11
+  total_plans: 22
+  completed_plans: 12
   percent: 0
 ---
 
@@ -56,6 +56,7 @@ Key v1.3 context:
 - [Phase 28]: Legal pages use full-width max-w-3xl layout with hyphens:auto for German compound words
 - [Phase 28]: Compact centered hero for subpages, asymmetric split reserved for homepage
 - [Phase 28]: Interior pages use compact dark hero (not asymmetric split which is homepage-exclusive)
+- [Phase 27]: Design A uses HTML entities for German umlauts; hover:no-underline on nav/CTA to override base.css
 
 ### Pending Todos
 
@@ -76,7 +77,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:12:30.585Z
-Stopped at: Completed 28-03-PLAN.md
+Last session: 2026-03-09T08:20:12.909Z
+Stopped at: Completed 27-01-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None
