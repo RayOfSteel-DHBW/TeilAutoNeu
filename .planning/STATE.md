@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: planning
-stopped_at: Completed 28-02-PLAN.md
-last_updated: "2026-03-09T08:10:19.623Z"
+stopped_at: Completed 28-03-PLAN.md
+last_updated: "2026-03-09T08:12:30.588Z"
 last_activity: 2026-03-08 — Roadmap created for v1.3 Epic Skins (Phases 26-31)
 progress:
   total_phases: 11
   completed_phases: 2
-  total_plans: 17
-  completed_plans: 10
+  total_plans: 19
+  completed_plans: 11
   percent: 0
 ---
 
@@ -55,6 +55,7 @@ Key v1.3 context:
 - [Phase 28]: Custom nav.js for floating pill pattern (not adapted from public nav.js)
 - [Phase 28]: Legal pages use full-width max-w-3xl layout with hyphens:auto for German compound words
 - [Phase 28]: Compact centered hero for subpages, asymmetric split reserved for homepage
+- [Phase 28]: Interior pages use compact dark hero (not asymmetric split which is homepage-exclusive)
 
 ### Pending Todos
 
@@ -75,7 +76,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:10:19.620Z
-Stopped at: Completed 28-02-PLAN.md
+Last session: 2026-03-09T08:12:30.585Z
+Stopped at: Completed 28-03-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None
