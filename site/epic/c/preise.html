@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preise | teilAuto M&ouml;ssingen</title>
+  <meta name="description" content="Transparente Preise f&uuml;r Carsharing bei teilAuto M&ouml;ssingen. Mitgliedsbeitrag, Nutzungskosten und Beispielrechnungen &ndash; fair und &uuml;bersichtlich." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-primary: #5B4A3F;
+      --color-brand-accent: #C4704B;
+      --color-brand-surface: #FAF7F4;
+      --color-brand-ink: #2C2420;
+      --color-brand-muted: #E8E0D8;
+      --color-brand-sage: #7A9E8E;
+      --font-sans: "Figtree", system-ui, sans-serif;
+      --font-display: "DM Serif Display", "Georgia", serif;
+    }
+
+    /* Organic blob shapes — Design C visual signature */
+    .c-blob {
+      position: absolute;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      pointer-events: none;
+    }
+    .c-blob--alt {
+      border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+    }
+  </style>
+</head>
+<body class="bg-brand-surface text-brand-ink font-sans antialiased">
+
+  <!-- Skip link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-brand-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Inhalt springen</a>
+
+  <!-- ============================================================
+       NAVIGATION — Minimal header (NOT sticky, NOT floating pill)
+       ============================================================ -->
+  <header class="relative z-30 bg-brand-surface">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="font-display text-2xl text-brand-primary tracking-tight">
+        teilAuto
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-brand-ink/80" aria-label="Hauptnavigation">
+        <a href="preise.html" class="hover:text-brand-accent transition-colors text-brand-accent font-semibold" aria-current="page">Preise</a>
+        <a href="fahrzeuge.html" class="hover:text-brand-accent transition-colors">Fahrzeuge</a>
+        <a href="fuer-firmen.html" class="hover:text-brand-accent transition-colors">F&uuml;r Firmen</a>
+        <a href="ueber-uns.html" class="hover:text-brand-accent transition-colors">&Uuml;ber uns</a>
+        <a href="mitglied-werden.html" class="ml-2 inline-flex items-center rounded-full bg-brand-accent px-5 py-2 text-white font-semibold hover:bg-brand-accent/90 transition-colors">Mitglied werden</a>
+        <a href="tel:+497473922202" class="text-brand-primary font-semibold">07473&#8209;922202</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        type="button"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-brand-primary"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Navigationsmen&uuml; &ouml;ffnen"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile overlay -->
+    <div id="mobile-nav" class="hidden fixed inset-0 z-40 flex-col items-center justify-center bg-brand-primary text-white" role="dialog" aria-modal="true" aria-label="Navigation">
+      <!-- Decorative blob -->
+      <div class="c-blob bg-white/5 w-64 h-64 top-10 -right-20" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-sage/10 w-48 h-48 bottom-20 -left-10" aria-hidden="true"></div>
+
+      <button type="button" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-lg text-white" aria-label="Men&uuml; schlie&szlig;en">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <nav class="flex flex-col items-center gap-6 text-xl font-medium" aria-label="Mobile Navigation">
+        <a href="index.html" class="hover:text-brand-muted transition-colors">Startseite</a>
+        <a href="preise.html" class="hover:text-brand-muted transition-colors text-brand-accent" aria-current="page">Preise</a>
+        <a href="fahrzeuge.html" class="hover:text-brand-muted transition-colors">Fahrzeuge</a>
+        <a href="fuer-firmen.html" class="hover:text-brand-muted transition-colors">F&uuml;r Firmen</a>
+        <a href="ueber-uns.html" class="hover:text-brand-muted transition-colors">&Uuml;ber uns</a>
+        <a href="mitglied-werden.html" class="mt-4 inline-flex items-center rounded-full bg-brand-accent px-8 py-3 text-white font-semibold text-lg hover:bg-brand-accent/90 transition-colors">Mitglied werden</a>
+        <a href="tel:+497473922202" class="mt-2 text-brand-muted font-semibold">07473&#8209;922202</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         PAGE HEADER — Compact with organic blob
+         ============================================================ -->
+    <section class="relative overflow-hidden py-16 lg:py-20 bg-brand-surface">
+      <div class="c-blob bg-brand-sage/8 w-56 h-56 -top-12 -right-16 lg:w-72 lg:h-72" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-accent/6 w-40 h-40 bottom-4 -left-10 hidden lg:block" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-sage mb-4">Carsharing-Kosten</p>
+        <h1 class="font-display text-4xl lg:text-6xl text-brand-ink leading-tight">
+          Unsere Preise
+        </h1>
+        <p class="mt-4 text-lg lg:text-xl text-brand-ink/70 max-w-xl leading-relaxed">
+          Fair und transparent &mdash; Sie zahlen nur, was Sie wirklich nutzen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRICING DISPLAY — Dynamic content from pricing.js
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-white">
+      <div class="c-blob bg-brand-muted/30 w-48 h-48 -bottom-12 -right-12" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink mb-8">
+          Mitgliedschaft &amp; Nutzungskosten
+        </h2>
+
+        <!-- pricing.js renders membership fees and usage costs here -->
+        <div id="pricing-values" class="mb-12"></div>
+
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink mb-8">
+          Beispielrechnungen
+        </h2>
+
+        <!-- pricing.js renders example trip calculations here -->
+        <div id="pricing-examples" class="mb-12"></div>
+
+        <!-- pricing.js renders the legal disclaimer here -->
+        <div id="pricing-disclaimer" class="text-sm text-brand-ink/50"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MEMBERSHIP GATE REMINDER
+         ============================================================ -->
+    <section class="relative overflow-hidden py-16 lg:py-20 bg-brand-surface">
+      <div class="c-blob bg-brand-sage/6 w-44 h-44 top-8 -left-12" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink">
+          Mitgliedschaft, die sich lohnt
+        </h2>
+        <p class="mt-4 text-lg text-brand-ink/70 leading-relaxed max-w-2xl">
+          Als Mitglied profitieren Sie von g&uuml;nstigen Konditionen &mdash; ohne versteckte Geb&uuml;hren. Versicherung, Wartung und Stellplatz sind bereits enthalten. Sie zahlen nur die tats&auml;chliche Nutzung &mdash; fair und nachbarschaftlich.
+        </p>
+        <p class="mt-6">
+          <a href="mitglied-werden.html" class="inline-flex items-center rounded-full border-2 border-brand-primary/30 px-7 py-3 text-brand-primary font-semibold hover:border-brand-primary/60 transition-colors">
+            Mehr zur Mitgliedschaft
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA — Contact / Membership
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-brand-primary text-white">
+      <div class="c-blob bg-white/5 w-72 h-72 -top-20 -right-20" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-sage/10 w-48 h-48 bottom-8 -left-12" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4 text-center">
+        <h2 class="font-display text-3xl lg:text-5xl">
+          Fragen zu unseren Preisen?
+        </h2>
+        <p class="mt-4 text-lg text-white/70 max-w-lg mx-auto leading-relaxed">
+          Rufen Sie uns an &mdash; wir erkl&auml;ren Ihnen alles pers&ouml;nlich und unverbindlich.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <a href="tel:+497473922202" class="inline-flex items-center gap-2 rounded-full bg-white text-brand-primary px-8 py-4 text-xl font-semibold hover:bg-brand-surface transition-colors shadow-lg">
+            <span aria-hidden="true">&#9742;</span> 07473&#8209;922202
+          </a>
+          <a href="mitglied-werden.html" class="inline-flex items-center rounded-full border-2 border-white/40 px-8 py-4 text-lg font-semibold text-white hover:bg-white/10 transition-colors">
+            Mitglied werden
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="relative overflow-hidden bg-brand-primary text-white/80 border-t border-white/10">
+    <div class="c-blob bg-white/3 w-56 h-56 -bottom-16 -right-16" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Brand -->
+        <div>
+          <p class="font-display text-xl text-white">teilAuto</p>
+          <p class="mt-2 text-sm text-white/60 leading-relaxed">
+            Carsharing von Nachbarn f&uuml;r Nachbarn.<br />
+            Seit 2000 in M&ouml;ssingen.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <p class="font-semibold text-white text-sm uppercase tracking-wider mb-3">Seiten</p>
+          <nav class="flex flex-col gap-2 text-sm" aria-label="Footer-Navigation">
+            <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
+            <a href="fahrzeuge.html" class="hover:text-white transition-colors">Fahrzeuge</a>
+            <a href="fuer-firmen.html" class="hover:text-white transition-colors">F&uuml;r Firmen</a>
+            <a href="ueber-uns.html" class="hover:text-white transition-colors">&Uuml;ber uns</a>
+            <a href="mitglied-werden.html" class="hover:text-white transition-colors">Mitglied werden</a>
+          </nav>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="font-semibold text-white text-sm uppercase tracking-wider mb-3">Kontakt</p>
+          <p class="text-sm">
+            <a href="tel:+497473922202" class="text-white font-semibold hover:text-brand-accent transition-colors">07473&#8209;922202</a>
+          </p>
+          <div class="mt-4 flex gap-4 text-sm">
+            <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 text-center text-xs text-white/40">
+        <p>&copy; 2025 teilAuto M&ouml;ssingen. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile fixed bottom phone bar -->
+  <div class="fixed bottom-4 left-4 right-4 z-40 lg:hidden">
+    <a href="tel:+497473922202" class="flex items-center justify-center gap-2 rounded-full bg-brand-accent text-white py-3 font-semibold shadow-lg shadow-brand-accent/30 hover:bg-brand-accent/90 transition-colors">
+      <span aria-hidden="true">&#9742;</span> 07473&#8209;922202 anrufen
+    </a>
+  </div>
+  <!-- Spacer to prevent footer content overlap with fixed bottom bar -->
+  <div class="pb-20 lg:pb-0"></div>
+
+  <!-- Scripts -->
+  <script src="js/nav.js" defer></script>
+  <script src="js/pricing.js" defer></script>
+
+</body>
+</html>
