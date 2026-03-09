@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teilAuto Moessingen &mdash; Carsharing</title>
+  <meta name="description" content="Carsharing in Moessingen: Nur zahlen, wenn Sie fahren. Versicherung, Wartung und Stellplatz inklusive.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="teilAuto Moessingen &mdash; Carsharing">
+  <meta property="og:description" content="Kein eigenes Auto noetig. Carsharing fuer Moessingen und Umgebung.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind-out.css">
+  <link rel="stylesheet" href="base.css">
+</head>
+<body class="min-h-screen bg-brand-surface text-brand-ink font-sans">
+
+  <!-- Skip to content -->
+  <a class="sr-only focus:not-sr-only" href="#main-content">Zum Inhalt springen</a>
+
+  <!-- ========== Floating Pill Navigation ========== -->
+  <nav class="fixed top-4 left-1/2 z-50 -translate-x-1/2"
+       aria-label="Hauptnavigation"
+       id="floating-nav">
+    <div class="flex items-center gap-1 rounded-full border border-brand-ink/10 bg-brand-surface/95 px-3 py-2 shadow-xl backdrop-blur-md">
+      <!-- Logo -->
+      <a href="index.html"
+         class="mr-2 font-display text-sm font-bold text-brand-primary">
+        teilAuto
+      </a>
+      <!-- Desktop links -->
+      <div class="hidden items-center gap-1 lg:flex">
+        <a href="preise.html"
+           class="rounded-full px-3 py-1.5 text-xs font-medium text-brand-ink transition hover:bg-brand-muted hover:text-brand-primary aria-[current=page]:bg-brand-primary aria-[current=page]:text-white">
+          Preise
+        </a>
+        <a href="fahrzeuge.html"
+           class="rounded-full px-3 py-1.5 text-xs font-medium text-brand-ink transition hover:bg-brand-muted hover:text-brand-primary aria-[current=page]:bg-brand-primary aria-[current=page]:text-white">
+          Fahrzeuge
+        </a>
+        <a href="geschaeftskunden.html"
+           class="rounded-full px-3 py-1.5 text-xs font-medium text-brand-ink transition hover:bg-brand-muted hover:text-brand-primary aria-[current=page]:bg-brand-primary aria-[current=page]:text-white">
+          F&uuml;r Firmen
+        </a>
+        <a href="ueber-uns.html"
+           class="rounded-full px-3 py-1.5 text-xs font-medium text-brand-ink transition hover:bg-brand-muted hover:text-brand-primary aria-[current=page]:bg-brand-primary aria-[current=page]:text-white">
+          &Uuml;ber uns
+        </a>
+      </div>
+      <!-- CTA pill -->
+      <a href="mitglied-werden.html"
+         class="ml-2 rounded-full bg-brand-primary px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-primary/90">
+        Mitglied werden
+      </a>
+      <!-- Mobile hamburger -->
+      <button class="ml-1 rounded-full p-1.5 text-brand-ink transition hover:bg-brand-muted lg:hidden"
+              type="button"
+              aria-controls="mobile-nav"
+              aria-expanded="false"
+              aria-label="Navigationsmen&uuml; &ouml;ffnen">
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Mobile Nav Overlay ========== -->
+  <div id="mobile-nav"
+       class="fixed inset-0 z-[60] hidden flex-col items-center justify-center bg-brand-primary"
+       aria-label="Mobile Navigation">
+    <!-- Close button -->
+    <button class="absolute right-4 top-4 rounded-full bg-brand-surface/20 p-2 text-white"
+            type="button"
+            aria-label="Men&uuml; schlie&szlig;en">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <!-- Mobile nav links -->
+    <div class="flex flex-col items-center gap-6">
+      <a href="index.html" class="font-display text-2xl font-bold text-white transition hover:text-brand-accent">Startseite</a>
+      <a href="preise.html" class="font-display text-2xl font-bold text-white transition hover:text-brand-accent">Preise</a>
+      <a href="fahrzeuge.html" class="font-display text-2xl font-bold text-white transition hover:text-brand-accent">Fahrzeuge</a>
+      <a href="geschaeftskunden.html" class="font-display text-2xl font-bold text-white transition hover:text-brand-accent">F&uuml;r Firmen</a>
+      <a href="ueber-uns.html" class="font-display text-2xl font-bold text-white transition hover:text-brand-accent">&Uuml;ber uns</a>
+      <a href="mitglied-werden.html" class="mt-4 rounded-full bg-brand-accent px-8 py-3 font-display text-lg font-bold text-brand-primary">Mitglied werden</a>
+      <a href="tel:+4974739222020" class="text-lg font-semibold text-white/80 hover:text-white">07473-922202</a>
+    </div>
+    <!-- Diagonal lines decoration -->
+    <div class="pointer-events-none absolute bottom-0 right-0 h-32 w-32 overflow-hidden opacity-20">
+      <div class="h-0.5 w-48 origin-right -rotate-45 bg-brand-accent"></div>
+      <div class="mt-8 h-0.5 w-48 origin-right -rotate-45 bg-brand-accent"></div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ========== Section 1: Asymmetric Split Hero ========== -->
+    <section class="relative min-h-[calc(90vh-0px)] overflow-hidden bg-brand-primary">
+      <!-- Diagonal accent line (visual signature) -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-[38%] h-full w-0.5 bg-brand-accent/30 -skew-x-3"></div>
+      </div>
+
+      <div class="mx-auto flex min-h-[calc(90vh-0px)] max-w-7xl items-center">
+        <!-- Left: 60% content column -->
+        <div class="flex w-full flex-col justify-center px-6 pt-20 pb-16 sm:px-12 lg:w-3/5 lg:py-32">
+          <!-- Eyebrow tag -->
+          <span class="inline-flex w-fit items-center rounded-full border border-brand-accent/40 px-3 py-1 text-xs font-semibold text-brand-accent">
+            Carsharing in M&ouml;ssingen
+          </span>
+          <!-- Main heading -->
+          <h1 class="mt-4 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Kein eigenes Auto &mdash;<br>
+            <span class="text-brand-accent">trotzdem mobil.</span>
+          </h1>
+          <p class="mt-6 max-w-md text-lg text-white/70">
+            Nur zahlen, wenn Sie fahren. Versicherung, Wartung und Stellplatz inklusive &mdash; alles geteilt, nichts vermisst.
+          </p>
+          <!-- CTAs -->
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="mitglied-werden.html"
+               class="inline-flex items-center rounded-full bg-brand-accent px-8 py-3 text-sm font-semibold text-brand-primary shadow-lg transition hover:brightness-110">
+              Mitglied werden &rarr;
+            </a>
+            <a href="preise.html"
+               class="inline-flex items-center rounded-full border border-white/30 px-8 py-3 text-sm font-semibold text-white transition hover:border-white/60">
+              Preise ansehen
+            </a>
+          </div>
+          <!-- Phone CTA in hero -->
+          <p class="mt-8 text-sm text-white/50">
+            Fragen? Rufen Sie uns an:
+            <a href="tel:+4974739222020" class="font-semibold text-white/80 underline decoration-brand-accent/50 hover:text-white">07473-922202</a>
+          </p>
+        </div>
+
+        <!-- Right: 40% visual element (desktop only) -->
+        <div class="hidden lg:flex lg:w-2/5 lg:flex-col lg:items-center lg:justify-center lg:px-12">
+          <!-- Large typographic stat block -->
+          <div class="relative rounded-2xl border border-brand-accent/20 bg-brand-surface/8 p-8 backdrop-blur-sm">
+            <p class="font-display text-7xl font-extrabold text-brand-accent">~60</p>
+            <p class="mt-1 text-sm font-medium text-white/60">Mitglieder teilen</p>
+            <p class="font-display text-7xl font-extrabold text-white">2</p>
+            <p class="mt-1 text-sm font-medium text-white/60">Fahrzeuge in M&ouml;ssingen</p>
+            <!-- Diagonal accent line detail -->
+            <div class="absolute -bottom-2 -right-2 h-16 w-16 overflow-hidden">
+              <div class="h-0.5 w-24 origin-left rotate-45 bg-brand-accent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Section 2: Savings Comparison ========== -->
+    <section class="diagonal-rule bg-brand-surface py-20 sm:py-24">
+      <div class="mx-auto max-w-5xl px-6 sm:px-12">
+        <h2 class="text-center font-display text-3xl font-bold text-brand-ink sm:text-4xl">
+          Was kostet ein Zweitwagen wirklich?
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-brand-ink/70">
+          Vergleichen Sie die laufenden Kosten eines eigenen Autos mit der teilAuto-Mitgliedschaft.
+        </p>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+          <!-- Left card: Eigenes Zweitauto -->
+          <div class="rounded-2xl bg-white p-8 shadow-sm">
+            <h3 class="font-display text-xl font-bold text-brand-ink">Eigenes Zweitauto</h3>
+            <p class="mt-1 text-sm text-brand-ink/60">Typische j&auml;hrliche Kosten</p>
+            <dl class="mt-6 space-y-4">
+              <div class="flex justify-between border-b border-brand-muted pb-3">
+                <dt class="text-brand-ink/70">Versicherung</dt>
+                <dd class="font-semibold text-brand-ink">~600&nbsp;EUR/Jahr</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-muted pb-3">
+                <dt class="text-brand-ink/70">Kfz-Steuer</dt>
+                <dd class="font-semibold text-brand-ink">~100&nbsp;EUR/Jahr</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-muted pb-3">
+                <dt class="text-brand-ink/70">Wartung / T&Uuml;V</dt>
+                <dd class="font-semibold text-brand-ink">~300&nbsp;EUR/Jahr</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-muted pb-3">
+                <dt class="text-brand-ink/70">Stellplatz</dt>
+                <dd class="font-semibold text-brand-ink">variabel</dd>
+              </div>
+              <div class="flex justify-between pt-1">
+                <dt class="font-semibold text-brand-ink">Summe (ohne Kraftstoff)</dt>
+                <dd class="font-display font-bold text-brand-primary">&gt;&nbsp;1.000&nbsp;EUR/Jahr</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Right card: teilAuto Mitglied -->
+          <div class="relative overflow-hidden rounded-2xl border-2 border-brand-accent bg-brand-highlight/30 p-8 shadow-sm">
+            <h3 class="font-display text-xl font-bold text-brand-primary">teilAuto Mitglied</h3>
+            <p class="mt-1 text-sm text-brand-primary/70">Nur zahlen, wenn Sie fahren</p>
+            <dl class="mt-6 space-y-4">
+              <div class="flex justify-between border-b border-brand-accent/20 pb-3">
+                <dt class="text-brand-primary/70">Jahresbeitrag</dt>
+                <dd class="font-semibold text-brand-primary" id="pricing-join-fee">wird geladen&hellip;</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-accent/20 pb-3">
+                <dt class="text-brand-primary/70">Versicherung</dt>
+                <dd class="font-semibold text-brand-accent">inklusive</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-accent/20 pb-3">
+                <dt class="text-brand-primary/70">Kraftstoff</dt>
+                <dd class="font-semibold text-brand-accent">inklusive</dd>
+              </div>
+              <div class="flex justify-between border-b border-brand-accent/20 pb-3">
+                <dt class="text-brand-primary/70">Wartung / T&Uuml;V</dt>
+                <dd class="font-semibold text-brand-accent">inklusive</dd>
+              </div>
+              <div class="flex justify-between pt-1">
+                <dt class="font-semibold text-brand-primary">Stellplatz</dt>
+                <dd class="font-semibold text-brand-accent">inklusive</dd>
+              </div>
+            </dl>
+            <!-- Diagonal accent corner -->
+            <div class="pointer-events-none absolute -right-4 -bottom-4 h-16 w-16 overflow-hidden opacity-50">
+              <div class="h-0.5 w-24 origin-left rotate-45 bg-brand-accent translate-x-4 translate-y-2"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-xs text-brand-ink/50">
+          Alle Vergleichswerte zur Orientierung. Tats&auml;chliche Kosten h&auml;ngen von Fahrzeugtyp und Nutzung ab.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== Section 3: Membership Gate ========== -->
+    <section class="relative bg-brand-muted py-20 sm:py-24">
+      <!-- Diagonal accent divider top -->
+      <div class="absolute inset-x-0 top-0 h-1 overflow-hidden">
+        <div class="h-full w-full bg-gradient-to-r from-transparent via-brand-accent/40 to-transparent -skew-x-3"></div>
+      </div>
+
+      <div class="mx-auto max-w-4xl px-6 text-center sm:px-12">
+        <h2 class="font-display text-3xl font-bold text-brand-ink sm:text-4xl">
+          Mitglied werden: So einfach wie eine Bibliothek
+        </h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-brand-ink/70">
+          teilAuto ist kein Mietwagenservice. Sie werden Mitglied einer Gemeinschaft, die sich Fahrzeuge teilt &mdash; fair, g&uuml;nstig und unkompliziert. Einmal anmelden, dann jederzeit buchen und losfahren.
+        </p>
+        <div class="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-3">
+          <div class="rounded-xl bg-brand-surface p-6 text-center shadow-sm">
+            <p class="font-display text-3xl font-bold text-brand-accent">1&times;</p>
+            <p class="mt-2 font-semibold text-brand-ink">Anmelden</p>
+            <p class="mt-1 text-sm text-brand-ink/60">Kurzes Formular ausf&uuml;llen und Mitglied werden.</p>
+          </div>
+          <div class="rounded-xl bg-brand-surface p-6 text-center shadow-sm">
+            <p class="font-display text-3xl font-bold text-brand-accent">&infin;</p>
+            <p class="mt-2 font-semibold text-brand-ink">Buchen</p>
+            <p class="mt-1 text-sm text-brand-ink/60">Fahrzeug online reservieren &mdash; so oft Sie m&ouml;chten.</p>
+          </div>
+          <div class="rounded-xl bg-brand-surface p-6 text-center shadow-sm">
+            <p class="font-display text-3xl font-bold text-brand-accent">0&nbsp;EUR</p>
+            <p class="mt-2 font-semibold text-brand-ink">Fixkosten</p>
+            <p class="mt-1 text-sm text-brand-ink/60">Keine Versicherung, kein Stellplatz, kein T&Uuml;V &mdash; alles inklusive.</p>
+          </div>
+        </div>
+        <div class="mt-10">
+          <a href="mitglied-werden.html"
+             class="inline-flex items-center rounded-full bg-brand-primary px-8 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-primary/90">
+            Jetzt Mitglied werden &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Section 4: How It Works ========== -->
+    <section class="bg-brand-surface py-20 sm:py-24">
+      <div class="mx-auto max-w-5xl px-6 sm:px-12">
+        <h2 class="text-center font-display text-3xl font-bold text-brand-ink sm:text-4xl">
+          So funktioniert&rsquo;s
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-center text-brand-ink/70">
+          In drei Schritten zum geteilten Auto &mdash; schnell, pers&ouml;nlich, g&uuml;nstig.
+        </p>
+
+        <div class="mt-14 grid gap-10 md:grid-cols-3">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <p class="font-display text-5xl font-extrabold text-brand-accent">1</p>
+            <h3 class="mt-4 font-display text-xl font-bold text-brand-ink">Anmelden</h3>
+            <p class="mt-2 text-brand-ink/70">
+              F&uuml;llen Sie das Mitgliedsformular aus. Nach einer kurzen Einweisung erhalten Sie Ihren Zugang.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="text-center">
+            <p class="font-display text-5xl font-extrabold text-brand-accent">2</p>
+            <h3 class="mt-4 font-display text-xl font-bold text-brand-ink">Buchen</h3>
+            <p class="mt-2 text-brand-ink/70">
+              Reservieren Sie ein Fahrzeug online &mdash; stundenweise oder f&uuml;r mehrere Tage, ganz wie Sie es brauchen.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="text-center">
+            <p class="font-display text-5xl font-extrabold text-brand-accent">3</p>
+            <h3 class="mt-4 font-display text-xl font-bold text-brand-ink">Losfahren</h3>
+            <p class="mt-2 text-brand-ink/70">
+              Auto abholen, Fahrt genie&szlig;en, zur&uuml;ckbringen. Abgerechnet wird nur die tats&auml;chliche Nutzung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Section 5: Fleet Preview ========== -->
+    <section class="relative overflow-hidden bg-brand-primary py-20 sm:py-24">
+      <!-- Diagonal accent lines -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -left-12 top-1/4 h-0.5 w-64 rotate-45 bg-brand-accent/20"></div>
+        <div class="absolute -right-12 bottom-1/3 h-0.5 w-64 -rotate-45 bg-brand-accent/20"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-5xl px-6 sm:px-12">
+        <h2 class="text-center font-display text-3xl font-bold text-white sm:text-4xl">
+          Unsere Fahrzeuge
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-center text-white/70">
+          Aktuell stehen 2 Fahrzeuge in M&ouml;ssingen f&uuml;r Sie bereit. Dank Quernutzung k&ouml;nnen Sie auch Fahrzeuge anderer Carsharing-Stationen in der Region buchen.
+        </p>
+
+        <div class="mt-12 grid gap-8 sm:grid-cols-2">
+          <div class="rounded-2xl border border-brand-accent/20 bg-brand-surface/8 p-8 backdrop-blur-sm">
+            <p class="font-display text-5xl font-extrabold text-brand-accent">2</p>
+            <p class="mt-2 font-semibold text-white">Fahrzeuge in M&ouml;ssingen</p>
+            <p class="mt-2 text-sm text-white/60">Standorte im Ortszentrum &mdash; bequem erreichbar.</p>
+          </div>
+          <div class="rounded-2xl border border-brand-accent/20 bg-brand-surface/8 p-8 backdrop-blur-sm">
+            <p class="font-display text-5xl font-extrabold text-white">+</p>
+            <p class="mt-2 font-semibold text-white">Quernutzung</p>
+            <p class="mt-2 text-sm text-white/60">Zugriff auf Fahrzeuge in T&uuml;bingen, Rottenburg und weiteren Standorten.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="fahrzeuge.html"
+             class="inline-flex items-center rounded-full bg-brand-accent px-8 py-3 text-sm font-semibold text-brand-primary shadow-lg transition hover:brightness-110">
+            Alle Fahrzeuge ansehen &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Section 6: Final CTA ========== -->
+    <section class="bg-brand-accent py-20 sm:py-24">
+      <div class="mx-auto max-w-4xl px-6 text-center sm:px-12">
+        <h2 class="font-display text-3xl font-bold text-brand-primary sm:text-4xl">
+          Bereit f&uuml;r Carsharing?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-brand-primary/80">
+          Sprechen Sie mit uns &mdash; wir beraten Sie pers&ouml;nlich und beantworten alle Fragen rund um die Mitgliedschaft.
+        </p>
+        <div class="mt-8">
+          <a href="tel:+4974739222020"
+             class="font-display text-4xl font-extrabold text-brand-primary underline decoration-brand-primary/30 transition hover:decoration-brand-primary sm:text-5xl">
+            07473-922202
+          </a>
+        </div>
+        <div class="mt-8">
+          <a href="mitglied-werden.html"
+             class="inline-flex items-center rounded-full bg-brand-primary px-10 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-brand-primary/90">
+            Mitglied werden &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="relative bg-brand-primary text-white">
+    <!-- Diagonal accent line above footer -->
+    <div class="absolute inset-x-0 top-0 h-0.5 overflow-hidden">
+      <div class="h-full w-full bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent -skew-x-3"></div>
+    </div>
+
+    <div class="mx-auto max-w-6xl px-6 pb-12 pt-16 sm:px-12">
+      <div class="grid gap-10 sm:grid-cols-3">
+        <!-- Brand -->
+        <div>
+          <p class="font-display text-lg font-bold">teilAuto</p>
+          <p class="mt-2 text-sm text-white/60">
+            Carsharing f&uuml;r M&ouml;ssingen und Umgebung. Gemeinsam mobil, einfach g&uuml;nstig.
+          </p>
+        </div>
+        <!-- Links -->
+        <div>
+          <p class="font-semibold text-white/80">Seiten</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="preise.html" class="text-white/60 transition hover:text-white">Preise</a></li>
+            <li><a href="fahrzeuge.html" class="text-white/60 transition hover:text-white">Fahrzeuge</a></li>
+            <li><a href="geschaeftskunden.html" class="text-white/60 transition hover:text-white">F&uuml;r Firmen</a></li>
+            <li><a href="ueber-uns.html" class="text-white/60 transition hover:text-white">&Uuml;ber uns</a></li>
+            <li><a href="mitglied-werden.html" class="text-white/60 transition hover:text-white">Mitglied werden</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <p class="font-semibold text-white/80">Kontakt</p>
+          <p class="mt-3 text-sm text-white/60">
+            <a href="tel:+4974739222020" class="font-semibold text-white hover:text-brand-accent">07473-922202</a>
+          </p>
+          <p class="mt-1 text-sm text-white/60">M&ouml;ssingen, Baden-W&uuml;rttemberg</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="diagonal-rule mt-12 border-t border-white/10 pt-8">
+        <p class="text-center text-xs text-white/40">
+          &copy; 2025 teilAuto M&ouml;ssingen.
+          <a href="impressum.html" class="underline hover:text-white/70">Impressum</a> &middot;
+          <a href="datenschutz.html" class="underline hover:text-white/70">Datenschutz</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Mobile Bottom Phone Bar ========== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 p-3 lg:hidden">
+    <a href="tel:+4974739222020"
+       class="flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-lg">
+      Jetzt anrufen: 07473-922202
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/nav.js" defer></script>
+</body>
+</html>
