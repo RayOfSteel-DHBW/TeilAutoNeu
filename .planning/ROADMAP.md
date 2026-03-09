@@ -392,7 +392,7 @@ Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
 | 32. Polish Baseline & Review Surface | v1.4 | 1/1 | Complete | 2026-03-09 |
 | 33. Epic Skin A Polish Loop | v1.4 | 1/1 | Complete | 2026-03-09 |
-| 34. Epic Skin B Polish Loop | 1/1 | Complete   | 2026-03-09 | - |
+| 34. Epic Skin B Polish Loop | 1/1 | Complete    | 2026-03-09 | - |
 | 35. Epic Skin C Polish Loop | v1.4 | 0/1 | Not started | - |
 | 36. Comparison Publish & Review Pack | v1.4 | 0/1 | Not started | - |
 
