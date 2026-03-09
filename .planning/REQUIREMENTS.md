@@ -21,8 +21,8 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 - [x] **IMPL-02**: Each design lives on a dedicated git branch (`design/a`, `design/b`, `design/c`)
 - [x] **IMPL-03**: Each design covers all 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz)
 - [x] **IMPL-04**: Each design is production-ready quality (shippable as-is)
-- [ ] **IMPL-05**: Each design refined through Playwright screenshot-evaluate loops
-- [ ] **IMPL-06**: Frontend Design Plugin used for implementation
+- [x] **IMPL-05**: Each design refined through Playwright screenshot-evaluate loops
+- [x] **IMPL-06**: Frontend Design Plugin used for implementation
 
 ### Visual Identity
 
@@ -85,8 +85,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | IMPL-02 | Phases 27, 28, 29 | Complete |
 | IMPL-03 | Phases 27, 28, 29 | Complete |
 | IMPL-04 | Phases 27, 28, 29 | Complete |
-| IMPL-05 | Phases 27, 28, 29 | Pending |
-| IMPL-06 | Phases 27, 28, 29 | Pending |
+| IMPL-05 | Phases 27, 28, 29 | Complete |
+| IMPL-06 | Phases 27, 28, 29 | Complete |
 | VIS-01 | Phases 27, 28, 29 | Complete |
 | VIS-02 | Phases 27, 28, 29 | Complete |
 | VIS-03 | Phases 27, 28, 29 | Complete |
