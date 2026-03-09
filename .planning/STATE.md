@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: completed
-stopped_at: Completed 27-04-PLAN.md
-last_updated: "2026-03-09T08:23:48.239Z"
+stopped_at: Completed 27-02-PLAN.md
+last_updated: "2026-03-09T08:24:46.110Z"
 last_activity: 2026-03-09 -- Completed 28-05 visual audit, all Design B pages production-ready
 progress:
   total_phases: 11
   completed_phases: 3
   total_plans: 22
-  completed_plans: 14
+  completed_plans: 15
   percent: 60
 ---
 
@@ -59,6 +59,8 @@ Key v1.3 context:
 - [Phase 27]: Design A uses HTML entities for German umlauts; hover:no-underline on nav/CTA to override base.css
 - [Phase 28]: All 8 Design B pages passed visual audit with no code changes needed at 375/768/1280px
 - [Phase 27]: No active nav indicator on legal pages (footer-linked only)
+- [Phase 27]: Accepted pricing.js card-like output as one exception to no-cards rule for structured tabular data
+- [Phase 27]: Vehicle specs use definition lists (dl/dt/dd) for editorial consistency instead of table elements
 
 ### Pending Todos
 
@@ -79,7 +81,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:23:48.236Z
-Stopped at: Completed 27-04-PLAN.md
+Last session: 2026-03-09T08:24:46.108Z
+Stopped at: Completed 27-02-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None

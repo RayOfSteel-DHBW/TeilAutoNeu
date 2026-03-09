@@ -257,7 +257,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 23. Design C | v1.2 | 5/5 | Complete | 2026-03-01 |
 | 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
 | 26. Epic Directions | v1.3 | 0/? | Not started | - |
-| 27. Epic Skin A | 2/5 | In Progress|  | - |
+| 27. Epic Skin A | 3/5 | In Progress|  | - |
 | 28. Epic Skin B | 5/5 | Complete   | 2026-03-09 | - |
 | 29. Epic Skin C | v1.3 | 0/? | Not started | - |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
