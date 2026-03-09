@@ -47,7 +47,7 @@ picker for the shared phases rather than the skin-local phases.
   user-approved hold after the iteration cap.
 - [x] **READY-B-01**: Design B reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
-- [ ] **READY-C-01**: Design C reaches review-ready state or an explicit
+- [x] **READY-C-01**: Design C reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
 
 ### Comparison Readiness
@@ -143,7 +143,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LOOP-03 | Phases 32, 33, 34, 35 | Complete |
 | READY-A-01 | Phase 33 | Complete |
 | READY-B-01 | Phase 34 | Complete |
-| READY-C-01 | Phase 35 | Pending |
+| READY-C-01 | Phase 35 | Complete |
 | COMP-01 | Phase 36 | Pending |
 | COMP-02 | Phase 36 | Pending |
 | STRUCT-01 | Phase 26 | Complete |
