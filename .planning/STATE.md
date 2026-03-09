@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: completed
-stopped_at: Completed 27-03-PLAN.md
-last_updated: "2026-03-09T08:27:41.243Z"
-last_activity: 2026-03-09 -- Completed 28-05 visual audit, all Design B pages production-ready
+stopped_at: Completed 27-06-PLAN.md (gap closure)
+last_updated: "2026-03-09T09:44:56.115Z"
+last_activity: 2026-03-09 -- Completed 27-05 visual audit, all Design A pages production-ready
 progress:
   total_phases: 11
   completed_phases: 3
-  total_plans: 22
-  completed_plans: 17
+  total_plans: 27
+  completed_plans: 18
   percent: 77
 ---
 
@@ -65,6 +65,7 @@ Key v1.3 context:
 - [Phase 27]: Membership gate uses editorial prose not callout box to maintain no-card identity
 - [Phase 27]: All 8 Design A pages passed visual audit with no code changes needed at 375/768/1280px
 - [Phase 27]: Structural identity verified: full-bleed hero, editorial rules, left-aligned flow, dark sticky nav, no rounded-full, no cards
+- [Phase 27]: Removed USt-ID section entirely from Design A impressum (matches Design B -- not publicly available)
 
 ### Pending Todos
 
@@ -85,7 +86,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:30:27Z
-Stopped at: Completed 27-05-PLAN.md (Phase 27 complete)
+Last session: 2026-03-09T09:44:47.138Z
+Stopped at: Completed 27-06-PLAN.md (gap closure)
 Next step: /gsd:execute-plan 29-05 or /gsd:plan-phase 26
 Resume file: None
