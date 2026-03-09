@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Epic Skins
 status: completed
-stopped_at: Completed 28-05-PLAN.md
-last_updated: "2026-03-09T08:23:26.756Z"
+stopped_at: Completed 27-04-PLAN.md
+last_updated: "2026-03-09T08:23:48.239Z"
 last_activity: 2026-03-09 -- Completed 28-05 visual audit, all Design B pages production-ready
 progress:
   total_phases: 11
   completed_phases: 3
   total_plans: 22
-  completed_plans: 13
+  completed_plans: 14
   percent: 60
 ---
 
@@ -58,6 +58,7 @@ Key v1.3 context:
 - [Phase 28]: Interior pages use compact dark hero (not asymmetric split which is homepage-exclusive)
 - [Phase 27]: Design A uses HTML entities for German umlauts; hover:no-underline on nav/CTA to override base.css
 - [Phase 28]: All 8 Design B pages passed visual audit with no code changes needed at 375/768/1280px
+- [Phase 27]: No active nav indicator on legal pages (footer-linked only)
 
 ### Pending Todos
 
@@ -78,7 +79,7 @@ Key v1.3 context:
 
 ## Session Continuity
 
-Last session: 2026-03-09T08:23:10.950Z
-Stopped at: Completed 28-05-PLAN.md
+Last session: 2026-03-09T08:23:48.236Z
+Stopped at: Completed 27-04-PLAN.md
 Next step: /gsd:plan-phase 26
 Resume file: None
