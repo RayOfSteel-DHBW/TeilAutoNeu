@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&Uuml;ber uns | teilAuto M&ouml;ssingen</title>
+  <meta name="description" content="Seit 2000 in M&ouml;ssingen: teilAuto ist Carsharing aus der Nachbarschaft. Familiengef&uuml;hrt, pers&ouml;nlich und zuverl&auml;ssig." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-primary: #5B4A3F;
+      --color-brand-accent: #C4704B;
+      --color-brand-surface: #FAF7F4;
+      --color-brand-ink: #2C2420;
+      --color-brand-muted: #E8E0D8;
+      --color-brand-sage: #7A9E8E;
+      --font-sans: "Figtree", system-ui, sans-serif;
+      --font-display: "DM Serif Display", "Georgia", serif;
+    }
+
+    /* Organic blob shapes — Design C visual signature */
+    .c-blob {
+      position: absolute;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      pointer-events: none;
+    }
+    .c-blob--alt {
+      border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
+    }
+
+    /* Accordion styles */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-brand-surface text-brand-ink font-sans antialiased">
+
+  <!-- Skip link -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-brand-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Inhalt springen</a>
+
+  <!-- ============================================================
+       NAVIGATION — Minimal header (NOT sticky, NOT floating pill)
+       ============================================================ -->
+  <header class="relative z-30 bg-brand-surface">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="font-display text-2xl text-brand-primary tracking-tight">
+        teilAuto
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-brand-ink/80" aria-label="Hauptnavigation">
+        <a href="preise.html" class="hover:text-brand-accent transition-colors">Preise</a>
+        <a href="fahrzeuge.html" class="hover:text-brand-accent transition-colors">Fahrzeuge</a>
+        <a href="geschaeftskunden.html" class="hover:text-brand-accent transition-colors">F&uuml;r Firmen</a>
+        <a href="ueber-uns.html" class="hover:text-brand-accent transition-colors text-brand-accent" aria-current="page">&Uuml;ber uns</a>
+        <a href="mitglied-werden.html" class="ml-2 inline-flex items-center rounded-full bg-brand-accent px-5 py-2 text-white font-semibold hover:bg-brand-accent/90 transition-colors">Mitglied werden</a>
+        <a href="tel:+497473922202" class="text-brand-primary font-semibold">07473&#8209;922202</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        type="button"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-brand-primary"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="Navigationsmen&uuml; &ouml;ffnen"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile overlay -->
+    <div id="mobile-nav" class="hidden fixed inset-0 z-40 flex-col items-center justify-center bg-brand-primary text-white" role="dialog" aria-modal="true" aria-label="Navigation">
+      <!-- Decorative blob -->
+      <div class="c-blob bg-white/5 w-64 h-64 top-10 -right-20" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-sage/10 w-48 h-48 bottom-20 -left-10" aria-hidden="true"></div>
+
+      <button type="button" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-lg text-white" aria-label="Men&uuml; schlie&szlig;en">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <nav class="flex flex-col items-center gap-6 text-xl font-medium" aria-label="Mobile Navigation">
+        <a href="index.html" class="hover:text-brand-muted transition-colors">Startseite</a>
+        <a href="preise.html" class="hover:text-brand-muted transition-colors">Preise</a>
+        <a href="fahrzeuge.html" class="hover:text-brand-muted transition-colors">Fahrzeuge</a>
+        <a href="geschaeftskunden.html" class="hover:text-brand-muted transition-colors">F&uuml;r Firmen</a>
+        <a href="ueber-uns.html" class="hover:text-brand-muted transition-colors" aria-current="page">&Uuml;ber uns</a>
+        <a href="mitglied-werden.html" class="mt-4 inline-flex items-center rounded-full bg-brand-accent px-8 py-3 text-white font-semibold text-lg hover:bg-brand-accent/90 transition-colors">Mitglied werden</a>
+        <a href="tel:+497473922202" class="mt-2 text-brand-muted font-semibold">07473&#8209;922202</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         PAGE HEADER — Wir sind teilAuto
+         ============================================================ -->
+    <section class="relative overflow-hidden bg-brand-surface py-16 lg:py-24">
+      <!-- Decorative blobs -->
+      <div class="c-blob bg-brand-sage/8 w-60 h-60 -top-12 -right-16 lg:w-80 lg:h-80" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-accent/6 w-40 h-40 bottom-4 -left-10" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-sage mb-4">&Uuml;ber uns</p>
+        <h1 class="font-display text-4xl lg:text-6xl text-brand-ink leading-tight max-w-2xl">
+          Wir sind teilAuto
+        </h1>
+        <p class="mt-6 text-lg text-brand-ink/70 max-w-xl leading-relaxed">
+          Familiengef&uuml;hrt, pers&ouml;nlich, lokal &mdash; seit &uuml;ber 25 Jahren organisieren wir Mobilit&auml;t in M&ouml;ssingen auf Vertrauensbasis.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STORY — Seit 2000 in Moessingen
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-white">
+      <div class="c-blob bg-brand-sage/6 w-52 h-52 -top-10 -left-12" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-accent/5 w-36 h-36 bottom-12 right-8 hidden lg:block" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink">
+          Seit 2000 in M&ouml;ssingen
+        </h2>
+        <div class="mt-6 max-w-2xl space-y-4 text-lg text-brand-ink/70 leading-relaxed">
+          <p>
+            Aus einer Idee unter Nachbarn wurde ein zuverl&auml;ssiges Carsharing-Netzwerk. Im Jahr 2000 fanden sich einige M&ouml;ssinger Familien zusammen, die sich fragten: Braucht wirklich jeder ein eigenes Auto &mdash; oder k&ouml;nnen wir das besser l&ouml;sen?
+          </p>
+          <p>
+            Die Antwort war teilAuto: Ein familiengef&uuml;hrtes Carsharing, bei dem man sich kennt und vertraut. Kein Konzern, keine App, keine anonyme Plattform &mdash; sondern Nachbarn, die sich gegenseitig Mobilit&auml;t erm&ouml;glichen.
+          </p>
+          <p>
+            Heute sind wir &uuml;ber 60 Mitglieder, die sich zwei Fahrzeuge teilen &mdash; und &uuml;ber das stadtmobil-Netzwerk Zugang zu &uuml;ber 200 weiteren Wagen in ganz Baden-W&uuml;rttemberg haben. Was als kleine Nachbarschaftsidee begann, ist zu einer festen Institution in M&ouml;ssingen geworden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NUMBERS — Key stats with decorative oversized numbers
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-brand-surface">
+      <div class="c-blob bg-brand-accent/6 w-52 h-52 top-8 -right-16" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-sage/8 w-40 h-40 bottom-8 -left-10" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink mb-12">
+          teilAuto in Zahlen
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div class="text-center">
+            <span class="font-display text-6xl lg:text-7xl text-brand-accent/10 block select-none" aria-hidden="true">60+</span>
+            <p class="font-display text-2xl text-brand-primary -mt-4 relative z-10">60+</p>
+            <p class="text-sm text-brand-ink/60 mt-1">Mitglieder</p>
+          </div>
+
+          <div class="text-center">
+            <span class="font-display text-6xl lg:text-7xl text-brand-sage/10 block select-none" aria-hidden="true">2</span>
+            <p class="font-display text-2xl text-brand-primary -mt-4 relative z-10">2</p>
+            <p class="text-sm text-brand-ink/60 mt-1">Fahrzeuge</p>
+          </div>
+
+          <div class="text-center">
+            <span class="font-display text-6xl lg:text-7xl text-brand-accent/10 block select-none" aria-hidden="true">2000</span>
+            <p class="font-display text-2xl text-brand-primary -mt-4 relative z-10">Seit 2000</p>
+            <p class="text-sm text-brand-ink/60 mt-1">in M&ouml;ssingen</p>
+          </div>
+
+          <div class="text-center">
+            <span class="font-display text-6xl lg:text-7xl text-brand-sage/10 block select-none" aria-hidden="true">200+</span>
+            <p class="font-display text-2xl text-brand-primary -mt-4 relative z-10">200+</p>
+            <p class="text-sm text-brand-ink/60 mt-1">Partnerwagen</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ ACCORDION — Haeufige Fragen
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-white">
+      <div class="c-blob bg-brand-muted/30 w-48 h-48 -bottom-12 -left-12" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4">
+        <h2 class="font-display text-3xl lg:text-4xl text-brand-ink">
+          H&auml;ufige Fragen
+        </h2>
+        <p class="mt-4 text-lg text-brand-ink/70 max-w-xl">
+          Die wichtigsten Antworten rund um teilAuto M&ouml;ssingen.
+        </p>
+
+        <div class="mt-10 max-w-2xl space-y-4">
+
+          <!-- FAQ 1 -->
+          <div class="border border-brand-muted rounded-xl overflow-hidden">
+            <button class="accordion-header w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-brand-ink hover:bg-brand-muted/30 transition-colors" aria-expanded="false" aria-controls="faq-1">
+              <span>Wie funktioniert die Buchung?</span>
+              <span class="text-brand-accent text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-1" class="accordion-content px-6 text-brand-ink/70 leading-relaxed">
+              <div class="pb-5">
+                Sie rufen uns einfach an oder schreiben eine kurze Nachricht. Wir stimmen den Zeitraum ab, und Sie k&ouml;nnen das Fahrzeug zum vereinbarten Termin abholen. Es gibt keinen Buchungsautomaten &mdash; bei uns l&auml;uft alles pers&ouml;nlich.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="border border-brand-muted rounded-xl overflow-hidden">
+            <button class="accordion-header w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-brand-ink hover:bg-brand-muted/30 transition-colors" aria-expanded="false" aria-controls="faq-2">
+              <span>Was kostet die Mitgliedschaft?</span>
+              <span class="text-brand-accent text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-2" class="accordion-content px-6 text-brand-ink/70 leading-relaxed">
+              <div class="pb-5">
+                Die Mitgliedschaft kostet einen monatlichen Grundbetrag plus nutzungsabh&auml;ngige Kosten f&uuml;r Zeit und Kilometer. Versicherung, Wartung und T&Uuml;V sind bereits enthalten. Details finden Sie auf unserer <a href="preise.html" class="text-brand-accent font-semibold hover:underline">Preisseite</a>.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="border border-brand-muted rounded-xl overflow-hidden">
+            <button class="accordion-header w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-brand-ink hover:bg-brand-muted/30 transition-colors" aria-expanded="false" aria-controls="faq-3">
+              <span>Wo stehen die Fahrzeuge?</span>
+              <span class="text-brand-accent text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-3" class="accordion-content px-6 text-brand-ink/70 leading-relaxed">
+              <div class="pb-5">
+                Unsere Fahrzeuge haben feste Standorte in M&ouml;ssingen. Sie wissen immer genau, wo Ihr Auto steht &mdash; kein Suchen, kein Stress. Die genauen Standorte zeigen wir Ihnen auf unserer <a href="fahrzeuge.html" class="text-brand-accent font-semibold hover:underline">Fahrzeugseite</a>.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="border border-brand-muted rounded-xl overflow-hidden">
+            <button class="accordion-header w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-brand-ink hover:bg-brand-muted/30 transition-colors" aria-expanded="false" aria-controls="faq-4">
+              <span>Kann ich auch au&szlig;erhalb M&ouml;ssingens fahren?</span>
+              <span class="text-brand-accent text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-4" class="accordion-content px-6 text-brand-ink/70 leading-relaxed">
+              <div class="pb-5">
+                Ja! &Uuml;ber die Quernutzung im stadtmobil-Netzwerk haben Sie Zugang zu &uuml;ber 200 Fahrzeugen in T&uuml;bingen, Reutlingen, Stuttgart und vielen weiteren Standorten in Baden-W&uuml;rttemberg. Ihre teilAuto-Mitgliedschaft gilt &uuml;berall im Netzwerk.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="border border-brand-muted rounded-xl overflow-hidden">
+            <button class="accordion-header w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-brand-ink hover:bg-brand-muted/30 transition-colors" aria-expanded="false" aria-controls="faq-5">
+              <span>Was passiert bei einer Panne?</span>
+              <span class="text-brand-accent text-xl flex-shrink-0 ml-4" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-5" class="accordion-content px-6 text-brand-ink/70 leading-relaxed">
+              <div class="pb-5">
+                Rufen Sie uns einfach an &mdash; wir k&uuml;mmern uns. Pannen und Unf&auml;lle sind &uuml;ber die Vollkaskoversicherung abgedeckt. In dringenden F&auml;llen erreichen Sie uns auch au&szlig;erhalb der &uuml;blichen Zeiten. Sie sind nie auf sich allein gestellt.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA — Lernen Sie uns persoenlich kennen
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-brand-primary text-white">
+      <div class="c-blob bg-white/5 w-72 h-72 -top-20 -right-20" aria-hidden="true"></div>
+      <div class="c-blob c-blob--alt bg-brand-sage/10 w-48 h-48 bottom-8 -left-12" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto max-w-6xl px-4 text-center">
+        <h2 class="font-display text-3xl lg:text-5xl">
+          Lernen Sie uns pers&ouml;nlich kennen
+        </h2>
+        <p class="mt-4 text-lg text-white/70 max-w-lg mx-auto leading-relaxed">
+          Wir sind echte Menschen, keine Hotline. Rufen Sie an und erfahren Sie, wie einfach Carsharing in M&ouml;ssingen funktioniert.
+        </p>
+
+        <div class="mt-8">
+          <a href="tel:+497473922202" class="inline-flex items-center gap-2 rounded-full bg-white text-brand-primary px-8 py-4 text-xl font-semibold hover:bg-brand-surface transition-colors shadow-lg">
+            <span aria-hidden="true">&#9742;</span> 07473&#8209;922202
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="relative overflow-hidden bg-brand-primary text-white/80 border-t border-white/10">
+    <div class="c-blob bg-white/3 w-56 h-56 -bottom-16 -right-16" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Brand -->
+        <div>
+          <p class="font-display text-xl text-white">teilAuto</p>
+          <p class="mt-2 text-sm text-white/60 leading-relaxed">
+            Carsharing von Nachbarn f&uuml;r Nachbarn.<br />
+            Seit 2000 in M&ouml;ssingen.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <p class="font-semibold text-white text-sm uppercase tracking-wider mb-3">Seiten</p>
+          <nav class="flex flex-col gap-2 text-sm" aria-label="Footer-Navigation">
+            <a href="index.html" class="hover:text-white transition-colors">Startseite</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
+            <a href="fahrzeuge.html" class="hover:text-white transition-colors">Fahrzeuge</a>
+            <a href="geschaeftskunden.html" class="hover:text-white transition-colors">F&uuml;r Firmen</a>
+            <a href="ueber-uns.html" class="hover:text-white transition-colors">&Uuml;ber uns</a>
+            <a href="mitglied-werden.html" class="hover:text-white transition-colors">Mitglied werden</a>
+          </nav>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="font-semibold text-white text-sm uppercase tracking-wider mb-3">Kontakt</p>
+          <p class="text-sm">
+            <a href="tel:+497473922202" class="text-white font-semibold hover:text-brand-accent transition-colors">07473&#8209;922202</a>
+          </p>
+          <div class="mt-4 flex gap-4 text-sm">
+            <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-white/10 text-center text-xs text-white/40">
+        <p>&copy; 2025 teilAuto M&ouml;ssingen. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile fixed bottom phone bar -->
+  <div class="fixed bottom-4 left-4 right-4 z-40 lg:hidden">
+    <a href="tel:+497473922202" class="flex items-center justify-center gap-2 rounded-full bg-brand-accent text-white py-3 font-semibold shadow-lg shadow-brand-accent/30 hover:bg-brand-accent/90 transition-colors">
+      <span aria-hidden="true">&#9742;</span> 07473&#8209;922202 anrufen
+    </a>
+  </div>
+  <!-- Spacer to prevent footer content overlap with fixed bottom bar -->
+  <div class="pb-20 lg:pb-0"></div>
+
+  <!-- Scripts -->
+  <script src="js/nav.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+
+</body>
+</html>
