@@ -1,0 +1,89 @@
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.6;
+    background-color: #faf8f5;
+    color: #2d2d3a;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Playfair Display", "Georgia", serif;
+    letter-spacing: -0.02em;
+    color: #2d2d3a;
+  }
+
+  h1 { font-size: clamp(2rem, calc(1.5rem + 2vw), 3.5rem); line-height: 1.1; }
+  h2 { font-size: clamp(1.5rem, calc(1.25rem + 1.25vw), 2.25rem); line-height: 1.2; }
+  h3 { font-size: clamp(1.125rem, calc(1rem + 0.625vw), 1.5rem); line-height: 1.3; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  a { color: #c2703e; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  :focus-visible {
+    outline: 2px solid #c2703e;
+    outline-offset: 2px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+/* Fleet map styles -- adapted for Design A colors */
+.fleet-map {
+  width: 100%;
+  height: 420px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e8e4de;
+}
+
+@media (min-width: 640px) { .fleet-map { height: 480px; } }
+@media (min-width: 1024px) { .fleet-map { height: 520px; } }
+
+.fleet-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 2px solid #c2703e;
+  background: #faf8f5;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.fleet-marker::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #c2703e;
+}
+
+.fleet-marker--planned {
+  background: #faf8f5;
+  border-style: dashed;
+}
+
+.fleet-marker--planned::before {
+  background: transparent;
+  border: 2px solid #c2703e;
+}
+
+.fleet-popup { display: flex; gap: 12px; align-items: flex-start; max-width: 280px; }
+.fleet-popup__icon { width: 44px; height: 44px; flex: 0 0 auto; }
+.fleet-popup__title { font-weight: 700; }
+.fleet-popup__location { margin-top: 2px; font-size: 0.8rem; opacity: 0.7; }
+.fleet-popup__features { margin-top: 6px; padding-left: 0; list-style: none; font-size: 0.8rem; opacity: 0.75; }
+.fleet-popup__features li + li { margin-top: 2px; }
+.maplibregl-popup-content { border-radius: 8px; font-family: inherit; }
+.maplibregl-ctrl-attrib { font-size: 11px; line-height: 1.3; }
