@@ -65,7 +65,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 **Milestone Goal:** Produce 3 structurally distinct ("epic skin") design explorations — each with a different page skeleton, hero composition, nav pattern, content flow, and visual signature — review them with the user, then synthesize feedback into Design D (Claude's autonomous vision).
 
 - [ ] **Phase 26: Epic Directions** — Write 3 structurally distinct design direction specifications before any code is written
-- [x] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A (completed 2026-03-09)
+- [ ] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A (completed 2026-03-09)
 - [x] **Phase 28: Epic Skin B** — Complete 8-page site in `site/epic/b/` per Epic Direction B (parallel to 27) (completed 2026-03-09)
 - [ ] **Phase 29: Epic Skin C** — Complete 8-page site in `site/epic/c/` per Epic Direction C (parallel to 27-28)
 - [ ] **Phase 30: Epic Review** — User reviews all 3 epic skins; structured feedback captured for Design D
@@ -176,12 +176,14 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Copy emphasis and ordering differ from Designs B and C — same facts, different storytelling arc
   7. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks or overflow across all 8 pages
   8. Navigation pattern is functional and accessible on all breakpoints
-**Plans**: 5 plans
-- [ ] 27-01-PLAN.md -- Foundation (theme, base CSS, JS copies) + Homepage with full-bleed immersive hero
-- [ ] 27-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
-- [ ] 27-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
-- [ ] 27-04-PLAN.md -- Impressum + Datenschutz legal pages
-- [ ] 27-05-PLAN.md -- Playwright visual audit + fixes
+**Plans**: 7 plans
+- [x] 27-01-PLAN.md -- Foundation (theme, base CSS, JS copies) + Homepage with full-bleed immersive hero
+- [x] 27-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
+- [x] 27-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
+- [x] 27-04-PLAN.md -- Impressum + Datenschutz legal pages
+- [x] 27-05-PLAN.md -- Playwright visual audit + fixes
+- [ ] 27-06-PLAN.md -- (gap closure) Fix impressum.html TODO placeholders
+- [ ] 27-07-PLAN.md -- (gap closure) Puppeteer visual audit + JS runtime verification
 
 ### Phase 28: Epic Skin B
 **Goal**: A complete 8-page site in `site/epic/b/` built per Epic Direction B — with its own structurally distinct page skeleton, hero composition, nav pattern, content flow, and visual signature. Refined through Playwright screenshot loops.
@@ -257,7 +259,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 23. Design C | v1.2 | 5/5 | Complete | 2026-03-01 |
 | 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
 | 26. Epic Directions | v1.3 | 0/? | Not started | - |
-| 27. Epic Skin A | 5/5 | Complete   | 2026-03-09 | - |
+| 27. Epic Skin A | v1.3 | 5/7 | Gap closure | - |
 | 28. Epic Skin B | 5/5 | Complete    | 2026-03-09 | - |
 | 29. Epic Skin C | v1.3 | 0/? | Not started | - |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
