@@ -65,7 +65,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 **Milestone Goal:** Produce 3 structurally distinct ("epic skin") design explorations — each with a different page skeleton, hero composition, nav pattern, content flow, and visual signature — review them with the user, then synthesize feedback into Design D (Claude's autonomous vision).
 
 - [ ] **Phase 26: Epic Directions** — Write 3 structurally distinct design direction specifications before any code is written
-- [ ] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A
+- [x] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A (completed 2026-03-09)
 - [x] **Phase 28: Epic Skin B** — Complete 8-page site in `site/epic/b/` per Epic Direction B (parallel to 27) (completed 2026-03-09)
 - [ ] **Phase 29: Epic Skin C** — Complete 8-page site in `site/epic/c/` per Epic Direction C (parallel to 27-28)
 - [ ] **Phase 30: Epic Review** — User reviews all 3 epic skins; structured feedback captured for Design D
@@ -257,7 +257,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 23. Design C | v1.2 | 5/5 | Complete | 2026-03-01 |
 | 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
 | 26. Epic Directions | v1.3 | 0/? | Not started | - |
-| 27. Epic Skin A | 4/5 | In Progress|  | - |
+| 27. Epic Skin A | 5/5 | Complete   | 2026-03-09 | - |
 | 28. Epic Skin B | 5/5 | Complete    | 2026-03-09 | - |
 | 29. Epic Skin C | v1.3 | 0/? | Not started | - |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
