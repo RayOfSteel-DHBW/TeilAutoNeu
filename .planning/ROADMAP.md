@@ -267,7 +267,7 @@ page/version picker handled separately from skin-specific review/fix work.
 that uses Playwright, screenshots, browser verification, or browser state must
 run serially and must not be grouped into the same browser wave.
 
-- [ ] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping,
+- [x] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping, (completed 2026-03-09)
   inventory checks, active-doc alignment, and locked comparison-surface
   contract
 - [ ] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements
@@ -390,7 +390,7 @@ Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 | 29. Epic Skin C | v1.3 | 5/5 | Complete | 2026-03-09 |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
-| 32. Polish Baseline & Review Surface | v1.4 | 0/1 | Not started | - |
+| 32. Polish Baseline & Review Surface | v1.4 | 1/1 | Complete | 2026-03-09 |
 | 33. Epic Skin A Polish Loop | v1.4 | 0/1 | Not started | - |
 | 34. Epic Skin B Polish Loop | v1.4 | 0/1 | Not started | - |
 | 35. Epic Skin C Polish Loop | v1.4 | 0/1 | Not started | - |

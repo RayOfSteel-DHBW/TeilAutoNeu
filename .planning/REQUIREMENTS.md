@@ -12,11 +12,11 @@ picker for the shared phases rather than the skin-local phases.
 
 ### Baseline
 
-- [ ] **BASE-01**: Shared planning artifacts and review paths match repo
+- [x] **BASE-01**: Shared planning artifacts and review paths match repo
   reality before skin-specific polish begins.
-- [ ] **BASE-02**: A, B, and C directory inventories are documented so missing
+- [x] **BASE-02**: A, B, and C directory inventories are documented so missing
   or incomplete versions are caught before a polish phase starts.
-- [ ] **BASE-03**: Comparison and publish expectations are documented before
+- [x] **BASE-03**: Comparison and publish expectations are documented before
   skin-specific loops begin, including the shared start page/version picker
   model.
 
@@ -28,7 +28,7 @@ picker for the shared phases rather than the skin-local phases.
   location, and issue description before fixes start.
 - [ ] **AUDIT-03**: Each audit checks both visual quality and adherence to
   `.planning/milestones/v1.0-REQUIREMENTS.md`.
-- [ ] **AUDIT-04**: Browser-driven audit work is executed sequentially because
+- [x] **AUDIT-04**: Browser-driven audit work is executed sequentially because
   all polish phases share one local browser resource.
 
 ### Loop Control
@@ -37,7 +37,7 @@ picker for the shared phases rather than the skin-local phases.
   clean pass finds no further obvious issues.
 - [ ] **LOOP-02**: Each skin stops after 5 iterations if issues remain and then
   waits for explicit user approval before another loop block.
-- [ ] **LOOP-03**: Shared repo or planning problems found during a skin phase
+- [x] **LOOP-03**: Shared repo or planning problems found during a skin phase
   are reported as blockers instead of being silently absorbed into skin-specific
   work.
 
@@ -131,16 +131,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BASE-01 | Phase 32 | Pending |
-| BASE-02 | Phase 32 | Pending |
-| BASE-03 | Phase 32 | Pending |
+| BASE-01 | Phase 32 | Complete |
+| BASE-02 | Phase 32 | Complete |
+| BASE-03 | Phase 32 | Complete |
 | AUDIT-01 | Phases 33, 34, 35 | Pending |
 | AUDIT-02 | Phases 33, 34, 35 | Pending |
 | AUDIT-03 | Phases 33, 34, 35 | Pending |
-| AUDIT-04 | Phase 32 | Pending |
+| AUDIT-04 | Phase 32 | Complete |
 | LOOP-01 | Phases 33, 34, 35 | Pending |
 | LOOP-02 | Phases 33, 34, 35 | Pending |
-| LOOP-03 | Phases 32, 33, 34, 35 | Pending |
+| LOOP-03 | Phases 32, 33, 34, 35 | Complete |
 | READY-A-01 | Phase 33 | Pending |
 | READY-B-01 | Phase 34 | Pending |
 | READY-C-01 | Phase 35 | Pending |

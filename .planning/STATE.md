@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Epic Skin Polish
 status: in-progress
-stopped_at: Ready to plan Phase 32 (Polish Baseline & Review Surface)
-last_updated: "2026-03-09T13:05:00Z"
-last_activity: 2026-03-09 -- Promoted the prepared v1.4 polish milestone into the active planning docs and aligned Phases 32-36 for serial execution
+stopped_at: Phase 32 complete; ready to execute Phase 33
+last_updated: "2026-03-09T15:57:07.319Z"
+last_activity: 2026-03-09 -- Completed Phase 32 baseline alignment, inventory, and shared comparison contract; ready for Design A polish
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 5
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 20
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-09)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.4 Epic Skin Polish -- Phase 32: Polish Baseline & Review Surface
+**Current focus:** v1.4 Epic Skin Polish -- Phase 33: Epic Skin A Polish Loop
 
 ## Current Position
 
-Phase: 32 of v1.4 (Polish Baseline & Review Surface)
+Phase: 33 of v1.4 (Epic Skin A Polish Loop)
 Plan: Not started
-Status: A, B, and C implementations are complete; next work is shared baseline alignment and the serial polish chain for Phases 32-36
-Last activity: 2026-03-09 -- Current milestone switched from prepared v1.4 docs to active v1.4 planning
+Status: Phase 32 complete; next work is the serial browser-driven Design A polish loop
+Last activity: 2026-03-09 -- Phase 32 verified and closed; Design A is next in the serial polish chain
 
-Progress: v1.4 [░░░░░░░░░░] 0%
+Progress: v1.4 [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
@@ -54,6 +54,9 @@ Key current context:
 - Comparison stays on one branch: `site/epic/{a,b,c}/` are the implementations, and a shared start page/version picker is the intended human entry point.
 - The active forward path is Phase 32 -> 33 -> 34 -> 35 -> 36. Do not route back to Phase 30 during this milestone.
 - If structured review-capture is still needed after Phase 36, propose a new forward phase number instead of reopening v1.3 placeholders.
+- [Phase 32]: Active planning docs now treat v1.4 as the current milestone and define serial browser execution for Phases 33-36.
+- [Phase 32]: A/B/C inventory captured in `.planning/phases/32-polish-baseline-review-surface/32-INVENTORY.md`.
+- [Phase 32]: Shared comparison-surface ownership locked to Phases 32 and 36 in `.planning/phases/32-polish-baseline-review-surface/32-REVIEW-SURFACE.md`.
 - [Phase 28]: Custom nav.js for floating pill pattern (not adapted from public nav.js)
 - [Phase 28]: Legal pages use full-width max-w-3xl layout with hyphens:auto for German compound words
 - [Phase 28]: Compact centered hero for subpages, asymmetric split reserved for homepage
@@ -93,12 +96,11 @@ Key current context:
 
 - Shared start page/version picker work belongs to shared review phases, not skin-specific implementation or polish phases.
 - Browser-driven audit work is a shared-resource bottleneck in this repo.
-- Phase 32 must align active docs before the polish loop begins so GSD routing is unambiguous.
 - Phase 35 must confirm all 8 Design C pages still exist before starting the loop.
 
 ## Session Continuity
 
-Last session: 2026-03-09T13:05:00Z
-Stopped at: Promoted v1.4 to active status; ready for Phase 32 planning
-Next step: /gsd:plan-phase 32 --auto
+Last session: 2026-03-09T15:57:07.319Z
+Stopped at: Phase 32 complete; ready to execute Phase 33
+Next step: /gsd:execute-phase 33 --auto
 Resume file: None
