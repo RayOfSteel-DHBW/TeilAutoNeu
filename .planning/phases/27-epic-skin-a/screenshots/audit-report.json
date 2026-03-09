@@ -1,0 +1,54 @@
+{
+  "screenshots": 24,
+  "issues": [
+    {
+      "page": "index.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "preise.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "fahrzeuge.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "geschaeftskunden.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "ueber-uns.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "mitglied-werden.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "impressum.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    },
+    {
+      "page": "datenschutz.html",
+      "breakpoint": "tablet",
+      "width": 768,
+      "issue": "Hamburger menu status: hidden"
+    }
+  ],
+  "consoleErrors": []
+}
