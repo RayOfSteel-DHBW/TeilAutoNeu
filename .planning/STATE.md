@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.3
-milestone_name: Epic Skins
+milestone: v1.4
+milestone_name: Epic Skin Polish
 status: in-progress
-stopped_at: Completed Phase 29 (Epic Skin C); ready to plan Phase 30 (Epic Review)
-last_updated: "2026-03-09T12:14:53Z"
-last_activity: 2026-03-09 -- Completed Phase 29 Epic Skin C closeout; verification passed after fixing broken Fuer Firmen links
+stopped_at: Ready to plan Phase 32 (Polish Baseline & Review Surface)
+last_updated: "2026-03-09T13:05:00Z"
+last_activity: 2026-03-09 -- Promoted the prepared v1.4 polish milestone into the active planning docs and aligned Phases 32-36 for serial execution
 progress:
-  total_phases: 11
-  completed_phases: 6
-  total_plans: 37
-  completed_plans: 34
-  percent: 92
+  total_phases: 5
+  completed_phases: 0
+  total_plans: 5
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-09)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.3 Epic Skins -- Phase 30: Epic Review (ready to plan)
+**Current focus:** v1.4 Epic Skin Polish -- Phase 32: Polish Baseline & Review Surface
 
 ## Current Position
 
-Phase: 30 of v1.3 (Epic Review) -- after Epic Skins A, B, and C
+Phase: 32 of v1.4 (Polish Baseline & Review Surface)
 Plan: Not started
-Status: Phase 27 complete, Phase 28 complete, Phase 29 complete; ready to plan shared review surface and feedback capture
-Last activity: 2026-03-09 -- Completed Phase 29 verification and closeout; Design C passed Playwright audit after broken-link fix
+Status: A, B, and C implementations are complete; next work is shared baseline alignment and the serial polish chain for Phases 32-36
+Last activity: 2026-03-09 -- Current milestone switched from prepared v1.4 docs to active v1.4 planning
 
-Progress: v1.3 [█████████░] 92%
+Progress: v1.4 [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -46,13 +46,14 @@ Progress: v1.3 [█████████░] 92%
 
 All v1.0, v1.1, v1.2 decisions logged in PROJECT.md Key Decisions table with outcomes.
 
-Key v1.3 context:
+Key current context:
 - v1.2 verdict: all 3 designs are chromas — same skeleton, different paint. Structural distinctness insufficient.
 - Root cause: Phase 20 directions specified colors/fonts/containers but never varied the page skeleton.
 - v1.3 fix: Phase 26 specs must include "Structural Signature" — section ordering, hero type, nav pattern, visual signature, copy strategy.
 - Phases 27, 28, 29 depend ONLY on Phase 26. Their source directories are isolated, but browser-driven audit work must serialize when agents share one local browser session.
 - Comparison stays on one branch: `site/epic/{a,b,c}/` are the implementations, and a shared start page/version picker is the intended human entry point.
-- Phase 31 (Design D) is the intended winner — synthesis of review feedback, not a fourth exploration.
+- The active forward path is Phase 32 -> 33 -> 34 -> 35 -> 36. Do not route back to Phase 30 during this milestone.
+- If structured review-capture is still needed after Phase 36, propose a new forward phase number instead of reopening v1.3 placeholders.
 - [Phase 28]: Custom nav.js for floating pill pattern (not adapted from public nav.js)
 - [Phase 28]: Legal pages use full-width max-w-3xl layout with hyphens:auto for German compound words
 - [Phase 28]: Compact centered hero for subpages, asymmetric split reserved for homepage
@@ -90,14 +91,14 @@ Key v1.3 context:
 
 ### Blockers/Concerns
 
-- Current local epic-skin audit server in this session is `http://127.0.0.1:5501/site/epic/{a,b,c}/`.
 - Shared start page/version picker work belongs to shared review phases, not skin-specific implementation or polish phases.
-- Design phases (27, 28, 29, 31) require Frontend Design Plugin skill.
-- Phase 26 is specification-only (no code). Plan-phase should produce a directions document, not HTML.
+- Browser-driven audit work is a shared-resource bottleneck in this repo.
+- Phase 32 must align active docs before the polish loop begins so GSD routing is unambiguous.
+- Phase 35 must confirm all 8 Design C pages still exist before starting the loop.
 
 ## Session Continuity
 
-Last session: 2026-03-09T12:14:53Z
-Stopped at: Completed Phase 29 verification and closeout artifacts
-Next step: /gsd:plan-phase 30
+Last session: 2026-03-09T13:05:00Z
+Stopped at: Promoted v1.4 to active status; ready for Phase 32 planning
+Next step: /gsd:plan-phase 32 --auto
 Resume file: None

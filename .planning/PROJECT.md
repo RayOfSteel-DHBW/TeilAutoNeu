@@ -69,7 +69,7 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 - [ ] Shared start page/version picker for A/B/C comparison on the same branch
 - [ ] Epic review captures per-design feedback for synthesis
 - [ ] Design D in `site/epic/d/`: Claude's autonomous synthesis of best elements from A/B/C review
-- [ ] Prepared follow-up milestone: `v1.4 Epic Skin Polish` (sequential shared-browser polish loops)
+- [x] Active follow-up milestone: `v1.4 Epic Skin Polish` (sequential shared-browser polish loops)
 
 ### Out of Scope
 
@@ -147,7 +147,28 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-## Current Milestone: v1.3 Epic Skins
+## Current Milestone: v1.4 Epic Skin Polish
+
+**Goal:** Polish Designs A, B, and C through bounded visual + requirements
+iteration loops after v1.3 implementation, while preserving the one-branch
+start-page/version-picker comparison model.
+
+**Execution constraint:** Sequential only. Browser-driven audit work shares one
+local browser resource, so Phases 33, 34, 35, and browser verification in
+Phase 36 must not overlap.
+
+**Target features:**
+- Phase 32: active-doc alignment, A/B/C inventory, and locked shared
+  comparison-surface contract
+- Phase 33: Design A review -> TODO -> batch fix -> verify loop
+- Phase 34: Design B review -> TODO -> batch fix -> verify loop
+- Phase 35: Design C review -> TODO -> batch fix -> verify loop
+- Phase 36: shared start page/version picker plus owner-facing comparison
+  instructions
+- If structured review-capture is still needed after Phase 36, create a new
+  forward phase number instead of routing back to Phase 30
+
+## Previous Milestone: v1.3 Epic Skins
 
 **Goal:** Produce 3 structurally distinct ("epic skin") design explorations, review them with the user, then synthesize feedback into Design D (Claude's autonomous vision).
 
@@ -161,33 +182,23 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 **Epic skin standard:** Must feel like a different product (not a chroma/recolor). Different section ordering, hero composition, nav pattern, information density, visual signature element.
 
-## Prepared Next Milestone: v1.4 Epic Skin Polish
-
-**Goal:** Polish Designs A, B, and C through bounded visual + requirements
-iteration loops after v1.3 implementation is complete, while preserving the
-one-branch start-page/version-picker review model.
-
-**Execution constraint:** Sequential only. All browser-driven audit work shares
-one local browser session, so A/B/C polish cannot run in parallel.
-
-**Prepared docs:**
-- `.planning/v1.4-MILESTONE-BRIEF.md`
-- `.planning/v1.4-REQUIREMENTS-DRAFT.md`
-- `.planning/v1.4-ROADMAP-DRAFT.md`
-- `.planning/v1.4-EXECUTION-PROMPTS.md`
-
 ## Current State
 
 v1.2 shipped. Three chromas produced — same skeleton, different paint. Phase 24 review verdict: structural distinctness insufficient. v1.3 focuses on true structural differentiation.
 
-Epic Skins A, B, and C are now implemented and Design C has passed closeout verification. Remaining v1.3 work is the shared review surface/version picker in Phase 30 and the synthesis phase that follows.
+Epic Skins A, B, and C are implemented and verified as the baseline for the
+polish milestone. Current execution should start at Phase 32, not return to
+Phase 30, because the prepared polish work is now the active path forward.
 
-Shared housekeeping drift has now been separated from the future skin-specific
-polish loops so the next milestone can focus on iterative improvement work
-instead of repo archaeology, with the shared comparison surface handled in the
-shared phases rather than by the skin agents.
+The shared comparison surface remains part of the one-branch model, but shared
+ownership has been split across Phase 32 and Phase 36 so Phases 33-35 can stay
+inside their own skin directories.
+
+Phase 30 and Phase 31 remain historical v1.3 placeholders. If a structured
+review-capture or synthesis follow-up is still needed after Phase 36, it should
+be added as a new forward phase number rather than reopening those placeholders.
 
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-09 after Phase 29 closeout, Design C verification, and v1.4 polish prep_
+_Last updated: 2026-03-09 after promoting v1.4 polish to the active milestone and preparing serial phases 32-36_

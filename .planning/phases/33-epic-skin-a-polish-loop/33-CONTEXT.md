@@ -26,8 +26,8 @@
 
 - This is sequential shared-browser work. Do not parallelize with Phases 34 or 35.
 - Do not start if any other browser-driven phase is active.
-- Do not progress into Phase 34 or any later phase in auto-advance mode from this phase.
-- Treat the current `.planning/STATE.md` note (`Phase 29` in progress) as a warning that auto-start is unsafe until preflight confirms the browser is free.
+- If the phase finishes clean and no blocker remains, mark it ready for Phase 34.
+- Stop only on a hard blocker, missing implementation, or the 5-iteration cap with unresolved non-nitpick issues.
 
 ### Scope Guardrails
 
@@ -75,8 +75,8 @@
 
 ## Current Planning Caveats
 
-- `.planning/ROADMAP.md` lists Phase 33 in the v1.4 summary but does not yet contain a detailed `### Phase 33:` section, so the GSD roadmap parser cannot validate or auto-route this phase reliably.
-- `.planning/STATE.md` still marks Phase 29 as in progress, so Phase 33 may be planned now but must not assume it can start executing immediately.
+- Active planning docs now treat v1.4 as the current milestone; use them as the canonical execution contract.
+- This phase must preserve the one-branch comparison model and must not absorb shared picker work from Phases 32 or 36.
 
 </specifics>
 
