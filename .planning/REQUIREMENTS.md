@@ -22,20 +22,20 @@ picker for the shared phases rather than the skin-local phases.
 
 ### Audit Loop
 
-- [ ] **AUDIT-01**: Each skin is visually reviewed across all 8 pages at
+- [x] **AUDIT-01**: Each skin is visually reviewed across all 8 pages at
   `375px`, `768px`, and `1280px`.
-- [ ] **AUDIT-02**: Each audit pass produces a written TODO list with page,
+- [x] **AUDIT-02**: Each audit pass produces a written TODO list with page,
   location, and issue description before fixes start.
-- [ ] **AUDIT-03**: Each audit checks both visual quality and adherence to
+- [x] **AUDIT-03**: Each audit checks both visual quality and adherence to
   `.planning/milestones/v1.0-REQUIREMENTS.md`.
 - [x] **AUDIT-04**: Browser-driven audit work is executed sequentially because
   all polish phases share one local browser resource.
 
 ### Loop Control
 
-- [ ] **LOOP-01**: Each skin repeats `review -> TODO -> fix -> verify` until a
+- [x] **LOOP-01**: Each skin repeats `review -> TODO -> fix -> verify` until a
   clean pass finds no further obvious issues.
-- [ ] **LOOP-02**: Each skin stops after 5 iterations if issues remain and then
+- [x] **LOOP-02**: Each skin stops after 5 iterations if issues remain and then
   waits for explicit user approval before another loop block.
 - [x] **LOOP-03**: Shared repo or planning problems found during a skin phase
   are reported as blockers instead of being silently absorbed into skin-specific
@@ -45,7 +45,7 @@ picker for the shared phases rather than the skin-local phases.
 
 - [x] **READY-A-01**: Design A reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
-- [ ] **READY-B-01**: Design B reaches review-ready state or an explicit
+- [x] **READY-B-01**: Design B reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
 - [ ] **READY-C-01**: Design C reaches review-ready state or an explicit
   user-approved hold after the iteration cap.
@@ -134,15 +134,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BASE-01 | Phase 32 | Complete |
 | BASE-02 | Phase 32 | Complete |
 | BASE-03 | Phase 32 | Complete |
-| AUDIT-01 | Phases 33, 34, 35 | Pending |
-| AUDIT-02 | Phases 33, 34, 35 | Pending |
-| AUDIT-03 | Phases 33, 34, 35 | Pending |
+| AUDIT-01 | Phases 33, 34, 35 | Complete |
+| AUDIT-02 | Phases 33, 34, 35 | Complete |
+| AUDIT-03 | Phases 33, 34, 35 | Complete |
 | AUDIT-04 | Phase 32 | Complete |
-| LOOP-01 | Phases 33, 34, 35 | Pending |
-| LOOP-02 | Phases 33, 34, 35 | Pending |
+| LOOP-01 | Phases 33, 34, 35 | Complete |
+| LOOP-02 | Phases 33, 34, 35 | Complete |
 | LOOP-03 | Phases 32, 33, 34, 35 | Complete |
 | READY-A-01 | Phase 33 | Complete |
-| READY-B-01 | Phase 34 | Pending |
+| READY-B-01 | Phase 34 | Complete |
 | READY-C-01 | Phase 35 | Pending |
 | COMP-01 | Phase 36 | Pending |
 | COMP-02 | Phase 36 | Pending |
