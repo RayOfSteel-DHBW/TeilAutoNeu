@@ -6,6 +6,7 @@
 - ✅ **v1.1 Visual Fixes** — Phases 12-19 (shipped 2026-02-27)
 - ✅ **v1.2 ClaudesDesigns** — Phases 20-24 (shipped 2026-03-08, verdict: chromas)
 - 🚧 **v1.3 Epic Skins** — Phases 26-31 (in progress)
+- ⏭️ **v1.4 Epic Skin Polish** — Phases 32-36 (prepared; sequential shared-browser execution)
 
 ## Phases
 
@@ -51,9 +52,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 **Outcome:** Three chromas produced and reviewed. Verdict: structural distinctness insufficient — designs differed in color/font/containers but shared identical page skeletons. Learning fed into v1.3 "Epic Skins" milestone.
 
 - [x] **Phase 20: Research** — Study student branches and old content docs; document 3 design direction rationales (completed 2026-02-27)
-- [x] **Phase 21: Design A** — Implement complete 8-page site in `site/epic/a/`, refined to production quality (completed 2026-02-28)
-- [x] **Phase 22: Design B** — Implement complete 8-page site in `site/epic/b/`, refined to production quality (completed 2026-02-28)
-- [x] **Phase 23: Design C** — Implement complete 8-page site in `site/epic/c/`, refined to production quality (completed 2026-03-01)
+- [x] **Phase 21: Design A** — Implement complete 8-page site on `design/a`, refined to production quality (completed 2026-02-28)
+- [x] **Phase 22: Design B** — Implement complete 8-page site on `design/b`, refined to production quality (completed 2026-02-28)
+- [x] **Phase 23: Design C** — Implement complete 8-page site on `design/c`, refined to production quality (completed 2026-03-01)
 - [x] **Phase 24: Joint Review** — Side-by-side comparison of all 3 designs; verdict: chromas, not epic skins (completed 2026-03-08)
 
 Full details: `.planning/milestones/v1.2-ROADMAP.md`
@@ -62,14 +63,16 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 ### v1.3 Epic Skins (In Progress)
 
-**Milestone Goal:** Produce 3 structurally distinct ("epic skin") design explorations — each with a different page skeleton, hero composition, nav pattern, content flow, and visual signature — review them with the user, then synthesize feedback into Design D (Claude's autonomous vision).
+**Milestone Goal:** Produce 3 structurally distinct ("epic skin") design explorations — each with a different page skeleton, hero composition, nav pattern, content flow, and visual signature — keep them on one branch in parallel directories, review them through a shared start page/version picker, then synthesize feedback into Design D (Claude's autonomous vision).
 
-- [ ] **Phase 26: Epic Directions** — Write 3 structurally distinct design direction specifications before any code is written
-- [x] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A (completed 2026-03-09) (completed 2026-03-09)
+- [x] **Phase 26: Epic Directions** — Write 3 structurally distinct design direction specifications before any code is written (restored 2026-03-09)
+- [x] **Phase 27: Epic Skin A** — Complete 8-page site in `site/epic/a/` per Epic Direction A (completed 2026-03-09)
 - [x] **Phase 28: Epic Skin B** — Complete 8-page site in `site/epic/b/` per Epic Direction B (parallel to 27) (completed 2026-03-09)
-- [ ] **Phase 29: Epic Skin C** — Complete 8-page site in `site/epic/c/` per Epic Direction C (parallel to 27-28)
-- [ ] **Phase 30: Epic Review** — User reviews all 3 epic skins; structured feedback captured for Design D
+- [x] **Phase 29: Epic Skin C** — Complete 8-page site in `site/epic/c/` per Epic Direction C (parallel to 27-28) (completed 2026-03-09)
+- [ ] **Phase 30: Epic Review** — User reviews all 3 epic skins from a shared start page/version picker; structured feedback captured for Design D
 - [ ] **Phase 31: Design D — Claude's Synthesis** — Claude's autonomous synthesis in `site/epic/d/` based on review feedback
+
+Prepared follow-up milestone: `.planning/v1.4-ROADMAP-DRAFT.md`
 
 ## Phase Details
 
@@ -87,7 +90,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [x] 20-02-PLAN.md -- Synthesize research into 3 distinct design direction rationales
 
 ### Phase 21: Design A
-**Goal**: A complete, production-ready 8-page site in `site/epic/a/` — visually distinct concept A, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Goal**: A complete, production-ready 8-page site on `design/a` — visually distinct concept A, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
 **Depends on**: Phase 20
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
@@ -104,7 +107,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [x] 21-05-PLAN.md -- Visual audit + fixes
 
 ### Phase 22: Design B
-**Goal**: A complete, production-ready 8-page site in `site/epic/b/` — visually distinct concept B, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Goal**: A complete, production-ready 8-page site on `design/b` — visually distinct concept B, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
 **Depends on**: Phase 21
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
@@ -121,7 +124,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [x] 22-05-PLAN.md -- Playwright visual audit + user review
 
 ### Phase 23: Design C
-**Goal**: A complete, production-ready 8-page site in `site/epic/c/` — visually distinct concept C, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
+**Goal**: A complete, production-ready 8-page site on `design/c` — visually distinct concept C, Zweitwagen-conversion-optimized, polished through Playwright screenshot loops
 **Depends on**: Phase 22
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
@@ -153,6 +156,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 **Goal**: Three structurally distinct design direction specifications written — each with a unique page skeleton, hero composition type, nav pattern, content flow, and visual signature. This is a specification document only; no code is written. Replaces Phase 20's directions with `26-EPIC-DIRECTIONS.md`.
 **Depends on**: Nothing (first phase of v1.3; references v1.2 learnings)
 **Requirements**: STRUCT-01, STRUCT-02, STRUCT-03, STRUCT-04, STRUCT-05
+**Status**: Complete (2026-03-09)
 **Success Criteria** (what must be TRUE):
   1. Three directions written, each with an explicit "Structural Signature" section covering: homepage section ordering, hero composition type, nav pattern, visual signature element, and copy strategy
   2. No two directions share the same hero composition type
@@ -160,12 +164,13 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   4. Differentiation matrix shows at least 3 structural differences between each design pair
   5. Each direction includes a copy strategy specifying what content is emphasized and what emotional arc it follows
   6. Document makes clear how each direction constitutes an "epic skin" not a "chroma" — structural skeleton varies, not just paint
-**Plans**: TBD
+**Plans**: 1 plan (complete)
+- [x] 26-01-PLAN.md -- Canonicalize the shared epic direction spec from implemented A/B and active C direction
 
 ### Phase 27: Epic Skin A
 **Goal**: A complete 8-page site in `site/epic/a/` built per Epic Direction A — with its own page skeleton, hero composition, nav pattern, content flow, and visual signature element. Refined through Playwright screenshot loops.
 **Depends on**: Phase 26
-**Parallel**: Can run parallel to Phases 28 and 29 (all three depend only on Phase 26, not on each other)
+**Parallel note**: Source directories are parallel-safe, but browser-driven audit work must serialize if all agents share one local browser.
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
   1. All 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz) render correctly in `site/epic/a/`
@@ -182,13 +187,13 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [x] 27-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
 - [x] 27-04-PLAN.md -- Impressum + Datenschutz legal pages
 - [x] 27-05-PLAN.md -- Playwright visual audit + fixes
-- [ ] 27-06-PLAN.md -- (gap closure) Fix impressum.html TODO placeholders
-- [ ] 27-07-PLAN.md -- (gap closure) Puppeteer visual audit + JS runtime verification
+- [x] 27-06-PLAN.md -- (gap closure) Fix impressum.html TODO placeholders
+- [x] 27-07-PLAN.md -- (gap closure) Puppeteer visual audit + JS runtime verification
 
 ### Phase 28: Epic Skin B
 **Goal**: A complete 8-page site in `site/epic/b/` built per Epic Direction B — with its own structurally distinct page skeleton, hero composition, nav pattern, content flow, and visual signature. Refined through Playwright screenshot loops.
 **Depends on**: Phase 26
-**Parallel**: Can run parallel to Phases 27 and 29 (all three depend only on Phase 26, not on each other)
+**Parallel note**: Source directories are parallel-safe, but browser-driven audit work must serialize if all agents share one local browser.
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
   1. All 8 pages render correctly in `site/epic/b/`
@@ -199,17 +204,17 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Copy emphasis and ordering differ from Designs A and C — same facts, different storytelling arc
   7. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks or overflow across all 8 pages
   8. Navigation pattern is functional and accessible on all breakpoints
-**Plans**: 5 plans
-- [ ] 28-01-PLAN.md -- Foundation (theme, base CSS, nav JS) + Homepage with asymmetric split hero
-- [ ] 28-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
-- [ ] 28-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
-- [ ] 28-04-PLAN.md -- Impressum + Datenschutz legal pages
-- [ ] 28-05-PLAN.md -- Playwright visual audit + fixes
+**Plans**: 5 plans (complete)
+- [x] 28-01-PLAN.md -- Foundation (theme, base CSS, nav JS) + Homepage with asymmetric split hero
+- [x] 28-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
+- [x] 28-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
+- [x] 28-04-PLAN.md -- Impressum + Datenschutz legal pages
+- [x] 28-05-PLAN.md -- Playwright visual audit + fixes
 
 ### Phase 29: Epic Skin C
 **Goal**: A complete 8-page site in `site/epic/c/` built per Epic Direction C — with its own structurally distinct page skeleton, hero composition, nav pattern, content flow, and visual signature. Refined through Playwright screenshot loops.
 **Depends on**: Phase 26
-**Parallel**: Can run parallel to Phases 27 and 28 (all three depend only on Phase 26, not on each other)
+**Parallel note**: Source directories are parallel-safe, but browser-driven audit work must serialize if all agents share one local browser.
 **Requirements**: IMPL-01, IMPL-02, IMPL-03, IMPL-04, IMPL-05, IMPL-06, VIS-01, VIS-02, VIS-03, VIS-04, CONV-01, CONV-02, CONV-03, CONV-04
 **Success Criteria** (what must be TRUE):
   1. All 8 pages render correctly in `site/epic/c/`
@@ -220,19 +225,19 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Copy emphasis and ordering differ from Designs A and B — same facts, different storytelling arc
   7. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks or overflow across all 8 pages
   8. Navigation pattern is functional and accessible on all breakpoints
-**Plans**: 5 plans
-- [ ] 29-01-PLAN.md -- Foundation (JS files, nav) + Homepage with stacked editorial hero and community-first arc
-- [ ] 29-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
-- [ ] 29-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
-- [ ] 29-04-PLAN.md -- Impressum + Datenschutz legal pages
-- [ ] 29-05-PLAN.md -- Puppeteer visual audit + fixes
+**Plans**: 5 plans (complete)
+- [x] 29-01-PLAN.md -- Foundation (JS files, nav) + Homepage with stacked editorial hero and community-first arc
+- [x] 29-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
+- [x] 29-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
+- [x] 29-04-PLAN.md -- Impressum + Datenschutz legal pages
+- [x] 29-05-PLAN.md -- Puppeteer visual audit + fixes
 
 ### Phase 30: Epic Review
-**Goal**: User reviews all 3 epic skins side-by-side; structured feedback is captured per design and distilled into a Design D brief that feeds directly into Phase 31.
+**Goal**: User reviews all 3 epic skins from a shared start page/version picker; structured feedback is captured per design and distilled into a Design D brief that feeds directly into Phase 31.
 **Depends on**: Phases 27, 28, 29 (all three must be complete)
 **Requirements**: SYNTH-01, SYNTH-02
 **Success Criteria** (what must be TRUE):
-  1. All three epic skins are viewable side-by-side (live from `site/epic/{a,b,c}/` or screenshots)
+  1. A shared start page/version picker on the current branch reaches all three epic skins by stable local or published paths
   2. User has evaluated structural distinctness, conversion effectiveness, and aesthetic preference for each design
   3. Specific feedback captured per design: what works, what doesn't, what elements to carry forward to Design D
   4. Design D brief written incorporating specific review feedback (not a generic "take the best parts")
@@ -252,6 +257,29 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Playwright screenshots clean at 375px, 768px, and 1280px across all 8 pages
 **Plans**: TBD
 
+### v1.4 Epic Skin Polish (Prepared)
+
+**Milestone Goal:** Run bounded polish loops on epic skins A, B, and C after
+v1.3 implementation completes, with shared housekeeping and the shared start
+page/version picker handled separately from skin-specific review/fix work.
+
+**Execution model:** Sequential only. The local browser is shared, so Phases 33,
+34, and 35 must not run in parallel.
+
+- [ ] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping,
+  inventory checks, version-picker contract, and comparison/publish prep
+- [ ] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements
+  polish for `site/epic/a/`
+- [ ] **Phase 34: Epic Skin B Polish Loop** — iterative visual + requirements
+  polish for `site/epic/b/`
+- [ ] **Phase 35: Epic Skin C Polish Loop** — iterative visual + requirements
+  polish for `site/epic/c/`
+- [ ] **Phase 36: Comparison Publish & Review Pack** — shared start
+  page/version picker, comparison-ready paths, and owner-facing review
+  instructions
+
+Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -263,10 +291,10 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 22. Design B | v1.2 | 5/5 | Complete | 2026-02-28 |
 | 23. Design C | v1.2 | 5/5 | Complete | 2026-03-01 |
 | 24. Joint Review | v1.2 | 0/0 | Complete | 2026-03-08 |
-| 26. Epic Directions | v1.3 | 0/? | Not started | - |
-| 27. Epic Skin A | 7/7 | Complete   | 2026-03-09 | - |
-| 28. Epic Skin B | 5/5 | Complete    | 2026-03-09 | - |
-| 29. Epic Skin C | 1/5 | In Progress|  | - |
+| 26. Epic Directions | v1.3 | 1/1 | Complete | 2026-03-09 |
+| 27. Epic Skin A | v1.3 | 7/7 | Complete | 2026-03-09 |
+| 28. Epic Skin B | v1.3 | 5/5 | Complete | 2026-03-09 |
+| 29. Epic Skin C | v1.3 | 5/5 | Complete | 2026-03-09 |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
 

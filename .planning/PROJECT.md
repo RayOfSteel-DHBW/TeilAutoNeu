@@ -60,14 +60,16 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 <!-- v1.3 Epic Skins — structurally distinct design explorations + synthesis -->
 
-- [ ] 3 structurally distinct ("epic skin") design directions specified with unique skeletons
-- [ ] Epic Skin A: complete 8-page site in `site/epic/a/` with unique page skeleton, hero, nav, visual signature
-- [ ] Epic Skin B: complete 8-page site in `site/epic/b/` with unique page skeleton, hero, nav, visual signature
-- [ ] Epic Skin C: complete 8-page site in `site/epic/c/` with unique page skeleton, hero, nav, visual signature
-- [ ] No two designs share the same hero composition type
-- [ ] Copy strategy varies per design (same facts, different emphasis)
+- [x] 3 structurally distinct ("epic skin") design directions specified with unique skeletons
+- [x] Epic Skin A: complete 8-page site in `site/epic/a/` with unique page skeleton, hero, nav, visual signature
+- [x] Epic Skin B: complete 8-page site in `site/epic/b/` with unique page skeleton, hero, nav, visual signature
+- [x] Epic Skin C: complete 8-page site in `site/epic/c/` with unique page skeleton, hero, nav, visual signature
+- [x] No two designs share the same hero composition type
+- [x] Copy strategy varies per design (same facts, different emphasis)
+- [ ] Shared start page/version picker for A/B/C comparison on the same branch
 - [ ] Epic review captures per-design feedback for synthesis
 - [ ] Design D in `site/epic/d/`: Claude's autonomous synthesis of best elements from A/B/C review
+- [ ] Prepared follow-up milestone: `v1.4 Epic Skin Polish` (sequential shared-browser polish loops)
 
 ### Out of Scope
 
@@ -151,19 +153,41 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 **Target features:**
 - Phase 26: Epic direction specifications with structural signatures (section ordering, hero type, nav, visual signature)
-- Phases 27-29: Three epic skin implementations in `site/epic/a/`, `b/`, `c/` — same branch, parallel-safe directories
-- Phase 30: Epic review capturing per-design feedback
+- Phases 27-29: Three epic skin implementations in `site/epic/a/`, `b/`, `c/` — same branch, parallel-safe directories behind one shared comparison surface
+- Phase 30: Epic review via a shared start page/version picker that lets the reviewer choose A, B, or C first
 - Phase 31: Design D synthesis in `site/epic/d/` — Claude's best synthesis of review feedback
 - Each design must differ in at least 3 structural dimensions (not just colors/fonts)
 - Copy strategy varies per design (same facts, different emphasis and emotional arc)
 
 **Epic skin standard:** Must feel like a different product (not a chroma/recolor). Different section ordering, hero composition, nav pattern, information density, visual signature element.
 
+## Prepared Next Milestone: v1.4 Epic Skin Polish
+
+**Goal:** Polish Designs A, B, and C through bounded visual + requirements
+iteration loops after v1.3 implementation is complete, while preserving the
+one-branch start-page/version-picker review model.
+
+**Execution constraint:** Sequential only. All browser-driven audit work shares
+one local browser session, so A/B/C polish cannot run in parallel.
+
+**Prepared docs:**
+- `.planning/v1.4-MILESTONE-BRIEF.md`
+- `.planning/v1.4-REQUIREMENTS-DRAFT.md`
+- `.planning/v1.4-ROADMAP-DRAFT.md`
+- `.planning/v1.4-EXECUTION-PROMPTS.md`
+
 ## Current State
 
 v1.2 shipped. Three chromas produced — same skeleton, different paint. Phase 24 review verdict: structural distinctness insufficient. v1.3 focuses on true structural differentiation.
 
+Epic Skins A, B, and C are now implemented and Design C has passed closeout verification. Remaining v1.3 work is the shared review surface/version picker in Phase 30 and the synthesis phase that follows.
+
+Shared housekeeping drift has now been separated from the future skin-specific
+polish loops so the next milestone can focus on iterative improvement work
+instead of repo archaeology, with the shared comparison surface handled in the
+shared phases rather than by the skin agents.
+
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-08 after v1.3 milestone start_
+_Last updated: 2026-03-09 after Phase 29 closeout, Design C verification, and v1.4 polish prep_

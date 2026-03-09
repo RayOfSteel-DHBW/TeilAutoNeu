@@ -5,7 +5,7 @@
 
 ## v1.3 Requirements
 
-Requirements for milestone v1.3 Epic Skins. Structurally distinct design explorations + synthesis — 3 "epic skin" designs that differ in page skeleton, hero composition, nav pattern, content flow, and visual signature, then synthesized into Design D.
+Requirements for milestone v1.3 Epic Skins. Structurally distinct design explorations + synthesis — 3 "epic skin" designs that differ in page skeleton, hero composition, nav pattern, content flow, and visual signature, are compared from one shared start page/version picker, then synthesized into Design D.
 
 ### Structural Identity
 
@@ -18,7 +18,7 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 ### Design Implementation
 
 - [x] **IMPL-01**: Three structurally distinct ("epic skin") designs implemented as complete sites
-- [x] **IMPL-02**: Each design lives on a dedicated git branch (`design/a`, `design/b`, `design/c`)
+- [x] **IMPL-02**: Each design lives in a dedicated parallel-safe implementation directory (`site/epic/a`, `site/epic/b`, `site/epic/c`)
 - [x] **IMPL-03**: Each design covers all 8 pages (home, preise, fahrzeuge, geschaeftskunden, ueber-uns, mitglied-werden, impressum, datenschutz)
 - [x] **IMPL-04**: Each design is production-ready quality (shippable as-is)
 - [x] **IMPL-05**: Each design refined through Playwright screenshot-evaluate loops
@@ -40,7 +40,7 @@ Requirements for milestone v1.3 Epic Skins. Structurally distinct design explora
 
 ### Review & Synthesis
 
-- [ ] **SYNTH-01**: Epic review captures per-design feedback (what works, what doesn't, what to keep)
+- [ ] **SYNTH-01**: Epic review captures per-design feedback (what works, what doesn't, what to keep) through a shared one-branch comparison surface with a start page/version picker
 - [ ] **SYNTH-02**: Design D brief incorporates specific review feedback before implementation
 - [ ] **SYNTH-03**: Design D's structural choices are traceable to review feedback
 
@@ -106,4 +106,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-08*
-*Last updated: 2026-03-08 — traceability finalized after roadmap creation (Phases 26-31)*
+*Last updated: 2026-03-09 — wording aligned to the restored directory-based v1.3 implementation model and shared picker review flow*
