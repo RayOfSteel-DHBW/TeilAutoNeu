@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #1b4332;
+  --color-brand-accent: #a3e635;
+  --color-brand-surface: #f8faf8;
+  --color-brand-ink: #0f1f17;
+  --color-brand-muted: #e8f0eb;
+  --color-brand-highlight: #d9f99d;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Diagonal accent line utility — Design B visual signature */
+.diagonal-rule {
+  position: relative;
+}
+.diagonal-rule::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--color-brand-accent), transparent);
+  transform: skewX(-3deg);
+}
