@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&Uuml;ber uns | teilAuto M&ouml;ssingen</title>
+  <meta name="description" content="teilAuto M&ouml;ssingen: Seit &uuml;ber zwei Jahrzehnten betreiben Ralf und Ursula Stahl ein pers&ouml;nliches Carsharing f&uuml;r &uuml;ber 60 Mitglieder im Steinlachtal.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind compiled output -->
+  <link rel="stylesheet" href="tailwind-out.css">
+</head>
+<body class="bg-brand-surface text-brand-ink font-sans">
+
+  <!-- Sticky dark nav bar -->
+  <header class="sticky top-0 z-50 bg-brand-primary shadow-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <!-- Logo -->
+      <a href="index.html" class="text-lg font-semibold text-white hover:no-underline">teilAuto</a>
+
+      <!-- Desktop links -->
+      <div class="hidden items-center gap-6 md:flex" id="primary-nav-desktop">
+        <a href="index.html" class="text-sm font-medium text-white/80 transition hover:text-brand-accent hover:no-underline">Startseite</a>
+        <a href="preise.html" class="text-sm font-medium text-white/80 transition hover:text-brand-accent hover:no-underline">Preise</a>
+        <a href="fahrzeuge.html" class="text-sm font-medium text-white/80 transition hover:text-brand-accent hover:no-underline">Fahrzeuge</a>
+        <a href="geschaeftskunden.html" class="text-sm font-medium text-white/80 transition hover:text-brand-accent hover:no-underline">F&uuml;r Firmen</a>
+        <a href="ueber-uns.html" class="border-b-2 border-brand-accent text-sm font-medium text-white transition hover:text-brand-accent hover:no-underline" aria-current="page">&Uuml;ber uns</a>
+        <a href="mitglied-werden.html" class="text-sm font-medium text-white/80 transition hover:text-brand-accent hover:no-underline">Mitglied werden</a>
+      </div>
+
+      <!-- Phone number (desktop) -->
+      <a href="tel:07473922202" class="hidden text-sm font-semibold text-brand-accent md:block hover:no-underline">07473-922202</a>
+
+      <!-- Mobile hamburger -->
+      <button type="button" class="text-white md:hidden" aria-controls="primary-nav" aria-expanded="false" aria-label="Navigationsmen&uuml; &ouml;ffnen">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile nav overlay -->
+    <div id="primary-nav" class="hidden flex-col items-center gap-6 bg-brand-primary px-4 py-8 md:hidden">
+      <a href="index.html" class="font-display text-lg text-white hover:no-underline">Startseite</a>
+      <a href="preise.html" class="font-display text-lg text-white hover:no-underline">Preise</a>
+      <a href="fahrzeuge.html" class="font-display text-lg text-white hover:no-underline">Fahrzeuge</a>
+      <a href="geschaeftskunden.html" class="font-display text-lg text-white hover:no-underline">F&uuml;r Firmen</a>
+      <a href="ueber-uns.html" class="font-display text-lg text-white hover:no-underline">&Uuml;ber uns</a>
+      <a href="mitglied-werden.html" class="font-display text-lg text-white hover:no-underline">Mitglied werden</a>
+      <a href="tel:07473922202" class="mt-4 rounded-md bg-brand-accent px-6 py-3 text-center font-semibold text-white hover:no-underline">
+        Jetzt anrufen: 07473-922202
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page header -->
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-display text-4xl font-black sm:text-5xl">Pers&ouml;nlich statt anonym</h1>
+        <p class="mt-4 max-w-2xl text-lg text-brand-ink/70">
+          Kein Callcenter &mdash; Sie sprechen direkt mit uns. Familiengefu&uuml;hrtes Carsharing in M&ouml;ssingen seit &uuml;ber zwei Jahrzehnten.
+        </p>
+      </div>
+    </section>
+
+    <!-- Amber accent rule -->
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <hr class="border-t-2 border-brand-accent">
+    </div>
+
+    <!-- 1. Founders story -->
+    <section class="border-b border-brand-muted py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">Wer wir sind</h2>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          teilAuto M&ouml;ssingen, das sind wir: Firmeninhaber Ralf Stahl und Ursula&nbsp;Stahl (Buchungszentrale / &bdquo;Office-Managerin&ldquo;). Pers&ouml;nlich, lokal und unkompliziert &mdash; so arbeiten wir seit &uuml;ber zwei Jahrzehnten.
+        </p>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          Da wir das Unternehmen nebenberuflich und im Grunde ehrenamtlich f&uuml;hren, ist die Verwaltung sehr schlicht gehalten. Beim jetzigen Umfang des Betriebs ist das gut zu bew&auml;ltigen, und auch Zuwachs ist ohne Probleme m&ouml;glich.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. History and growth -->
+    <section class="border-b border-brand-muted py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">Unsere Geschichte</h2>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          Das Unternehmen entstand auf private Initiative im Jahr 2000. Wir waren zuvor Mitglied beim Projekt teilAuto des damaligen Vereins &Ouml;kostadt T&uuml;bingen. Der dortige Verein steckte selbst noch in den Anf&auml;ngen, und eine Erweiterung des Angebots auf M&ouml;ssingen war noch nicht in Sicht. Da wir jedoch vom Konzept und der Nachhaltigkeit des Autoteilens &uuml;berzeugt waren, beschlossen wir, selbst die Initiative zu ergreifen und unser &ndash; zun&auml;chst einziges und nur wenig genutztes &ndash; Fahrzeug mit anderen zu teilen.
+        </p>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          Wir gaben der Sache einen offiziellen Rahmen, meldeten ein Gewerbe in der Rechtsform des eingetragenen Kaufmanns (e.K.) an und konnten nach und nach immer mehr Nutzer dazugewinnen. Im Jahr 2025 sind &uuml;ber 60 Fahrtberechtigte angemeldet. Darunter befinden sich sowohl Privatpersonen als auch Firmen und Beh&ouml;rden.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. How we operate -->
+    <section class="border-b border-brand-muted py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">Wie wir arbeiten</h2>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          F&uuml;r die einen ist es die Ausweichm&ouml;glichkeit zu Fahrrad und &Ouml;PNV, f&uuml;r die anderen das hin und wieder ben&ouml;tigte Zweitauto, wieder andere m&ouml;chten nur ein &bdquo;Backup&ldquo;, falls das eigene Fahrzeug einmal ausf&auml;llt. Bei dieser Aufteilung reichen derzeit unsere zwei Fahrzeuge aus, ohne dass nennenswerte Engp&auml;sse entstehen. Bei weiterem Wachstum wird der Fuhrpark entsprechend vergr&ouml;&szlig;ert.
+        </p>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          Das Buchen der Fahrzeuge erfolgt telefonisch zu unseren B&uuml;rozeiten (Mo&ndash;Fr 09:00&ndash;12:00 Uhr). Auswertung der Fahrberichte, Abrechnung sowie Pflege und Wartung der Fahrzeuge finden am Feierabend und am Wochenende statt.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. BCS network -->
+    <section class="border-b border-brand-muted py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">Mitglied einer gr&ouml;&szlig;eren Gemeinschaft</h2>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          teilAuto M&ouml;ssingen ist Mitglied im Bundesverband Carsharing (BCS) und damit Teil des DACHverband-Netzwerks. Das bedeutet f&uuml;r unsere Mitglieder mehr als nur die zwei lokalen Fahrzeuge: &Uuml;ber die sogenannte Quernutzung k&ouml;nnen Sie bei Bedarf auf Fahrzeuge von &uuml;ber 200 Partnern in der Region und deutschlandweit zur&uuml;ckgreifen.
+        </p>
+        <p class="mt-4 max-w-2xl text-brand-ink/80">
+          Gemeinsam genutzte Fahrzeuge, die gut ausgelastet sind, ersetzen viele Privatautos. Das ist keine Ideologie &ndash; das ist der praktische Kern dessen, was wir seit Jahrzehnten tun.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. FAQ section with accordion -->
+    <section class="border-b border-brand-muted py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">H&auml;ufige Fragen</h2>
+
+        <div class="mt-8 divide-y divide-brand-muted">
+
+          <!-- FAQ 1 -->
+          <div>
+            <button class="accordion-header flex w-full items-center justify-between py-5 text-left font-medium text-brand-ink transition hover:text-brand-accent" aria-expanded="false" aria-controls="faq-1">
+              <span>Wie buche ich ein Fahrzeug?</span>
+              <span aria-hidden="true" class="ml-4 text-xl font-bold text-brand-accent">+</span>
+            </button>
+            <div id="faq-1" class="overflow-hidden transition-all duration-300" style="max-height: 0px;">
+              <p class="pb-5 text-brand-ink/80">
+                Die Buchung erfolgt telefonisch zu unseren B&uuml;rozeiten (Mo&ndash;Fr 09:00&ndash;12:00 Uhr) unter <a href="tel:07473922202" class="font-semibold text-brand-accent">07473-922202</a>. Einfach anrufen, Wunschtermin nennen &mdash; wir k&uuml;mmern uns um den Rest.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div>
+            <button class="accordion-header flex w-full items-center justify-between py-5 text-left font-medium text-brand-ink transition hover:text-brand-accent" aria-expanded="false" aria-controls="faq-2">
+              <span>Was kostet die Mitgliedschaft?</span>
+              <span aria-hidden="true" class="ml-4 text-xl font-bold text-brand-accent">+</span>
+            </button>
+            <div id="faq-2" class="overflow-hidden transition-all duration-300" style="max-height: 0px;">
+              <p class="pb-5 text-brand-ink/80">
+                Sie zahlen einen kleinen Jahresbeitrag plus faire Kosten pro Fahrt &mdash; transparent und ohne versteckte Geb&uuml;hren. Alle Details finden Sie auf unserer <a href="preise.html" class="font-semibold text-brand-accent">Preisseite</a>.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div>
+            <button class="accordion-header flex w-full items-center justify-between py-5 text-left font-medium text-brand-ink transition hover:text-brand-accent" aria-expanded="false" aria-controls="faq-3">
+              <span>Kann ich auch au&szlig;erhalb von M&ouml;ssingen ein Auto nutzen?</span>
+              <span aria-hidden="true" class="ml-4 text-xl font-bold text-brand-accent">+</span>
+            </button>
+            <div id="faq-3" class="overflow-hidden transition-all duration-300" style="max-height: 0px;">
+              <p class="pb-5 text-brand-ink/80">
+                Ja. &Uuml;ber die Quernutzung im BCS-Netzwerk haben Sie Zugang zu Fahrzeugen von &uuml;ber 200 Partnern in der Region und deutschlandweit &mdash; ohne separaten Vertrag.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div>
+            <button class="accordion-header flex w-full items-center justify-between py-5 text-left font-medium text-brand-ink transition hover:text-brand-accent" aria-expanded="false" aria-controls="faq-4">
+              <span>Wie lange ist die Mindestlaufzeit?</span>
+              <span aria-hidden="true" class="ml-4 text-xl font-bold text-brand-accent">+</span>
+            </button>
+            <div id="faq-4" class="overflow-hidden transition-all duration-300" style="max-height: 0px;">
+              <p class="pb-5 text-brand-ink/80">
+                Die Mitgliedschaft l&auml;uft mindestens drei Monate. Danach ist sie monatlich k&uuml;ndbar. Kein Abo mit versteckten Geb&uuml;hren &mdash; klare Regeln und faire Kosten.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div>
+            <button class="accordion-header flex w-full items-center justify-between py-5 text-left font-medium text-brand-ink transition hover:text-brand-accent" aria-expanded="false" aria-controls="faq-5">
+              <span>K&ouml;nnen auch Unternehmen Mitglied werden?</span>
+              <span aria-hidden="true" class="ml-4 text-xl font-bold text-brand-accent">+</span>
+            </button>
+            <div id="faq-5" class="overflow-hidden transition-all duration-300" style="max-height: 0px;">
+              <p class="pb-5 text-brand-ink/80">
+                Selbstverst&auml;ndlich. Unter unseren &uuml;ber 60 Mitgliedern befinden sich sowohl Privatpersonen als auch Firmen und Beh&ouml;rden. F&uuml;r Unternehmen gelten gesonderte Kautionsregelungen. Mehr dazu auf unserer Seite <a href="geschaeftskunden.html" class="font-semibold text-brand-accent">F&uuml;r Firmen</a>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA block -->
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <hr class="border-t-2 border-brand-accent">
+    </div>
+    <section class="py-16">
+      <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold sm:text-3xl">Lernen Sie uns kennen</h2>
+        <p class="mt-4 text-brand-ink/80">Wir freuen uns auf Ihren Anruf.</p>
+        <a href="tel:07473922202" class="mt-6 inline-block text-3xl font-bold text-brand-accent transition hover:text-brand-cta hover:no-underline sm:text-4xl">07473-922202</a>
+        <p class="mt-4 text-sm text-brand-ink/60">Pers&ouml;nlich und unkompliziert &mdash; kein Callcenter, Sie sprechen direkt mit uns.</p>
+        <div class="mt-8">
+          <a href="mitglied-werden.html"
+             class="inline-flex items-center rounded-md bg-brand-accent px-8 py-3 text-base font-semibold text-white transition hover:bg-brand-cta hover:no-underline">
+            Mitglied werden
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-primary py-12 text-white/80">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <p class="font-semibold text-white">teilAuto M&ouml;ssingen</p>
+          <p class="mt-2 text-sm">Carsharing f&uuml;r M&ouml;ssingen und Umgebung.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-white">Navigation</p>
+          <ul class="mt-2 space-y-1 text-sm">
+            <li><a href="preise.html" class="hover:text-brand-accent">Preise</a></li>
+            <li><a href="fahrzeuge.html" class="hover:text-brand-accent">Fahrzeuge</a></li>
+            <li><a href="mitglied-werden.html" class="hover:text-brand-accent">Mitglied werden</a></li>
+            <li><a href="ueber-uns.html" class="hover:text-brand-accent">&Uuml;ber uns</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-white">Kontakt</p>
+          <p class="mt-2 text-sm">
+            <a href="tel:07473922202" class="text-brand-accent hover:underline">07473-922202</a>
+          </p>
+          <div class="mt-4 space-x-4 text-sm">
+            <a href="impressum.html" class="hover:text-brand-accent">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-brand-accent">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile fixed bottom bar -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-primary px-4 py-3 md:hidden">
+    <a href="tel:07473922202" class="flex items-center justify-center gap-2 font-semibold text-brand-accent hover:no-underline">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+      </svg>
+      Jetzt anrufen: 07473-922202
+    </a>
+  </div>
+
+  <!-- Bottom padding for fixed phone bar on mobile -->
+  <div class="pb-16 md:pb-0"></div>
+
+  <!-- JS -->
+  <script src="js/nav.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+</body>
+</html>
