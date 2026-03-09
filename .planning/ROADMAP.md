@@ -220,7 +220,12 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   6. Copy emphasis and ordering differ from Designs A and B — same facts, different storytelling arc
   7. Playwright screenshots at 375px, 768px, and 1280px show no layout breaks or overflow across all 8 pages
   8. Navigation pattern is functional and accessible on all breakpoints
-**Plans**: TBD
+**Plans**: 5 plans
+- [ ] 29-01-PLAN.md -- Foundation (JS files, nav) + Homepage with stacked editorial hero and community-first arc
+- [ ] 29-02-PLAN.md -- Preise + Fahrzeuge data-driven pages
+- [ ] 29-03-PLAN.md -- Geschaeftskunden, Ueber-uns, Mitglied-werden content pages
+- [ ] 29-04-PLAN.md -- Impressum + Datenschutz legal pages
+- [ ] 29-05-PLAN.md -- Puppeteer visual audit + fixes
 
 ### Phase 30: Epic Review
 **Goal**: User reviews all 3 epic skins side-by-side; structured feedback is captured per design and distilled into a Design D brief that feeds directly into Phase 31.
