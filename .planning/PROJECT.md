@@ -201,4 +201,4 @@ be added as a new forward phase number rather than reopening those placeholders.
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-09 after promoting v1.4 polish to the active milestone and preparing serial phases 32-36_
+_Last updated: 2026-03-09 after Phase 34 (Design B polish loop — clean pass)_
