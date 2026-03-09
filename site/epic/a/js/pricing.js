@@ -4,7 +4,7 @@
  * Rendering rules:
  *   - DOM APIs only (createElement / textContent / appendChild)
  *   - NO innerHTML, NO insertAdjacentHTML
- *   - "TODO" values get an amber badge so placeholders are visible
+ *   - Unknown shared pricing placeholders render as truthful fallback copy
  */
 (function () {
   "use strict";
@@ -46,23 +46,12 @@
   }
 
   /**
-   * Return either a plain text node or an amber "TODO" badge,
-   * depending on the value.
+   * Return either a plain text node or a truthful fallback string,
+   * depending on whether the shared data still carries a placeholder.
    */
-  function valueOrBadge(val, prefix) {
+  function valueOrBadge(val, prefix, fallback) {
     if (isTodo(val)) {
-      var badge = el(
-        "span",
-        { className: "inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800" },
-        "TODO"
-      );
-      if (prefix) {
-        var wrapper = el("span", { className: "inline-flex items-center gap-2" });
-        wrapper.appendChild(document.createTextNode(prefix + " "));
-        wrapper.appendChild(badge);
-        return wrapper;
-      }
-      return badge;
+      return document.createTextNode(prefix ? prefix + " " + fallback : fallback);
     }
     return document.createTextNode(prefix ? prefix + " " + val : val);
   }
@@ -88,7 +77,7 @@
     var feeCard = el("div", { className: "rounded-2xl bg-brand-surface p-4" });
     feeCard.appendChild(el("p", { className: "text-sm font-semibold text-brand-ink" }, "Jahresbeitrag"));
     feeCard.appendChild(el("p", { className: "mt-1 text-lg font-display" }));
-    feeCard.lastChild.appendChild(valueOrBadge(data.membership.annual_fee));
+    feeCard.lastChild.appendChild(valueOrBadge(data.membership.annual_fee, "", "im pers\u00f6nlichen Gespr\u00e4ch"));
     memberGrid.appendChild(feeCard);
 
     container.appendChild(memberGrid);
@@ -110,7 +99,10 @@
       li.appendChild(el("span", { className: "mt-0.5 text-brand-primary", "aria-hidden": "true" }, "\u2713"));
       var content = el("span");
       content.appendChild(el("span", { className: "font-semibold" }, item.label + ": "));
-      content.appendChild(valueOrBadge(item.value));
+      var fallback = item.label === "Buchungsgeb\u00fchr"
+        ? "im pers\u00f6nlichen Gespr\u00e4ch"
+        : "auf Anfrage";
+      content.appendChild(valueOrBadge(item.value, "", fallback));
       li.appendChild(content);
       ul.appendChild(li);
     });
