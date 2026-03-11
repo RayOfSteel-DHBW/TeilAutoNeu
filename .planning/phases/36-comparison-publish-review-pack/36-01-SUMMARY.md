@@ -27,7 +27,7 @@ patterns-established:
   - "Shared comparison work lives in Phase 36 rather than skin-local polish phases."
   - "Comparison verification is done from the shared picker into each skin homepage, serially, with one browser session."
 requirements-completed: [COMP-01, COMP-02]
-duration: pending
+duration: 6 min
 completed: 2026-03-11
 ---
 
@@ -37,9 +37,9 @@ completed: 2026-03-11
 
 ## Performance
 
-- **Duration:** Pending final timestamp
+- **Duration:** 6 min
 - **Started:** 2026-03-11T10:09:53Z
-- **Completed:** Pending final timestamp
+- **Completed:** 2026-03-11T10:12:11Z
 - **Tasks:** 3
 - **Files modified:** 3
 
@@ -55,9 +55,9 @@ Each task was committed atomically:
 
 1. **Task 1: Build the shared comparison start page and version picker** - `22d28fa` (feat)
 2. **Task 2: Verify the shared comparison surface in browser** - `c6dfa84` (docs)
-3. **Task 3: Write owner-facing instructions and forward-boundary closeout** - `PENDING` (docs)
+3. **Task 3: Write owner-facing instructions and forward-boundary closeout** - `dd03968` (docs)
 
-**Plan metadata:** `PENDING` (docs: complete plan)
+**Plan metadata:** `f5b9ac2` (docs: complete plan)
 
 ## Files Created/Modified
 
@@ -119,3 +119,8 @@ None - no external service configuration required.
 - Phase 36 now provides a usable shared comparison surface and owner instructions on the current branch.
 - If the owners still want structured comparison feedback captured after reviewing A, B, and C, propose **Phase 37: Structured Comparison Review Capture** as a new forward phase.
 - No backward routing to Phase 30 is needed for this milestone path.
+
+## Self-Check: PASSED
+
+- Verified required artifacts exist: `site/epic/index.html`, `.planning/phases/36-comparison-publish-review-pack/36-OWNER-INSTRUCTIONS.md`, `.planning/phases/36-comparison-publish-review-pack/36-01-SUMMARY.md`
+- Verified task commits exist in git history: `22d28fa`, `c6dfa84`, `dd03968`
