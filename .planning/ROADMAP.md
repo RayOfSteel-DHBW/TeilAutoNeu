@@ -7,7 +7,7 @@
 - ✅ **v1.2 ClaudesDesigns** — Phases 20-24 (shipped 2026-03-08, verdict: chromas)
 - ⏸️ **v1.3 Epic Skins** — Phases 26-31 (historical milestone; Phases 30-31 remain placeholders)
 - ✅ **v1.4 Epic Skin Polish** — Phases 32-36 (shipped 2026-03-11; accepted gaps recorded in audit)
-- 📋 **Next milestone** — not defined yet
+- 📋 **v1.5 Publish Readiness & Review Capture** — Phases 37-39 (planned 2026-03-11)
 
 ## Phases
 
@@ -94,6 +94,14 @@ Prepared follow-up milestone: `.planning/v1.4-ROADMAP-DRAFT.md`
 Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 </details>
+
+### v1.5 Publish Readiness & Review Capture
+
+**Milestone Goal:** Close the known publish blockers left by v1.4, preserve the shared A/B/C comparison flow after those fixes, capture structured owner review in one deep brief, and end with a documented recommendation for the next path.
+
+- [ ] **Phase 37: Publish Readiness Blockers** — fix the known Design B and shared-picker blockers that must be clean before any publish recommendation
+- [ ] **Phase 38: Structured Owner Review Capture** — run one shared comparison brief that records per-design keep/drop/blocker notes and cross-design preferences
+- [ ] **Phase 39: Direction Recommendation Brief** — turn the review findings and blocker status into a documented recommendation for Design D synthesis or rollout
 
 ## Phase Details
 
@@ -278,6 +286,39 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
   6. Playwright screenshots clean at 375px, 768px, and 1280px across all 8 pages
 **Plans**: TBD
 
+### Phase 37: Publish Readiness Blockers
+**Goal**: The shared comparison experience is technically publish-ready again: Design B dials the correct phone number, its `fahrzeuge` map popups load the expected car icons, and the shared picker still routes cleanly into Designs A, B, and C after the fixes.
+**Depends on**: Phase 36
+**Requirements**: GAP-01, GAP-02, GAP-03
+**Success Criteria** (what must be TRUE):
+  1. On Design B review-ready pages, every visible phone CTA opens a dial action for `07473-922202`
+  2. On Design B `fahrzeuge`, fleet-map popups show their car icons without broken or missing asset states
+  3. From the shared comparison picker, the reviewer can still enter Design A, Design B, and Design C without dead links or misrouting after the fixes
+  4. A reviewer can move through the shared comparison surface without seeing a regression introduced by the publish-readiness fixes
+**Plans**: TBD
+
+### Phase 38: Structured Owner Review Capture
+**Goal**: The owner can review Designs A, B, and C through one explicit comparison brief that captures actionable per-design feedback and cross-design preferences in a single place.
+**Depends on**: Phase 37
+**Requirements**: REVIEW-01, REVIEW-02, REVIEW-03
+**Success Criteria** (what must be TRUE):
+  1. The owner can review Designs A, B, and C through one shared comparison flow that uses the same prompt structure for each design
+  2. The review artifact records, for each design, what to keep, what to drop, and which concerns block rollout
+  3. Cross-design preferences and comparative notes are captured in the same artifact instead of scattered across separate comments
+  4. Another reader can understand the tradeoffs between A, B, and C from the artifact alone without replaying the live review session
+**Plans**: TBD
+
+### Phase 39: Direction Recommendation Brief
+**Goal**: The milestone ends with one documented recommendation for the next path, grounded in the structured owner review and the remaining publish-readiness status.
+**Depends on**: Phase 38
+**Requirements**: DECIDE-01, DECIDE-02, DECIDE-03
+**Success Criteria** (what must be TRUE):
+  1. The final brief states one explicit recommendation: create Design D synthesis or roll out a named baseline skin
+  2. The recommendation cites the owner review findings and any remaining publish blockers, rather than relying on subjective preference alone
+  3. If Design D is recommended, the brief names the specific elements to synthesize from the reviewed designs
+  4. If rollout is recommended, the brief names the baseline design and the remaining rollout work needed before publish
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -296,6 +337,9 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
 | 32-36. Epic Skin Polish | v1.4 | 5/5 | Complete | 2026-03-11 |
+| 37. Publish Readiness Blockers | v1.5 | 0/? | Not started | - |
+| 38. Structured Owner Review Capture | v1.5 | 0/? | Not started | - |
+| 39. Direction Recommendation Brief | v1.5 | 0/? | Not started | - |
 
 ### ~~Phase 25: Design D — Claude's Own Vision~~ (Moved to v1.3 as Phase 31)
 

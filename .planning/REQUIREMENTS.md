@@ -54,21 +54,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GAP-01 | Phase TBD | Pending |
-| GAP-02 | Phase TBD | Pending |
-| GAP-03 | Phase TBD | Pending |
-| REVIEW-01 | Phase TBD | Pending |
-| REVIEW-02 | Phase TBD | Pending |
-| REVIEW-03 | Phase TBD | Pending |
-| DECIDE-01 | Phase TBD | Pending |
-| DECIDE-02 | Phase TBD | Pending |
-| DECIDE-03 | Phase TBD | Pending |
+| GAP-01 | Phase 37 | Pending |
+| GAP-02 | Phase 37 | Pending |
+| GAP-03 | Phase 37 | Pending |
+| REVIEW-01 | Phase 38 | Pending |
+| REVIEW-02 | Phase 38 | Pending |
+| REVIEW-03 | Phase 38 | Pending |
+| DECIDE-01 | Phase 39 | Pending |
+| DECIDE-02 | Phase 39 | Pending |
+| DECIDE-03 | Phase 39 | Pending |
 
 **Coverage:**
 - v1.5 requirements: 9 total
-- Mapped to phases: 0
-- Unmapped: 9 ⚠
+- Mapped to phases: 9
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after v1.5 milestone start*
+*Last updated: 2026-03-11 after v1.5 roadmap creation*

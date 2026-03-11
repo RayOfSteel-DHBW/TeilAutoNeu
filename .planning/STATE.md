@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Publish Readiness & Review Capture
-status: defining_requirements
-stopped_at: defining milestone requirements
-last_updated: "2026-03-11T13:34:55.8247997+01:00"
-last_activity: 2026-03-11 -- milestone v1.5 started; defining requirements
+status: roadmap_created
+stopped_at: roadmap created; ready to plan phase 37
+last_updated: "2026-03-11T16:46:50.2752439+01:00"
+last_activity: 2026-03-11 -- roadmap created for milestone v1.5; Phase 37 ready for planning
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** Defining milestone v1.5 requirements for publish-readiness gap closure and owner review capture
+**Current focus:** Planning and executing Phase 37 to close publish-readiness blockers before the owner review brief
 
 ## Current Position
 
-Milestone: v1.5 (Publish Readiness & Review Capture) -- STARTED
-Phase: Not started (defining requirements)
+Milestone: v1.5 (Publish Readiness & Review Capture) -- ROADMAP CREATED
+Phase: 37 -- Publish Readiness Blockers (next)
 Plan: -
-Status: Defining requirements for publish-readiness fixes and owner review capture
-Last activity: 2026-03-11 -- milestone v1.5 started; defining requirements
+Status: Ready to plan Phase 37 from the approved milestone roadmap
+Last activity: 2026-03-11 -- roadmap created for publish blockers, owner review capture, and direction recommendation
 
 Progress: v1.5 [░░░░░░░░░░░░░░░░░░░░] 0%
 
@@ -43,6 +43,7 @@ Progress: v1.5 [░░░░░░░░░░░░░░░░░░░░] 0%
 
 **Recent execution:**
 - 2026-03-11: v1.5 started to close publish blockers and capture structured owner review from the shared picker
+- 2026-03-11: v1.5 roadmap created with three phases (37-39) and full requirement traceability
 
 ## Accumulated Context
 
@@ -90,6 +91,8 @@ Key current context:
 - [Phase 35]: Design C clean pass on Iteration 1 after copyright year and og:title fixes
 - [Phase 36]: The shared comparison entry lives at site/epic/index.html and links directly to the canonical A, B, and C homepages.
 - [Phase 36]: If structured review capture is still wanted after Phase 36, propose it as new Phase 37 rather than routing back to Phase 30.
+- [Phase 37]: v1.5 phase structure is locked as publish blockers -> structured owner review capture -> direction recommendation.
+- [Phase 37]: Requirement coverage is complete: GAP-01..03 -> Phase 37, REVIEW-01..03 -> Phase 38, DECIDE-01..03 -> Phase 39.
 
 ### Pending Todos
 
@@ -110,6 +113,6 @@ Key current context:
 
 ## Session Continuity
 
-Last session: 2026-03-11T13:34:55.8247997+01:00
-Stopped at: milestone v1.5 started; requirements definition in progress
+Last session: 2026-03-11T16:46:50.2752439+01:00
+Stopped at: roadmap created for milestone v1.5; ready to plan Phase 37
 Resume file: None
