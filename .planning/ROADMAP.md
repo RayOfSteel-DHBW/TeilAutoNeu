@@ -88,7 +88,7 @@ Prepared follow-up milestone: `.planning/v1.4-ROADMAP-DRAFT.md`
 - [x] **Phase 36: Comparison Publish & Review Pack** — shared picker, comparison-ready paths, and owner-facing instructions (completed 2026-03-11)
 
 **Accepted known gaps:**
-- Design B phone CTA `tel:` targets still need correction before a clean publish decision
+- Design B exposes the phone number too broadly instead of preserving the original membership-gated contact flow
 - Shared map popup icon asset paths still 404 on Design B `fahrzeuge`
 
 Full details: `.planning/milestones/v1.4-ROADMAP.md`
@@ -287,11 +287,11 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 **Plans**: TBD
 
 ### Phase 37: Publish Readiness Blockers
-**Goal**: The shared comparison experience is technically publish-ready again: Design B dials the correct phone number, its `fahrzeuge` map popups load the expected car icons, and the shared picker still routes cleanly into Designs A, B, and C after the fixes.
+**Goal**: The shared comparison experience is technically publish-ready again: Design B preserves the intended membership-gated phone flow instead of spamming the number across general pages, its `fahrzeuge` map popups load the expected car icons, and the shared picker still routes cleanly into Designs A, B, and C after the fixes.
 **Depends on**: Phase 36
 **Requirements**: GAP-01, GAP-02, GAP-03
 **Success Criteria** (what must be TRUE):
-  1. On Design B review-ready pages, every visible phone CTA opens a dial action for `07473-922202`
+  1. On Design B review-ready pages, the booking phone number is only exposed in the intended membership context instead of being repeated across general-page nav, footer, and premature CTA surfaces
   2. On Design B `fahrzeuge`, fleet-map popups show their car icons without broken or missing asset states
   3. From the shared comparison picker, the reviewer can still enter Design A, Design B, and Design C without dead links or misrouting after the fixes
   4. A reviewer can move through the shared comparison surface without seeing a regression introduced by the publish-readiness fixes

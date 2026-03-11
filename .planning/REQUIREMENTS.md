@@ -9,7 +9,7 @@ Requirements for milestone v1.5 Publish Readiness and Review Capture.
 
 ### Publish Readiness
 
-- [ ] **GAP-01**: Design B phone CTAs dial the same `07473-922202` number that is rendered in the UI.
+- [ ] **GAP-01**: Design B restores the original membership gate for phone access, so visitors are not shown the booking number broadly on general pages before the membership context qualifies them.
 - [ ] **GAP-02**: Design B `fahrzeuge` map popups load their car icons without broken asset-path requests.
 - [ ] **GAP-03**: The shared comparison picker still routes cleanly into Designs A, B, and C after the publish-readiness fixes land.
 

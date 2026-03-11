@@ -60,7 +60,7 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-- [ ] Correct Design B phone CTA targets so review-ready pages dial the displayed `07473-922202`
+- [ ] Restore Design B's membership-gated phone flow so general pages stop surfacing the booking number prematurely
 - [ ] Resolve the shared fleet-map popup icon asset-path mismatch before any publish decision
 - [ ] Capture structured owner feedback from the shared comparison picker so A/B/C differences are documented explicitly
 - [ ] End the milestone with a documented direction decision: Design D synthesis vs rollout of a chosen skin
@@ -150,7 +150,7 @@ owner review pass through the shared comparison picker so the next direction is
 chosen intentionally instead of inferred later.
 
 **Target features:**
-- Fix Design B phone CTA targets so the dialed number matches the rendered `07473-922202`
+- Restore Design B's original phone gating so the booking number appears only after the membership context qualifies the visitor
 - Fix the shared fleet-map popup icon asset-path mismatch on Design B `fahrzeuge`
 - Capture structured owner feedback from the shared comparison picker for Designs A, B, and C
 - Record a milestone-end direction decision: Design D synthesis or rollout of a chosen skin
@@ -165,7 +165,7 @@ start-page/version-picker comparison model.
 current branch after serial polish loops on A/B/C.
 
 **Accepted gaps at completion:**
-- Design B phone CTA links still dial the wrong number
+- Design B phone CTA placement broke the original membership gate and now surfaces the booking number too broadly
 - Shared fleet-map popup icon asset paths still 404 on Design B `fahrzeuge`
 - Traceability/bookkeeping drift remains in some planning docs
 
