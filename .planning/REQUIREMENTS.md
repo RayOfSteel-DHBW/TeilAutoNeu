@@ -52,10 +52,10 @@ picker for the shared phases rather than the skin-local phases.
 
 ### Comparison Readiness
 
-- [ ] **COMP-01**: All three skins can be reached from a shared start
+- [x] **COMP-01**: All three skins can be reached from a shared start
   page/version picker on the same branch, backed by stable local or published
   paths.
-- [ ] **COMP-02**: Review and publish instructions are documented so the owner
+- [x] **COMP-02**: Review and publish instructions are documented so the owner
   can compare the skins through that shared picker without repo archaeology.
 
 ## v1.3 Requirements (Archived)
@@ -144,8 +144,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | READY-A-01 | Phase 33 | Complete |
 | READY-B-01 | Phase 34 | Complete |
 | READY-C-01 | Phase 35 | Complete |
-| COMP-01 | Phase 36 | Pending |
-| COMP-02 | Phase 36 | Pending |
+| COMP-01 | Phase 36 | Complete |
+| COMP-02 | Phase 36 | Complete |
 | STRUCT-01 | Phase 26 | Complete |
 | STRUCT-02 | Phase 26 | Complete |
 | STRUCT-03 | Phase 26 | Complete |

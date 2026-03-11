@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Epic Skin Polish
 status: completed
-stopped_at: Completed 35-01-PLAN.md
-last_updated: "2026-03-09T21:58:27.156Z"
-last_activity: 2026-03-09 -- Phase 35 Design C polish loop finished clean on Iteration 1
+stopped_at: Completed 36-01-PLAN.md
+last_updated: "2026-03-11T10:12:11.395Z"
+last_activity: 2026-03-11 -- Phase 36 shared comparison surface delivered, browser-verified, and handed off
 progress:
   total_phases: 16
-  completed_phases: 10
+  completed_phases: 11
   total_plans: 35
-  completed_plans: 29
-  percent: 86
+  completed_plans: 30
+  percent: 88
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-09)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.4 Epic Skin Polish -- Phase 36: Epic Comparison Publish
+**Current focus:** v1.4 Epic Skin Polish -- complete through Phase 36 comparison publish
 
 ## Current Position
 
-Phase: 35 of v1.4 (Epic Skin C Polish Loop) -- COMPLETE
+Phase: 36 of v1.4 (Comparison Publish & Review Pack) -- COMPLETE
 Plan: 01 of 01 complete
-Status: Phase 35 complete; Design C polish clean pass on Iteration 1; ready for Phase 36
-Last activity: 2026-03-09 -- Phase 35 Design C polish loop finished clean on Iteration 1
+Status: Phase 36 complete; shared comparison start page, browser verification, and owner handoff docs delivered
+Last activity: 2026-03-11 -- Phase 36 shared comparison surface delivered, browser-verified, and handed off
 
-Progress: v1.4 [████████████████████] 86%
+Progress: v1.4 [████████████████████] 100%
 
 ## Performance Metrics
 
@@ -39,6 +39,9 @@ Progress: v1.4 [████████████████████] 86
 - v1.1: 7 plans, 2 days
 - v1.2: 17 plans, 9 days
 - Trend: Stable
+
+**Recent execution:**
+- 2026-03-11: Phase 36 Plan 01 completed in 6 min (3 tasks, 3 plan files delivered/updated)
 
 ## Accumulated Context
 
@@ -84,6 +87,8 @@ Key current context:
 - [Phase 34]: Shared fleet-map.js 404s for car icon SVGs reported as out-of-scope blocker, not fixed from Design B scope
 - [Phase 34]: All 8 Design B pages verified at 375/768/1280px via Playwright with no visual or content issues
 - [Phase 35]: Design C clean pass on Iteration 1 after copyright year and og:title fixes
+- [Phase 36]: The shared comparison entry lives at site/epic/index.html and links directly to the canonical A, B, and C homepages.
+- [Phase 36]: If structured review capture is still wanted after Phase 36, propose it as new Phase 37 rather than routing back to Phase 30.
 
 ### Pending Todos
 
@@ -100,10 +105,10 @@ Key current context:
 
 - Shared start page/version picker work belongs to shared review phases, not skin-specific implementation or polish phases.
 - Browser-driven audit work is a shared-resource bottleneck in this repo.
-- Phase 35 confirmed all 8 Design C pages exist and passed clean polish. Ready for Phase 36.
+- If formal owner review capture is still needed, propose a new Phase 37 instead of routing back to Phase 30.
 
 ## Session Continuity
 
-Last session: 2026-03-09T21:54:18.283Z
-Stopped at: Completed 35-01-PLAN.md
+Last session: 2026-03-11T10:12:11.391Z
+Stopped at: Completed 36-01-PLAN.md
 Resume file: None

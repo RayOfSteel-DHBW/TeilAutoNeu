@@ -276,7 +276,7 @@ run serially and must not be grouped into the same browser wave.
   polish for `site/epic/b/`
 - [x] **Phase 35: Epic Skin C Polish Loop** — iterative visual + requirements (completed 2026-03-09)
   polish for `site/epic/c/`
-- [ ] **Phase 36: Comparison Publish & Review Pack** — shared start
+- [x] **Phase 36: Comparison Publish & Review Pack** — shared start (completed 2026-03-11)
   page/version picker, comparison-ready paths, and owner-facing review
   instructions
 
@@ -394,7 +394,7 @@ Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 | 33. Epic Skin A Polish Loop | v1.4 | 1/1 | Complete | 2026-03-09 |
 | 34. Epic Skin B Polish Loop | 1/1 | Complete    | 2026-03-09 | - |
 | 35. Epic Skin C Polish Loop | 1/1 | Complete    | 2026-03-09 | - |
-| 36. Comparison Publish & Review Pack | v1.4 | 0/1 | Not started | - |
+| 36. Comparison Publish & Review Pack | 1/1 | Complete   | 2026-03-11 | - |
 
 ### ~~Phase 25: Design D — Claude's Own Vision~~ (Moved to v1.3 as Phase 31)
 
