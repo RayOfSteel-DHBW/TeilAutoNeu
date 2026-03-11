@@ -62,8 +62,8 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 - [ ] Correct Design B phone CTA targets so review-ready pages dial the displayed `07473-922202`
 - [ ] Resolve the shared fleet-map popup icon asset-path mismatch before any publish decision
-- [ ] Capture structured owner feedback from the shared comparison picker as a new forward milestone or phase
-- [ ] Decide whether the next milestone builds Design D synthesis or rolls a chosen design toward production
+- [ ] Capture structured owner feedback from the shared comparison picker so A/B/C differences are documented explicitly
+- [ ] End the milestone with a documented direction decision: Design D synthesis vs rollout of a chosen skin
 
 ### Out of Scope
 
@@ -143,19 +143,17 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-## Current State
+## Current Milestone: v1.5 Publish Readiness & Review Capture
 
-The repository now contains three structurally distinct epic skins in
-`site/epic/a/`, `site/epic/b/`, and `site/epic/c/`, plus a shared comparison
-entry at `site/epic/index.html`. Milestone `v1.4 Epic Skin Polish` is archived
-as shipped, but with an explicitly accepted Design B CTA wiring gap documented
-in `.planning/milestones/v1.4-MILESTONE-AUDIT.md`.
+**Goal:** Close the known publish blockers left by v1.4, then run a structured
+owner review pass through the shared comparison picker so the next direction is
+chosen intentionally instead of inferred later.
 
-## Next Milestone Goals
-
-- Fix the accepted Design B phone CTA gap and other shared polish debt that still affects publish confidence
-- Decide whether owner comparison should continue as a structured feedback-capture milestone
-- Decide whether the forward path is Design D synthesis or direct rollout of a chosen skin
+**Target features:**
+- Fix Design B phone CTA targets so the dialed number matches the rendered `07473-922202`
+- Fix the shared fleet-map popup icon asset-path mismatch on Design B `fahrzeuge`
+- Capture structured owner feedback from the shared comparison picker for Designs A, B, and C
+- Record a milestone-end direction decision: Design D synthesis or rollout of a chosen skin
 
 ## Most Recent Milestone: v1.4 Epic Skin Polish
 
@@ -185,7 +183,7 @@ current branch after serial polish loops on A/B/C.
 
 **Epic skin standard:** Must feel like a different product (not a chroma/recolor). Different section ordering, hero composition, nav pattern, information density, visual signature element.
 
-## Current State
+## Historical Context
 
 v1.2 shipped. Three chromas produced — same skeleton, different paint. Phase 24 review verdict: structural distinctness insufficient. v1.3 focuses on true structural differentiation.
 
@@ -204,4 +202,4 @@ be added as a new forward phase number rather than reopening those placeholders.
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-11 after v1.4 milestone completion_
+_Last updated: 2026-03-11 after v1.5 milestone start_

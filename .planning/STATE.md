@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.4
-milestone_name: Epic Skin Polish
-status: completed
-stopped_at: v1.4 milestone archived; ready to define next milestone
-last_updated: "2026-03-11T12:54:10.3769216+01:00"
-last_activity: 2026-03-11 -- v1.4 milestone archived with accepted Design B CTA gap
+milestone: v1.5
+milestone_name: Publish Readiness & Review Capture
+status: defining_requirements
+stopped_at: defining milestone requirements
+last_updated: "2026-03-11T13:34:55.8247997+01:00"
+last_activity: 2026-03-11 -- milestone v1.5 started; defining requirements
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 5
-  completed_plans: 5
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -21,16 +21,17 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** Planning next milestone after archived v1.4 polish work
+**Current focus:** Defining milestone v1.5 requirements for publish-readiness gap closure and owner review capture
 
 ## Current Position
 
-Milestone: v1.4 (Epic Skin Polish) -- ARCHIVED
-Position: No active milestone selected yet
-Status: v1.4 shipped with accepted known gaps; next milestone not yet defined
-Last activity: 2026-03-11 -- v1.4 milestone archived with accepted Design B CTA gap
+Milestone: v1.5 (Publish Readiness & Review Capture) -- STARTED
+Phase: Not started (defining requirements)
+Plan: -
+Status: Defining requirements for publish-readiness fixes and owner review capture
+Last activity: 2026-03-11 -- milestone v1.5 started; defining requirements
 
-Progress: v1.4 [████████████████████] 100%
+Progress: v1.5 [░░░░░░░░░░░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -41,7 +42,7 @@ Progress: v1.4 [████████████████████] 10
 - Trend: Stable
 
 **Recent execution:**
-- 2026-03-11: v1.4 archived after Phases 32-36 completed; accepted Design B CTA gap carried forward
+- 2026-03-11: v1.5 started to close publish blockers and capture structured owner review from the shared picker
 
 ## Accumulated Context
 
@@ -109,6 +110,6 @@ Key current context:
 
 ## Session Continuity
 
-Last session: 2026-03-11T12:54:10.3769216+01:00
-Stopped at: v1.4 archived; ready to define next milestone
+Last session: 2026-03-11T13:34:55.8247997+01:00
+Stopped at: milestone v1.5 started; requirements definition in progress
 Resume file: None
