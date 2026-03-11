@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Epic Skin Polish
 status: completed
-stopped_at: Completed 36-01-PLAN.md
-last_updated: "2026-03-11T11:21:51.4931592+01:00"
-last_activity: 2026-03-11 -- Phase 36 shared comparison surface delivered, browser-verified, and handed off
+stopped_at: v1.4 milestone archived; ready to define next milestone
+last_updated: "2026-03-11T12:54:10.3769216+01:00"
+last_activity: 2026-03-11 -- v1.4 milestone archived with accepted Design B CTA gap
 progress:
-  total_phases: 16
-  completed_phases: 11
-  total_plans: 35
-  completed_plans: 30
-  percent: 88
+  total_phases: 5
+  completed_phases: 5
+  total_plans: 5
+  completed_plans: 5
+  percent: 100
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Attract suitable new members without overwhelming the owners' limited phone capacity.
-**Current focus:** v1.4 Epic Skin Polish -- complete; ready for milestone audit/archive or a new forward Phase 37 if formal review capture is needed
+**Current focus:** Planning next milestone after archived v1.4 polish work
 
 ## Current Position
 
-Phase: 36 of v1.4 (Comparison Publish & Review Pack) -- COMPLETE
-Plan: 01 of 01 complete
-Status: Phase 36 complete; shared comparison start page, browser verification, and owner handoff docs delivered
-Last activity: 2026-03-11 -- Phase 36 shared comparison surface delivered, browser-verified, and handed off
+Milestone: v1.4 (Epic Skin Polish) -- ARCHIVED
+Position: No active milestone selected yet
+Status: v1.4 shipped with accepted known gaps; next milestone not yet defined
+Last activity: 2026-03-11 -- v1.4 milestone archived with accepted Design B CTA gap
 
 Progress: v1.4 [████████████████████] 100%
 
@@ -41,7 +41,7 @@ Progress: v1.4 [████████████████████] 10
 - Trend: Stable
 
 **Recent execution:**
-- 2026-03-11: Phase 36 Plan 01 completed in 6 min (3 tasks, 3 plan files delivered/updated)
+- 2026-03-11: v1.4 archived after Phases 32-36 completed; accepted Design B CTA gap carried forward
 
 ## Accumulated Context
 
@@ -55,7 +55,7 @@ Key current context:
 - v1.3 fix: Phase 26 specs must include "Structural Signature" — section ordering, hero type, nav pattern, visual signature, copy strategy.
 - Phases 27, 28, 29 depend ONLY on Phase 26. Their source directories are isolated, but browser-driven audit work must serialize when agents share one local browser session.
 - Comparison stays on one branch: `site/epic/{a,b,c}/` are the implementations, and a shared start page/version picker is the intended human entry point.
-- The active forward path is Phase 32 -> 33 -> 34 -> 35 -> 36. Do not route back to Phase 30 during this milestone.
+- The v1.4 execution path was Phase 32 -> 33 -> 34 -> 35 -> 36. Do not route future work back to Phase 30 just because that historical path exists.
 - If structured review-capture is still needed after Phase 36, propose a new forward phase number instead of reopening v1.3 placeholders.
 - [Phase 32]: Active planning docs now treat v1.4 as the current milestone and define serial browser execution for Phases 33-36.
 - [Phase 32]: A/B/C inventory captured in `.planning/phases/32-polish-baseline-review-surface/32-INVENTORY.md`.
@@ -85,7 +85,7 @@ Key current context:
 - [Process]: Future browser-driven polish work must run sequentially because A/B/C share one local browser session
 - [Phase 34]: Design B clean pass on Iteration 1 after copyright year fix (2025->2026)
 - [Phase 34]: Shared fleet-map.js 404s for car icon SVGs reported as out-of-scope blocker, not fixed from Design B scope
-- [Phase 34]: All 8 Design B pages verified at 375/768/1280px via Playwright with no visual or content issues
+- [Phase 34]: Milestone audit later found Design B phone CTA targets still dial the wrong number despite the clean-pass claim.
 - [Phase 35]: Design C clean pass on Iteration 1 after copyright year and og:title fixes
 - [Phase 36]: The shared comparison entry lives at site/epic/index.html and links directly to the canonical A, B, and C homepages.
 - [Phase 36]: If structured review capture is still wanted after Phase 36, propose it as new Phase 37 rather than routing back to Phase 30.
@@ -103,12 +103,12 @@ Key current context:
 
 ### Blockers/Concerns
 
-- Shared start page/version picker work belongs to shared review phases, not skin-specific implementation or polish phases.
-- Browser-driven audit work is a shared-resource bottleneck in this repo.
-- If formal owner review capture is still needed, propose a new Phase 37 instead of routing back to Phase 30.
+- Accepted shipped gap: Design B phone CTA links still need correction before a clean publish decision.
+- Shared `site/public/js/fleet-map.js` popup icon asset paths still mismatch the actual `/public/img/cars/` location.
+- If formal owner review capture is still needed, propose it as new forward work instead of routing back to Phase 30.
 
 ## Session Continuity
 
-Last session: 2026-03-11T11:21:51.4931592+01:00
-Stopped at: Phase 36 complete; v1.4 ready for milestone audit/archive
+Last session: 2026-03-11T12:54:10.3769216+01:00
+Stopped at: v1.4 archived; ready to define next milestone
 Resume file: None

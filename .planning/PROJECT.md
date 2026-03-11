@@ -49,6 +49,8 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 - ✓ Secondary pages reframed (geschaeftskunden, ueber-uns, mitglied-werden) — v1.1
 - ✓ Nav CTA for mitglied-werden on every page — v1.1
 - ✓ Card border contrast and placeholder standardization site-wide — v1.1
+- ✓ Shared comparison start page/version picker for A/B/C on the same branch — v1.4
+- ✓ Serial polish loops for Designs A, B, and C with a shared owner handoff surface — v1.4
 
 ### Deferred
 
@@ -58,18 +60,10 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ### Active
 
-<!-- v1.3 Epic Skins — structurally distinct design explorations + synthesis -->
-
-- [x] 3 structurally distinct ("epic skin") design directions specified with unique skeletons
-- [x] Epic Skin A: complete 8-page site in `site/epic/a/` with unique page skeleton, hero, nav, visual signature
-- [x] Epic Skin B: complete 8-page site in `site/epic/b/` with unique page skeleton, hero, nav, visual signature
-- [x] Epic Skin C: complete 8-page site in `site/epic/c/` with unique page skeleton, hero, nav, visual signature
-- [x] No two designs share the same hero composition type
-- [x] Copy strategy varies per design (same facts, different emphasis)
-- [x] Shared start page/version picker for A/B/C comparison on the same branch
-- [ ] Epic review captures per-design feedback for synthesis
-- [ ] Design D in `site/epic/d/`: Claude's autonomous synthesis of best elements from A/B/C review
-- [x] Active follow-up milestone: `v1.4 Epic Skin Polish` (sequential shared-browser polish loops)
+- [ ] Correct Design B phone CTA targets so review-ready pages dial the displayed `07473-922202`
+- [ ] Resolve the shared fleet-map popup icon asset-path mismatch before any publish decision
+- [ ] Capture structured owner feedback from the shared comparison picker as a new forward milestone or phase
+- [ ] Decide whether the next milestone builds Design D synthesis or rolls a chosen design toward production
 
 ### Out of Scope
 
@@ -149,30 +143,33 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 
 ---
 
-## Current Milestone: v1.4 Epic Skin Polish
+## Current State
+
+The repository now contains three structurally distinct epic skins in
+`site/epic/a/`, `site/epic/b/`, and `site/epic/c/`, plus a shared comparison
+entry at `site/epic/index.html`. Milestone `v1.4 Epic Skin Polish` is archived
+as shipped, but with an explicitly accepted Design B CTA wiring gap documented
+in `.planning/milestones/v1.4-MILESTONE-AUDIT.md`.
+
+## Next Milestone Goals
+
+- Fix the accepted Design B phone CTA gap and other shared polish debt that still affects publish confidence
+- Decide whether owner comparison should continue as a structured feedback-capture milestone
+- Decide whether the forward path is Design D synthesis or direct rollout of a chosen skin
+
+## Most Recent Milestone: v1.4 Epic Skin Polish
 
 **Goal:** Polish Designs A, B, and C through bounded visual + requirements
 iteration loops after v1.3 implementation, while preserving the one-branch
 start-page/version-picker comparison model.
 
-**Status:** Complete through Phase 36. The shared comparison picker, browser
-verification, and owner-facing review instructions are now in place on the
-current branch.
+**Result:** Shared comparison entry and owner review instructions shipped on the
+current branch after serial polish loops on A/B/C.
 
-**Execution constraint:** Sequential only. Browser-driven audit work shares one
-local browser resource, so Phases 33, 34, 35, and browser verification in
-Phase 36 must not overlap.
-
-**Target features:**
-- Phase 32: active-doc alignment, A/B/C inventory, and locked shared
-  comparison-surface contract
-- Phase 33: Design A review -> TODO -> batch fix -> verify loop
-- Phase 34: Design B review -> TODO -> batch fix -> verify loop
-- Phase 35: Design C review -> TODO -> batch fix -> verify loop
-- Phase 36: shared start page/version picker plus owner-facing comparison
-  instructions
-- If structured review-capture is still needed after Phase 36, create a new
-  forward phase number instead of routing back to Phase 30
+**Accepted gaps at completion:**
+- Design B phone CTA links still dial the wrong number
+- Shared fleet-map popup icon asset paths still 404 on Design B `fahrzeuge`
+- Traceability/bookkeeping drift remains in some planning docs
 
 ## Previous Milestone: v1.3 Epic Skins
 
@@ -207,4 +204,4 @@ be added as a new forward phase number rather than reopening those placeholders.
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-11 after Phase 36 (Comparison Publish & Review Pack)_
+_Last updated: 2026-03-11 after v1.4 milestone completion_

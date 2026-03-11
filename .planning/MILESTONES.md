@@ -1,5 +1,34 @@
 # Milestones
 
+## v1.4 Epic Skin Polish (Shipped: 2026-03-11)
+
+**Phases:** 5 phases (32-36), 5 plans
+**Timeline:** 3 days (2026-03-09 → 2026-03-11)
+**Status:** Shipped with accepted known gaps
+
+**Key accomplishments:**
+
+1. Locked the v1.4 comparison contract and serial browser-execution rules before polish began
+2. Brought Design A to a clean review-ready pass at 375px, 768px, and 1280px
+3. Brought Design B to a near-clean review-ready pass and surfaced the shared fleet-map popup icon issue
+4. Brought Design C to a clean review-ready pass at 375px, 768px, and 1280px
+5. Added a shared comparison entry page at `site/epic/index.html` with stable links into Designs A, B, and C
+6. Wrote owner-facing comparison instructions and verified the shared picker flow in browser
+
+**Known gaps (accepted):**
+
+- Phase 34 / Design B still contains miswired phone CTA targets (`tel:+4974739222020`) despite displaying `07473-922202`
+- Shared `site/public/js/fleet-map.js` popup icon asset paths still 404 on Design B `fahrzeuge`
+- Summary-frontmatter and roadmap-checkbox traceability drift remains in milestone bookkeeping
+
+**Archives:**
+
+- `.planning/milestones/v1.4-ROADMAP.md`
+- `.planning/milestones/v1.4-REQUIREMENTS.md`
+- `.planning/milestones/v1.4-MILESTONE-AUDIT.md`
+
+---
+
 ## v1.0 MVP (Shipped: 2026-02-26)
 
 **Phases:** 11 phases (1-11), 25 plans
@@ -63,4 +92,3 @@
 - `.planning/milestones/v1.1-MILESTONE-AUDIT.md`
 
 ---
-

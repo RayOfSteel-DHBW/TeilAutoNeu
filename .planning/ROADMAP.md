@@ -6,7 +6,8 @@
 - ✅ **v1.1 Visual Fixes** — Phases 12-19 (shipped 2026-02-27)
 - ✅ **v1.2 ClaudesDesigns** — Phases 20-24 (shipped 2026-03-08, verdict: chromas)
 - ⏸️ **v1.3 Epic Skins** — Phases 26-31 (historical milestone; Phases 30-31 remain placeholders)
-- 🚧 **v1.4 Epic Skin Polish** — Phases 32-36 (active; sequential shared-browser execution)
+- ✅ **v1.4 Epic Skin Polish** — Phases 32-36 (shipped 2026-03-11; accepted gaps recorded in audit)
+- 📋 **Next milestone** — not defined yet
 
 ## Phases
 
@@ -61,7 +62,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 </details>
 
-### v1.3 Epic Skins (In Progress)
+### v1.3 Epic Skins (Historical / Incomplete)
 
 **Milestone Goal:** Produce 3 structurally distinct ("epic skin") design explorations — each with a different page skeleton, hero composition, nav pattern, content flow, and visual signature — keep them on one branch in parallel directories, review them through a shared start page/version picker, then synthesize feedback into Design D (Claude's autonomous vision).
 
@@ -73,6 +74,26 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [ ] **Phase 31: Design D — Claude's Synthesis** — Claude's autonomous synthesis in `site/epic/d/` based on review feedback
 
 Prepared follow-up milestone: `.planning/v1.4-ROADMAP-DRAFT.md`
+
+<details>
+<summary>✅ v1.4 Epic Skin Polish (Phases 32-36) — SHIPPED 2026-03-11</summary>
+
+**Milestone Goal:** Run bounded polish loops on epic skins A, B, and C after v1.3 implementation completed, with shared housekeeping and the shared start page/version picker handled separately from skin-specific review/fix work.
+**Outcome:** Shared comparison entry and owner handoff shipped on one branch after serial polish loops for A/B/C. Milestone completed with accepted known gaps recorded in `.planning/milestones/v1.4-MILESTONE-AUDIT.md`.
+
+- [x] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping, inventory checks, active-doc alignment, and locked comparison-surface contract (completed 2026-03-09)
+- [x] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements polish for `site/epic/a/` (completed 2026-03-09)
+- [x] **Phase 34: Epic Skin B Polish Loop** — iterative visual + requirements polish for `site/epic/b/` (completed 2026-03-09)
+- [x] **Phase 35: Epic Skin C Polish Loop** — iterative visual + requirements polish for `site/epic/c/` (completed 2026-03-09)
+- [x] **Phase 36: Comparison Publish & Review Pack** — shared picker, comparison-ready paths, and owner-facing instructions (completed 2026-03-11)
+
+**Accepted known gaps:**
+- Design B phone CTA `tel:` targets still need correction before a clean publish decision
+- Shared map popup icon asset paths still 404 on Design B `fahrzeuge`
+
+Full details: `.planning/milestones/v1.4-ROADMAP.md`
+
+</details>
 
 ## Phase Details
 
@@ -257,122 +278,6 @@ Prepared follow-up milestone: `.planning/v1.4-ROADMAP-DRAFT.md`
   6. Playwright screenshots clean at 375px, 768px, and 1280px across all 8 pages
 **Plans**: TBD
 
-### v1.4 Epic Skin Polish
-
-**Milestone Goal:** Run bounded polish loops on epic skins A, B, and C after
-v1.3 implementation completed, with shared housekeeping and the shared start
-page/version picker handled separately from skin-specific review/fix work.
-
-**Execution model:** Sequential only. The local browser is shared, so any plan
-that uses Playwright, screenshots, browser verification, or browser state must
-run serially and must not be grouped into the same browser wave.
-
-- [x] **Phase 32: Polish Baseline & Review Surface** — shared housekeeping, (completed 2026-03-09)
-  inventory checks, active-doc alignment, and locked comparison-surface
-  contract
-- [x] **Phase 33: Epic Skin A Polish Loop** — iterative visual + requirements (completed 2026-03-09)
-  polish for `site/epic/a/`
-- [x] **Phase 34: Epic Skin B Polish Loop** — iterative visual + requirements (completed 2026-03-09)
-  polish for `site/epic/b/`
-- [x] **Phase 35: Epic Skin C Polish Loop** — iterative visual + requirements (completed 2026-03-09)
-  polish for `site/epic/c/`
-- [x] **Phase 36: Comparison Publish & Review Pack** — shared start (completed 2026-03-11)
-  page/version picker, comparison-ready paths, and owner-facing review
-  instructions
-
-### Phase 32: Polish Baseline & Review Surface
-**Goal**: Remove shared repo/planning uncertainty before skin-specific polish
-starts, verify the A/B/C inventory, and lock the one-branch comparison contract
-that later phases must follow.
-**Depends on**: Phases 27, 28, 29
-**Requirements**: BASE-01, BASE-02, BASE-03, AUDIT-04, LOOP-03
-**Success Criteria** (what must be TRUE):
-  1. Active planning docs reflect v1.4 as the current polish milestone from
-     Phase 32 onward.
-  2. Directory and page inventories exist for `site/epic/a/`, `site/epic/b/`,
-     and `site/epic/c/`.
-  3. The canonical comparison model is documented: one branch, shared start
-     page/version picker first, then stable A/B/C paths.
-  4. Skin-specific phases are explicitly scoped away from shared comparison
-     surface ownership.
-  5. No backward routing into Phase 30 is introduced; if structured
-     review-capture is still needed after Phase 36, it must be proposed as a
-     new forward phase.
-**Plans**: 1 plan
-- [x] 32-01-PLAN.md -- Promote active polish docs, inventory A/B/C, and lock the shared comparison contract
-
-### Phase 33: Epic Skin A Polish Loop
-**Goal**: Bring `site/epic/a/` to review-ready quality through a bounded
-iterative visual + requirements polish loop.
-**Depends on**: Phase 32
-**Parallel note**: Browser-driven execution is serial only. Phase 33 must not
-overlap with Phases 34 or 35.
-**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03, LOOP-01, LOOP-02, LOOP-03, READY-A-01
-**Success Criteria** (what must be TRUE):
-  1. All 8 A pages are reviewed at 375px, 768px, and 1280px.
-  2. Each iteration writes a TODO list before fixes begin.
-  3. Each loop checks both visual execution and the v1.0 requirements floor.
-  4. The loop stops only on a clean pass, a hard blocker, missing
-     implementation, or the 5-iteration cap.
-  5. A clean finish is explicitly marked ready for Phase 34.
-**Plans**: 1 plan
-- [x] 33-01-PLAN.md -- Run the bounded review -> TODO -> batch fix -> verify loop for Design A
-
-### Phase 34: Epic Skin B Polish Loop
-**Goal**: Bring `site/epic/b/` to review-ready quality through a bounded
-iterative visual + requirements polish loop.
-**Depends on**: Phase 33
-**Parallel note**: Browser-driven execution is serial only. Phase 34 must not
-overlap with Phases 33 or 35.
-**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03, LOOP-01, LOOP-02, LOOP-03, READY-B-01
-**Success Criteria** (what must be TRUE):
-  1. All 8 B pages are reviewed at 375px, 768px, and 1280px.
-  2. Each iteration writes a TODO list before fixes begin.
-  3. Each loop checks both visual execution and the v1.0 requirements floor.
-  4. The loop stops only on a clean pass, a hard blocker, missing
-     implementation, or the 5-iteration cap.
-  5. A clean finish is explicitly marked ready for Phase 35.
-**Plans**: 1 plan
-- [ ] 34-01-PLAN.md -- Run the bounded review -> TODO -> batch fix -> verify loop for Design B
-
-### Phase 35: Epic Skin C Polish Loop
-**Goal**: Bring `site/epic/c/` to review-ready quality through a bounded
-iterative visual + requirements polish loop.
-**Depends on**: Phase 34
-**Parallel note**: Browser-driven execution is serial only. Phase 35 must not
-overlap with Phases 33 or 34.
-**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03, LOOP-01, LOOP-02, LOOP-03, READY-C-01
-**Success Criteria** (what must be TRUE):
-  1. All 8 C pages exist before the loop starts.
-  2. All 8 C pages are reviewed at 375px, 768px, and 1280px.
-  3. Each iteration writes a TODO list before fixes begin.
-  4. Each loop checks both visual execution and the v1.0 requirements floor.
-  5. The loop stops only on a clean pass, a hard blocker, missing
-     implementation, or the 5-iteration cap.
-  6. A clean finish is explicitly marked ready for Phase 36.
-**Plans**: 1 plan
-- [ ] 35-01-PLAN.md -- Run the bounded review -> TODO -> batch fix -> verify loop for Design C
-
-### Phase 36: Comparison Publish & Review Pack
-**Goal**: Deliver and verify the shared comparison surface so a reviewer can
-choose a version first from one start page on the current branch, then hand off
-brief owner-facing comparison instructions.
-**Depends on**: Phase 35
-**Requirements**: COMP-01, COMP-02
-**Success Criteria** (what must be TRUE):
-  1. A shared start page/version picker reaches all three polished skins by
-     stable local paths on the current branch.
-  2. The comparison surface is verified in browser from the shared entry point.
-  3. Brief owner-facing review instructions explain the pick-a-version-first
-     flow and stable paths.
-  4. If a structured review-capture phase is still needed after this work, it
-     is proposed as a new forward phase number rather than routed back to
-     Phase 30.
-**Plans**: 1 plan
-- [x] 36-01-PLAN.md -- Build and verify the shared comparison start page and owner review instructions
-
-Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
-
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -390,11 +295,7 @@ Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 | 29. Epic Skin C | v1.3 | 5/5 | Complete | 2026-03-09 |
 | 30. Epic Review | v1.3 | 0/? | Not started | - |
 | 31. Design D — Claude's Synthesis | v1.3 | 0/? | Not started | - |
-| 32. Polish Baseline & Review Surface | v1.4 | 1/1 | Complete | 2026-03-09 |
-| 33. Epic Skin A Polish Loop | v1.4 | 1/1 | Complete | 2026-03-09 |
-| 34. Epic Skin B Polish Loop | 1/1 | Complete    | 2026-03-09 | - |
-| 35. Epic Skin C Polish Loop | 1/1 | Complete    | 2026-03-09 | - |
-| 36. Comparison Publish & Review Pack | 1/1 | Complete   | 2026-03-11 | - |
+| 32-36. Epic Skin Polish | v1.4 | 5/5 | Complete | 2026-03-11 |
 
 ### ~~Phase 25: Design D — Claude's Own Vision~~ (Moved to v1.3 as Phase 31)
 

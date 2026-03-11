@@ -52,6 +52,45 @@
 
 ---
 
+## Milestone: v1.4 — Epic Skin Polish
+
+**Shipped:** 2026-03-11
+**Phases:** 5 | **Plans:** 5 | **Timeline:** 3 days
+
+### What Was Built
+- Shared comparison entry page at `site/epic/index.html`
+- Serial polish loop closeout for Designs A, B, and C at 375px, 768px, and 1280px
+- Owner-facing comparison instructions for the shared A/B/C picker flow
+- Milestone audit documenting one accepted blocker-grade gap in Design B CTA wiring
+
+### What Worked
+- **Shared-contract split was effective** — Phase 32 owned comparison-surface rules, letting 33-35 stay directory-local
+- **Serial browser discipline held** — the polish loops and shared comparison verification did not trample each other
+- **Short polish loops were efficient** — each design phase closed in one bounded pass instead of dragging across many micro-fixes
+- **Comparison surface stayed truthful** — one branch, stable A/B/C paths, and explicit owner instructions all lined up cleanly
+
+### What Was Inefficient
+- **Phase 34 over-claimed readiness** — Design B shipped with a still-broken `tel:` target even though the loop declared a clean pass
+- **Summary/traceability consistency drifted** — some summaries lacked `requirements-completed`, making milestone aggregation noisier than it should be
+- **Roadmap checkbox drift survived phase completion** — archived milestone bookkeeping still needed manual cleanup after execution
+
+### Patterns Established
+- Shared review infrastructure belongs in dedicated shared phases, not skin-local polish phases
+- Browser-driven polish work must stay serialized when one local browser session is shared
+- Milestone audits are valuable even after all phase verifications pass; they catch cross-phase contradictions
+
+### Key Lessons
+1. **A clean pass claim is not enough** — critical CTA paths need explicit wiring checks, not just visible-copy checks
+2. **Shared-resource bottlenecks are manageable when named early** — the serial-browser rule prevented execution chaos
+3. **Archive automation still needs human correction in mixed-history repos** — milestone tools over-counted this repo because older milestone structure remains irregular
+
+### Cost Observations
+- Model mix: planning/execution primarily on sonnet-level workflows with local manual verification
+- Timeline: fast finish once Phase 32 locked scope; most work compressed into 2026-03-09 through 2026-03-11
+- Notable: the final milestone audit was the step that surfaced the only blocker-grade shipped gap
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -59,9 +98,11 @@
 | Milestone | Timeline | Phases | Key Change |
 |-----------|----------|--------|------------|
 | v1.0      | 17 days  | 11     | Initial milestone — established gap closure pattern via audit |
+| v1.4      | 3 days   | 5      | Shared comparison contract + serial polish loops + milestone audit caught cross-phase CTA mismatch |
 
 ### Top Lessons (Verified Across Milestones)
 
 1. Author content with correct encoding from day one
 2. Run milestone audits at mid-milestone, not just at the end
 3. Every phase needs verification — missing VERIFICATION.md allows silent regressions
+4. Cross-phase milestone audits catch real bugs even when individual phases all report passed
