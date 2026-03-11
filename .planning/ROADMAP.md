@@ -369,7 +369,7 @@ brief owner-facing comparison instructions.
      is proposed as a new forward phase number rather than routed back to
      Phase 30.
 **Plans**: 1 plan
-- [ ] 36-01-PLAN.md -- Build and verify the shared comparison start page and owner review instructions
+- [x] 36-01-PLAN.md -- Build and verify the shared comparison start page and owner review instructions
 
 Full draft: `.planning/v1.4-ROADMAP-DRAFT.md`
 
