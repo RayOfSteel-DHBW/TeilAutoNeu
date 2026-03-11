@@ -66,7 +66,7 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 - [x] Epic Skin C: complete 8-page site in `site/epic/c/` with unique page skeleton, hero, nav, visual signature
 - [x] No two designs share the same hero composition type
 - [x] Copy strategy varies per design (same facts, different emphasis)
-- [ ] Shared start page/version picker for A/B/C comparison on the same branch
+- [x] Shared start page/version picker for A/B/C comparison on the same branch
 - [ ] Epic review captures per-design feedback for synthesis
 - [ ] Design D in `site/epic/d/`: Claude's autonomous synthesis of best elements from A/B/C review
 - [x] Active follow-up milestone: `v1.4 Epic Skin Polish` (sequential shared-browser polish loops)
@@ -144,6 +144,8 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 | mitglied-werden.html as hybrid "So funktioniert's" + join page | Practical carsharing how-to section before 3-step join flow. Corrected transactional framing | ✓ Good — shipped Phase 10 |
 | Labeled pricing breakdowns | Line-by-line label+value pairs in example calculations. Kaution demoted to footnote | ✓ Good — shipped Phase 10 |
 | Simplified Datenschutzerklärung (no-tracking angle) | No tracking exists yet; removed forward-looking Google Analytics section, kept honest disclosure | ✓ Good — shipped Phase 11 |
+| Shared epic comparison entry at `site/epic/index.html` | Keep the one-branch review model intact while giving owners one canonical start page into A/B/C | ✓ Good — shipped Phase 36 |
+| Structured post-polish review must move forward, not back to Phase 30 | v1.3 placeholders are historical; any formal comparison capture now belongs in a new forward phase | ✓ Good — Phase 36 proposes Phase 37 if needed |
 
 ---
 
@@ -152,6 +154,10 @@ A modern, mobile-friendly static website for **teilAuto Mössingen e.K.**, a fam
 **Goal:** Polish Designs A, B, and C through bounded visual + requirements
 iteration loops after v1.3 implementation, while preserving the one-branch
 start-page/version-picker comparison model.
+
+**Status:** Complete through Phase 36. The shared comparison picker, browser
+verification, and owner-facing review instructions are now in place on the
+current branch.
 
 **Execution constraint:** Sequential only. Browser-driven audit work shares one
 local browser resource, so Phases 33, 34, 35, and browser verification in
@@ -201,4 +207,4 @@ be added as a new forward phase number rather than reopening those placeholders.
 **Pending owner actions:** Vehicle photos, Impressum fields (Handelsregister, USt-ID), member count verification, real pricing data for X%/Y% placeholders, Card 5 phrasing confirmation.
 
 ---
-_Last updated: 2026-03-09 after Phase 34 (Design B polish loop — clean pass)_
+_Last updated: 2026-03-11 after Phase 36 (Comparison Publish & Review Pack)_
